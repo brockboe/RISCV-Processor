@@ -111,6 +111,17 @@ For help, you can visit the RVFI Monitor's `GitHub page <https://github.com/Symb
 Based on feedback from previous semesters, we are requring you to hook up the RVFI Monitor and
 Shadow Memory.
 
+We do provide you with some skeleton code to help you start testing your design. Most of the
+modifications will be made in ``hvl/top.sv`` and consist of connecting the correct design ports to
+the correct interface ports. The only changes that should be made outside of ``hvl/top.sv`` are to
+enable or disable various features in ``hvl/source_tb.sv`` for later checkpoints. This standard is
+to allow for ease in autograding, should TAs decide to run the autograder. If the autograder will be
+enabled, further details will be released when that determination is made.
+
+As always, we expect you to fully read through all provided code and documentation before starting
+your design. There may be requirements not explicitly mentioned in this documentation but are made
+clear through a basic reading of the provided code. While the TAs make every effort to ensure
+completeness of the documentation, that goal is not always achieved.
 
 The Pipeline
 ============
@@ -119,7 +130,7 @@ Pipeline Control
 ----------------
 
 In this pipelined design, you will be using a simple control memory to generate control signals. No
-state diagrams will be allowed for pipeline control (state diagrams *are* still allowed for cache
+state diagrams will be allowed for basic pipeline control (state diagrams *are* still allowed for cache
 controllers and other parts of your design). The control memory behaves similar to a ROM (read only
 memory). When an instruction is ready to be decoded, the opcode (and possibly some other fields of
 the instruction word) are sent to a logic block, which then outputs a ``control word`` containing
@@ -607,6 +618,7 @@ with your mentor TA to assign it a point value.
   - `Tournament branch predictor`_ [4]
   - LTAGE branch predictor [6]
   - Alternative branch predictor (points up to TA discretion) [#]_
+  - `Software branch predictor model`_ [2]
   - Branch target buffer, support for jumps [1]
   - 4-way set associative or higher BTB [2]
   - `Return address stack`_ [2]
@@ -730,6 +742,16 @@ with your mentor TA to assign it a point value.
   two is the best predictor to use for a branch. This predictor should use the two bit counter
   method to make its selection, and should update on a per-branch basis.
 
+.. _Software branch predictor model:
+
+- **Software Branch Predictor Model**
+
+  To evaluate whether or not your branch predictor is performing as expected, you need to know what
+  expected is. To accomplish that, you can create a systemverilog model of your core and branch predictor.
+  This model comes with the added benefit of helping you verify the rest of your core as well. Your
+  branch predictor's accuracy must match the model's accuracy for points. If you do not implement a
+  dynamic branch prediction model, this option is only worth a single advanced feature point.
+
 .. _Return address stack:
 
 - **Return Address Stack**
@@ -784,8 +806,8 @@ cache. Here are several options of implementing prefetching.
 - **Memory Stage Leapfrogging**
 
   This allows independent instructions to "jump past" the memory stage if/when there is a data cache
-  miss. Beware! This requires extra special care to make sure that the register file values and
-  condition codes are set correctly when the stalled instruction finally completes.
+  miss. Beware! This requires extra special care to make sure that the register file values are
+  set correctly when the stalled instruction finally completes.
 
 .. _RISC-V M Extension:
 
@@ -862,8 +884,8 @@ cache. Here are several options of implementing prefetching.
   renaming. Discuss with your mentor TA for more details.
 
 
-.. [#] M Extension Spec: `<https://courses.grainger.illinois.edu/ece411/fa2019/mp/riscv-spec-v2.2.pdf#page=47>`_
-.. [#] C Extension Spec: `<https://courses.grainger.illinois.edu/ece411/fa2019/mp/riscv-spec-v2.2.pdf#page=79>`_
+.. [#] M Extension Spec: `<https://content.riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf#page=47>`_
+.. [#] C Extension Spec: `<https://content.riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf#page=79>`_
 
 
 FAQs
@@ -961,7 +983,8 @@ Advice from Past Students
     the pipeline. Also, pass the opcode and PC down. These are essential when debugging."
   - "Check your sensitivity lists!!"
   - "Hook up the debug utilities, shadow memory and RVFI monitor, early. It helps so much later."
-  - "RISC-V MONITOR please start using it at CHECKPOINT 1!"
+  - "RISC-V MONITOR please start using it at CHECKPOINT 1!"  (TA note: we suggest using RVFI
+    Monitor beginning with CP3.)
   - "Performance counters might seem unnecessary at first, but they totally saved our competition
     score. Make a lot of them, and use them!!"
 
