@@ -36,6 +36,7 @@ typedef enum bit [2:0] {
 } alumux2_sel_t;
 endpackage
 
+/*
 package regfilemux;
 typedef enum bit [3:0] {
     alu_out   = 4'b0000
@@ -49,4 +50,34 @@ typedef enum bit [3:0] {
     ,lhu       = 4'b1000  // unsigned halfword
 } regfilemux_sel_t;
 endpackage
+*/
 
+// TODO: Complete forwarding values
+package rs1mux;
+typedef enum bit [1:0] {
+      rs2_out = 2'b00
+} rs1mux_sel_t;
+endpackage
+
+// TODO: Complete forwarding values
+package rs2mux;
+typedef enum bit [1:0] {
+      rs2_out = 2'b00
+} rs2mux_sel_t;
+endpackage;
+
+package regfilemux;
+typedef enum bit [1:0] {
+      alu_out = 2'b00,
+      br_en = 2'b01,
+      u_imm = 2'b10,
+      MDRreg_out = 2'b11
+} regfilemux_sel_t;
+endpackage;
+
+//TODO: complete forwarding
+package dcachemux;
+typedef enum bit {
+      rs2_out = 1'b0
+} dcachemux_sel_t;
+endpackage;

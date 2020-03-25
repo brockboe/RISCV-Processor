@@ -1,0 +1,71 @@
+import rv32i_types::*;
+import pcmux::*;
+import marmux::*;
+import cmpmux::*;
+import alumux::*;
+import regfilemux::*;
+
+package control_itf;
+
+typedef struct packed
+{
+      logic load_pc;
+      logic load_regfile;
+      pcmux::pcmux_sel_t pcmux_sel;
+      alumux::alumux1_sel_t alumux1_sel;
+      alumux::alumux2_sel_t alumux2_sel;
+      regfilemux::regfilemux_sel_t regfilemux_sel;
+      cmpmux::cmpmux_sel_t cmpmux_sel;
+      rv32i_types::alu_ops aluop;
+      rv32i_types::branch_funct3_t cmpop;
+      logic dcachemux_sel;
+
+      logic [1:0] rs1mux_sel;
+      logic [1:0] rs2mux_sel;
+
+      logic pipe_load_ifid;
+      logic pipe_load_idex;
+      logic pipe_load_exmem;
+      logic pipe_load_memwb;
+
+      logic pipe_rst_ifid;
+      logic pipe_rst_idex;
+      logic pipe_rst_exmem;
+      logic pipe_rst_memwb;
+} control;
+
+//contains control data information
+//length = 20
+typedef struct packed
+{
+      logic alumux1_sel;
+      logic [2:0] alumux2_sel;
+      logic cmpmux_sel;
+      logic [2:0] aluop;
+      logic [2:0] cmpop;
+      logic dcache_read;
+      logic dcache_write;
+      logic mask1;
+      logic mask2;
+      logic [3:0] regfilemux_sel;
+      logic load_regfile;
+} ctrl_word;
+
+//contains instruction decode data
+//length = 192
+typedef struct packed
+{
+      logic [2:0] funct3;
+      logic [6:0] funct7;
+      rv32i_opcode opcode;
+      logic [31:0] i_imm;
+      logic [31:0] s_imm;
+      logic [31:0] b_imm;
+      logic [31:0] u_imm;
+      logic [31:0] j_imm;
+      logic [4:0] rs1;
+      logic [4:0] rs2;
+      logic [4:0] rd;
+} instruction_decode;
+
+endpackage: control_itf
