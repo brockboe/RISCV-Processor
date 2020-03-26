@@ -7,6 +7,9 @@ import regfilemux::*;
 
 package control_itf;
 
+// struct of control signals, collected
+// for easy connection between datapath
+// and control modules
 typedef struct packed
 {
       logic load_pc;

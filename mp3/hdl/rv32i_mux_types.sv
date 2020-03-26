@@ -64,7 +64,7 @@ package rs2mux;
 typedef enum bit [1:0] {
       rs2_out = 2'b00
 } rs2mux_sel_t;
-endpackage;
+endpackage
 
 package regfilemux;
 typedef enum bit [1:0] {
@@ -73,11 +73,11 @@ typedef enum bit [1:0] {
       u_imm = 2'b10,
       MDRreg_out = 2'b11
 } regfilemux_sel_t;
-endpackage;
+endpackage
 
 //TODO: complete forwarding
 package dcachemux;
 typedef enum bit {
       rs2_out = 1'b0
 } dcachemux_sel_t;
-endpackage;
+endpackage

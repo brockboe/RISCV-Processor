@@ -13,41 +13,83 @@ import rs1mux::*;
 import rs2mux::*;
 import dcachemux::*;
 
+// top level datapath module
 module datapath
 (
       input logic clk,
       input logic rst,
-      input control control,        //control itf struct,
-                                    //see control_itf.sv for
-                                    //more information and contents
+      input control_itf::control control,        //control itf struct,
+                                                 //see control_itf.sv for
+                                                 //more information and contents
 
-      input ctrl_word idex_ctrl_word,     //again, see control_itf.sv
+      input control_itf::ctrl_word idex_ctrl_word,     //again, see control_itf.sv
+                                                       //The new control word is injected
+                                                       //in the id/ex stage, and then passed
+                                                       //along the pipeline stage
 
-      output logic icache_address,
-      output logic icache_wdata,
-      input logic icache_rdata,
+      output logic [31:0] icache_address,
+      output logic [31:0] icache_wdata,
+      input logic [31:0] icache_rdata,
 
-      output logic dcache_address,
-      output logic dcache_wdata,
-      input logic dcache_rdata
+      output logic [31:0] dcache_address,
+      output logic [31:0] dcache_wdata,
+      input logic [31:0] dcache_rdata
 );
 
-// function to decode instruction
-function instruction_decode decode;
-      input logic [31:0] idata;
-      output decode;
+// connectors - defined here so quartus doesn't get
+// confused or complain
+control_itf::instruction_decode pipereg_idex_idecode;
+control_itf::instruction_decode pipereg_exmem_idecode;
+control_itf::instruction_decode pipereg_memwb_idecode;
+control_itf::ctrl_word pipereg_idex_ctrl_word;
+control_itf::ctrl_word pipereg_exmem_ctrl_word;
+control_itf::ctrl_word pipereg_memwb_ctrl_word;
+logic [31:0] rs1mux_out;
+logic [31:0] rs2mux_out;
+logic [31:0] dcachemux_out;
+logic [31:0] pipereg_ifid_icache_rdata;
+logic [31:0] pc_module_out;
+logic [31:0] pipereg_ifid_pc_out;
+logic [31:0] pipereg_idex_pc_out;
+logic [31:0] pipereg_idex_rs1_out;
+logic [31:0] regfile_rs1_out;
+logic [31:0] regfile_rs2_out;
+logic [31:0] pipereg_idex_rs2_out;
+logic [31:0] pipereg_exmem_rs2_out;
+logic [31:0] alu_module_out;
+logic [31:0] pipe_exmem_alu_out;
+logic [31:0] pipe_memwb_alu_out;
+logic [31:0] pipereg_memwb_mdr_out;
+logic [31:0] pcmux_out;
+logic [31:0] regfilemux_out;
+logic [31:0] alumux1_out;
+logic [31:0] alumux2_out;
+logic br_en_out;                    //TODO: When working with the cmp module, remember
+logic pipereg_exmem_br_en_out;      // that the output is one bit, and must be extended
+logic pipereg_memwb_br_en;          // to 32 bits.
+logic [31:0] cmpmux_out;
 
-      decode.funct3 = idata[14:12];
-      decode.funct7 = idata[31:25];
-      decode.opcode = idata[6:0];
-      decode.i_imm = {{21{idata[31]}}, idata[30:20]};
-      decode.s_imm = {{21{idata[31]}}, idata[30:25], idata[11:7]};
-      decode.b_imm = {{20{idata[31]}}, idata[7], idata[30:25], idata[11:8], 1'b0};
-      decode.u_imm = {idata[31:12], 12'h000};
-      decode.j_imm = {{12{idata[31]}}, idata[19:12], idata[20], idata[30:21], 1'b0};
-      decode.rs1 = idata[19:15];
-      decode.rs2 = idata[24:20];
-      decode.rd = idata[11:7];
+
+// function to decode instruction
+// only used in pipe_idex_idecode pipeline
+// register to convert the instruction into something
+// useful
+function control_itf::instruction_decode decode (logic [31:0] idata);
+      control_itf::instruction_decode d;
+
+      d.funct3 = idata[14:12];
+      d.funct7 = idata[31:25];
+      d.opcode = rv32i_types::rv32i_opcode ' (idata[6:0]);
+      d.i_imm = {{21{idata[31]}}, idata[30:20]};
+      d.s_imm = {{21{idata[31]}}, idata[30:25], idata[11:7]};
+      d.b_imm = {{20{idata[31]}}, idata[7], idata[30:25], idata[11:8], 1'b0};
+      d.u_imm = {idata[31:12], 12'h000};
+      d.j_imm = {{12{idata[31]}}, idata[19:12], idata[20], idata[30:21], 1'b0};
+      d.rs1 = idata[19:15];
+      d.rs2 = idata[24:20];
+      d.rd = idata[11:7];
+
+      return d;
 endfunction
 
 //********************************** Pipeline Registers
@@ -68,7 +110,7 @@ pipe_ifid_pc (
       .clk(clk),
       .rst(rst | control.pipe_rst_ifid),
       .load(control.pipe_load_ifid),
-      .in(pc_out),
+      .in(pc_module_out),
       .out(pipereg_ifid_pc_out)
 );
 
@@ -108,7 +150,7 @@ pipe_idex_rs1_out (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex),
       .load(control.pipe_load_idex),
-      .in(rs1_out),
+      .in(regfile_rs1_out),
       .out(pipereg_idex_rs1_out)
 );
 // rs2 out
@@ -117,7 +159,7 @@ pipe_idex_rs2_out (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex),
       .load(control.pipe_load_idex),
-      .in(rs2_out),
+      .in(regfile_rs2_out),
       .out(pipereg_idex_rs2_out)
 );
 
@@ -138,7 +180,7 @@ pipe_exmem_alu (
       .clk(clk),
       .rst(rst | control.pipe_rst_exmem),
       .load(control.pipe_load_exmem),
-      .in(alu_out),
+      .in(alu_module_out),
       .out(pipe_exmem_alu_out)
 );
 // instruction data
@@ -174,12 +216,12 @@ pipe_exmem_ctrl_word(
 // MEM / WB Registers
 // alu output
 register #(.width(32))
-pipe_memwb_alu_out (
+pipe_memwb_alu (
       .clk(clk),
       .rst(rst | control.pipe_rst_memwb),
       .load(control.pipe_load_memwb),
       .in(pipe_exmem_alu_out),
-      .out(pipe_memwb_alu_out),
+      .out(pipe_memwb_alu_out)
 );
 // instruction data
 register #(.width(192))
@@ -234,7 +276,7 @@ pc (
       .rst(rst),
       .load(control.load_pc),
       .in(pcmux_out),
-      .out(pc_out)
+      .out(pc_module_out)
 );
 
 
@@ -247,17 +289,24 @@ regfile regfile(
       .src_a(pipereg_idex_idecode.rs1),
       .src_b(pipereg_idex_idecode.rs2),
       .dest(pipereg_idex_idecode.rd),
-      .reg_a(rs1_out),
-      .reg_b(rs2_out)
+      .reg_a(regfile_rs1_out),
+      .reg_b(regfile_rs2_out)
 );
 
 
 // EX - execute
 alu alu (
-      .aluop(pipereg_idex_idecode.funct3),
+      .aluop(rv32i_types::alu_ops ' (pipereg_idex_idecode.funct3)),
       .a(alumux1_out),
       .b(alumux2_out),
-      .f(alu_out)
+      .f(alu_module_out)
+);
+
+cmp_module cmp (
+      .op(branch_funct3_t ' (pipereg_idex_idecode.funct3)),
+      .a(rs1mux_out),
+      .b(cmpmux_out),
+      .result(br_en_out)
 );
 
 
@@ -280,8 +329,9 @@ alu alu (
 always_comb begin : MUXES
       // IF - Instruction fetch
       unique case (control.pcmux_sel)
-            pcmux::pc_plus4: pcmux_out = pc_out + 4;
+            pcmux::pc_plus4: pcmux_out = pc_module_out + 4;
             pcmux::alu_out: pcmux_out = pipe_exmem_alu_out;
+            pcmux::alu_mod2: pcmux_out = {pipe_exmem_alu_out[31:2], 2'b0};
             default: `BAD_MUX_SEL;
       endcase
 
@@ -291,15 +341,18 @@ always_comb begin : MUXES
 
       // EX - Execute
       // TODO: Complete forwarding
-      unique case (control.rs1mux_sel)
-            rs1mux::rs1_out: rs1mux_out = pipereg_idex_rs1_out;
-            default: `BAD_MUX_SEL;
-      endcase
+      //unique case (control.rs1mux_sel)
+      //      rs1mux::rs1_out: rs1mux_out = pipereg_idex_rs1_out;
+      //      default: `BAD_MUX_SEL;
+      //endcase
+      rs1mux_out = pipereg_idex_rs1_out;
 
       // TODO: Complete forwarding
-      unique case (control.rs2mux_sel)
-            rs2mux::rs2_out: rs2mux_out = pipereg_idex_rs2_out;
-      endcase
+      //unique case (control.rs2mux_sel)
+      //      rs2mux::rs2_out: rs2mux_out = pipereg_idex_rs2_out;
+      //      default: `BAD_MUX_SEL;
+      //endcase
+      rs2mux_out = pipereg_idex_rs2_out;
 
       unique case (control.alumux1_sel)
             alumux::rs1_out: alumux1_out = rs1mux_out;
@@ -333,7 +386,7 @@ always_comb begin : MUXES
       // WB - Writeback
       unique case (control.regfilemux_sel)
             regfilemux::alu_out: regfilemux_out = pipe_memwb_alu_out;
-            regfilemux::br_en: regfilemux_out = pipereg_memwb_br_en
+            regfilemux::br_en: regfilemux_out = pipereg_memwb_br_en;
             regfilemux::u_imm: regfilemux_out = pipereg_memwb_idecode.u_imm;
             regfilemux::MDRreg_out: regfilemux_out = pipereg_memwb_mdr_out;
             default: `BAD_MUX_SEL;
