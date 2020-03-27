@@ -18,22 +18,23 @@ module datapath
 (
       input logic clk,
       input logic rst,
-      input control_itf::control control,        //control itf struct,
-                                                 //see control_itf.sv for
-                                                 //more information and contents
+
+      input control_itf::control control,
 
       output rv32i_opcode opcode,
       output logic [2:0] funct3,
       output logic [6:0] funct7,
-      input control_itf::ctrl_word idex_ctrl_word,     //again, see control_itf.sv
+      input control_itf::ctrl_word idex_ctrl_word,     //see control_itf.sv
                                                        //The new control word is injected
                                                        //in the id/ex stage, and then passed
                                                        //along the pipeline stage
-
+      output logic icache_read,
       output logic [31:0] icache_address,
       output logic [31:0] icache_wdata,
       input logic [31:0] icache_rdata,
 
+      output logic dcache_read,
+      output logic dcache_write,
       output logic [31:0] dcache_address,
       output logic [31:0] dcache_wdata,
       input logic [31:0] dcache_rdata
@@ -54,6 +55,8 @@ logic [31:0] pipereg_ifid_icache_rdata;
 logic [31:0] pc_module_out;
 logic [31:0] pipereg_ifid_pc_out;
 logic [31:0] pipereg_idex_pc_out;
+logic [31:0] pipereg_exmem_pc_out;
+logic [31:0] pipereg_memwb_pc_out;
 logic [31:0] pipereg_idex_rs1_out;
 logic [31:0] regfile_rs1_out;
 logic [31:0] regfile_rs2_out;
@@ -221,6 +224,16 @@ pipe_exmem_ctrl_word(
       .out(pipereg_exmem_ctrl_word)
 );
 
+// PC
+register #(.width(32))
+pipe_exmem_pc (
+      .clk(clk),
+      .rst(rst | control.pipe_rst_idex),
+      .load(control.pipe_load_idex),
+      .in(pipereg_idex_pc_out),
+      .out(pipereg_exmem_pc_out)
+);
+
 
 
 // MEM / WB Registers
@@ -270,8 +283,17 @@ pipe_memwb_br_en (
       .out(pipereg_memwb_br_en)
 );
 
-//*****************************************************
+// PC
+register #(.width(32))
+pipe_memwb_pc (
+      .clk(clk),
+      .rst(rst | control.pipe_rst_idex),
+      .load(control.pipe_load_idex),
+      .in(pipereg_exmem_pc_out),
+      .out(pipereg_memwb_pc_out)
+);
 
+//*****************************************************
 
 
 
@@ -282,22 +304,22 @@ pipe_memwb_br_en (
 // compute alu and cmp signals
 // see execute controller for
 // implementation
-cmpmux::cmpmux_sel_t cmpmux_sel;
-alumux::alumux1_sel_t alumux1_sel;
-alumux::alumux2_sel_t alumux2_sel;
-rv32i_types::alu_ops aluop;
-rv32i_types::branch_funct3_t cmpop;
+// cmpmux::cmpmux_sel_t cmpmux_sel;
+// alumux::alumux1_sel_t alumux1_sel;
+// alumux::alumux2_sel_t alumux2_sel;
+// rv32i_types::alu_ops aluop;
+// rv32i_types::branch_funct3_t cmpop;
 
-execute_controller execute_controller (
-      .idecode(pipereg_idex_idecode),
-      .cmpmux_sel(cmpmux_sel),
-      .alumux1_sel(alumux1_sel),
-      .alumux2_sel(alumux2_sel),
-      .aluop(aluop),
-      .cmpop(cmpop)
-);
+// execute_controller execute_controller (
+//       .idecode(pipereg_idex_idecode),
+//       .cmpmux_sel(cmpmux_sel),
+//       .alumux1_sel(alumux1_sel),
+//       .alumux2_sel(alumux2_sel),
+//       .aluop(aluop),
+//       .cmpop(cmpop)
+// );
 
-
+assign icache_read = 1'b1; // (CP1)
 
 
 // IF - instruction fetch
@@ -310,6 +332,7 @@ pc (
       .out(pc_module_out)
 );
 
+assign icache_address = pc_module_out;
 
 // DE - decode
 regfile regfile(
@@ -346,7 +369,10 @@ cmp_module cmp (
 
 // MEM - Memory
 // none
-
+assign dcache_read = pipereg_exmem_ctrl_word.dcache_read;
+assign dcache_write = pipereg_exmem_ctrl_word.dcache_write;
+assign dcache_wdata = dcachemux_out;
+assign dcache_address = pipe_exmem_alu_out;
 
 // WB - Writeback
 // none
@@ -399,13 +425,13 @@ always_comb begin : MUXES
       //endcase
       rs2mux_out = pipereg_idex_rs2_out;
 
-      unique case (alumux1_sel)
+      unique case (pipereg_idex_ctrl_word.alumux1_sel)
             alumux::rs1_out: alumux1_out = rs1mux_out;
             alumux::pc_out: alumux1_out = pipereg_idex_pc_out;
             default: `BAD_MUX_SEL;
       endcase
 
-      unique case (alumux2_sel)
+      unique case (pipereg_idex_ctrl_word.alumux2_sel)
             alumux::rs2_out: alumux2_out = rs2mux_out;
             alumux::i_imm: alumux2_out = pipereg_idex_idecode.i_imm;
             alumux::u_imm: alumux2_out = pipereg_idex_idecode.u_imm;
@@ -415,7 +441,7 @@ always_comb begin : MUXES
             default: `BAD_MUX_SEL;
       endcase
 
-      unique case (cmpmux_sel)
+      unique case (pipereg_idex_ctrl_word.cmpmux_sel)
             cmpmux::rs2_out: cmpmux_out = pipereg_idex_rs2_out;
             cmpmux::i_imm: cmpmux_out = pipereg_idex_idecode.i_imm;
             default: `BAD_MUX_SEL;
@@ -435,6 +461,7 @@ always_comb begin : MUXES
             regfilemux::br_en: regfilemux_out = pipereg_memwb_br_en;
             regfilemux::u_imm: regfilemux_out = pipereg_memwb_idecode.u_imm;
             regfilemux::MDRreg_out: regfilemux_out = pipereg_memwb_mdr_out;
+            regfilemux::pc_plus4: regfilemux_out = pipereg_memwb_pc_out + 4;
             default: `BAD_MUX_SEL;
       endcase
 
