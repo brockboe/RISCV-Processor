@@ -10,19 +10,10 @@ package control_itf;
 // struct of control signals, collected
 // for easy connection between datapath
 // and control modules
+// TODO: This struct will be used when implementing
+// forwarding
 typedef struct packed
 {
-      logic load_pc;
-      logic load_regfile;
-      pcmux::pcmux_sel_t pcmux_sel;
-      alumux::alumux1_sel_t alumux1_sel;
-      alumux::alumux2_sel_t alumux2_sel;
-      regfilemux::regfilemux_sel_t regfilemux_sel;
-      cmpmux::cmpmux_sel_t cmpmux_sel;
-      rv32i_types::alu_ops aluop;
-      rv32i_types::branch_funct3_t cmpop;
-      logic dcachemux_sel;
-
       logic [1:0] rs1mux_sel;
       logic [1:0] rs2mux_sel;
 
@@ -60,7 +51,7 @@ typedef struct packed
 {
       logic [2:0] funct3;
       logic [6:0] funct7;
-      rv32i_opcode opcode;
+      rv32i_types::rv32i_opcode opcode;
       logic [31:0] i_imm;
       logic [31:0] s_imm;
       logic [31:0] b_imm;

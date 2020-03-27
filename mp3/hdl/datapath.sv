@@ -65,8 +65,8 @@ logic [31:0] regfilemux_out;
 logic [31:0] alumux1_out;
 logic [31:0] alumux2_out;
 logic br_en_out;                    //TODO: When working with the cmp module, remember
-logic pipereg_exmem_br_en_out;      // that the output is one bit, and must be extended
-logic pipereg_memwb_br_en;          // to 32 bits.
+logic [31:0] pipereg_exmem_br_en_out;      // that the output is one bit, and must be extended
+logic [31:0] pipereg_memwb_br_en;          // to 32 bits.
 logic [31:0] cmpmux_out;
 
 
@@ -198,7 +198,7 @@ pipe_exmem_br_en (
       .clk(clk),
       .rst(rst | control.pipe_rst_exmem),
       .load(control.pipe_load_exmem),
-      .in(br_en_out),
+      .in({31'd0, br_en_out}),
       .out(pipereg_exmem_br_en_out)
 );
 // control word
@@ -263,7 +263,20 @@ pipe_memwb_br_en (
 //*****************************************************
 
 
+cmpmux::cmpmux_sel_t cmpmux_sel;
+alumux::alumux1_sel_t alumux1_sel;
+alumux::alumux2_sel_t alumux2_sel;
+rv32i_types::alu_ops aluop;
+rv32i_types::branch_funct3_t cmpop;
 
+execute_controller execute_controller (
+      .idecode(pipereg_idex_ctrl_word),
+      .cmpmux_sel(cmpmux_sel),
+      .alumux1_sel(alumux1_sel),
+      .alumux2_sel(alumux2_sel),
+      .aluop(aluop),
+      .cmpop(cmpop)
+);
 
 
 
@@ -274,7 +287,7 @@ pc_register #(.width(32))
 pc (
       .clk(clk),
       .rst(rst),
-      .load(control.load_pc),
+      .load(1'b1),                  //always load the pc
       .in(pcmux_out),
       .out(pc_module_out)
 );
@@ -284,7 +297,7 @@ pc (
 regfile regfile(
       .clk(clk),
       .rst(rst),
-      .load(control.load_regfile),
+      .load(pipereg_memwb_ctrl_word.load_regfile),
       .in(regfilemux_out),
       .src_a(pipereg_idex_idecode.rs1),
       .src_b(pipereg_idex_idecode.rs2),
@@ -296,14 +309,14 @@ regfile regfile(
 
 // EX - execute
 alu alu (
-      .aluop(rv32i_types::alu_ops ' (pipereg_idex_idecode.funct3)),
+      .aluop(aluop),
       .a(alumux1_out),
       .b(alumux2_out),
       .f(alu_module_out)
 );
 
 cmp_module cmp (
-      .op(branch_funct3_t ' (pipereg_idex_idecode.funct3)),
+      .op(cmpop),
       .a(rs1mux_out),
       .b(cmpmux_out),
       .result(br_en_out)
@@ -321,6 +334,10 @@ cmp_module cmp (
 
 
 
+
+
+
+
 //********************************** Mux Declarations
 // mux typdef declarations all found
 // in rv32i_mux_types.sv, including rs1mux,
@@ -328,10 +345,9 @@ cmp_module cmp (
 
 always_comb begin : MUXES
       // IF - Instruction fetch
-      unique case (control.pcmux_sel)
-            pcmux::pc_plus4: pcmux_out = pc_module_out + 4;
-            pcmux::alu_out: pcmux_out = pipe_exmem_alu_out;
-            pcmux::alu_mod2: pcmux_out = {pipe_exmem_alu_out[31:2], 2'b0};
+      unique case (pipereg_memwb_br_en[0])
+            1'b0: pcmux_out = pc_module_out + 32'd4;
+            1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
             default: `BAD_MUX_SEL;
       endcase
 
@@ -354,13 +370,13 @@ always_comb begin : MUXES
       //endcase
       rs2mux_out = pipereg_idex_rs2_out;
 
-      unique case (control.alumux1_sel)
+      unique case (alumux1_sel)
             alumux::rs1_out: alumux1_out = rs1mux_out;
             alumux::pc_out: alumux1_out = pipereg_idex_pc_out;
             default: `BAD_MUX_SEL;
       endcase
 
-      unique case (control.alumux2_sel)
+      unique case (alumux2_sel)
             alumux::rs2_out: alumux2_out = rs2mux_out;
             alumux::i_imm: alumux2_out = pipereg_idex_idecode.i_imm;
             alumux::u_imm: alumux2_out = pipereg_idex_idecode.u_imm;
@@ -370,7 +386,7 @@ always_comb begin : MUXES
             default: `BAD_MUX_SEL;
       endcase
 
-      unique case (control.cmpmux_sel)
+      unique case (cmpmux_sel)
             cmpmux::rs2_out: cmpmux_out = pipereg_idex_rs2_out;
             cmpmux::i_imm: cmpmux_out = pipereg_idex_idecode.i_imm;
             default: `BAD_MUX_SEL;
@@ -378,13 +394,14 @@ always_comb begin : MUXES
 
       // TODO: Implement dcache read / write logic
       // MEM - Memory
-      unique case (control.dcachemux_sel)
-            dcachemux::rs2_out: dcachemux_out = pipereg_exmem_rs2_out;
-            default: `BAD_MUX_SEL;
-      endcase
+      //unique case (control.dcachemux_sel)
+      //      dcachemux::rs2_out: dcachemux_out = pipereg_exmem_rs2_out;
+      //      default: `BAD_MUX_SEL;
+      //endcase
+      dcachemux_out = pipereg_exmem_rs2_out;
 
       // WB - Writeback
-      unique case (control.regfilemux_sel)
+      unique case (regfilemux::regfilemux_sel_t ' (pipereg_memwb_ctrl_word.regfilemux_sel))
             regfilemux::alu_out: regfilemux_out = pipe_memwb_alu_out;
             regfilemux::br_en: regfilemux_out = pipereg_memwb_br_en;
             regfilemux::u_imm: regfilemux_out = pipereg_memwb_idecode.u_imm;

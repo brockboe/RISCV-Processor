@@ -38,7 +38,7 @@ module mp3
 );
 
 // Instantiate the datapath
-datapath datapath (
+datapath d (
       .clk(clk),
       .rst(rst),
       .control(),             //TODO: FILL ME IN!

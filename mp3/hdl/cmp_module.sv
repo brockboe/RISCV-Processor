@@ -17,7 +17,7 @@ always_comb begin
             rv32i_types::bge: result = ($signed(a) >= $signed(b));
             rv32i_types::bltu: result = (a < b);
             rv32i_types::bgeu: result = (a >= b);
-            default: `BAD_MUX_SEL_CMP;
+            default: `BAD_MUX_SEL;
       endcase
 end
 
