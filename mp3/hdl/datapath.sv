@@ -73,6 +73,13 @@ logic [31:0] pipereg_memwb_br_en;          // to 32 bits.
 logic [31:0] cmpmux_out;
 
 
+
+assign icache_address = pc_module_out;
+assign dcache_address = pipe_exmem_alu_out;
+assign dcache_wdata = pipereg_exmem_rs2_out;
+
+
+
 // function to decode instruction
 // only used in pipe_idex_idecode pipeline
 // register to convert the instruction into something
@@ -312,7 +319,7 @@ regfile regfile(
       .in(regfilemux_out),
       .src_a(pipereg_idex_idecode.rs1),
       .src_b(pipereg_idex_idecode.rs2),
-      .dest(pipereg_idex_idecode.rd),
+      .dest(pipereg_memwb_idecode.rd),
       .reg_a(regfile_rs1_out),
       .reg_b(regfile_rs2_out)
 );
@@ -323,14 +330,14 @@ assign funct7 = pipereg_idex_idecode.funct7;
 
 // EX - execute
 alu alu (
-      .aluop(aluop),
+      .aluop(pipereg_idex_ctrl_word.aluop),
       .a(alumux1_out),
       .b(alumux2_out),
       .f(alu_module_out)
 );
 
 cmp_module cmp (
-      .op(cmpop),
+      .op(rv32i_types::branch_funct3_t ' (pipereg_idex_ctrl_word.cmpop)),
       .a(rs1mux_out),
       .b(cmpmux_out),
       .result(br_en_out)

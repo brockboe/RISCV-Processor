@@ -38,7 +38,7 @@ assign itf.registers = dut.d.regfile.data;
 initial begin
       itf.path_mb.put("memory.lst");
       itf.rst = 1'b1;
-      repeat (5) @(posedge itf.clk);
+      repeat (4) @(posedge itf.clk);
       itf.rst = 1'b0;
 end
 

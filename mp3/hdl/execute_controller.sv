@@ -31,7 +31,7 @@ always_comb begin
 
       if (idecode.opcode == op_lui) begin
             //do nothing
-            set_defaults();
+
       end else if (idecode.opcode == op_auipc) begin
             alumux1_sel = alumux::pc_out;
             alumux2_sel = alumux::u_imm;
@@ -50,7 +50,9 @@ always_comb begin
             aluop = alu_add;
       end else if (idecode.opcode == op_load) begin
             //do nothing
-            set_defaults();
+            alumux1_sel = alumux::rs1_out;
+            alumux2_sel = alumux::i_imm;
+            aluop = alu_add;
       end else if (idecode.opcode == op_store) begin
             //do nothing
             set_defaults();

@@ -42,11 +42,32 @@ logic [2:0] funct3;
 logic [6:0] funct7;
 ctrl_word ctrl;
 
+assign dcache_read = ctrl.dcache_read;
+assign dcache_write = ctrl.dcache_write;
+
+//TODO: When updating forwarding, change the control signals
+control_itf::control c_temp;
+
+always_comb begin
+      c_temp.rs1mux_sel = 1'b0;
+      c_temp.rs2mux_sel = 1'b0;
+
+      c_temp.pipe_load_ifid = 1'b1;
+      c_temp.pipe_load_idex = 1'b1;
+      c_temp.pipe_load_exmem = 1'b1;
+      c_temp.pipe_load_memwb = 1'b1;
+
+      c_temp.pipe_rst_ifid = 1'b0;
+      c_temp.pipe_rst_idex = 1'b0;
+      c_temp.pipe_rst_exmem = 1'b0;
+      c_temp.pipe_rst_memwb = 1'b0;
+end
+
 // Instantiate the datapath
 datapath d (
       .clk(clk),
       .rst(rst),
-      .control(),             //TODO: FILL ME IN!
+      .control(c_temp),             //TODO: FILL ME IN!
       .opcode(opcode),
       .funct3(funct3),
       .funct7(funct7),

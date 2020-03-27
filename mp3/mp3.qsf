@@ -77,3 +77,4 @@ set_global_assignment -name EDA_TEST_BENCH_FILE hvl/shadow_memory.sv -section_id
 set_global_assignment -name EDA_TEST_BENCH_FILE hvl/source_tb.sv -section_id top
 set_global_assignment -name EDA_TEST_BENCH_FILE hvl/tb_itf.sv -section_id top
 set_global_assignment -name EDA_TEST_BENCH_FILE hvl/top.sv -section_id top
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/memory.lst -section_id top
