@@ -289,6 +289,14 @@ pipe_memwb_pc (
 //*****************************************************
 
 
+
+
+//********************************** Pipeline Stage Modules
+
+
+// compute alu and cmp signals
+// see execute controller for
+// implementation
 // cmpmux::cmpmux_sel_t cmpmux_sel;
 // alumux::alumux1_sel_t alumux1_sel;
 // alumux::alumux2_sel_t alumux2_sel;
@@ -296,7 +304,7 @@ pipe_memwb_pc (
 // rv32i_types::branch_funct3_t cmpop;
 
 // execute_controller execute_controller (
-//       .idecode(pipereg_idex_ctrl_word),
+//       .idecode(pipereg_idex_idecode),
 //       .cmpmux_sel(cmpmux_sel),
 //       .alumux1_sel(alumux1_sel),
 //       .alumux2_sel(alumux2_sel),
@@ -306,7 +314,6 @@ pipe_memwb_pc (
 
 assign icache_read = 1'b1; // (CP1)
 
-//********************************** Pipeline Stage Modules
 
 // IF - instruction fetch
 pc_register #(.width(32))
