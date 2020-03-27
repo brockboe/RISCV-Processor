@@ -33,8 +33,6 @@ module datapath
       output logic [31:0] icache_wdata,
       input logic [31:0] icache_rdata,
 
-      output logic dcache_read,
-      output logic dcache_write,
       output logic [31:0] dcache_address,
       output logic [31:0] dcache_wdata,
       input logic [31:0] dcache_rdata
@@ -78,9 +76,6 @@ logic [31:0] cmpmux_out;
 
 
 assign icache_address = pc_module_out;
-assign dcache_address = pipe_exmem_alu_out;
-assign dcache_wdata = pipereg_exmem_rs2_out;
-
 
 
 // function to decode instruction
@@ -331,8 +326,6 @@ pc (
       .in(pcmux_out),
       .out(pc_module_out)
 );
-
-assign icache_address = pc_module_out;
 
 // DE - decode
 regfile regfile(

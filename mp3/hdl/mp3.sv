@@ -84,7 +84,6 @@ datapath d (
       .opcode(opcode),
       .funct3(funct3),
       .funct7(funct7),
-      .control(fwd_ctrl),
       .idex_ctrl_word(ctrl),      //TODO: FILL ME IN!
 
       .icache_read(icache_read),
@@ -92,8 +91,6 @@ datapath d (
       .icache_wdata(icache_wdata),
       .icache_rdata(icache_rdata),
 
-      .dcache_read(dcache_read),
-      .dcache_write(dcache_write),
       .dcache_address(dcache_address),
       .dcache_wdata(dcache_wdata),
       .dcache_rdata(dcache_rdata)

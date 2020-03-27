@@ -40,7 +40,7 @@ function void set_defaults();
       idex_ctrl_word.alumux2_sel = alumux::i_imm;
       idex_ctrl_word.cmpmux_sel = cmpmux::i_imm;
       idex_ctrl_word.aluop = rv32i_types::alu_add;
-      idex_ctrl_word.cmpop = 3'b000;
+      idex_ctrl_word.cmpop = rv32i_types::blt;
 
       idex_ctrl_word.dcache_read = 1'b0;
       idex_ctrl_word.dcache_write = 1'b0;
