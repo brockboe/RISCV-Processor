@@ -1,3 +1,5 @@
+import control_itf::*;
+
 module register #(parameter width = 32)
 (
     input clk,
@@ -31,3 +33,37 @@ begin
 end
 
 endmodule : register
+
+module ctrl_word_register
+(
+    input clk,
+    input rst,
+    input load,
+    input ctrl_word in,
+    output ctrl_word out
+);
+
+ctrl_word data = 1'b0;
+
+always_ff @(posedge clk)
+begin
+    if (rst)
+    begin
+        data <= ctrl_word'(0);
+    end
+    else if (load)
+    begin
+        data <= in;
+    end
+    else
+    begin
+        data <= data;
+    end
+end
+
+always_comb
+begin
+    out = data;
+end
+
+endmodule
