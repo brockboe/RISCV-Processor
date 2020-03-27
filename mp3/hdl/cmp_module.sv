@@ -1,11 +1,24 @@
 `define BAD_MUX_SEL $fatal("%0t %s %0d: Illegal mux select", $time, `__FILE__, `__LINE__)
 
+import rv32i_types::*;
+import control_itf::*;
+
+import rv32i_types::*;
+import pcmux::*;
+import marmux::*;
+import cmpmux::*;
+import alumux::*;
+import regfilemux::*;
+import rs1mux::*;
+import rs2mux::*;
+import dcachemux::*;
+
 // Compare module
 
 module cmp_module(
-      input branch_funct3_t op,
-      input rv32i_word a,
-      input rv32i_word b,
+      input rv32i_types::branch_funct3_t op,
+      input rv32i_types::rv32i_word a,
+      input rv32i_types::rv32i_word b,
       output logic result
 );
 
