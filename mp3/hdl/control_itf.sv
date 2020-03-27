@@ -36,7 +36,7 @@ typedef struct packed
       alumux2_sel_t alumux2_sel;
       cmpmux_sel_t cmpmux_sel;
       alu_ops aluop;
-      logic [2:0] cmpop;
+      branch_funct3_t cmpop;
       logic dcache_read;
       logic dcache_write;
       logic mask1;

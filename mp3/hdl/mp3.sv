@@ -41,21 +41,37 @@ rv32i_opcode opcode;
 logic [2:0] funct3;
 logic [6:0] funct7;
 ctrl_word ctrl;
+control fwd_ctrl;
+
+assign fwd_ctrl.pipe_load_ifid  = 1'b1;
+assign fwd_ctrl.pipe_load_idex  = 1'b1;
+assign fwd_ctrl.pipe_load_exmem = 1'b1;
+assign fwd_ctrl.pipe_load_memwb = 1'b1;
+
+assign fwd_ctrl.pipe_rst_ifid  = 1'b0;
+assign fwd_ctrl.pipe_rst_idex  = 1'b0;
+assign fwd_ctrl.pipe_rst_exmem = 1'b0;
+assign fwd_ctrl.pipe_rst_memwb = 1'b0;
+
+assign icache_write = 1'b0; // (unless we need to handle self-modifying code)
 
 // Instantiate the datapath
 datapath d (
       .clk(clk),
       .rst(rst),
-      .control(),             //TODO: FILL ME IN!
       .opcode(opcode),
       .funct3(funct3),
       .funct7(funct7),
+      .control(fwd_ctrl),
       .idex_ctrl_word(ctrl),      //TODO: FILL ME IN!
 
+      .icache_read(icache_read),
       .icache_address(icache_address),
       .icache_wdata(icache_wdata),
       .icache_rdata(icache_rdata),
 
+      .dcache_read(dcache_read),
+      .dcache_write(dcache_write),
       .dcache_address(dcache_address),
       .dcache_wdata(dcache_wdata),
       .dcache_rdata(dcache_rdata)
