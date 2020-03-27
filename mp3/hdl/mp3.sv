@@ -37,12 +37,20 @@ module mp3
       output logic dcache_write
 );
 
+rv32i_opcode opcode;
+logic [2:0] funct3;
+logic [6:0] funct7;
+ctrl_word ctrl;
+
 // Instantiate the datapath
 datapath datapath (
       .clk(clk),
       .rst(rst),
       .control(),             //TODO: FILL ME IN!
-      .idex_ctrl_word(),      //TODO: FILL ME IN!
+      .opcode(opcode),
+      .funct3(funct3),
+      .funct7(funct7),
+      .idex_ctrl_word(ctrl),      //TODO: FILL ME IN!
 
       .icache_address(icache_address),
       .icache_wdata(icache_wdata),
@@ -51,6 +59,13 @@ datapath datapath (
       .dcache_address(dcache_address),
       .dcache_wdata(dcache_wdata),
       .dcache_rdata(dcache_rdata)
+);
+
+control_rom ctrl_rom(
+      .opcode(opcode),
+      .funct3(funct3),
+      .funct7(funct7),
+      .idex_ctrl_word(ctrl)
 );
 
 endmodule

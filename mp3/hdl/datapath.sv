@@ -22,6 +22,9 @@ module datapath
                                                  //see control_itf.sv for
                                                  //more information and contents
 
+      output rv32i_opcode opcode,
+      output logic [2:0] funct3,
+      output logic [6:0] funct7,
       input control_itf::ctrl_word idex_ctrl_word,     //again, see control_itf.sv
                                                        //The new control word is injected
                                                        //in the id/ex stage, and then passed
@@ -127,7 +130,7 @@ pipe_idex_idecode (
       .out(pipereg_idex_idecode)
 );
 // control word
-register #(.width(20))
+ctrl_word_register
 pipe_idex_ctrl_word (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex),
@@ -202,7 +205,7 @@ pipe_exmem_br_en (
       .out(pipereg_exmem_br_en_out)
 );
 // control word
-register #(.width(20))
+ctrl_word_register
 pipe_exmem_ctrl_word(
       .clk(clk),
       .rst(rst | control.pipe_rst_exmem),
@@ -242,7 +245,7 @@ pipe_memwb_mdr_out (
       .out(pipereg_memwb_mdr_out)
 );
 // control word
-register #(.width(32))
+ctrl_word_register
 pipe_memwb_ctrl_word (
       .clk(clk),
       .rst(rst | control.pipe_rst_memwb),
@@ -293,6 +296,9 @@ regfile regfile(
       .reg_b(regfile_rs2_out)
 );
 
+assign opcode = rv32i_opcode'(pipereg_idex_idecode.opcode);
+assign funct3 = pipereg_idex_idecode.funct3;
+assign funct7 = pipereg_idex_idecode.funct7;
 
 // EX - execute
 alu alu (
@@ -327,6 +333,14 @@ cmp_module cmp (
 // rs2mux, dcachemux
 
 always_comb begin : MUXES
+      // Set defaults
+      pcmux_out = 32'bx;
+      alumux1_out = 32'bx;
+      alumux2_out = 32'bx;
+      regfilemux_out = 32'bx;
+      cmpmux_out = 32'bx;
+      dcachemux_out = 32'bx;
+
       // IF - Instruction fetch
       unique case (control.pcmux_sel)
             pcmux::pc_plus4: pcmux_out = pc_module_out + 4;

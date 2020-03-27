@@ -41,16 +41,16 @@ typedef struct packed
 //length = 20
 typedef struct packed
 {
-      logic alumux1_sel;
-      logic [2:0] alumux2_sel;
-      logic cmpmux_sel;
-      logic [2:0] aluop;
+      alumux1_sel_t alumux1_sel;
+      alumux2_sel_t alumux2_sel;
+      cmpmux_sel_t cmpmux_sel;
+      alu_ops aluop;
       logic [2:0] cmpop;
       logic dcache_read;
       logic dcache_write;
       logic mask1;
       logic mask2;
-      logic [3:0] regfilemux_sel;
+      regfilemux_sel_t regfilemux_sel;
       logic load_regfile;
 } ctrl_word;
 
