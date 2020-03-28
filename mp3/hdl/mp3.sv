@@ -55,9 +55,6 @@ assign fwd_ctrl.pipe_rst_memwb = 1'b0;
 
 assign icache_write = 1'b0; // (unless we need to handle self-modifying code)
 
-assign dcache_read = ctrl.dcache_read;
-assign dcache_write = ctrl.dcache_write;
-
 //TODO: When updating forwarding, change the control signals
 control_itf::control c_temp;
 
@@ -91,6 +88,8 @@ datapath d (
       .icache_wdata(icache_wdata),
       .icache_rdata(icache_rdata),
 
+      .dcache_read(dcache_read),
+      .dcache_write(dcache_write),
       .dcache_address(dcache_address),
       .dcache_wdata(dcache_wdata),
       .dcache_rdata(dcache_rdata)

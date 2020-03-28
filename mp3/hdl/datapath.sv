@@ -33,6 +33,8 @@ module datapath
       output logic [31:0] icache_wdata,
       input logic [31:0] icache_rdata,
 
+      output logic dcache_read,
+      output logic dcache_write,
       output logic [31:0] dcache_address,
       output logic [31:0] dcache_wdata,
       input logic [31:0] dcache_rdata
@@ -40,6 +42,7 @@ module datapath
 
 // connectors - defined here so quartus doesn't get
 // confused or complain
+control_itf::instruction_decode pipereg_ifid_idecode;
 control_itf::instruction_decode pipereg_idex_idecode;
 control_itf::instruction_decode pipereg_exmem_idecode;
 control_itf::instruction_decode pipereg_memwb_idecode;
@@ -49,7 +52,6 @@ control_itf::ctrl_word pipereg_memwb_ctrl_word;
 logic [31:0] rs1mux_out;
 logic [31:0] rs2mux_out;
 logic [31:0] dcachemux_out;
-logic [31:0] pipereg_ifid_icache_rdata;
 logic [31:0] pc_module_out;
 logic [31:0] pipereg_ifid_pc_out;
 logic [31:0] pipereg_idex_pc_out;
@@ -73,9 +75,6 @@ logic [31:0] pipereg_exmem_br_en_out;      // that the output is one bit, and mu
 logic [31:0] pipereg_memwb_br_en;          // to 32 bits.
 logic [31:0] cmpmux_out;
 
-
-
-assign icache_address = pc_module_out;
 
 
 // function to decode instruction
@@ -104,13 +103,13 @@ endfunction
 
 // IF / ID Registers
 // holds instruction data for current instruction
-register #(.width(32))
-pipe_ifid_icache_rdata (
+register #(.width(192))
+pipe_ifid_idecode (
       .clk(clk),
       .rst(rst | control.pipe_rst_ifid),
       .load(control.pipe_load_ifid),
-      .in(icache_rdata),
-      .out(pipereg_ifid_icache_rdata)
+      .in(decode(icache_rdata)),
+      .out(pipereg_ifid_idecode)
 );
 // holds PC value for current instruction
 register #(.width(32))
@@ -131,7 +130,7 @@ pipe_idex_idecode (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex),
       .load(control.pipe_load_idex),
-      .in(decode(pipereg_ifid_icache_rdata)),
+      .in(pipereg_ifid_idecode),
       .out(pipereg_idex_idecode)
 );
 // control word
@@ -302,8 +301,8 @@ pipe_memwb_pc (
 // cmpmux::cmpmux_sel_t cmpmux_sel;
 // alumux::alumux1_sel_t alumux1_sel;
 // alumux::alumux2_sel_t alumux2_sel;
-// rv32i_types::alu_ops aluop;
-// rv32i_types::branch_funct3_t cmpop;
+//rv32i_types::alu_ops aluop;
+//rv32i_types::branch_funct3_t cmpop;
 
 // execute_controller execute_controller (
 //       .idecode(pipereg_idex_idecode),
@@ -315,7 +314,7 @@ pipe_memwb_pc (
 // );
 
 assign icache_read = 1'b1; // (CP1)
-
+assign icache_address = pc_module_out;
 
 // IF - instruction fetch
 pc_register #(.width(32))
@@ -333,16 +332,16 @@ regfile regfile(
       .rst(rst),
       .load(pipereg_memwb_ctrl_word.load_regfile),
       .in(regfilemux_out),
-      .src_a(pipereg_idex_idecode.rs1),
-      .src_b(pipereg_idex_idecode.rs2),
+      .src_a(pipereg_ifid_idecode.rs1),
+      .src_b(pipereg_ifid_idecode.rs2),
       .dest(pipereg_memwb_idecode.rd),
       .reg_a(regfile_rs1_out),
       .reg_b(regfile_rs2_out)
 );
 
-assign opcode = rv32i_opcode'(pipereg_idex_idecode.opcode);
-assign funct3 = pipereg_idex_idecode.funct3;
-assign funct7 = pipereg_idex_idecode.funct7;
+assign opcode = rv32i_opcode'(pipereg_ifid_idecode.opcode);
+assign funct3 = pipereg_ifid_idecode.funct3;
+assign funct7 = pipereg_ifid_idecode.funct7;
 
 // EX - execute
 alu alu (
@@ -396,7 +395,7 @@ always_comb begin : MUXES
       unique case (pipereg_memwb_br_en[0])
             1'b0: pcmux_out = pc_module_out + 32'd4;
             1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
-            default: `BAD_MUX_SEL;
+            //default: `BAD_MUX_SEL;
       endcase
 
       // ID - Instruction Decode
@@ -419,25 +418,25 @@ always_comb begin : MUXES
       rs2mux_out = pipereg_idex_rs2_out;
 
       unique case (pipereg_idex_ctrl_word.alumux1_sel)
-            alumux::rs1_out: alumux1_out = rs1mux_out;
+            alumux::rs1_out: alumux1_out = pipereg_idex_rs1_out;
             alumux::pc_out: alumux1_out = pipereg_idex_pc_out;
-            default: `BAD_MUX_SEL;
+            //default: `BAD_MUX_SEL;
       endcase
 
       unique case (pipereg_idex_ctrl_word.alumux2_sel)
-            alumux::rs2_out: alumux2_out = rs2mux_out;
+            alumux::rs2_out: alumux2_out = pipereg_idex_rs2_out;
             alumux::i_imm: alumux2_out = pipereg_idex_idecode.i_imm;
             alumux::u_imm: alumux2_out = pipereg_idex_idecode.u_imm;
             alumux::b_imm: alumux2_out = pipereg_idex_idecode.b_imm;
             alumux::s_imm: alumux2_out = pipereg_idex_idecode.s_imm;
             alumux::j_imm: alumux2_out = pipereg_idex_idecode.j_imm;
-            default: `BAD_MUX_SEL;
+            //default: `BAD_MUX_SEL;
       endcase
 
       unique case (pipereg_idex_ctrl_word.cmpmux_sel)
             cmpmux::rs2_out: cmpmux_out = pipereg_idex_rs2_out;
             cmpmux::i_imm: cmpmux_out = pipereg_idex_idecode.i_imm;
-            default: `BAD_MUX_SEL;
+            //default: `BAD_MUX_SEL;
       endcase
 
       // TODO: Implement dcache read / write logic
@@ -455,7 +454,7 @@ always_comb begin : MUXES
             regfilemux::u_imm: regfilemux_out = pipereg_memwb_idecode.u_imm;
             regfilemux::MDRreg_out: regfilemux_out = pipereg_memwb_mdr_out;
             regfilemux::pc_plus4: regfilemux_out = pipereg_memwb_pc_out + 4;
-            default: `BAD_MUX_SEL;
+            //default: `BAD_MUX_SEL;
       endcase
 
 end
