@@ -190,7 +190,7 @@ always_comb begin
             endcase
         end
         // op_csr   :
-        default: ;
+        default   : ;
     endcase
 
 end

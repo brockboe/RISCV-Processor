@@ -74,6 +74,16 @@ logic br_en_out;                    //TODO: When working with the cmp module, re
 logic [31:0] pipereg_exmem_br_en_out;      // that the output is one bit, and must be extended
 logic [31:0] pipereg_memwb_br_en;          // to 32 bits.
 logic [31:0] cmpmux_out;
+logic branch_go;
+
+always_comb begin
+
+branch_go = pipereg_memwb_br_en[0] &
+            ((pipereg_exmem_idecode.opcode == op_br) |
+            (pipereg_exmem_idecode.opcode == op_jal) |
+            (pipereg_exmem_idecode.opcode == op_jalr));
+
+end
 
 
 
@@ -106,7 +116,7 @@ endfunction
 register #(.width(192))
 pipe_ifid_idecode (
       .clk(clk),
-      .rst(rst | control.pipe_rst_ifid),
+      .rst(rst | control.pipe_rst_ifid | branch_go),
       .load(control.pipe_load_ifid),
       .in(decode(icache_rdata)),
       .out(pipereg_ifid_idecode)
@@ -115,7 +125,7 @@ pipe_ifid_idecode (
 register #(.width(32))
 pipe_ifid_pc (
       .clk(clk),
-      .rst(rst | control.pipe_rst_ifid),
+      .rst(rst | control.pipe_rst_ifid | branch_go),
       .load(control.pipe_load_ifid),
       .in(pc_module_out),
       .out(pipereg_ifid_pc_out)
@@ -128,7 +138,7 @@ pipe_ifid_pc (
 register #(.width(192))
 pipe_idex_idecode (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex),
+      .rst(rst | control.pipe_rst_idex | branch_go),
       .load(control.pipe_load_idex),
       .in(pipereg_ifid_idecode),
       .out(pipereg_idex_idecode)
@@ -137,7 +147,7 @@ pipe_idex_idecode (
 ctrl_word_register
 pipe_idex_ctrl_word (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex),
+      .rst(rst | control.pipe_rst_idex | branch_go),
       .load(control.pipe_load_idex),
       .in(idex_ctrl_word),
       .out(pipereg_idex_ctrl_word)
@@ -146,7 +156,7 @@ pipe_idex_ctrl_word (
 register #(.width(32))
 pipe_idex_pc (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex),
+      .rst(rst | control.pipe_rst_idex | branch_go),
       .load(control.pipe_load_idex),
       .in(pipereg_ifid_pc_out),
       .out(pipereg_idex_pc_out)
@@ -155,7 +165,7 @@ pipe_idex_pc (
 register #(.width(32))
 pipe_idex_rs1_out (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex),
+      .rst(rst | control.pipe_rst_idex | branch_go),
       .load(control.pipe_load_idex),
       .in(regfile_rs1_out),
       .out(pipereg_idex_rs1_out)
@@ -164,7 +174,7 @@ pipe_idex_rs1_out (
 register #(.width(32))
 pipe_idex_rs2_out (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex),
+      .rst(rst | control.pipe_rst_idex | branch_go),
       .load(control.pipe_load_idex),
       .in(regfile_rs2_out),
       .out(pipereg_idex_rs2_out)
@@ -176,7 +186,7 @@ pipe_idex_rs2_out (
 register #(.width(32))
 pipe_exmem_rs2_out (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | branch_go),
       .load(control.pipe_load_exmem),
       .in(pipereg_idex_rs2_out),
       .out(pipereg_exmem_rs2_out)
@@ -185,7 +195,7 @@ pipe_exmem_rs2_out (
 register #(.width(32))
 pipe_exmem_alu (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | branch_go),
       .load(control.pipe_load_exmem),
       .in(alu_module_out),
       .out(pipe_exmem_alu_out)
@@ -194,7 +204,7 @@ pipe_exmem_alu (
 register #(.width(192))
 pipe_exmem_decode (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | branch_go),
       .load(control.pipe_load_exmem),
       .in(pipereg_idex_idecode),
       .out(pipereg_exmem_idecode)
@@ -203,7 +213,7 @@ pipe_exmem_decode (
 register #(.width(32))
 pipe_exmem_br_en (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | branch_go),
       .load(control.pipe_load_exmem),
       .in({31'd0, br_en_out}),
       .out(pipereg_exmem_br_en_out)
@@ -212,7 +222,7 @@ pipe_exmem_br_en (
 ctrl_word_register
 pipe_exmem_ctrl_word(
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | branch_go),
       .load(control.pipe_load_exmem),
       .in(pipereg_idex_ctrl_word),
       .out(pipereg_exmem_ctrl_word)
@@ -222,7 +232,7 @@ pipe_exmem_ctrl_word(
 register #(.width(32))
 pipe_exmem_pc (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex),
+      .rst(rst | control.pipe_rst_idex | branch_go),
       .load(control.pipe_load_idex),
       .in(pipereg_idex_pc_out),
       .out(pipereg_exmem_pc_out)
@@ -235,7 +245,7 @@ pipe_exmem_pc (
 register #(.width(32))
 pipe_memwb_alu (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb),
+      .rst(rst | control.pipe_rst_memwb | branch_go),
       .load(control.pipe_load_memwb),
       .in(pipe_exmem_alu_out),
       .out(pipe_memwb_alu_out)
@@ -244,7 +254,7 @@ pipe_memwb_alu (
 register #(.width(192))
 pipe_memwb_idecode (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb),
+      .rst(rst | control.pipe_rst_memwb | branch_go),
       .load(control.pipe_load_memwb),
       .in(pipereg_exmem_idecode),
       .out(pipereg_memwb_idecode)
@@ -253,7 +263,7 @@ pipe_memwb_idecode (
 register #(.width(32))
 pipe_memwb_mdr_out (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb),
+      .rst(rst | control.pipe_rst_memwb | branch_go),
       .load(control.pipe_load_memwb),
       .in(dcache_rdata),
       .out(pipereg_memwb_mdr_out)
@@ -262,7 +272,7 @@ pipe_memwb_mdr_out (
 ctrl_word_register
 pipe_memwb_ctrl_word (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb),
+      .rst(rst | control.pipe_rst_memwb | branch_go),
       .load(control.pipe_load_memwb),
       .in(pipereg_exmem_ctrl_word),
       .out(pipereg_memwb_ctrl_word)
@@ -271,7 +281,7 @@ pipe_memwb_ctrl_word (
 register #(.width(32))
 pipe_memwb_br_en (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb),
+      .rst(rst | control.pipe_rst_memwb | branch_go),
       .load(control.pipe_load_memwb),
       .in(pipereg_exmem_br_en_out),
       .out(pipereg_memwb_br_en)
@@ -281,7 +291,7 @@ pipe_memwb_br_en (
 register #(.width(32))
 pipe_memwb_pc (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex),
+      .rst(rst | control.pipe_rst_idex | branch_go),
       .load(control.pipe_load_idex),
       .in(pipereg_exmem_pc_out),
       .out(pipereg_memwb_pc_out)
@@ -392,7 +402,7 @@ always_comb begin : MUXES
       dcachemux_out = 32'bx;
 
       // IF - Instruction fetch
-      unique case (pipereg_memwb_br_en[0])
+      unique case (branch_go)
             1'b0: pcmux_out = pc_module_out + 32'd4;
             1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
             //default: `BAD_MUX_SEL;
