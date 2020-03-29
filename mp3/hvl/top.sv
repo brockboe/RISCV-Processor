@@ -59,6 +59,10 @@ mp3 dut(
       .dcache_read(itf.data_read),
       .dcache_write(itf.data_write)
 );
+
+logic [31:0] pc_val;
+assign pc_val = itf.inst_addr;
+
 /***************************** End Instantiation *****************************/
 
 endmodule
