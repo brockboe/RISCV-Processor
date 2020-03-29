@@ -23,7 +23,15 @@ assign itf.inst_read = 1'b1;
 // This section not required until CP3
 
 assign rvfi.commit = 1'b1;                                        // Set high when a valid instruction is modifying regfile or PC
-assign rvfi.halt = (dut.d.pipereg_exmem_pc_out == dut.d.pcmux_out);      // Set high when you detect an infinite loop
+
+logic halt0, halt1;
+// assign halt0 = (dut.d.pc_module_out == dut.d.pcmux_out + 12);
+assign halt0 = (dut.d.pipereg_exmem_pc_out == dut.d.pcmux_out);
+always_ff @( posedge itf.clk ) begin // Wait one cycle for the last instruction to finish write back.
+      halt1 <= halt0;
+end
+assign rvfi.halt = halt1;      // Set high when you detect an infinite loop
+
 initial rvfi.order = 0;
 always @(posedge itf.clk iff rvfi.commit) rvfi.order <= rvfi.order + 1; // Modify for OoO
 /**************************** End RVFIMON signals ****************************/
