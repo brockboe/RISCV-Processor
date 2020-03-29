@@ -405,7 +405,7 @@ always_comb begin : MUXES
       unique case (branch_go)
             1'b0: pcmux_out = pc_module_out + 32'd4;
             1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
-            //default: `BAD_MUX_SEL;
+            default: pcmux_out = pc_module_out + 32'd4;
       endcase
 
       // ID - Instruction Decode
