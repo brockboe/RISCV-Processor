@@ -78,7 +78,7 @@ logic branch_go;
 
 always_comb begin
 
-branch_go = pipereg_memwb_br_en[0] &
+branch_go = pipereg_exmem_br_en_out[0] &
             ((pipereg_exmem_idecode.opcode == op_br) |
             (pipereg_exmem_idecode.opcode == op_jal) |
             (pipereg_exmem_idecode.opcode == op_jalr));
@@ -186,7 +186,7 @@ pipe_idex_rs2_out (
 register #(.width(32))
 pipe_exmem_rs2_out (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem | branch_go),
+      .rst(rst | control.pipe_rst_exmem),
       .load(control.pipe_load_exmem),
       .in(pipereg_idex_rs2_out),
       .out(pipereg_exmem_rs2_out)
@@ -195,7 +195,7 @@ pipe_exmem_rs2_out (
 register #(.width(32))
 pipe_exmem_alu (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem | branch_go),
+      .rst(rst | control.pipe_rst_exmem),
       .load(control.pipe_load_exmem),
       .in(alu_module_out),
       .out(pipe_exmem_alu_out)
@@ -204,7 +204,7 @@ pipe_exmem_alu (
 register #(.width(192))
 pipe_exmem_decode (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem | branch_go),
+      .rst(rst | control.pipe_rst_exmem),
       .load(control.pipe_load_exmem),
       .in(pipereg_idex_idecode),
       .out(pipereg_exmem_idecode)
@@ -213,7 +213,7 @@ pipe_exmem_decode (
 register #(.width(32))
 pipe_exmem_br_en (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem | branch_go),
+      .rst(rst | control.pipe_rst_exmem),
       .load(control.pipe_load_exmem),
       .in({31'd0, br_en_out}),
       .out(pipereg_exmem_br_en_out)
@@ -222,7 +222,7 @@ pipe_exmem_br_en (
 ctrl_word_register
 pipe_exmem_ctrl_word(
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem | branch_go),
+      .rst(rst | control.pipe_rst_exmem),
       .load(control.pipe_load_exmem),
       .in(pipereg_idex_ctrl_word),
       .out(pipereg_exmem_ctrl_word)
@@ -232,7 +232,7 @@ pipe_exmem_ctrl_word(
 register #(.width(32))
 pipe_exmem_pc (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex | branch_go),
+      .rst(rst | control.pipe_rst_exmem),
       .load(control.pipe_load_idex),
       .in(pipereg_idex_pc_out),
       .out(pipereg_exmem_pc_out)
@@ -245,7 +245,7 @@ pipe_exmem_pc (
 register #(.width(32))
 pipe_memwb_alu (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb | branch_go),
+      .rst(rst | control.pipe_rst_memwb),
       .load(control.pipe_load_memwb),
       .in(pipe_exmem_alu_out),
       .out(pipe_memwb_alu_out)
@@ -254,7 +254,7 @@ pipe_memwb_alu (
 register #(.width(192))
 pipe_memwb_idecode (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb | branch_go),
+      .rst(rst | control.pipe_rst_memwb),
       .load(control.pipe_load_memwb),
       .in(pipereg_exmem_idecode),
       .out(pipereg_memwb_idecode)
@@ -263,7 +263,7 @@ pipe_memwb_idecode (
 register #(.width(32))
 pipe_memwb_mdr_out (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb | branch_go),
+      .rst(rst | control.pipe_rst_memwb),
       .load(control.pipe_load_memwb),
       .in(dcache_rdata),
       .out(pipereg_memwb_mdr_out)
@@ -272,7 +272,7 @@ pipe_memwb_mdr_out (
 ctrl_word_register
 pipe_memwb_ctrl_word (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb | branch_go),
+      .rst(rst | control.pipe_rst_memwb),
       .load(control.pipe_load_memwb),
       .in(pipereg_exmem_ctrl_word),
       .out(pipereg_memwb_ctrl_word)
@@ -281,7 +281,7 @@ pipe_memwb_ctrl_word (
 register #(.width(32))
 pipe_memwb_br_en (
       .clk(clk),
-      .rst(rst | control.pipe_rst_memwb | branch_go),
+      .rst(rst | control.pipe_rst_memwb),
       .load(control.pipe_load_memwb),
       .in(pipereg_exmem_br_en_out),
       .out(pipereg_memwb_br_en)
@@ -291,7 +291,7 @@ pipe_memwb_br_en (
 register #(.width(32))
 pipe_memwb_pc (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex | branch_go),
+      .rst(rst | control.pipe_rst_memwb),
       .load(control.pipe_load_idex),
       .in(pipereg_exmem_pc_out),
       .out(pipereg_memwb_pc_out)
@@ -428,7 +428,7 @@ always_comb begin : MUXES
       rs2mux_out = pipereg_idex_rs2_out;
 
       unique case (pipereg_idex_ctrl_word.alumux1_sel)
-            alumux::rs1_out: alumux1_out = pipereg_idex_rs1_out;
+            alumux::rs1_out: alumux1_out = pipereg_idex_rs2_out;
             alumux::pc_out: alumux1_out = pipereg_idex_pc_out;
             //default: `BAD_MUX_SEL;
       endcase
