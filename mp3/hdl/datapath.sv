@@ -428,7 +428,7 @@ always_comb begin : MUXES
       rs2mux_out = pipereg_idex_rs2_out;
 
       unique case (pipereg_idex_ctrl_word.alumux1_sel)
-            alumux::rs1_out: alumux1_out = pipereg_idex_rs1_out;
+            alumux::rs1_out: alumux1_out = pipereg_idex_rs2_out;
             alumux::pc_out: alumux1_out = pipereg_idex_pc_out;
             //default: `BAD_MUX_SEL;
       endcase
