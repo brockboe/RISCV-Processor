@@ -65,7 +65,8 @@ mp3 dut(
       .dcache_wdata(itf.data_wdata),
       .dcache_rdata(itf.data_rdata),
       .dcache_read(itf.data_read),
-      .dcache_write(itf.data_write)
+      .dcache_write(itf.data_write),
+      .dcache_mbe(itf.data_mbe)
 );
 
 logic [31:0] pc_val;

@@ -35,6 +35,7 @@ module datapath
 
       output logic dcache_read,
       output logic dcache_write,
+      output logic [3:0] dcache_mbe,
       output logic [31:0] dcache_address,
       output logic [31:0] dcache_wdata,
       input logic [31:0] dcache_rdata
@@ -375,6 +376,7 @@ assign dcache_read = pipereg_exmem_ctrl_word.dcache_read;
 assign dcache_write = pipereg_exmem_ctrl_word.dcache_write;
 assign dcache_wdata = dcachemux_out;
 assign dcache_address = pipe_exmem_alu_out;
+assign dcache_mbe = 4'b1111;
 
 // WB - Writeback
 // none

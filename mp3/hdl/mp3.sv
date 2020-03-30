@@ -32,6 +32,7 @@ module mp3
       //dcache signals
       output logic [31:0] dcache_address, //data and address come from datapath
       output logic [31:0] dcache_wdata,
+      output logic [3:0] dcache_mbe,
       input logic [31:0] dcache_rdata,
       output logic dcache_read,           //read and write come from control module
       output logic dcache_write
@@ -90,6 +91,7 @@ datapath d (
 
       .dcache_read(dcache_read),
       .dcache_write(dcache_write),
+      .dcache_mbe(dcache_mbe),
       .dcache_address(dcache_address),
       .dcache_wdata(dcache_wdata),
       .dcache_rdata(dcache_rdata)
