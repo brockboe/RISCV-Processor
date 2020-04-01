@@ -52,21 +52,6 @@ interface tb_itf();
         output resp = mem_resp, rdata = mem_rdata, error = pmem_error;
     endclocking
 
-    /* Inst Shadow Memory */
-    clocking inst_smcb @(posedge clk);
-        input read = inst_read, write = 1'b0, addr = inst_addr, wdata = 1'b0,
-              rst = rst, resp = inst_resp, rdata = inst_rdata;
-        output error = inst_sm_error;
-    endclocking
-
-    /* Data Shadow Memory */
-    clocking data_smcb @(posedge clk);
-        input read = data_read, write = data_write, addr = data_addr,
-              mbe = data_mbe, wdata = data_wdata, rst = rst, resp = data_resp,
-              rdata = data_rdata;
-        output error = data_sm_error;
-    endclocking
-
     /* Shadow Memory */
     clocking smcb @(posedge clk);
         input read_a = inst_read, address_a = inst_addr, rdata_a = inst_rdata,
