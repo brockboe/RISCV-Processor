@@ -39,9 +39,8 @@ initial begin
     fork
         begin : instruction
             forever begin
-                @(sm_itf.smcb iff sm_itf.smcb.read_a)
+                @(sm_itf.smcb iff (sm_itf.smcb.read_a && sm_itf.smcb.resp_a))
                 rdata_inst = read(sm_itf.smcb.address_a);
-                @(sm_itf.smcb iff sm_itf.smcb.resp_a)
                 if (rdata_inst != sm_itf.smcb.rdata_a) begin
                     $display("%0t: ShadowMemory Error: Mismatch rdata:", $time,
                         " Expected %8h, Detected %8h", rdata_inst,
@@ -53,7 +52,7 @@ initial begin
 
         begin : data
             forever begin
-                @(sm_itf.smcb iff sm_itf.smcb.read_b || sm_itf.smcb.write)
+                @(sm_itf.smcb iff ((sm_itf.smcb.read_b || sm_itf.smcb.write) && sm_itf.smcb.resp_b))
                 if (sm_itf.smcb.read_b) begin
                     rdata_data = read(sm_itf.smcb.address_b);
                     _read_data = 1'b1;
@@ -63,7 +62,6 @@ initial begin
                             sm_itf.smcb.mbe);
                     _read_data = 1'b0;
                 end
-                @(sm_itf.smcb iff sm_itf.smcb.resp_b)
                 if (_read_data) begin
                     if (rdata_data != sm_itf.smcb.rdata_b) begin
                         $display("%0t: ShadowMemory Error: Mismatch rdata:", $time,
