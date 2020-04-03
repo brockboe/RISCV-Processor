@@ -35,19 +35,19 @@ assign index = addr[7:5];
 assign tag = addr[31:8];
 assign addr_out = {tagmuxout, index_in, {5{1'b0}}};
 
-data_array data0(.clk(clk), .rst(), .read(1'b1), .write_en(write_en0), .rindex(index_in), .windex(index_in), .datain(data_in), .dataout(dataout0));
-data_array data1(.clk(clk), .rst(), .read(1'b1), .write_en(write_en1), .rindex(index_in), .windex(index_in), .datain(data_in), .dataout(dataout1));
+data_array data0(.clk(clk), .rst(), .write_en(write_en0), .rindex(index_in), .windex(index_in), .datain(data_in), .dataout(dataout0));
+data_array data1(.clk(clk), .rst(), .write_en(write_en1), .rindex(index_in), .windex(index_in), .datain(data_in), .dataout(dataout1));
 
-array #(.width(24)) tag0(.clk(clk), .rst(), .read(1'b1), .load(load_tag[0]), .rindex(index_in), .windex(index_in), .datain(tag), .dataout(tagout0));
-array #(.width(24)) tag1(.clk(clk), .rst(), .read(1'b1), .load(load_tag[1]), .rindex(index_in), .windex(index_in), .datain(tag), .dataout(tagout1));
+array #(.width(24)) tag0(.clk(clk), .rst(), .load(load_tag[0]), .rindex(index_in), .windex(index_in), .datain(tag), .dataout(tagout0));
+array #(.width(24)) tag1(.clk(clk), .rst(), .load(load_tag[1]), .rindex(index_in), .windex(index_in), .datain(tag), .dataout(tagout1));
 
-array d0(.clk(clk), .rst(), .read(1'b1), .load(load_dirty), .rindex(index_in), .datain(dirty_in[0]), .windex(index_in), .dataout(dirty[0]));
-array d1(.clk(clk), .rst(), .read(1'b1), .load(load_dirty), .rindex(index_in), .datain(dirty_in[1]), .windex(index_in), .dataout(dirty[1]));
+array d0(.clk(clk), .rst(), .load(load_dirty), .rindex(index_in), .datain(dirty_in[0]), .windex(index_in), .dataout(dirty[0]));
+array d1(.clk(clk), .rst(), .load(load_dirty), .rindex(index_in), .datain(dirty_in[1]), .windex(index_in), .dataout(dirty[1]));
 
-array v0(.clk(clk), .rst(rst), .read(1'b1), .load(load_valid), .rindex(index_in), .datain(valid_in[0]), .windex(index_in), .dataout(valid[0]));
-array v1(.clk(clk), .rst(rst), .read(1'b1), .load(load_valid), .rindex(index_in), .datain(valid_in[1]), .windex(index_in), .dataout(valid[1]));
+array v0(.clk(clk), .rst(rst), .load(load_valid), .rindex(index_in), .datain(valid_in[0]), .windex(index_in), .dataout(valid[0]));
+array v1(.clk(clk), .rst(rst), .load(load_valid), .rindex(index_in), .datain(valid_in[1]), .windex(index_in), .dataout(valid[1]));
 
-array LRU(.clk(clk), .rst(rst), .read(1'b1), .load(load_lru), .rindex(index_in), .windex(index_in), .datain(lru_in), .dataout(lru));
+array LRU(.clk(clk), .rst(rst), .load(load_lru), .rindex(index_in), .windex(index_in), .datain(lru_in), .dataout(lru));
 
 always_comb begin
     // MUXes

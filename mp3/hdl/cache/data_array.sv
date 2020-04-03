@@ -45,9 +45,7 @@ begin
 end
 
 always_comb begin
-    for (int i = 0; i < s_mask; i++)
-        _dataout[8*i +: 8] = (write_en[i] & (rindex == windex)) ?
-                                      datain[8*i +: 8] : data[rindex][8*i +: 8];
+    _dataout = data[rindex];
 end
 
 endmodule : data_array

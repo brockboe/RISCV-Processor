@@ -206,6 +206,8 @@ always_comb begin // state actions
         resp = (flush_counter == 4'hF)? 1'b1 : 1'b0;
     end
 
+    default: ;
+
     endcase
     
 end

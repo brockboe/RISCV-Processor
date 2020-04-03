@@ -39,7 +39,7 @@ begin
 end
 
 always_comb begin
-    if (read) _dataout = (load  & (rindex == windex)) ? datain : data[rindex];
+    _dataout = data[rindex];
 end
 
 endmodule : array
