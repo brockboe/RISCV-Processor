@@ -51,19 +51,6 @@ set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/control_rom.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/control_itf.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/execute_controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/rv32i_types.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/rv32i_mux_types.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/register.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/regfile.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/pc_reg.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/mp3.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/ir.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/datapath.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/cmp_module.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hdl/alu.sv
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH top -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME top -section_id eda_simulation
@@ -82,4 +69,26 @@ set_global_assignment -name EDA_TEST_BENCH_FILE simulation/memory.lst -section_i
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/mp3_cache.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/data_array.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/cacheline_adaptor.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/cache_datapath.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/cache_control.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/cache_arbiter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/cache.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/bus_adapter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cache/array.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/control_rom.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/control_itf.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/execute_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/rv32i_types.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/rv32i_mux_types.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/register.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/regfile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/pc_reg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/mp3.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/ir.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/datapath.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/cmp_module.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl/alu.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
