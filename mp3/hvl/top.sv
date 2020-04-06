@@ -26,7 +26,7 @@ assign rvfi.commit = 1'b1;                                        // Set high wh
 
 logic halt0, halt1;
 // assign halt0 = (dut.d.pc_module_out == dut.d.pcmux_out + 12);
-assign halt0 = (dut.d.pipereg_exmem_pc_out == dut.d.pcmux_out);
+assign halt0 = (dut.d.pipereg_exmem_pc_out == dut.d.pcmux_out) & (~dut.d.pause_pipeline);
 always_ff @( posedge itf.clk ) begin // Wait one cycle for the last instruction to finish write back.
       halt1 <= halt0;
 end
