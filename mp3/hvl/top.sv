@@ -39,7 +39,20 @@ always @(posedge itf.clk iff rvfi.commit) rvfi.order <= rvfi.order + 1; // Modif
 /********************* Assign Shadow Memory Signals Here *********************/
 // This section not required until CP2
 
+// icache signals
+assign itf.inst_read = dut.icache_read;
+assign itf.inst_addr = dut.icache_address;
+assign itf.inst_resp = dut.icache_resp;
+assign itf.inst_rdata = dut.icache_rdata;
 
+// dcache signals
+assign itf.data_read = dut.dcache_read;
+assign itf.data_write = dut.dcache_write;
+assign itf.data_mbe = dut.dcache_mbe;
+assign itf.data_addr = dut.dcache_address;
+assign itf.data_wdata = dut.dcache_wdata;
+assign itf.data_resp = dut.dcache_resp;
+assign itf.data_rdata = dut.dcache_rdata;
 
 /*********************** End Shadow Memory Assignments ***********************/
 

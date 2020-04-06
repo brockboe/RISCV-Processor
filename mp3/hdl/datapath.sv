@@ -318,7 +318,7 @@ pipe_memwb_pc (
 
 //********************************** Pipeline Stage Modules
 
-assign icache_read = 1'b1; // (CP1)
+assign icache_read = rst? 1'b0 : 1'b1; // (CP1)
 assign icache_address = pc_module_out;
 
 // IF - instruction fetch
