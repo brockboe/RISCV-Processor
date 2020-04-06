@@ -64,12 +64,18 @@ always_comb begin : MUX
         l2_address = icache_address;
         icache_resp = l2_resp;
         dcache_resp = 1'b0;
-    end else begin
+    end else if (state == data) begin
         l2_read = dcache_read;
         l2_write = dcache_write;
         l2_address = dcache_address;
         icache_resp = 1'b0;
         dcache_resp = l2_resp;
+    end else begin
+      l2_read = 1'b0;
+      l2_write = 1'b0;
+      l2_address = dcache_address;
+      icache_resp = 1'b0;
+      dcache_resp = 1'b0;
     end
     l2_wdata = dcache_wdata;
     icache_rdata = l2_rdata;
