@@ -1,7 +1,7 @@
 module cache_arbiter (
     input logic clk,
     input logic rst,
-    
+
     // dcache interface
     input logic dcache_read, dcache_write,
     input logic [31:0] dcache_address,
@@ -45,12 +45,12 @@ always_comb begin : Next_state_logic
 
         inst: begin
             if (~icache_read & (dcache_read | dcache_write)) next_state = data;
-            else if (~(icache_read & dcache_read & dcache_write)) next_state = idle;
+            else if (~(icache_read | dcache_read | dcache_write)) next_state = idle;
         end
 
         data: begin
             if (~(dcache_read | dcache_write) & icache_read) next_state = inst;
-            else if (~(icache_read & dcache_read & dcache_write)) next_state = idle;
+            else if (~(icache_read | dcache_read | dcache_write)) next_state = idle;
         end
 
         default: next_state = idle;

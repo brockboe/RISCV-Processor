@@ -55,18 +55,12 @@ mp3 dut(
       .clk(itf.clk),
       .rst(itf.rst),
 
-      .icache_address(itf.inst_addr),
-      .icache_wdata(),
-      .icache_rdata(itf.inst_rdata),
-      .icache_read(),
-      .icache_write(),
-
-      .dcache_address(itf.data_addr),
-      .dcache_wdata(itf.data_wdata),
-      .dcache_rdata(itf.data_rdata),
-      .dcache_read(itf.data_read),
-      .dcache_write(itf.data_write),
-      .dcache_mbe(itf.data_mbe)
+      .burst_o(itf.mem_wdata),
+      .burst_i(itf.mem_rdata),
+      .address_o(itf.mem_addr),
+      .read_o(itf.mem_read),
+      .write_o(itf.mem_write),
+      .resp_i(itf.mem_resp)
 );
 
 logic [31:0] pc_val;

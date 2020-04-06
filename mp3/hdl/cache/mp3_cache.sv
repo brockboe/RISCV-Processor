@@ -24,12 +24,26 @@ module mp3_cache (
     output logic [63:0] pmem_wdata
 );
 
+// Signals between icache and arbiter
+logic [255:0] i_a_rdata;
+logic [31:0] i_a_address;
+logic i_a_read;
+logic i_a_resp;
+
+// Signals between dcache and arbiter
+logic [255:0] d_a_rdata;
+logic [255:0] d_a_wdata;
+logic [31:0] d_a_address;
+logic d_a_read, d_a_write;
+logic d_a_resp;
+
+
 cache icache(
     .clk, .rst,
     // to cpu
     .mem_read(icache_read), .mem_write(1'b0),
     .mem_byte_enable(4'b1111),
-    .mem_wdata(), 
+    .mem_wdata(),
     .mem_address(icache_address),
     .mem_rdata(icache_rdata),
     .mem_resp(icache_resp),
@@ -42,18 +56,12 @@ cache icache(
     .pmem_resp(i_a_resp)
 );
 
-// Signals between icache and arbiter
-logic [255:0] i_a_rdata;
-logic [31:0] i_a_address;
-logic i_a_read;
-logic i_a_resp;
-
 cache dcache(
     .clk, .rst,
     // to cpu
     .mem_read(dcache_read), .mem_write(dcache_write),
     .mem_byte_enable(dcache_mbe),
-    .mem_wdata(dcache_wdata), 
+    .mem_wdata(dcache_wdata),
     .mem_address(dcache_address),
     .mem_rdata(dcache_rdata),
     .mem_resp(dcache_resp),
@@ -66,17 +74,16 @@ cache dcache(
     .pmem_resp(d_a_resp)
 );
 
-// Signals between dcache and arbiter
-logic [255:0] d_a_rdata;
-logic [255:0] d_a_wdata;
-logic [31:0] d_a_address;
-logic d_a_read, d_a_write;
-logic d_a_resp;
+// Signals between l2cache and arbiter
+logic l2_read, l2_write, l2_resp;
+logic [31:0] l2_address;
+logic [255:0] l2_wdata, l2_rdata;
+
 
 cache_arbiter arbiter(
     .clk,
     .rst,
-    
+
     // dcache interface
     .dcache_read(d_a_read),
     .dcache_write(d_a_write),
@@ -92,7 +99,7 @@ cache_arbiter arbiter(
     .icache_resp(i_a_resp),
 
     // L2 cache interface
-    .l2_read, 
+    .l2_read,
     .l2_write,
     .l2_address,
     .l2_wdata,
@@ -100,13 +107,9 @@ cache_arbiter arbiter(
     .l2_resp
 );
 
-logic l2_read, l2_write, l2_resp;
-logic [31:0] l2_address;
-logic [255:0] l2_wdata, l2_rdata;
-
 // L2 cache (cp3)
 
-cacheline_adapter adapter(
+cacheline_adaptor adapter(
     .clk(clk),
     .reset_n(~rst),
 

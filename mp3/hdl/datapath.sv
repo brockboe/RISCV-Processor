@@ -32,13 +32,15 @@ module datapath
       output logic [31:0] icache_address,
       output logic [31:0] icache_wdata,
       input logic [31:0] icache_rdata,
+      input logic icache_resp,
 
       output logic dcache_read,
       output logic dcache_write,
       output logic [3:0] dcache_mbe,
       output logic [31:0] dcache_address,
       output logic [31:0] dcache_wdata,
-      input logic [31:0] dcache_rdata
+      input logic [31:0] dcache_rdata,
+      input logic dcache_resp
 );
 
 // connectors - defined here so quartus doesn't get
@@ -76,13 +78,20 @@ logic [31:0] pipereg_exmem_br_en_out;      // that the output is one bit, and mu
 logic [31:0] pipereg_memwb_br_en;          // to 32 bits.
 logic [31:0] cmpmux_out;
 logic branch_go;
+logic pause_pipeline;
+
 
 always_comb begin
 
-branch_go = pipereg_exmem_br_en_out[0] &
-            ((pipereg_exmem_idecode.opcode == op_br) |
-            (pipereg_exmem_idecode.opcode == op_jal) |
-            (pipereg_exmem_idecode.opcode == op_jalr));
+      branch_go = pipereg_exmem_br_en_out[0] &
+                  ((pipereg_exmem_idecode.opcode == op_br) |
+                  (pipereg_exmem_idecode.opcode == op_jal) |
+                  (pipereg_exmem_idecode.opcode == op_jalr));
+
+      if (~icache_resp) pause_pipeline = 1'b1;
+      else if ((pipereg_exmem_idecode.opcode == op_load) & (~dcache_resp))  pause_pipeline = 1'b1;
+      else if ((pipereg_exmem_idecode.opcode == op_store) & (~dcache_resp)) pause_pipeline = 1'b1;
+      else pause_pipeline = 1'b0;
 
 end
 
@@ -118,7 +127,7 @@ register #(.width(192))
 pipe_ifid_idecode (
       .clk(clk),
       .rst(rst | control.pipe_rst_ifid | branch_go),
-      .load(control.pipe_load_ifid),
+      .load(control.pipe_load_ifid & (~pause_pipeline)),
       .in(decode(icache_rdata)),
       .out(pipereg_ifid_idecode)
 );
@@ -127,7 +136,7 @@ register #(.width(32))
 pipe_ifid_pc (
       .clk(clk),
       .rst(rst | control.pipe_rst_ifid | branch_go),
-      .load(control.pipe_load_ifid),
+      .load(control.pipe_load_ifid & (~pause_pipeline)),
       .in(pc_module_out),
       .out(pipereg_ifid_pc_out)
 );
@@ -140,7 +149,7 @@ register #(.width(192))
 pipe_idex_idecode (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex | branch_go),
-      .load(control.pipe_load_idex),
+      .load(control.pipe_load_idex & (~pause_pipeline)),
       .in(pipereg_ifid_idecode),
       .out(pipereg_idex_idecode)
 );
@@ -149,7 +158,7 @@ ctrl_word_register
 pipe_idex_ctrl_word (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex | branch_go),
-      .load(control.pipe_load_idex),
+      .load(control.pipe_load_idex & (~pause_pipeline)),
       .in(idex_ctrl_word),
       .out(pipereg_idex_ctrl_word)
 );
@@ -158,7 +167,7 @@ register #(.width(32))
 pipe_idex_pc (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex | branch_go),
-      .load(control.pipe_load_idex),
+      .load(control.pipe_load_idex & (~pause_pipeline)),
       .in(pipereg_ifid_pc_out),
       .out(pipereg_idex_pc_out)
 );
@@ -167,7 +176,7 @@ register #(.width(32))
 pipe_idex_rs1_out (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex | branch_go),
-      .load(control.pipe_load_idex),
+      .load(control.pipe_load_idex & (~pause_pipeline)),
       .in(regfile_rs1_out),
       .out(pipereg_idex_rs1_out)
 );
@@ -176,7 +185,7 @@ register #(.width(32))
 pipe_idex_rs2_out (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex | branch_go),
-      .load(control.pipe_load_idex),
+      .load(control.pipe_load_idex & (~pause_pipeline)),
       .in(regfile_rs2_out),
       .out(pipereg_idex_rs2_out)
 );
@@ -188,7 +197,7 @@ register #(.width(32))
 pipe_exmem_rs2_out (
       .clk(clk),
       .rst(rst | control.pipe_rst_exmem),
-      .load(control.pipe_load_exmem),
+      .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in(pipereg_idex_rs2_out),
       .out(pipereg_exmem_rs2_out)
 );
@@ -197,7 +206,7 @@ register #(.width(32))
 pipe_exmem_alu (
       .clk(clk),
       .rst(rst | control.pipe_rst_exmem),
-      .load(control.pipe_load_exmem),
+      .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in(alu_module_out),
       .out(pipe_exmem_alu_out)
 );
@@ -206,7 +215,7 @@ register #(.width(192))
 pipe_exmem_decode (
       .clk(clk),
       .rst(rst | control.pipe_rst_exmem),
-      .load(control.pipe_load_exmem),
+      .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in(pipereg_idex_idecode),
       .out(pipereg_exmem_idecode)
 );
@@ -215,7 +224,7 @@ register #(.width(32))
 pipe_exmem_br_en (
       .clk(clk),
       .rst(rst | control.pipe_rst_exmem),
-      .load(control.pipe_load_exmem),
+      .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in({31'd0, br_en_out}),
       .out(pipereg_exmem_br_en_out)
 );
@@ -224,7 +233,7 @@ ctrl_word_register
 pipe_exmem_ctrl_word(
       .clk(clk),
       .rst(rst | control.pipe_rst_exmem),
-      .load(control.pipe_load_exmem),
+      .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in(pipereg_idex_ctrl_word),
       .out(pipereg_exmem_ctrl_word)
 );
@@ -234,7 +243,7 @@ register #(.width(32))
 pipe_exmem_pc (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex),
-      .load(control.pipe_load_idex),
+      .load(control.pipe_load_idex & (~pause_pipeline)),
       .in(pipereg_idex_pc_out),
       .out(pipereg_exmem_pc_out)
 );
@@ -247,7 +256,7 @@ register #(.width(32))
 pipe_memwb_alu (
       .clk(clk),
       .rst(rst | control.pipe_rst_memwb),
-      .load(control.pipe_load_memwb),
+      .load(control.pipe_load_memwb & (~pause_pipeline)),
       .in(pipe_exmem_alu_out),
       .out(pipe_memwb_alu_out)
 );
@@ -256,7 +265,7 @@ register #(.width(192))
 pipe_memwb_idecode (
       .clk(clk),
       .rst(rst | control.pipe_rst_memwb),
-      .load(control.pipe_load_memwb),
+      .load(control.pipe_load_memwb & (~pause_pipeline)),
       .in(pipereg_exmem_idecode),
       .out(pipereg_memwb_idecode)
 );
@@ -265,7 +274,7 @@ register #(.width(32))
 pipe_memwb_mdr_out (
       .clk(clk),
       .rst(rst | control.pipe_rst_memwb),
-      .load(control.pipe_load_memwb),
+      .load(control.pipe_load_memwb & (~pause_pipeline)),
       .in(dcache_rdata),
       .out(pipereg_memwb_mdr_out)
 );
@@ -274,7 +283,7 @@ ctrl_word_register
 pipe_memwb_ctrl_word (
       .clk(clk),
       .rst(rst | control.pipe_rst_memwb),
-      .load(control.pipe_load_memwb),
+      .load(control.pipe_load_memwb & (~pause_pipeline)),
       .in(pipereg_exmem_ctrl_word),
       .out(pipereg_memwb_ctrl_word)
 );
@@ -283,7 +292,7 @@ register #(.width(32))
 pipe_memwb_br_en (
       .clk(clk),
       .rst(rst | control.pipe_rst_memwb),
-      .load(control.pipe_load_memwb),
+      .load(control.pipe_load_memwb & (~pause_pipeline)),
       .in(pipereg_exmem_br_en_out),
       .out(pipereg_memwb_br_en)
 );
@@ -293,7 +302,7 @@ register #(.width(32))
 pipe_memwb_pc (
       .clk(clk),
       .rst(rst | control.pipe_rst_idex),
-      .load(control.pipe_load_idex),
+      .load(control.pipe_load_idex & (~pause_pipeline)),
       .in(pipereg_exmem_pc_out),
       .out(pipereg_memwb_pc_out)
 );
@@ -332,7 +341,7 @@ pc_register #(.width(32))
 pc (
       .clk(clk),
       .rst(rst),
-      .load(1'b1),                  //always load the pc
+      .load(~pause_pipeline),                  //don't always load the pc
       .in(pcmux_out),
       .out(pc_module_out)
 );

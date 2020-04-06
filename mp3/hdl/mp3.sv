@@ -22,6 +22,15 @@ module mp3
       input logic clk,
       input logic rst,
 
+      // physical memory signals
+      output logic [63:0] burst_o,
+      input logic [63:0] burst_i,
+      output logic [31:0] address_o,
+      output logic read_o,
+      output logic write_o,
+      input logic resp_i
+
+      /*
       // icache signals
       output logic [31:0] icache_address, //data and address come from datapath
       output logic [31:0] icache_wdata,
@@ -36,6 +45,7 @@ module mp3
       input logic [31:0] dcache_rdata,
       output logic dcache_read,           //read and write come from control module
       output logic dcache_write
+      */
 );
 
 rv32i_opcode opcode;
@@ -43,6 +53,23 @@ logic [2:0] funct3;
 logic [6:0] funct7;
 ctrl_word ctrl;
 control fwd_ctrl;
+
+logic icache_resp;
+logic dcache_resp;
+
+logic [31:0] icache_address;
+logic [31:0] icache_wdata;
+logic [31:0] icache_rdata;
+logic icache_read;
+logic icache_write;
+
+logic [31:0] dcache_address;
+logic [31:0] dcache_wdata;
+logic [3:0] dcache_mbe;
+logic [31:0] dcache_rdata;
+logic dcache_read;
+logic dcache_write;
+
 
 assign fwd_ctrl.pipe_load_ifid  = 1'b1;
 assign fwd_ctrl.pipe_load_idex  = 1'b1;
@@ -82,19 +109,21 @@ datapath d (
       .opcode(opcode),
       .funct3(funct3),
       .funct7(funct7),
-      .idex_ctrl_word(ctrl),      //TODO: FILL ME IN!
+      .idex_ctrl_word(ctrl),        //TODO: FILL ME IN!
 
       .icache_read(icache_read),
       .icache_address(icache_address),
       .icache_wdata(icache_wdata),
       .icache_rdata(icache_rdata),
+      .icache_resp(icache_resp),
 
       .dcache_read(dcache_read),
       .dcache_write(dcache_write),
       .dcache_mbe(dcache_mbe),
       .dcache_address(dcache_address),
       .dcache_wdata(dcache_wdata),
-      .dcache_rdata(dcache_rdata)
+      .dcache_rdata(dcache_rdata),
+      .dcache_resp(dcache_resp)
 );
 
 control_rom ctrl_rom (
@@ -102,6 +131,31 @@ control_rom ctrl_rom (
       .funct3(funct3),
       .funct7(funct7),
       .idex_ctrl_word(ctrl)
+);
+
+mp3_cache cache (
+      .clk(clk),
+      .rst(rst),
+
+      .icache_read(icache_read),
+      .icache_address(icache_address),
+      .icache_rdata(icache_rdata),
+      .icache_resp(icache_resp),
+
+      .dcache_read(dcache_read),
+      .dcache_write(dcache_write),
+      .dcache_mbe(dcache_mbe),
+      .dcache_address(dcache_address),
+      .dcache_wdata(dcache_wdata),
+      .dcache_rdata(dcache_rdata),
+      .dcache_resp(dcache_resp),
+
+      .pmem_resp(resp_i),
+      .pmem_rdata(burst_i),
+      .pmem_read(read_o),
+      .pmem_write(write_o),
+      .pmem_address(address_o),
+      .pmem_wdata(burst_o)
 );
 
 endmodule
