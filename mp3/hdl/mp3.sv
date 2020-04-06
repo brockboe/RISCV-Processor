@@ -16,7 +16,7 @@ import rs1mux::*;
 import rs2mux::*;
 import dcachemux::*;
 
-
+// Top level module
 module mp3
 (
       input logic clk,
@@ -29,23 +29,6 @@ module mp3
       output logic read_o,
       output logic write_o,
       input logic resp_i
-
-      /*
-      // icache signals
-      output logic [31:0] icache_address, //data and address come from datapath
-      output logic [31:0] icache_wdata,
-      input logic [31:0] icache_rdata,
-      output logic icache_read,           //read and write come from control module
-      output logic icache_write,
-
-      //dcache signals
-      output logic [31:0] dcache_address, //data and address come from datapath
-      output logic [31:0] dcache_wdata,
-      output logic [3:0] dcache_mbe,
-      input logic [31:0] dcache_rdata,
-      output logic dcache_read,           //read and write come from control module
-      output logic dcache_write
-      */
 );
 
 rv32i_opcode opcode;
@@ -54,6 +37,9 @@ logic [6:0] funct7;
 ctrl_word ctrl;
 control fwd_ctrl;
 
+
+// cache connectors - specified here so quartus
+// doesn't complain or get confused
 logic icache_resp;
 logic dcache_resp;
 
@@ -70,7 +56,7 @@ logic [31:0] dcache_rdata;
 logic dcache_read;
 logic dcache_write;
 
-
+// forwarding control signals
 assign fwd_ctrl.pipe_load_ifid  = 1'b1;
 assign fwd_ctrl.pipe_load_idex  = 1'b1;
 assign fwd_ctrl.pipe_load_exmem = 1'b1;
@@ -86,6 +72,7 @@ assign icache_write = 1'b0; // (unless we need to handle self-modifying code)
 //TODO: When updating forwarding, change the control signals
 control_itf::control c_temp;
 
+// assign initial control signals
 always_comb begin
       c_temp.rs1mux_sel = 1'b0;
       c_temp.rs2mux_sel = 1'b0;
@@ -126,6 +113,8 @@ datapath d (
       .dcache_resp(dcache_resp)
 );
 
+// generates control signals to propagate
+// down the pipeline
 control_rom ctrl_rom (
       .opcode(opcode),
       .funct3(funct3),
@@ -133,6 +122,7 @@ control_rom ctrl_rom (
       .idex_ctrl_word(ctrl)
 );
 
+// memory subsystem
 mp3_cache cache (
       .clk(clk),
       .rst(rst),

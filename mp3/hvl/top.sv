@@ -18,7 +18,7 @@ source_tb tb(
 
 /************************ Signals necessary for monitor **********************/
 
-assign itf.inst_read = 1'b1;
+// assign itf.inst_read = 1'b1;
 
 // This section not required until CP3
 
@@ -38,13 +38,15 @@ always @(posedge itf.clk iff rvfi.commit) rvfi.order <= rvfi.order + 1; // Modif
 
 /********************* Assign Shadow Memory Signals Here *********************/
 // This section not required until CP2
+
+
+
 /*********************** End Shadow Memory Assignments ***********************/
 
 // Set this to the proper value
 assign itf.registers = dut.d.regfile.data;
 
 initial begin
-      itf.path_mb.put("memory.lst");
       itf.rst = 1'b1;
       repeat (5) @(posedge itf.clk);
       itf.rst = 1'b0;
@@ -67,5 +69,6 @@ logic [31:0] pc_val;
 assign pc_val = itf.inst_addr;
 
 /***************************** End Instantiation *****************************/
+
 
 endmodule

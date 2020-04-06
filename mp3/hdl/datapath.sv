@@ -28,12 +28,14 @@ module datapath
                                                        //The new control word is injected
                                                        //in the id/ex stage, and then passed
                                                        //along the pipeline stage
+      //icache signals
       output logic icache_read,
       output logic [31:0] icache_address,
       output logic [31:0] icache_wdata,
       input logic [31:0] icache_rdata,
       input logic icache_resp,
 
+      //dcache signals
       output logic dcache_read,
       output logic dcache_write,
       output logic [3:0] dcache_mbe,
@@ -43,7 +45,7 @@ module datapath
       input logic dcache_resp
 );
 
-// connectors - defined here so quartus doesn't get
+// connectors - defined here proactively so quartus doesn't get
 // confused or complain
 control_itf::instruction_decode pipereg_ifid_idecode;
 control_itf::instruction_decode pipereg_idex_idecode;
@@ -73,21 +75,23 @@ logic [31:0] pcmux_out;
 logic [31:0] regfilemux_out;
 logic [31:0] alumux1_out;
 logic [31:0] alumux2_out;
-logic br_en_out;                    //TODO: When working with the cmp module, remember
+logic br_en_out;                           //TODO: When working with the cmp module, remember
 logic [31:0] pipereg_exmem_br_en_out;      // that the output is one bit, and must be extended
 logic [31:0] pipereg_memwb_br_en;          // to 32 bits.
 logic [31:0] cmpmux_out;
-logic branch_go;
-logic pause_pipeline;
+logic branch_go;                    // specifies whether we need to branch
+logic pause_pipeline;               // logic specifying if we need to halt the pipeline
 
 
 always_comb begin
 
+      // calculate whether or not we need to branch
       branch_go = pipereg_exmem_br_en_out[0] &
                   ((pipereg_exmem_idecode.opcode == op_br) |
                   (pipereg_exmem_idecode.opcode == op_jal) |
                   (pipereg_exmem_idecode.opcode == op_jalr));
 
+      // calcualte if we need to pause (if we're waiting on data from memory)
       if (~icache_resp) pause_pipeline = 1'b1;
       else if ((pipereg_exmem_idecode.opcode == op_load) & (~dcache_resp))  pause_pipeline = 1'b1;
       else if ((pipereg_exmem_idecode.opcode == op_store) & (~dcache_resp)) pause_pipeline = 1'b1;
@@ -313,25 +317,6 @@ pipe_memwb_pc (
 
 
 //********************************** Pipeline Stage Modules
-
-
-// compute alu and cmp signals
-// see execute controller for
-// implementation
-// cmpmux::cmpmux_sel_t cmpmux_sel;
-// alumux::alumux1_sel_t alumux1_sel;
-// alumux::alumux2_sel_t alumux2_sel;
-//rv32i_types::alu_ops aluop;
-//rv32i_types::branch_funct3_t cmpop;
-
-// execute_controller execute_controller (
-//       .idecode(pipereg_idex_idecode),
-//       .cmpmux_sel(cmpmux_sel),
-//       .alumux1_sel(alumux1_sel),
-//       .alumux2_sel(alumux2_sel),
-//       .aluop(aluop),
-//       .cmpop(cmpop)
-// );
 
 assign icache_read = 1'b1; // (CP1)
 assign icache_address = pc_module_out;
