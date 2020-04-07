@@ -81,7 +81,9 @@ logic [31:0] pipereg_memwb_br_en;          // to 32 bits.
 logic [31:0] cmpmux_out;
 logic branch_go;                    // specifies whether we need to branch
 logic pause_pipeline;               // logic specifying if we need to halt the pipeline
-
+logic [31:0] mem_rdata;       //parsed memory input, for non-word-aligned stores
+logic [31:0] mem_wdata;       //parsed memory output, for non-word-aligned writes
+logic [3:0] mem_mbe;           //parsed memory byte enable, for non-word aligned writes
 
 always_comb begin
 
@@ -279,7 +281,7 @@ pipe_memwb_mdr_out (
       .clk(clk),
       .rst(rst | control.pipe_rst_memwb),
       .load(control.pipe_load_memwb & (~pause_pipeline)),
-      .in(dcache_rdata),
+      .in(mem_rdata),
       .out(pipereg_memwb_mdr_out)
 );
 // control word
@@ -369,11 +371,94 @@ cmp_module cmp (
 assign dcache_read = pipereg_exmem_ctrl_word.dcache_read;
 assign dcache_write = pipereg_exmem_ctrl_word.dcache_write;
 assign dcache_wdata = dcachemux_out;
-assign dcache_address = pipe_exmem_alu_out;
-assign dcache_mbe = 4'b1111;
+assign dcache_address = {pipe_exmem_alu_out[31:2], 2'd0};
+assign dcache_mbe = mem_mbe;
 
 // WB - Writeback
 // none
+
+//**********************************************************
+
+
+
+
+
+
+//********************************** Non-word aligned read / writes
+
+// functions to parse direct input from the data cache
+function logic [31:0] parse_lb (logic [31:0] rdata);
+      logic [31:0] parse;
+      unique case(pipe_exmem_alu_out[1:0])
+            2'b00: parse = {{24{rdata[7]}}, rdata[7:0]};
+            2'b01: parse = {{24{rdata[15]}}, rdata[15:8]};
+            2'b10: parse = {{24{rdata[23]}}, rdata[23:16]};
+            2'b11: parse = {{24{rdata[31]}}, rdata[31:24]};
+      endcase
+      return parse;
+endfunction
+
+function logic [31:0] parse_lbu (logic [31:0] rdata);
+      logic [31:0] parse;
+      unique case(pipe_exmem_alu_out[1:0])
+            2'b00: parse = {24'd0, rdata[7:0]};
+            2'b01: parse = {24'd0, rdata[15:8]};
+            2'b10: parse = {24'd0, rdata[23:16]};
+            2'b11: parse = {24'd0, rdata[31:24]};
+      endcase
+      return parse;
+endfunction
+
+function logic [31:0] parse_lh (logic [31:0] rdata);
+      logic [31:0] parse;
+      unique case(pipe_exmem_alu_out[1:0])
+            2'b00: parse = {{16{rdata[15]}}, rdata[15:0]};
+            2'b01: parse = {{16{rdata[23]}}, rdata[23:8]};
+            2'b10: parse = {{16{rdata[31]}}, rdata[31:16]};
+            2'b11: parse = 32'hBAADBAAD; // don't care about this case
+      endcase
+      return parse;
+endfunction
+
+function logic [31:0] parse_lhu (logic [31:0] rdata);
+      logic [31:0] parse;
+      unique case(pipe_exmem_alu_out[1:0])
+            2'b00: parse = {16'd0, rdata[15:0]};
+            2'b01: parse = {16'd0, rdata[23:8]};
+            2'b10: parse = {16'd0, rdata[31:16]};
+            2'b11: parse = 23'hBAADBAAD; // don't care about this case
+      endcase
+      return parse;
+endfunction
+
+
+always_comb begin : NWA_read_write
+
+      unique case(pipereg_exmem_idecode.funct3)
+            rv32i_types::lb: mem_rdata = parse_lb(dcache_rdata);
+            rv32i_types::lbu: mem_rdata = parse_lbu(dcache_rdata);
+            rv32i_types::lh: mem_rdata = parse_lh(dcache_rdata);
+            rv32i_types::lhu: mem_rdata = parse_lhu(dcache_rdata);
+            default: mem_rdata = dcache_rdata;
+      endcase
+
+      unique case(pipereg_exmem_idecode.funct3)
+            rv32i_types::sb: begin
+                  mem_wdata = (pipereg_exmem_rs2_out << {pipe_exmem_alu_out[1:0], 3'd0});
+                  mem_mbe = (4'b0001 << {pipe_exmem_alu_out[1:0]});
+            end
+            rv32i_types::sh: begin
+                  mem_wdata = (pipereg_exmem_rs2_out << {pipe_exmem_alu_out[1:0], 3'd0});
+                  mem_mbe = (4'b0011 << {pipe_exmem_alu_out[1:0]});
+            end
+            default: begin
+                  mem_wdata = pipereg_exmem_rs2_out;
+                  mem_mbe = 4'b1111;
+            end
+      endcase
+
+end
+
 
 //**********************************************************
 
@@ -451,7 +536,7 @@ always_comb begin : MUXES
       //      dcachemux::rs2_out: dcachemux_out = pipereg_exmem_rs2_out;
       //      default: `BAD_MUX_SEL;
       //endcase
-      dcachemux_out = pipereg_exmem_rs2_out;
+      dcachemux_out = mem_wdata;
 
       // WB - Writeback
       unique case (pipereg_memwb_ctrl_word.regfilemux_sel)
