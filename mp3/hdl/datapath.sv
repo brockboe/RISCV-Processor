@@ -85,6 +85,8 @@ logic [31:0] mem_rdata;       //parsed memory input, for non-word-aligned stores
 logic [31:0] mem_wdata;       //parsed memory output, for non-word-aligned writes
 logic [3:0] mem_mbe;           //parsed memory byte enable, for non-word aligned writes
 
+logic icache_resp_2, dcache_resp_2;     // 1 if cache has responded to the current inst, 0 if not.
+
 always_comb begin
 
       // calculate whether or not we need to branch
@@ -94,14 +96,27 @@ always_comb begin
                   (pipereg_exmem_idecode.opcode == op_jalr));
 
       // calcualte if we need to pause (if we're waiting on data from memory)
-      if (~icache_resp) pause_pipeline = 1'b1;
-      else if ((pipereg_exmem_idecode.opcode == op_load) & (~dcache_resp))  pause_pipeline = 1'b1;
-      else if ((pipereg_exmem_idecode.opcode == op_store) & (~dcache_resp)) pause_pipeline = 1'b1;
+      if (icache_read & (~icache_resp)) pause_pipeline = 1'b1; // waiting on icache
+      else if ((dcache_read | dcache_write) & (~dcache_resp))  pause_pipeline = 1'b1; // waiting on dcache
       else pause_pipeline = 1'b0;
 
 end
 
-
+always_ff @( posedge clk ) begin
+      if (pause_pipeline) begin
+            if (icache_resp) begin
+                  icache_resp_2 <= 1'b1;
+            end
+            if (dcache_resp) begin
+                  dcache_resp_2 <= 1'b1;
+            end
+            // else keep current value
+      end
+      else begin
+            icache_resp_2 <= 1'b0;
+            dcache_resp_2 <= 1'b0;
+      end
+end
 
 // function to decode instruction
 // only used in pipe_idex_idecode pipeline
@@ -320,7 +335,7 @@ pipe_memwb_pc (
 
 //********************************** Pipeline Stage Modules
 
-assign icache_read = rst? 1'b0 : 1'b1; // (CP1)
+assign icache_read = ~icache_resp_2; // (CP1)
 assign icache_address = pc_module_out;
 
 // IF - instruction fetch
@@ -368,8 +383,8 @@ cmp_module cmp (
 
 // MEM - Memory
 // none
-assign dcache_read = pipereg_exmem_ctrl_word.dcache_read;
-assign dcache_write = pipereg_exmem_ctrl_word.dcache_write;
+assign dcache_read = pipereg_exmem_ctrl_word.dcache_read & (~dcache_resp_2);
+assign dcache_write = pipereg_exmem_ctrl_word.dcache_write & (~dcache_resp_2);
 assign dcache_wdata = dcachemux_out;
 assign dcache_address = {pipe_exmem_alu_out[31:2], 2'd0};
 assign dcache_mbe = mem_mbe;
@@ -426,7 +441,7 @@ function logic [31:0] parse_lhu (logic [31:0] rdata);
             2'b00: parse = {16'd0, rdata[15:0]};
             2'b01: parse = {16'd0, rdata[23:8]};
             2'b10: parse = {16'd0, rdata[31:16]};
-            2'b11: parse = 23'hBAADBAAD; // don't care about this case
+            2'b11: parse = 32'hBAADBAAD; // don't care about this case
       endcase
       return parse;
 endfunction
