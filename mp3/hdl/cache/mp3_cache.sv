@@ -39,7 +39,7 @@ logic d_a_resp;
 
 
 cache icache(
-    .clk, .rst,
+    .clk(clk), .rst(rst),
     // to cpu
     .mem_read(icache_read), .mem_write(1'b0),
     .mem_byte_enable(4'b1111),
@@ -57,7 +57,7 @@ cache icache(
 );
 
 cache dcache(
-    .clk, .rst,
+    .clk(clk), .rst(rst),
     // to cpu
     .mem_read(dcache_read), .mem_write(dcache_write),
     .mem_byte_enable(dcache_mbe),
@@ -81,8 +81,8 @@ logic [255:0] l2_wdata, l2_rdata;
 
 
 cache_arbiter arbiter(
-    .clk,
-    .rst,
+    .clk(clk),
+    .rst(rst),
 
     // dcache interface
     .dcache_read(d_a_read),
@@ -99,27 +99,49 @@ cache_arbiter arbiter(
     .icache_resp(i_a_resp),
 
     // L2 cache interface
-    .l2_read,
-    .l2_write,
-    .l2_address,
-    .l2_wdata,
-    .l2_rdata,
-    .l2_resp
+    .l2_read(l2_read), 
+    .l2_write(l2_write),
+    .l2_wdata(l2_wdata), 
+    .l2_address(l2_address),
+    .l2_rdata(l2_rdata),
+    .l2_resp(l2_resp)
 );
 
+// signals between l2 cache and adapter
+logic [255:0] l2_pmem_rdata, l2_pmem_wdata;
+logic [31:0] l2_pmem_address;
+logic l2_pmem_read, l2_pmem_write, l2_pmem_resp;
+
 // L2 cache (cp3)
+l2_cache #(.s_index(6)) l2(    
+    .clk(clk), .rst(rst),
+    // L1 - L2
+    .l2_read(l2_read), 
+    .l2_write(l2_write),
+    .l2_wdata(l2_wdata), 
+    .l2_address(l2_address),
+    .l2_rdata(l2_rdata),
+    .l2_resp(l2_resp),
+
+    // L2 - pmem
+    .pmem_rdata(l2_pmem_rdata),
+    .pmem_wdata(l2_pmem_wdata),
+    .pmem_address(l2_pmem_address),
+    .pmem_read(l2_pmem_read), .pmem_write(l2_pmem_write),
+    .pmem_resp(l2_pmem_resp)
+);
 
 cacheline_adaptor adapter(
     .clk(clk),
     .reset_n(~rst),
 
     // Port to LLC (Lowest Level Cache)
-    .line_i(l2_wdata),
-    .line_o(l2_rdata),
-    .address_i(l2_address),
-    .read_i(l2_read),
-    .write_i(l2_write),
-    .resp_o(l2_resp),
+    .line_i(l2_pmem_wdata),
+    .line_o(l2_pmem_rdata),
+    .address_i(l2_pmem_address),
+    .read_i(l2_pmem_read),
+    .write_i(l2_pmem_write),
+    .resp_o(l2_pmem_resp),
 
     // Port to memory
     .burst_i(pmem_rdata),

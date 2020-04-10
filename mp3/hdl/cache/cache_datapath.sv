@@ -25,21 +25,21 @@ module cache_datapath #(
     input logic [255:0] mem_wdata256, line_in
 );
 
-logic [2:0] index, index_in;
-logic [23:0] tag;
+logic [s_index-1:0] index, index_in;
+logic [s_tag-1:0] tag;
 
-logic [255:0] dataout0, dataout1, data_in;
-logic [23:0] tagout0, tagout1, tagmuxout;
+logic [s_line-1:0] dataout0, dataout1, data_in;
+logic [s_tag-1:0] tagout0, tagout1, tagmuxout;
 
-assign index = addr[7:5];
-assign tag = addr[31:8];
-assign addr_out = {tagmuxout, index_in, {5{1'b0}}};
+assign index = addr[s_index+s_offset-1:s_offset];
+assign tag = addr[31:s_index+s_offset];
+assign addr_out = {tagmuxout, index_in, {s_offset{1'b0}}};
 
 data_array data0(.clk(clk), .rst(), .write_en(write_en0), .rindex(index_in), .windex(index_in), .datain(data_in), .dataout(dataout0));
 data_array data1(.clk(clk), .rst(), .write_en(write_en1), .rindex(index_in), .windex(index_in), .datain(data_in), .dataout(dataout1));
 
-array #(.width(24)) tag0(.clk(clk), .rst(), .load(load_tag[0]), .rindex(index_in), .windex(index_in), .datain(tag), .dataout(tagout0));
-array #(.width(24)) tag1(.clk(clk), .rst(), .load(load_tag[1]), .rindex(index_in), .windex(index_in), .datain(tag), .dataout(tagout1));
+array #(.width(s_tag)) tag0(.clk(clk), .rst(), .load(load_tag[0]), .rindex(index_in), .windex(index_in), .datain(tag), .dataout(tagout0));
+array #(.width(s_tag)) tag1(.clk(clk), .rst(), .load(load_tag[1]), .rindex(index_in), .windex(index_in), .datain(tag), .dataout(tagout1));
 
 array d0(.clk(clk), .rst(), .load(load_dirty), .rindex(index_in), .datain(dirty_in[0]), .windex(index_in), .dataout(dirty[0]));
 array d1(.clk(clk), .rst(), .load(load_dirty), .rindex(index_in), .datain(dirty_in[1]), .windex(index_in), .dataout(dirty[1]));
