@@ -26,7 +26,8 @@ enum int unsigned {
     /* List of states */
     idle, read_check, write_check,
     write_back, meta_update, read_mem,
-    read_end, write_end
+    read_end, write_end,
+    wait0, wait1, wait2
 } state, next_state;
 
 logic prev_lru;
@@ -66,6 +67,10 @@ always_comb begin // next state logic
             if (!cacheline_resp) next_state = read_mem;
             else next_state = mem_write ? write_end : read_end;
         end
+
+        read_end, write_end: next_state = wait0;
+        wait0: next_state = wait1;
+        // wait1: next_state = wait2;
 
         default: next_state = idle;
     endcase
