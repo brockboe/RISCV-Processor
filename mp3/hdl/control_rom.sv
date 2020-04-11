@@ -28,8 +28,6 @@ typedef struct packed
       logic [2:0] cmpop;
       logic dcache_read;
       logic dcache_write;
-      logic mask1;
-      logic mask2;
       logic [3:0] regfilemux_sel;
       logic load_regfile;
 } ctrl_word;
@@ -44,8 +42,6 @@ function void set_defaults();
 
       idex_ctrl_word.dcache_read = 1'b0;
       idex_ctrl_word.dcache_write = 1'b0;
-      idex_ctrl_word.mask1 = 1'b0;
-      idex_ctrl_word.mask2 = 1'b0;
 
       idex_ctrl_word.regfilemux_sel = regfilemux::alu_out;
       idex_ctrl_word.load_regfile = 1'b0;
@@ -83,8 +79,6 @@ always_comb begin
             idex_ctrl_word.dcache_write = 1'b0;
             idex_ctrl_word.regfilemux_sel = regfilemux::pc_plus4;
             idex_ctrl_word.load_regfile = 1'b1;
-            idex_ctrl_word.mask1 = 1'b1;
-            idex_ctrl_word.mask2 = 1'b1;
         end
 
         op_jalr  : begin
@@ -95,8 +89,6 @@ always_comb begin
             idex_ctrl_word.dcache_write = 1'b0;
             idex_ctrl_word.regfilemux_sel = regfilemux::pc_plus4;
             idex_ctrl_word.load_regfile = 1'b1;
-            idex_ctrl_word.mask1 = 1'b0;
-            idex_ctrl_word.mask2 = 1'b1;
         end
 
         op_br    : begin
@@ -109,8 +101,6 @@ always_comb begin
             idex_ctrl_word.dcache_write = 1'b0;
             // idex_ctrl_word.regfilemux_sel = regfilemux::alu_out;
             idex_ctrl_word.load_regfile = 1'b0;
-            idex_ctrl_word.mask1 = 1'b1;
-            idex_ctrl_word.mask2 = 1'b1;
         end
 
         op_load  : begin

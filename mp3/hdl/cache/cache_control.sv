@@ -11,8 +11,6 @@ module cache_control (
     output logic [1:0] load_tag,
     output logic lru_in,
     output logic [1:0] dirty_in, valid_in,
-    output logic [2:0] flush_index,
-    output logic index_sel,
 
     // cpu & bus_adapter
     input logic mem_read, mem_write,
@@ -25,28 +23,24 @@ module cache_control (
     output logic cacheline_read
 );
 
-logic [3:0] flush_counter, counter_next;
-
 enum int unsigned {
     /* List of states */
     idle, read_check, write_check,
     write_back, meta_update, read_mem,
-    read_end, write_end,
-    flush0, flush1, flush_check, flush2
+    read_end, write_end
 } state, next_state;
 
 always_ff @(posedge clk)
 begin: next_state_assignment
     /* Assignment of next state on clock edge */
     state <= rst? idle : next_state;
-    flush_counter <= counter_next;
 end
 
 always_comb begin // next state logic
     case(state)
         idle: begin
             if (mem_read & mem_write) begin
-                next_state = flush_check;
+                next_state = idle;
             end
             else if (mem_read | mem_write) begin
                 if ((valid & cmp) == 2'b00) begin // read miss
@@ -69,22 +63,6 @@ always_comb begin // next state logic
             else next_state = mem_write ? write_end : read_end;
         end
 
-        flush_check: begin
-            next_state = (valid[flush_counter[3]] & dirty[flush_counter[3]]) ? flush0 : flush1;
-        end
-
-        flush0: begin
-            next_state = cacheline_resp ? flush1 : flush0;
-        end
-
-        flush1: begin
-            next_state = (flush_counter == 4'hF) ? idle : flush2;
-        end
-
-        flush2: begin
-            next_state = flush_check;
-        end
-
         default: next_state = idle;
     endcase
 end
@@ -105,13 +83,9 @@ always_comb begin // state actions
     dirty_in = dirty;
 	cacheline_read = 1'b0;
 	cacheline_write = 1'b0;
-    counter_next = flush_counter;
-    index_sel = mem_write & mem_read;
-    flush_index = flush_counter[2:0];
 
     case(state)
     idle: begin
-        counter_next = 4'h0;
         if (mem_read & mem_write) begin
             // do nothing
         end else if (mem_read) begin
@@ -189,21 +163,6 @@ always_comb begin // state actions
         resp = 1'b1;
         if (cmp[0] & valid[0]) write_en0 = mem_byte_enable256;
         else write_en1 = mem_byte_enable256;
-    end
-	 
-	 flush_check: begin
-    end
-
-    flush0: begin
-        sel = flush_counter[3];
-        cacheline_write = 1'b1;
-    end
-
-    flush1: begin
-        dirty_in[flush_counter[3]] = 1'b0;
-        load_dirty = 1'b1;
-        counter_next = flush_counter + 4'h1;
-        resp = (flush_counter == 4'hF)? 1'b1 : 1'b0;
     end
 
     default: ;

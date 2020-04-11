@@ -39,8 +39,6 @@ typedef struct packed
       rv32i_types::branch_funct3_t cmpop;
       logic dcache_read;
       logic dcache_write;
-      logic mask1;
-      logic mask2;
       regfilemux::regfilemux_sel_t regfilemux_sel;
       logic load_regfile;
 } ctrl_word;

@@ -10,13 +10,12 @@ module cache_datapath #(
     input logic clk, rst,
     input logic read,
     input logic [31:0] write_en0, write_en1,
-    input logic sel, data_in_sel, index_sel,
+    input logic sel, data_in_sel,
     input logic load_lru, load_dirty, load_valid,
     input logic [1:0] load_tag,
     input logic lru_in,
     input logic [1:0] dirty_in, valid_in,
     input logic [31:0] addr,
-    input logic [2:0] flush_index,
     output logic [31:0] addr_out,
     output logic [255:0] data_out,
     output logic [1:0] cmp, dirty, valid,
@@ -67,10 +66,7 @@ always_comb begin
         1'b1: data_in = line_in;
     endcase
 
-    case(index_sel)
-        1'b0: index_in = index;
-        1'b1: index_in = flush_index;
-    endcase
+    index_in = index;
 
     // Comparator
     cmp[0] = (tag == tagout0);

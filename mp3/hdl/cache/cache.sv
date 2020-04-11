@@ -26,13 +26,12 @@ module cache #(
 // datapath <==> control
 logic [1:0] cmp, dirty, valid;
 logic lru;
-logic sel, data_in_sel, index_sel;
+logic sel, data_in_sel;
 logic [31:0] write_en0, write_en1;
 logic load_lru, load_dirty, load_valid;
 logic [1:0] load_tag;
 logic lru_in;
 logic [1:0] dirty_in, valid_in;
-logic [2:0] flush_index;
 
 // control <==> bus adapter
 logic [31:0] mem_byte_enable256;
@@ -48,13 +47,12 @@ cache_control control
     // datapath
     .cmp, .dirty, .valid,
     .lru,
-    .sel, .data_in_sel, .index_sel,
+    .sel, .data_in_sel,
     .write_en0, .write_en1,
     .load_lru, .load_dirty, .load_valid,
     .load_tag,
     .lru_in,
     .dirty_in, .valid_in,
-	.flush_index,
 
     // cpu & bus_adapter
     .mem_read, .mem_write,
@@ -75,7 +73,6 @@ cache_datapath datapath
     .write_en1,
     .sel,
     .data_in_sel,
-	.index_sel,
     .load_lru,
     .load_dirty,
     .load_valid,
@@ -83,7 +80,6 @@ cache_datapath datapath
     .lru_in,
     .dirty_in,
     .valid_in,
-	.flush_index,
     .addr(mem_address),
     .addr_out(pmem_address),
     .data_out,
