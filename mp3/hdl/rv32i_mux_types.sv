@@ -54,15 +54,25 @@ endpackage
 
 // TODO: Complete forwarding values
 package rs1mux;
-typedef enum bit [1:0] {
-      rs2_out = 2'b00
+typedef enum bit [2:0] {
+      rs1_out = 3'b000,
+      exmem_alu_out = 3'b001,
+      exmem_br_en = 3'b010,
+      regfilemux_out = 3'b011,
+      mem_rdata = 3'b100,
+      exmem_u_imm = 3'b101
 } rs1mux_sel_t;
 endpackage
 
 // TODO: Complete forwarding values
 package rs2mux;
-typedef enum bit [1:0] {
-      rs2_out = 2'b00
+typedef enum bit [2:0] {
+      rs2_out = 3'b000,
+      exmem_alu_out = 3'b001,
+      exmem_br_en = 3'b010,
+      regfilemux_out = 3'b011,
+      mem_rdata = 3'b100,
+      exmem_u_imm = 3'b101
 } rs2mux_sel_t;
 endpackage
 
@@ -79,6 +89,7 @@ endpackage
 //TODO: complete forwarding
 package dcachemux;
 typedef enum bit {
-      rs2_out = 1'b0
+      rs2_out = 1'b0,
+      regfilemux_out = 1'b1
 } dcachemux_sel_t;
 endpackage

@@ -1,4 +1,6 @@
 `define BAD_MUX_SEL $fatal("%0t %s %0d: Illegal mux select", $time, `__FILE__, `__LINE__)
+`include "./forwarding/forwarding.sv"
+
 
 import rv32i_types::*;
 import control_itf::*;
@@ -86,8 +88,15 @@ logic [31:0] mem_wdata;       //parsed memory output, for non-word-aligned write
 logic [3:0] mem_mbe;           //parsed memory byte enable, for non-word aligned writes
 
 logic icache_resp_2, dcache_resp_2;     // 1 if cache has responded to the current inst, 0 if not.
+forwarding_itf::instruction_input fitf;
+
 
 always_comb begin
+
+      // assign forwarding itf signals
+      fitf.idex_inst_decode = rs1mux::rs1mux_sel_t ' (pipereg_idex_idecode);
+      fitf.exmem_inst_decode = rs2mux::rs2mux_sel_t ' (pipereg_exmem_idecode);
+      fitf.memwb_inst_decode = dcachemux::dcachemux_sel_t ' (pipereg_memwb_idecode);
 
       // calculate whether or not we need to branch
       branch_go = pipereg_exmem_br_en_out[0] &
@@ -483,6 +492,29 @@ end
 
 
 
+//********************************** Hazard Detection / Forwarding
+
+
+rs1mux::rs1mux_sel_t rs1mux_forwarding_sel;
+rs2mux::rs2mux_sel_t rs2mux_forwarding_sel;
+dcachemux::dcachemux_sel_t dcachemux_forwarding_sel;
+
+always_comb begin
+	rs1mux_forwarding_sel = rs1_forward(fitf);
+	rs2mux_forwarding_sel = rs2_forward(fitf);
+	dcachemux_forwarding_sel = dcache_forward(fitf);
+end
+
+//**********************************************************
+
+
+
+
+
+
+
+
+
 //********************************** Mux Declarations
 // mux typdef declarations all found
 // in rv32i_mux_types.sv, including rs1mux,
@@ -510,27 +542,37 @@ always_comb begin : MUXES
 
       // EX - Execute
       // TODO: Complete forwarding
-      //unique case (control.rs1mux_sel)
-      //      rs1mux::rs1_out: rs1mux_out = pipereg_idex_rs1_out;
-      //      default: `BAD_MUX_SEL;
-      //endcase
-      rs1mux_out = pipereg_idex_rs1_out;
+      unique case (rs1mux_forwarding_sel)
+            rs1mux::rs1_out: rs1mux_out = pipereg_idex_rs1_out;
+            rs1mux::exmem_alu_out: rs1mux_out = pipe_exmem_alu_out;
+            rs1mux::exmem_br_en: rs1mux_out = pipereg_exmem_br_en_out;
+            rs1mux::regfilemux_out: rs1mux_out = regfilemux_out;
+            rs1mux::mem_rdata: rs1mux_out = mem_rdata;
+            rs1mux::exmem_u_imm: rs1mux_out = pipereg_exmem_idecode.u_imm;
+            default: rs1mux_out = pipereg_idex_rs1_out;
+      endcase
+      //rs1mux_out = pipereg_idex_rs1_out;
 
       // TODO: Complete forwarding
-      //unique case (control.rs2mux_sel)
-      //      rs2mux::rs2_out: rs2mux_out = pipereg_idex_rs2_out;
-      //      default: `BAD_MUX_SEL;
-      //endcase
-      rs2mux_out = pipereg_idex_rs2_out;
+      unique case (rs2mux_forwarding_sel)
+            rs2mux::rs2_out: rs2mux_out = pipereg_idex_rs2_out;
+            rs2mux::exmem_alu_out: rs2mux_out = pipe_exmem_alu_out;
+            rs2mux::exmem_br_en: rs2mux_out = pipereg_exmem_br_en_out;
+            rs2mux::regfilemux_out: rs2mux_out = regfilemux_out;
+            rs2mux::mem_rdata: rs2mux_out = mem_rdata;
+            rs2mux::exmem_u_imm: rs2mux_out = pipereg_exmem_idecode.u_imm;
+            default: rs2mux_out = pipereg_idex_rs2_out;
+      endcase
+      //rs2mux_out = pipereg_idex_rs2_out;
 
       unique case (pipereg_idex_ctrl_word.alumux1_sel)
-            alumux::rs1_out: alumux1_out = pipereg_idex_rs1_out;
+            alumux::rs1_out: alumux1_out = rs1mux_out;
             alumux::pc_out: alumux1_out = pipereg_idex_pc_out;
             //default: `BAD_MUX_SEL;
       endcase
 
       unique case (pipereg_idex_ctrl_word.alumux2_sel)
-            alumux::rs2_out: alumux2_out = pipereg_idex_rs2_out;
+            alumux::rs2_out: alumux2_out = rs2mux_out;
             alumux::i_imm: alumux2_out = pipereg_idex_idecode.i_imm;
             alumux::u_imm: alumux2_out = pipereg_idex_idecode.u_imm;
             alumux::b_imm: alumux2_out = pipereg_idex_idecode.b_imm;
@@ -547,11 +589,12 @@ always_comb begin : MUXES
 
       // TODO: Implement dcache read / write logic
       // MEM - Memory
-      //unique case (control.dcachemux_sel)
-      //      dcachemux::rs2_out: dcachemux_out = pipereg_exmem_rs2_out;
-      //      default: `BAD_MUX_SEL;
-      //endcase
-      dcachemux_out = mem_wdata;
+      unique case (dcachemux_forwarding_sel)
+            dcachemux::rs2_out: dcachemux_out = mem_wdata;
+            dcachemux::regfilemux_out: dcachemux_out = regfilemux_out;
+            default: dcachemux_out = mem_wdata;
+      endcase
+      //dcachemux_out = mem_wdata;
 
       // WB - Writeback
       unique case (pipereg_memwb_ctrl_word.regfilemux_sel)
