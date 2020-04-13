@@ -13,7 +13,7 @@ _start:
 
       # misc
       lw x1, NEGTWO
-      addi x1, x1, 0
+      addi x1, x1, 10
 
 done:
       beq x0, x0, done

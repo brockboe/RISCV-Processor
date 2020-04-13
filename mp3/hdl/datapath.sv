@@ -94,9 +94,9 @@ forwarding_itf::instruction_input fitf;
 always_comb begin
 
       // assign forwarding itf signals
-      fitf.idex_inst_decode = rs1mux::rs1mux_sel_t ' (pipereg_idex_idecode);
-      fitf.exmem_inst_decode = rs2mux::rs2mux_sel_t ' (pipereg_exmem_idecode);
-      fitf.memwb_inst_decode = dcachemux::dcachemux_sel_t ' (pipereg_memwb_idecode);
+      fitf.idex_inst_decode =  pipereg_idex_idecode;
+      fitf.exmem_inst_decode = pipereg_exmem_idecode;
+      fitf.memwb_inst_decode = pipereg_memwb_idecode;
 
       // calculate whether or not we need to branch
       branch_go = pipereg_exmem_br_en_out[0] &
