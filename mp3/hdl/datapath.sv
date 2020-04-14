@@ -226,16 +226,16 @@ pipe_idex_rs2_out (
 register #(.width(32))
 pipe_exmem_rs2_out (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | (branch_go & ~pause_pipeline)),
       .load(control.pipe_load_exmem & (~pause_pipeline)),
-      .in(pipereg_idex_rs2_out),
+      .in(rs2mux_out),
       .out(pipereg_exmem_rs2_out)
 );
 // alu output
 register #(.width(32))
 pipe_exmem_alu (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | (branch_go & ~pause_pipeline)),
       .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in(alu_module_out),
       .out(pipe_exmem_alu_out)
@@ -244,7 +244,7 @@ pipe_exmem_alu (
 register #(.width(192))
 pipe_exmem_decode (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | (branch_go & ~pause_pipeline)),
       .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in(pipereg_idex_idecode),
       .out(pipereg_exmem_idecode)
@@ -253,7 +253,7 @@ pipe_exmem_decode (
 register #(.width(32))
 pipe_exmem_br_en (
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | (branch_go & ~pause_pipeline)),
       .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in({31'd0, br_en_out}),
       .out(pipereg_exmem_br_en_out)
@@ -262,7 +262,7 @@ pipe_exmem_br_en (
 ctrl_word_register
 pipe_exmem_ctrl_word(
       .clk(clk),
-      .rst(rst | control.pipe_rst_exmem),
+      .rst(rst | control.pipe_rst_exmem | (branch_go & ~pause_pipeline)),
       .load(control.pipe_load_exmem & (~pause_pipeline)),
       .in(pipereg_idex_ctrl_word),
       .out(pipereg_exmem_ctrl_word)
@@ -272,7 +272,7 @@ pipe_exmem_ctrl_word(
 register #(.width(32))
 pipe_exmem_pc (
       .clk(clk),
-      .rst(rst | control.pipe_rst_idex),
+      .rst(rst | control.pipe_rst_idex | (branch_go & ~pause_pipeline)),
       .load(control.pipe_load_idex & (~pause_pipeline)),
       .in(pipereg_idex_pc_out),
       .out(pipereg_exmem_pc_out)
@@ -541,6 +541,27 @@ always_comb begin : MUXES
 
 
       // EX - Execute
+
+      // TODO: Implement dcache read / write logic
+      // MEM - Memory
+      unique case (dcachemux_forwarding_sel)
+            dcachemux::rs2_out: dcachemux_out = mem_wdata;
+            dcachemux::regfilemux_out: dcachemux_out = regfilemux_out;
+            default: dcachemux_out = mem_wdata;
+      endcase
+      //dcachemux_out = mem_wdata;
+
+      // WB - Writeback
+      unique case (pipereg_memwb_ctrl_word.regfilemux_sel)
+            regfilemux::alu_out: regfilemux_out = pipe_memwb_alu_out;
+            regfilemux::br_en: regfilemux_out = pipereg_memwb_br_en;
+            regfilemux::u_imm: regfilemux_out = pipereg_memwb_idecode.u_imm;
+            regfilemux::MDRreg_out: regfilemux_out = pipereg_memwb_mdr_out;
+            regfilemux::pc_plus4: regfilemux_out = pipereg_memwb_pc_out + 4;
+            //default: `BAD_MUX_SEL;
+      endcase
+
+
       // TODO: Complete forwarding
       unique case (rs1mux_forwarding_sel)
             rs1mux::rs1_out: rs1mux_out = pipereg_idex_rs1_out;
@@ -582,27 +603,8 @@ always_comb begin : MUXES
       endcase
 
       unique case (pipereg_idex_ctrl_word.cmpmux_sel)
-            cmpmux::rs2_out: cmpmux_out = pipereg_idex_rs2_out;
+            cmpmux::rs2_out: cmpmux_out = rs2mux_out;
             cmpmux::i_imm: cmpmux_out = pipereg_idex_idecode.i_imm;
-            //default: `BAD_MUX_SEL;
-      endcase
-
-      // TODO: Implement dcache read / write logic
-      // MEM - Memory
-      unique case (dcachemux_forwarding_sel)
-            dcachemux::rs2_out: dcachemux_out = mem_wdata;
-            dcachemux::regfilemux_out: dcachemux_out = regfilemux_out;
-            default: dcachemux_out = mem_wdata;
-      endcase
-      //dcachemux_out = mem_wdata;
-
-      // WB - Writeback
-      unique case (pipereg_memwb_ctrl_word.regfilemux_sel)
-            regfilemux::alu_out: regfilemux_out = pipe_memwb_alu_out;
-            regfilemux::br_en: regfilemux_out = pipereg_memwb_br_en;
-            regfilemux::u_imm: regfilemux_out = pipereg_memwb_idecode.u_imm;
-            regfilemux::MDRreg_out: regfilemux_out = pipereg_memwb_mdr_out;
-            regfilemux::pc_plus4: regfilemux_out = pipereg_memwb_pc_out + 4;
             //default: `BAD_MUX_SEL;
       endcase
 

@@ -145,7 +145,11 @@ function dcachemux::dcachemux_sel_t dcache_forward (forwarding_itf::instruction_
       rd_match = (itf.memwb_inst_decode.rd == itf.exmem_inst_decode.rs2);
 
       if (rd_match & (
-            (itf.memwb_inst_decode.opcode == rv32i_types::op_store)
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_lui) |
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_auipc) |
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_load) |
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_imm) |
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_reg)
             ))
             return dcachemux::regfilemux_out;
 
