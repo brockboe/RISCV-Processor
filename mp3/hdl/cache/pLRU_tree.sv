@@ -39,17 +39,17 @@ assign bit2 = lv2[{bit0, bit1}];
 assign plru = {bit0, bit1, bit2};
 
 // Level 0 (root)
-tree_node #(.s_index(s_index)) L0(.clk, .rst, .load(load), .data_in(last_access[2]), .index, .data_out(l[0]) .load_left(l1), .load_right(l2));
+tree_node #(.s_index(s_index)) L0(.clk, .rst, .load(load), .data_in(last_access[2]), .index, .data_out(l[0]), .load_left(l1), .load_right(l2));
 
 // level 1
-tree_node #(.s_index(s_index)) L1(.clk, .rst, .load(l1), .data_in(last_access[1]), .index, .data_out(l[1]) .load_left(l3), .load_right(l4));
-tree_node #(.s_index(s_index)) L2(.clk, .rst, .load(l2), .data_in(last_access[1]), .index, .data_out(l[2]) .load_left(l5), .load_right(l6));
+tree_node #(.s_index(s_index)) L1(.clk, .rst, .load(l1), .data_in(last_access[1]), .index, .data_out(l[1]), .load_left(l3), .load_right(l4));
+tree_node #(.s_index(s_index)) L2(.clk, .rst, .load(l2), .data_in(last_access[1]), .index, .data_out(l[2]), .load_left(l5), .load_right(l6));
 
 // level 2 (leaf)
-tree_node #(.s_index(s_index)) L3(.clk, .rst, .load(l3), .data_in(last_access[0]), .index, .data_out(l[3]) .load_left(), .load_right());
-tree_node #(.s_index(s_index)) L4(.clk, .rst, .load(l4), .data_in(last_access[0]), .index, .data_out(l[4]) .load_left(), .load_right());
-tree_node #(.s_index(s_index)) L5(.clk, .rst, .load(l5), .data_in(last_access[0]), .index, .data_out(l[5]) .load_left(), .load_right());
-tree_node #(.s_index(s_index)) L6(.clk, .rst, .load(l6), .data_in(last_access[0]), .index, .data_out(l[6]) .load_left(), .load_right());
+tree_node #(.s_index(s_index)) L3(.clk, .rst, .load(l3), .data_in(last_access[0]), .index, .data_out(l[3]), .load_left(), .load_right());
+tree_node #(.s_index(s_index)) L4(.clk, .rst, .load(l4), .data_in(last_access[0]), .index, .data_out(l[4]), .load_left(), .load_right());
+tree_node #(.s_index(s_index)) L5(.clk, .rst, .load(l5), .data_in(last_access[0]), .index, .data_out(l[5]), .load_left(), .load_right());
+tree_node #(.s_index(s_index)) L6(.clk, .rst, .load(l6), .data_in(last_access[0]), .index, .data_out(l[6]), .load_left(), .load_right());
 
 endmodule
 

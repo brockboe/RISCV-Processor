@@ -26,7 +26,7 @@ always_ff @(posedge clk) rand_val <= $urandom;
 always_ff @(negedge clk) begin
     last_access <= rand_val[2:0];
     load <= rand_val[3];
-    $display("L6:L0 are %7b, lru is %d, accessing %d", l, plru, last_access);
+    $display("L6:L0 are %7b, lru is %d, accessing %d, load is %d", l, plru, rand_val[2:0], rand_val[3]);
 end
 
 pLRU_tree dut(.*);
