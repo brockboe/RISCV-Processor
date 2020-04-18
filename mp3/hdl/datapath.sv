@@ -86,10 +86,43 @@ logic pause_pipeline;               // logic specifying if we need to halt the p
 logic [31:0] mem_rdata;       //parsed memory input, for non-word-aligned stores
 logic [31:0] mem_wdata;       //parsed memory output, for non-word-aligned writes
 logic [3:0] mem_mbe;           //parsed memory byte enable, for non-word aligned writes
+logic mem_forward_pause_pipeline;   // pause pipeline if we have to fowarward data from the mem stage
+logic [31:0] mem_rdata_temp;   // temporary storage of mem_rdata, see mem stage below
 
 logic icache_resp_2, dcache_resp_2;     // 1 if cache has responded to the current inst, 0 if not.
 forwarding_itf::instruction_input fitf;
 
+
+// memory forwarding / hazard detection solution
+always_comb begin
+
+      if ((pipereg_exmem_idecode.opcode == rv32i_types::op_load) &
+               (pipereg_exmem_idecode.rs1 != 5'd0) &
+               (pipereg_idex_idecode.rs1 == pipereg_exmem_idecode.rd))
+            mem_forward_pause_pipeline = 1'b1;
+      else if ((pipereg_exmem_idecode.opcode == rv32i_types::op_load) &
+               (pipereg_idex_idecode.rs2 == pipereg_exmem_idecode.rd) &
+               (pipereg_idex_idecode.rs2 != 5'd0) &
+               ((pipereg_idex_idecode.opcode == rv32i_types::op_br) |
+                (pipereg_idex_idecode.opcode == rv32i_types::op_store) |
+                (pipereg_idex_idecode.opcode == rv32i_types::op_reg)))
+            mem_forward_pause_pipeline = 1'b1;
+      else
+            mem_forward_pause_pipeline = 1'b0;
+
+end
+
+logic [1:0] mem_forward_timer;
+
+always_ff @ (posedge clk or posedge rst) begin
+      if(rst)
+            mem_forward_timer <= 4'd0;
+
+      else begin
+            mem_forward_timer[0] <= mem_forward_pause_pipeline;
+            mem_forward_timer[1] <= mem_forward_pause_pipeline;
+      end
+end
 
 always_comb begin
 
@@ -107,6 +140,7 @@ always_comb begin
       // calcualte if we need to pause (if we're waiting on data from memory)
       if (icache_read & (~icache_resp)) pause_pipeline = 1'b1; // waiting on icache
       else if ((dcache_read | dcache_write) & (~dcache_resp))  pause_pipeline = 1'b1; // waiting on dcache
+      else if (mem_forward_pause_pipeline & (~mem_forward_timer[0])) pause_pipeline = 1'b1;  //pause for memory forwarding
       else pause_pipeline = 1'b0;
 
 end
@@ -391,12 +425,20 @@ cmp_module cmp (
 
 
 // MEM - Memory
-// none
 assign dcache_read = pipereg_exmem_ctrl_word.dcache_read & (~dcache_resp_2);
 assign dcache_write = pipereg_exmem_ctrl_word.dcache_write & (~dcache_resp_2);
 assign dcache_wdata = dcachemux_out;
 assign dcache_address = {pipe_exmem_alu_out[31:2], 2'd0};
 assign dcache_mbe = mem_mbe;
+
+register #(.width(32))
+mem_rdata_temp_storage (
+      .clk(clk),
+      .rst(rst),
+      .load(1'b1),
+      .in(mem_rdata),
+      .out(mem_rdata_temp)
+);
 
 // WB - Writeback
 // none
@@ -418,6 +460,7 @@ function logic [31:0] parse_lb (logic [31:0] rdata);
             2'b01: parse = {{24{rdata[15]}}, rdata[15:8]};
             2'b10: parse = {{24{rdata[23]}}, rdata[23:16]};
             2'b11: parse = {{24{rdata[31]}}, rdata[31:24]};
+            default: parse = 32'd0;
       endcase
       return parse;
 endfunction
@@ -429,6 +472,7 @@ function logic [31:0] parse_lbu (logic [31:0] rdata);
             2'b01: parse = {24'd0, rdata[15:8]};
             2'b10: parse = {24'd0, rdata[23:16]};
             2'b11: parse = {24'd0, rdata[31:24]};
+            default: parse = 32'd0;
       endcase
       return parse;
 endfunction
@@ -440,6 +484,7 @@ function logic [31:0] parse_lh (logic [31:0] rdata);
             2'b01: parse = {{16{rdata[23]}}, rdata[23:8]};
             2'b10: parse = {{16{rdata[31]}}, rdata[31:16]};
             2'b11: parse = 32'hBAADBAAD; // don't care about this case
+            default: parse = 32'd0;
       endcase
       return parse;
 endfunction
@@ -451,6 +496,7 @@ function logic [31:0] parse_lhu (logic [31:0] rdata);
             2'b01: parse = {16'd0, rdata[23:8]};
             2'b10: parse = {16'd0, rdata[31:16]};
             2'b11: parse = 32'hBAADBAAD; // don't care about this case
+            default: parse = 32'd0;
       endcase
       return parse;
 endfunction
@@ -568,7 +614,7 @@ always_comb begin : MUXES
             rs1mux::exmem_alu_out: rs1mux_out = pipe_exmem_alu_out;
             rs1mux::exmem_br_en: rs1mux_out = pipereg_exmem_br_en_out;
             rs1mux::regfilemux_out: rs1mux_out = regfilemux_out;
-            rs1mux::mem_rdata: rs1mux_out = mem_rdata;
+            rs1mux::mem_rdata: rs1mux_out = mem_rdata_temp;
             rs1mux::exmem_u_imm: rs1mux_out = pipereg_exmem_idecode.u_imm;
             default: rs1mux_out = pipereg_idex_rs1_out;
       endcase
@@ -580,7 +626,7 @@ always_comb begin : MUXES
             rs2mux::exmem_alu_out: rs2mux_out = pipe_exmem_alu_out;
             rs2mux::exmem_br_en: rs2mux_out = pipereg_exmem_br_en_out;
             rs2mux::regfilemux_out: rs2mux_out = regfilemux_out;
-            rs2mux::mem_rdata: rs2mux_out = mem_rdata;
+            rs2mux::mem_rdata: rs2mux_out = mem_rdata_temp;
             rs2mux::exmem_u_imm: rs2mux_out = pipereg_exmem_idecode.u_imm;
             default: rs2mux_out = pipereg_idex_rs2_out;
       endcase
