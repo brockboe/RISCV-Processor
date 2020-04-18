@@ -102,22 +102,27 @@ forwarding_itf::instruction_input fitf;
 // a clock cycle late.
 always_ff @ (posedge clk) begin
 
-      if (mem_forward_pause_pipeline == 1'b1)
+      if(rst) begin
             mem_forward_pause_pipeline <= 1'b0;
-      else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
-               (pipereg_ifid_idecode.rs1 != 5'd0) &
-               (pipereg_ifid_idecode.rs1 == pipereg_idex_idecode.rd))
-            mem_forward_pause_pipeline <= 1'b1;
-      else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
-               (pipereg_ifid_idecode.rs2 == pipereg_idex_idecode.rd) &
-               (pipereg_ifid_idecode.rs2 != 5'd0) &
-               ((pipereg_ifid_idecode.opcode == rv32i_types::op_br) |
-                (pipereg_ifid_idecode.opcode == rv32i_types::op_store) |
-                (pipereg_ifid_idecode.opcode == rv32i_types::op_reg)))
-            mem_forward_pause_pipeline <= 1'b1;
-      else
-            mem_forward_pause_pipeline <= 1'b0;
-
+      end else begin
+            if ((mem_forward_pause_pipeline == 1'b1) &
+                ~((dcache_read | dcache_write) & (~dcache_resp)) &
+                ~(icache_read & (~icache_resp)))
+                  mem_forward_pause_pipeline <= 1'b0;
+            else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
+                     (pipereg_ifid_idecode.rs1 != 5'd0) &
+                     (pipereg_ifid_idecode.rs1 == pipereg_idex_idecode.rd))
+                  mem_forward_pause_pipeline <= 1'b1;
+            else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
+                     (pipereg_ifid_idecode.rs2 == pipereg_idex_idecode.rd) &
+                     (pipereg_ifid_idecode.rs2 != 5'd0) &
+                     ((pipereg_ifid_idecode.opcode == rv32i_types::op_br) |
+                      (pipereg_ifid_idecode.opcode == rv32i_types::op_store) |
+                      (pipereg_ifid_idecode.opcode == rv32i_types::op_reg)))
+                  mem_forward_pause_pipeline <= 1'b1;
+            else
+                  mem_forward_pause_pipeline <= mem_forward_pause_pipeline;
+      end
 end
 
 always_comb begin
