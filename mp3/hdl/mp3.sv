@@ -35,8 +35,6 @@ rv32i_opcode opcode;
 logic [2:0] funct3;
 logic [6:0] funct7;
 ctrl_word ctrl;
-control fwd_ctrl;
-
 
 // cache connectors - specified here so quartus
 // doesn't complain or get confused
@@ -44,10 +42,8 @@ logic icache_resp;
 logic dcache_resp;
 
 logic [31:0] icache_address;
-logic [31:0] icache_wdata;
 logic [31:0] icache_rdata;
 logic icache_read;
-logic icache_write;
 
 logic [31:0] dcache_address;
 logic [31:0] dcache_wdata;
@@ -56,43 +52,13 @@ logic [31:0] dcache_rdata;
 logic dcache_read;
 logic dcache_write;
 
-// forwarding control signals
-assign fwd_ctrl.pipe_load_ifid  = 1'b1;
-assign fwd_ctrl.pipe_load_idex  = 1'b1;
-assign fwd_ctrl.pipe_load_exmem = 1'b1;
-assign fwd_ctrl.pipe_load_memwb = 1'b1;
-
-assign fwd_ctrl.pipe_rst_ifid  = 1'b0;
-assign fwd_ctrl.pipe_rst_idex  = 1'b0;
-assign fwd_ctrl.pipe_rst_exmem = 1'b0;
-assign fwd_ctrl.pipe_rst_memwb = 1'b0;
-
-assign icache_write = 1'b0; // (unless we need to handle self-modifying code)
-
 //TODO: When updating forwarding, change the control signals
 control_itf::control c_temp;
-
-// assign initial control signals
-always_comb begin
-      c_temp.rs1mux_sel = 1'b0;
-      c_temp.rs2mux_sel = 1'b0;
-
-      c_temp.pipe_load_ifid = 1'b1;
-      c_temp.pipe_load_idex = 1'b1;
-      c_temp.pipe_load_exmem = 1'b1;
-      c_temp.pipe_load_memwb = 1'b1;
-
-      c_temp.pipe_rst_ifid = 1'b0;
-      c_temp.pipe_rst_idex = 1'b0;
-      c_temp.pipe_rst_exmem = 1'b0;
-      c_temp.pipe_rst_memwb = 1'b0;
-end
 
 // Instantiate the datapath
 datapath d (
       .clk(clk),
       .rst(rst),
-      .control(c_temp),             //TODO: FILL ME IN!
       .opcode(opcode),
       .funct3(funct3),
       .funct7(funct7),
@@ -100,7 +66,6 @@ datapath d (
 
       .icache_read(icache_read),
       .icache_address(icache_address),
-      .icache_wdata(icache_wdata),
       .icache_rdata(icache_rdata),
       .icache_resp(icache_resp),
 

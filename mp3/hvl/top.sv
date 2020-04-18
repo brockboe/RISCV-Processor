@@ -22,13 +22,14 @@ source_tb tb(
 
 // This section not required until CP3
 
-logic halt0, halt1;
+logic halt0, halt1, halt2;
 // assign halt0 = (dut.d.pc_module_out == dut.d.pcmux_out + 12);
 assign halt0 = (dut.d.pipereg_exmem_pc_out == dut.d.pcmux_out) & (~dut.d.pause_pipeline);
 always_ff @( posedge itf.clk ) begin // Wait one cycle for the last instruction to finish write back.
       halt1 <= halt0;
+      halt2 <= halt1;
 end
-assign rvfi.halt = halt1;      // Set high when you detect an infinite loop
+assign rvfi.halt = halt2;      // Set high when you detect an infinite loop
 
 initial rvfi.order = 0;
 always @(posedge itf.clk iff rvfi.commit) rvfi.order <= rvfi.order + 1; // Modify for OoO
@@ -125,9 +126,6 @@ mp3 dut(
       .write_o(itf.mem_write),
       .resp_i(itf.mem_resp)
 );
-
-logic [31:0] pc_val;
-assign pc_val = itf.inst_addr;
 
 /***************************** End Instantiation *****************************/
 
