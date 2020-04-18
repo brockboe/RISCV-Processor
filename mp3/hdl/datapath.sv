@@ -103,20 +103,20 @@ forwarding_itf::instruction_input fitf;
 always_ff @ (posedge clk) begin
 
       if (mem_forward_pause_pipeline == 1'b1)
-            mem_forward_pause_pipeline = 1'b0;
+            mem_forward_pause_pipeline <= 1'b0;
       else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
                (pipereg_ifid_idecode.rs1 != 5'd0) &
                (pipereg_ifid_idecode.rs1 == pipereg_idex_idecode.rd))
-            mem_forward_pause_pipeline = 1'b1;
+            mem_forward_pause_pipeline <= 1'b1;
       else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
                (pipereg_ifid_idecode.rs2 == pipereg_idex_idecode.rd) &
                (pipereg_ifid_idecode.rs2 != 5'd0) &
                ((pipereg_ifid_idecode.opcode == rv32i_types::op_br) |
                 (pipereg_ifid_idecode.opcode == rv32i_types::op_store) |
                 (pipereg_ifid_idecode.opcode == rv32i_types::op_reg)))
-            mem_forward_pause_pipeline = 1'b1;
+            mem_forward_pause_pipeline <= 1'b1;
       else
-            mem_forward_pause_pipeline = 1'b0;
+            mem_forward_pause_pipeline <= 1'b0;
 
 end
 
