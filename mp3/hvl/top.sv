@@ -71,7 +71,7 @@ always_comb begin // rvfi signals
       rvfi.rs2_rdata = memwb_rs2_rdata;
       rvfi.load_regfile = dut.d.pipereg_memwb_ctrl_word.load_regfile;
       rvfi.rd_addr = dut.d.pipereg_memwb_idecode.rd;
-      rvfi.rd_wdata = dut.d.regfilemux_out;
+      rvfi.rd_wdata = dut.d.regfile.in;
       rvfi.pc_rdata = dut.d.pipereg_memwb_pc_out;
       rvfi.pc_wdata = memwb_pc_wdata;
       rvfi.mem_addr = memwb_mem_addr;
