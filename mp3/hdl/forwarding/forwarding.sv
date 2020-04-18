@@ -40,7 +40,7 @@ function rs1mux::rs1mux_sel_t rs1_forward (forwarding_itf::instruction_input itf
 
 
       //special case for x0
-      if(itf.idex_inst_decode.rs1 == 4'd0)
+      if(itf.idex_inst_decode.rs1 == 5'd0)
             return rs1mux::rs1_out;
 
 
