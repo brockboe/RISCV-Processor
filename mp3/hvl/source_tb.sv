@@ -7,7 +7,7 @@
 
 // Set these to 1 to enable the feature
 `define USE_SHADOW_MEMORY 1
-`define USE_RVFI_MONITOR 0
+`define USE_RVFI_MONITOR 1
 
 module source_tb(
     tb_itf.magic_mem magic_mem_itf,

@@ -22,8 +22,6 @@ source_tb tb(
 
 // This section not required until CP3
 
-assign rvfi.commit = 1'b1;                                        // Set high when a valid instruction is modifying regfile or PC
-
 logic halt0, halt1;
 // assign halt0 = (dut.d.pc_module_out == dut.d.pcmux_out + 12);
 assign halt0 = (dut.d.pipereg_exmem_pc_out == dut.d.pcmux_out) & (~dut.d.pause_pipeline);
@@ -34,6 +32,56 @@ assign rvfi.halt = halt1;      // Set high when you detect an infinite loop
 
 initial rvfi.order = 0;
 always @(posedge itf.clk iff rvfi.commit) rvfi.order <= rvfi.order + 1; // Modify for OoO
+
+logic [31:0] exmem_pc_wdata, memwb_pc_wdata;
+logic [31:0] memwb_mem_addr;
+logic [3:0] memwb_mem_wmask, memwb_mem_rmask;
+logic [31:0] memwb_mem_wdata;
+logic [31:0] exmem_rs1_rdata, exmem_rs2_rdata, memwb_rs1_rdata, memwb_rs2_rdata;
+logic pause_pipeline;
+assign pause_pipeline = dut.d.pause_pipeline;
+always_ff @(posedge itf.clk) begin
+      if (~pause_pipeline) begin
+            exmem_rs1_rdata <= dut.d.rs1mux_out;
+            exmem_rs2_rdata <= dut.d.rs2mux_out;
+      end
+      if (~pause_pipeline) begin
+            memwb_pc_wdata <= (dut.d.branch_go)? dut.d.pcmux_out : (dut.d.pipereg_idex_pc_out);
+            memwb_rs1_rdata <= exmem_rs1_rdata;
+            memwb_rs2_rdata <= exmem_rs2_rdata;
+            memwb_mem_addr <= dut.dcache_address;
+            memwb_mem_rmask <= (dut.d.pipereg_exmem_ctrl_word.dcache_read)? dut.dcache_mbe : '0;
+            memwb_mem_wmask <= (dut.d.pipereg_exmem_ctrl_word.dcache_write)? dut.dcache_mbe : '0;
+            memwb_mem_wdata <= dut.dcache_wdata;
+      end
+end
+
+always_comb begin // rvfi signals
+//     logic halt;
+      if (dut.d.pipereg_memwb_idecode.opcode) begin
+            rvfi.commit = (~pause_pipeline);
+      end else rvfi.commit = 1'b0;
+//     logic [63:0] order;
+      rvfi.inst = {dut.d.pipereg_memwb_idecode.u_imm[31:12], dut.d.pipereg_memwb_idecode.rd, dut.d.pipereg_memwb_idecode.opcode};
+      rvfi.trap = 1'b0;
+      rvfi.rs1_addr = dut.d.pipereg_memwb_idecode.rs1;
+      rvfi.rs2_addr = dut.d.pipereg_memwb_idecode.rs2;
+      rvfi.rs1_rdata = memwb_rs1_rdata;
+      rvfi.rs2_rdata = memwb_rs2_rdata;
+      rvfi.load_regfile = dut.d.pipereg_memwb_ctrl_word.load_regfile;
+      rvfi.rd_addr = dut.d.pipereg_memwb_idecode.rd;
+      rvfi.rd_wdata = dut.d.regfilemux_out;
+      rvfi.pc_rdata = dut.d.pipereg_memwb_pc_out;
+      rvfi.pc_wdata = memwb_pc_wdata;
+      rvfi.mem_addr = memwb_mem_addr;
+      rvfi.mem_rmask = memwb_mem_rmask;
+      rvfi.mem_wmask = memwb_mem_wmask;
+      rvfi.mem_rdata = dut.d.pipereg_memwb_mdr_out;
+      rvfi.mem_wdata = memwb_mem_wdata;
+
+//     logic [15:0] errcode;
+end
+
 /**************************** End RVFIMON signals ****************************/
 
 /********************* Assign Shadow Memory Signals Here *********************/
