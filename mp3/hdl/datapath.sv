@@ -93,35 +93,32 @@ logic icache_resp_2, dcache_resp_2;     // 1 if cache has responded to the curre
 forwarding_itf::instruction_input fitf;
 
 
-// memory forwarding / hazard detection solution
-always_comb begin
+// memory forwarding / hazard detection solution.
+//
+// comparisons are performed between ifid / idex
+// because the pause pipeline signal must be set
+// high while the load instruction reaches the
+// mem stage. Performing the comparisons between the
+// idex / exmem stages would set the signal high
+// a clock cycle late.
+always_ff @ (posedge clk) begin
 
-      if ((pipereg_exmem_idecode.opcode == rv32i_types::op_load) &
-               (pipereg_exmem_idecode.rs1 != 5'd0) &
-               (pipereg_idex_idecode.rs1 == pipereg_exmem_idecode.rd))
+      if (mem_forward_pause_pipeline == 1'b1)
+            mem_forward_pause_pipeline = 1'b0;
+      else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
+               (pipereg_ifid_idecode.rs1 != 5'd0) &
+               (pipereg_ifid_idecode.rs1 == pipereg_idex_idecode.rd))
             mem_forward_pause_pipeline = 1'b1;
-      else if ((pipereg_exmem_idecode.opcode == rv32i_types::op_load) &
-               (pipereg_idex_idecode.rs2 == pipereg_exmem_idecode.rd) &
-               (pipereg_idex_idecode.rs2 != 5'd0) &
-               ((pipereg_idex_idecode.opcode == rv32i_types::op_br) |
-                (pipereg_idex_idecode.opcode == rv32i_types::op_store) |
-                (pipereg_idex_idecode.opcode == rv32i_types::op_reg)))
+      else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
+               (pipereg_ifid_idecode.rs2 == pipereg_idex_idecode.rd) &
+               (pipereg_ifid_idecode.rs2 != 5'd0) &
+               ((pipereg_ifid_idecode.opcode == rv32i_types::op_br) |
+                (pipereg_ifid_idecode.opcode == rv32i_types::op_store) |
+                (pipereg_ifid_idecode.opcode == rv32i_types::op_reg)))
             mem_forward_pause_pipeline = 1'b1;
       else
             mem_forward_pause_pipeline = 1'b0;
 
-end
-
-logic [1:0] mem_forward_timer;
-
-always_ff @ (posedge clk or posedge rst) begin
-      if(rst)
-            mem_forward_timer <= 4'd0;
-
-      else begin
-            mem_forward_timer[0] <= mem_forward_pause_pipeline;
-            mem_forward_timer[1] <= mem_forward_pause_pipeline;
-      end
 end
 
 always_comb begin
@@ -140,7 +137,7 @@ always_comb begin
       // calcualte if we need to pause (if we're waiting on data from memory)
       if (icache_read & (~icache_resp)) pause_pipeline = 1'b1; // waiting on icache
       else if ((dcache_read | dcache_write) & (~dcache_resp))  pause_pipeline = 1'b1; // waiting on dcache
-      else if (mem_forward_pause_pipeline & (~mem_forward_timer[0])) pause_pipeline = 1'b1;  //pause for memory forwarding
+      else if (mem_forward_pause_pipeline) pause_pipeline = 1'b1;  //pause for memory forwarding
       else pause_pipeline = 1'b0;
 
 end
@@ -565,6 +562,11 @@ end
 // mux typdef declarations all found
 // in rv32i_mux_types.sv, including rs1mux,
 // rs2mux, dcachemux
+//
+// muxes cannot be organized by stages because
+// we're using blocking assignments, and many muxes
+// rely on the output of muxes before it, and these
+// assignments don't align with the pipeline stages.
 
 always_comb begin : MUXES
       // Set defaults
@@ -575,21 +577,15 @@ always_comb begin : MUXES
       cmpmux_out = 32'bx;
       dcachemux_out = 32'bx;
 
-      // IF - Instruction fetch
+      // input into the pc module, dependent
+      // on the branch_go signal
       unique case (branch_go)
             1'b0: pcmux_out = pc_module_out + 32'd4;
             1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
             default: pcmux_out = pc_module_out + 32'd4;
       endcase
 
-      // ID - Instruction Decode
-      // none
-
-
-      // EX - Execute
-
-      // TODO: Implement dcache read / write logic
-      // MEM - Memory
+      // forwarding mux for the mem stage
       unique case (dcachemux_forwarding_sel)
             dcachemux::rs2_out: dcachemux_out = mem_wdata;
             dcachemux::regfilemux_out: dcachemux_out = regfilemux_out;
@@ -597,7 +593,7 @@ always_comb begin : MUXES
       endcase
       //dcachemux_out = mem_wdata;
 
-      // WB - Writeback
+      // regfile mux
       unique case (pipereg_memwb_ctrl_word.regfilemux_sel)
             regfilemux::alu_out: regfilemux_out = pipe_memwb_alu_out;
             regfilemux::br_en: regfilemux_out = pipereg_memwb_br_en;
@@ -607,8 +603,7 @@ always_comb begin : MUXES
             //default: `BAD_MUX_SEL;
       endcase
 
-
-      // TODO: Complete forwarding
+      // rs1 forwarding mux
       unique case (rs1mux_forwarding_sel)
             rs1mux::rs1_out: rs1mux_out = pipereg_idex_rs1_out;
             rs1mux::exmem_alu_out: rs1mux_out = pipe_exmem_alu_out;
@@ -620,7 +615,7 @@ always_comb begin : MUXES
       endcase
       //rs1mux_out = pipereg_idex_rs1_out;
 
-      // TODO: Complete forwarding
+      // rs2 forwarding mux
       unique case (rs2mux_forwarding_sel)
             rs2mux::rs2_out: rs2mux_out = pipereg_idex_rs2_out;
             rs2mux::exmem_alu_out: rs2mux_out = pipe_exmem_alu_out;
@@ -632,12 +627,14 @@ always_comb begin : MUXES
       endcase
       //rs2mux_out = pipereg_idex_rs2_out;
 
+      // alumux 1 select
       unique case (pipereg_idex_ctrl_word.alumux1_sel)
             alumux::rs1_out: alumux1_out = rs1mux_out;
             alumux::pc_out: alumux1_out = pipereg_idex_pc_out;
             //default: `BAD_MUX_SEL;
       endcase
 
+      // alu mux 2
       unique case (pipereg_idex_ctrl_word.alumux2_sel)
             alumux::rs2_out: alumux2_out = rs2mux_out;
             alumux::i_imm: alumux2_out = pipereg_idex_idecode.i_imm;
@@ -648,6 +645,7 @@ always_comb begin : MUXES
             //default: `BAD_MUX_SEL;
       endcase
 
+      // compare mux
       unique case (pipereg_idex_ctrl_word.cmpmux_sel)
             cmpmux::rs2_out: cmpmux_out = rs2mux_out;
             cmpmux::i_imm: cmpmux_out = pipereg_idex_idecode.i_imm;
