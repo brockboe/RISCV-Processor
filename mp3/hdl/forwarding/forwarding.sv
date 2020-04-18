@@ -39,6 +39,11 @@ function rs1mux::rs1mux_sel_t rs1_forward (forwarding_itf::instruction_input itf
       sltu = (op_exmem == rv32i_types::op_reg) & (itf.exmem_inst_decode.funct3 == rv32i_types::sltu);
 
 
+      //special case for x0
+      if(itf.idex_inst_decode.rs1 == 4'd0)
+            return rs1mux::rs1_out;
+
+
       // mem => ex hazards
       if ((op_exmem == rv32i_types::op_lui) & rd_exmem_match)
             return rs1mux::exmem_u_imm;
@@ -101,6 +106,11 @@ function rs2mux::rs2mux_sel_t rs2_forward (forwarding_itf::instruction_input itf
       sltu = (op_exmem == rv32i_types::op_reg) & (itf.exmem_inst_decode.funct3 == rv32i_types::sltu);
 
 
+      // special case for x0
+      if(itf.idex_inst_decode.rs2 == 5'd0)
+            return rs2mux::rs2_out;
+
+
       // mem => ex hazards
       if ((op_exmem == rv32i_types::op_lui) & rd_exmem_match)
             return rs2mux::exmem_u_imm;
@@ -145,7 +155,11 @@ function dcachemux::dcachemux_sel_t dcache_forward (forwarding_itf::instruction_
       rd_match = (itf.memwb_inst_decode.rd == itf.exmem_inst_decode.rs2);
 
       if (rd_match & (
-            (itf.memwb_inst_decode.opcode == rv32i_types::op_store)
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_lui) |
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_auipc) |
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_load) |
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_imm) |
+            (itf.memwb_inst_decode.opcode == rv32i_types::op_reg)
             ))
             return dcachemux::regfilemux_out;
 
