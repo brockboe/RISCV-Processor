@@ -86,52 +86,15 @@ logic [31:0] mem_rdata;       //parsed memory input, for non-word-aligned stores
 logic [31:0] mem_wdata;       //parsed memory output, for non-word-aligned writes
 logic [3:0] mem_mbe;           //parsed memory byte enable, for non-word aligned writes
 logic mem_forward_pause_pipeline;   // pause pipeline if we have to fowarward data from the mem stage
-logic [31:0] mem_rdata_temp;   // temporary storage of mem_rdata, see mem stage below
 
 logic icache_resp_2, dcache_resp_2;     // 1 if cache has responded to the current inst, 0 if not.
-forwarding_itf::instruction_input fitf;
 
-
-// memory forwarding / hazard detection solution.
-//
-// comparisons are performed between ifid / idex
-// because the pause pipeline signal must be set
-// high while the load instruction reaches the
-// mem stage. Performing the comparisons between the
-// idex / exmem stages would set the signal high
-// a clock cycle late.
-always_ff @ (posedge clk) begin
-
-      if(rst) begin
-            mem_forward_pause_pipeline <= 1'b0;
-      end else begin
-            if ((mem_forward_pause_pipeline == 1'b1) &
-                ~((dcache_read | dcache_write) & (~dcache_resp)) &
-                ~(icache_read & (~icache_resp)))
-                  mem_forward_pause_pipeline <= 1'b0;
-            else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
-                     (pipereg_ifid_idecode.rs1 != 5'd0) &
-                     (pipereg_ifid_idecode.rs1 == pipereg_idex_idecode.rd))
-                  mem_forward_pause_pipeline <= 1'b1;
-            else if ((pipereg_idex_idecode.opcode == rv32i_types::op_load) &
-                     (pipereg_ifid_idecode.rs2 == pipereg_idex_idecode.rd) &
-                     (pipereg_ifid_idecode.rs2 != 5'd0) &
-                     ((pipereg_ifid_idecode.opcode == rv32i_types::op_br) |
-                      (pipereg_ifid_idecode.opcode == rv32i_types::op_store) |
-                      (pipereg_ifid_idecode.opcode == rv32i_types::op_reg)))
-                  mem_forward_pause_pipeline <= 1'b1;
-            else
-                  mem_forward_pause_pipeline <= mem_forward_pause_pipeline;
-      end
-end
+regfilemux::regfilemux_sel_t rs1_fwd_sel;
+regfilemux::regfilemux_sel_t rs2_fwd_sel;
+dcachemux::dcachemux_sel_t dcachemux_forwarding_sel;
+logic hazard_stall;
 
 always_comb begin
-
-      // assign forwarding itf signals
-      fitf.idex_inst_decode =  pipereg_idex_idecode;
-      fitf.exmem_inst_decode = pipereg_exmem_idecode;
-      fitf.memwb_inst_decode = pipereg_memwb_idecode;
-
       // calculate whether or not we need to branch
       branch_go = pipereg_exmem_br_en_out[0] &
                   ((pipereg_exmem_idecode.opcode == op_br) |
@@ -141,9 +104,7 @@ always_comb begin
       // calcualte if we need to pause (if we're waiting on data from memory)
       if (icache_read & (~icache_resp)) pause_pipeline = 1'b1; // waiting on icache
       else if ((dcache_read | dcache_write) & (~dcache_resp))  pause_pipeline = 1'b1; // waiting on dcache
-      else if (mem_forward_pause_pipeline) pause_pipeline = 1'b1;  //pause for memory forwarding
       else pause_pipeline = 1'b0;
-
 end
 
 always_ff @( posedge clk ) begin
@@ -188,7 +149,7 @@ endfunction
 
 // IF / ID Registers
 assign pipe_rst_ifid = rst | (branch_go & (~pause_pipeline));
-assign pipe_load_ifid = ~pause_pipeline;
+assign pipe_load_ifid = ~(pause_pipeline | hazard_stall);
 // holds instruction data for current instruction
 register #(.width(192))
 pipe_ifid_idecode (
@@ -211,7 +172,7 @@ pipe_ifid_pc (
 
 // ID / EX Registers
 assign pipe_rst_idex = rst | (branch_go & (~pause_pipeline));
-assign pipe_load_idex = ~pause_pipeline;
+assign pipe_load_idex = ~(pause_pipeline | hazard_stall);
 // holds the decoded instruction
 register #(.width(192))
 pipe_idex_idecode (
@@ -260,7 +221,7 @@ pipe_idex_rs2_out (
 
 
 // EX/MEM Registers
-assign pipe_rst_exmem = rst | (branch_go & (~pause_pipeline));
+assign pipe_rst_exmem = rst | (branch_go & (~pause_pipeline)) | (hazard_stall & (~pause_pipeline));
 assign pipe_load_exmem = ~pause_pipeline;
 //rs2 out
 register #(.width(32))
@@ -385,7 +346,7 @@ pipe_memwb_pc (
 
 //********************************** Pipeline Stage Modules
 
-assign icache_read = ~icache_resp_2; // (CP1)
+assign icache_read = ~icache_resp_2;
 assign icache_address = pc_module_out;
 
 // IF - instruction fetch
@@ -393,7 +354,7 @@ pc_register #(.width(32))
 pc (
       .clk(clk),
       .rst(rst),
-      .load(~pause_pipeline),                  //don't always load the pc
+      .load(~(pause_pipeline | hazard_stall)),                  //don't always load the pc
       .in(pcmux_out),
       .out(pc_module_out)
 );
@@ -402,7 +363,7 @@ pc (
 regfile regfile(
       .clk(clk),
       .rst(rst),
-      .load(pipereg_memwb_ctrl_word.load_regfile),
+      .load(pipereg_memwb_ctrl_word.load_regfile & pipe_load_memwb),
       .in((pipereg_memwb_idecode.rd == 5'd0) ? 32'd0 : regfilemux_out),
       .src_a(pipereg_ifid_idecode.rs1),
       .src_b(pipereg_ifid_idecode.rs2),
@@ -437,15 +398,6 @@ assign dcache_write = pipereg_exmem_ctrl_word.dcache_write & (~dcache_resp_2);
 assign dcache_wdata = dcachemux_out;
 assign dcache_address = {pipe_exmem_alu_out[31:2], 2'd0};
 assign dcache_mbe = mem_mbe;
-
-register #(.width(32))
-mem_rdata_temp_storage (
-      .clk(clk),
-      .rst(rst),
-      .load(1'b1),
-      .in(mem_rdata),
-      .out(mem_rdata_temp)
-);
 
 // WB - Writeback
 // none
@@ -545,15 +497,51 @@ end
 
 //********************************** Hazard Detection / Forwarding
 
-
-rs1mux::rs1mux_sel_t rs1mux_forwarding_sel;
-rs2mux::rs2mux_sel_t rs2mux_forwarding_sel;
-dcachemux::dcachemux_sel_t dcachemux_forwarding_sel;
-
 always_comb begin
-	rs1mux_forwarding_sel = rs1_forward(fitf);
-	rs2mux_forwarding_sel = rs2_forward(fitf);
-	dcachemux_forwarding_sel = dcache_forward(fitf);
+      // defaults:
+      rs1_fwd_sel = regfilemux::pass;
+      rs2_fwd_sel = regfilemux::pass;
+      dcachemux_forwarding_sel = dcachemux::rs2_out;
+      hazard_stall = 1'b0;
+// MEMWB - EX
+      if (pipereg_memwb_ctrl_word.load_regfile) begin
+            if (pipereg_memwb_idecode.rd == pipereg_idex_idecode.rs1 && pipereg_memwb_idecode.rd != 5'd0) begin
+                  rs1_fwd_sel = regfilemux::regfilemux_out;
+            end
+            if (pipereg_memwb_idecode.rd == pipereg_idex_idecode.rs2 && pipereg_memwb_idecode.rd != 5'd0) begin
+                  rs2_fwd_sel = regfilemux::regfilemux_out;
+            end
+      end
+// MEMWB - MEM
+      if (pipereg_memwb_ctrl_word.load_regfile) begin
+            if (pipereg_memwb_idecode.rd == pipereg_exmem_idecode.rs2 && pipereg_memwb_idecode.rd != 5'd0) begin
+                  dcachemux_forwarding_sel = dcachemux::regfilemux_out;
+            end
+      end
+// EXMEM - EX: Highest priority, will overwrite previous forwarding_mux_sel.
+      if (pipereg_exmem_ctrl_word.load_regfile && (pipereg_exmem_idecode.opcode != op_load)) begin
+            if (pipereg_exmem_idecode.rd == pipereg_idex_idecode.rs1 && pipereg_exmem_idecode.rd != 5'd0) begin
+                  rs1_fwd_sel = pipereg_exmem_ctrl_word.regfilemux_sel;
+            end
+            if (pipereg_exmem_idecode.rd == pipereg_idex_idecode.rs2 && pipereg_exmem_idecode.rd != 5'd0) begin
+                  rs2_fwd_sel = pipereg_exmem_ctrl_word.regfilemux_sel;
+            end
+      end
+
+      if (pipereg_exmem_idecode.opcode == op_load) begin
+            if (pipereg_idex_idecode.rs1 == pipereg_exmem_idecode.rd && pipereg_exmem_idecode.rd != 5'd0) begin
+                  case(pipereg_idex_idecode.opcode)
+                        op_jalr, op_br, op_load, op_store, op_imm, op_reg, op_csr: hazard_stall = 1'b1; // stall & reset
+                        default: ;
+                  endcase
+            end
+            if (pipereg_idex_idecode.rs2 == pipereg_exmem_idecode.rd && pipereg_exmem_idecode.rd != 5'd0) begin
+                  case(pipereg_idex_idecode.opcode)
+                        op_br, op_reg: hazard_stall = 1'b1; // stall & reset
+                        default: ;
+                  endcase
+            end
+      end
 end
 
 //**********************************************************
@@ -612,28 +600,24 @@ always_comb begin : MUXES
       endcase
 
       // rs1 forwarding mux
-      unique case (rs1mux_forwarding_sel)
-            rs1mux::rs1_out: rs1mux_out = pipereg_idex_rs1_out;
-            rs1mux::exmem_alu_out: rs1mux_out = pipe_exmem_alu_out;
-            rs1mux::exmem_br_en: rs1mux_out = pipereg_exmem_br_en_out;
-            rs1mux::regfilemux_out: rs1mux_out = regfilemux_out;
-            rs1mux::mem_rdata: rs1mux_out = mem_rdata_temp;
-            rs1mux::exmem_u_imm: rs1mux_out = pipereg_exmem_idecode.u_imm;
+      unique case (rs1_fwd_sel)
+            regfilemux::alu_out: rs1mux_out = pipe_exmem_alu_out;
+            regfilemux::br_en: rs1mux_out = pipereg_exmem_br_en_out;
+            regfilemux::u_imm: rs1mux_out = pipereg_exmem_idecode.u_imm;
+            regfilemux::pc_plus4: rs1mux_out = pipereg_exmem_pc_out + 4;
+            regfilemux::regfilemux_out: rs1mux_out = regfilemux_out;
             default: rs1mux_out = pipereg_idex_rs1_out;
       endcase
-      //rs1mux_out = pipereg_idex_rs1_out;
 
       // rs2 forwarding mux
-      unique case (rs2mux_forwarding_sel)
-            rs2mux::rs2_out: rs2mux_out = pipereg_idex_rs2_out;
-            rs2mux::exmem_alu_out: rs2mux_out = pipe_exmem_alu_out;
-            rs2mux::exmem_br_en: rs2mux_out = pipereg_exmem_br_en_out;
-            rs2mux::regfilemux_out: rs2mux_out = regfilemux_out;
-            rs2mux::mem_rdata: rs2mux_out = mem_rdata_temp;
-            rs2mux::exmem_u_imm: rs2mux_out = pipereg_exmem_idecode.u_imm;
+      unique case (rs2_fwd_sel)
+            regfilemux::alu_out: rs2mux_out = pipe_exmem_alu_out;
+            regfilemux::br_en: rs2mux_out = pipereg_exmem_br_en_out;
+            regfilemux::u_imm: rs2mux_out = pipereg_exmem_idecode.u_imm;
+            regfilemux::pc_plus4: rs2mux_out = pipereg_exmem_pc_out + 4;
+            regfilemux::regfilemux_out: rs2mux_out = regfilemux_out;
             default: rs2mux_out = pipereg_idex_rs2_out;
       endcase
-      //rs2mux_out = pipereg_idex_rs2_out;
 
       // alumux 1 select
       unique case (pipereg_idex_ctrl_word.alumux1_sel)

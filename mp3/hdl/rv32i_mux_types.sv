@@ -82,7 +82,10 @@ typedef enum bit [2:0] {
       br_en = 3'b001,
       u_imm = 3'b010,
       MDRreg_out = 3'b011,
-      pc_plus4 = 3'b100
+      pc_plus4 = 3'b100,
+      // The following signals are used in forwarding only
+      regfilemux_out = 3'b101,
+      pass = 3'b110
 } regfilemux_sel_t;
 endpackage
 
