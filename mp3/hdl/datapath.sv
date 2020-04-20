@@ -402,7 +402,7 @@ pc (
 regfile regfile(
       .clk(clk),
       .rst(rst),
-      .load(pipereg_memwb_ctrl_word.load_regfile),
+      .load(pipereg_memwb_ctrl_word.load_regfile & pipe_load_memwb),
       .in((pipereg_memwb_idecode.rd == 5'd0) ? 32'd0 : regfilemux_out),
       .src_a(pipereg_ifid_idecode.rs1),
       .src_b(pipereg_ifid_idecode.rs2),

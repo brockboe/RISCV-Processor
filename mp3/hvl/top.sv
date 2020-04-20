@@ -27,7 +27,7 @@ assign rvfi.halt = (rvfi.pc_wdata == rvfi.pc_rdata) && rvfi.commit;      // Set 
 initial rvfi.order = 0;
 always @(posedge itf.clk iff rvfi.commit) rvfi.order <= rvfi.order + 1; // Modify for OoO
 
-logic [31:0] exmem_pc_wdata, memwb_pc_wdata;
+logic [31:0] memwb_pc_wdata;
 logic [31:0] memwb_mem_addr;
 logic [3:0] memwb_mem_wmask, memwb_mem_rmask;
 logic [31:0] memwb_mem_wdata;
