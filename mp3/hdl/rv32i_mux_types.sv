@@ -77,12 +77,12 @@ typedef enum bit [2:0] {
 endpackage
 
 package regfilemux;
-typedef enum bit [2:0] {
-      alu_out = 3'b000,
-      br_en = 3'b001,
-      u_imm = 3'b010,
-      MDRreg_out = 3'b011,
-      pc_plus4 = 3'b100
+typedef enum bit [3:0] {
+      alu_out = 4'b0000,
+      br_en = 4'b0001,
+      u_imm = 4'b0010,
+      MDRreg_out = 4'b0011,
+      pc_plus4 = 4'b0100
 } regfilemux_sel_t;
 endpackage
 

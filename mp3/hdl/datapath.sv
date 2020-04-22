@@ -91,6 +91,18 @@ logic [31:0] mem_rdata_temp;   // temporary storage of mem_rdata, see mem stage 
 logic icache_resp_2, dcache_resp_2;     // 1 if cache has responded to the current inst, 0 if not.
 forwarding_itf::instruction_input fitf;
 
+//multiplier signals
+logic [63:0] multiplier_out;
+logic multiplier_done;
+logic run_multiplier;
+
+//divider signals
+logic [31:0] quotient_out;
+logic [31:0] remainder_out;
+logic divider_done;
+logic run_divider;
+
+logic [31:0] aluresmux_out;
 
 // memory forwarding / hazard detection solution.
 //
@@ -127,21 +139,37 @@ end
 
 always_comb begin
 
+      run_divider = (pipereg_idex_idecode.opcode == rv32i_types::op_reg)
+                    & (pipereg_idex_idecode.funct7 == 7'b0000001)
+                    & ((pipereg_idex_idecode.funct3 == div) |
+                      (pipereg_idex_idecode.funct3 == divu) |
+                      (pipereg_idex_idecode.funct3 == rem) |
+                      (pipereg_idex_idecode.funct3 == remu));
+
+      run_multiplier = (pipereg_idex_idecode.opcode == rv32i_types::op_reg)
+                       & (pipereg_idex_idecode.funct7 == 7'b0000001)
+                       & ((pipereg_idex_idecode.funct3 == mul) |
+                          (pipereg_idex_idecode.funct3 == mulh) |
+                          (pipereg_idex_idecode.funct3 == mulhsu) |
+                          (pipereg_idex_idecode.funct3 == mulhu));
+
       // assign forwarding itf signals
       fitf.idex_inst_decode =  pipereg_idex_idecode;
       fitf.exmem_inst_decode = pipereg_exmem_idecode;
       fitf.memwb_inst_decode = pipereg_memwb_idecode;
 
       // calculate whether or not we need to branch
-      branch_go = pipereg_exmem_br_en_out[0] &
-                  ((pipereg_exmem_idecode.opcode == op_br) |
+      branch_go = (pipereg_exmem_br_en_out[0] &
+                  (pipereg_exmem_idecode.opcode == op_br)) |
                   (pipereg_exmem_idecode.opcode == op_jal) |
-                  (pipereg_exmem_idecode.opcode == op_jalr));
+                  (pipereg_exmem_idecode.opcode == op_jalr);
 
       // calcualte if we need to pause (if we're waiting on data from memory)
       if (icache_read & (~icache_resp)) pause_pipeline = 1'b1; // waiting on icache
       else if ((dcache_read | dcache_write) & (~dcache_resp))  pause_pipeline = 1'b1; // waiting on dcache
       else if (mem_forward_pause_pipeline) pause_pipeline = 1'b1;  //pause for memory forwarding
+      else if (run_divider & ~divider_done) pause_pipeline = 1'b1; // pause to wait for division unit
+      else if (run_multiplier & ~multiplier_done) pause_pipeline = 1'b1; // pause to wait for multiplication unit
       else pause_pipeline = 1'b0;
 
 end
@@ -277,7 +305,7 @@ pipe_exmem_alu (
       .clk(clk),
       .rst(pipe_rst_exmem),
       .load(pipe_load_exmem),
-      .in(alu_module_out),
+      .in(aluresmux_out),
       .out(pipe_exmem_alu_out)
 );
 // instruction data
@@ -430,6 +458,28 @@ cmp_module cmp (
       .result(br_en_out)
 );
 
+multiplier multiplier (
+      .clk(clk),
+      .a(rs1mux_out),
+      .b(rs2mux_out),
+      .start(run_multiplier),
+      .sign(muldiv_funct3_t ' (pipereg_idex_idecode.funct3)),
+      .product(multiplier_out),
+      .done(multiplier_done)
+);
+
+divider divider (
+      .clk(clk),
+      .rst(rst),
+      .sign(muldiv_funct3_t ' (pipereg_idex_idecode.funct3)),
+      .start(run_divider),
+      .numerator(rs1mux_out),
+      .denominator(rs2mux_out),
+      .quotient(quotient_out),
+      .remainder(remainder_out),
+      .done(divider_done)
+);
+
 
 // MEM - Memory
 assign dcache_read = pipereg_exmem_ctrl_word.dcache_read & (~dcache_resp_2);
@@ -576,6 +626,13 @@ end
 // rely on the output of muxes before it, and these
 // assignments don't align with the pipeline stages.
 
+muldiv_funct3_t idex_funct3;
+rv32i_opcode idex_opcode;
+logic [6:0] idex_funct7;
+assign idex_funct3 = muldiv_funct3_t ' (pipereg_idex_idecode.funct3);
+assign idex_opcode = pipereg_idex_idecode.opcode;
+assign idex_funct7 = pipereg_idex_idecode.funct7;
+
 always_comb begin : MUXES
       // Set defaults
       pcmux_out = 32'bx;
@@ -593,14 +650,6 @@ always_comb begin : MUXES
             default: pcmux_out = pc_module_out + 32'd4;
       endcase
 
-      // forwarding mux for the mem stage
-      unique case (dcachemux_forwarding_sel)
-            dcachemux::rs2_out: dcachemux_out = mem_wdata;
-            dcachemux::regfilemux_out: dcachemux_out = regfilemux_out;
-            default: dcachemux_out = mem_wdata;
-      endcase
-      //dcachemux_out = mem_wdata;
-
       // regfile mux
       unique case (pipereg_memwb_ctrl_word.regfilemux_sel)
             regfilemux::alu_out: regfilemux_out = pipe_memwb_alu_out;
@@ -610,6 +659,14 @@ always_comb begin : MUXES
             regfilemux::pc_plus4: regfilemux_out = pipereg_memwb_pc_out + 4;
             //default: `BAD_MUX_SEL;
       endcase
+
+      // forwarding mux for the mem stage
+      unique case (dcachemux_forwarding_sel)
+            dcachemux::rs2_out: dcachemux_out = mem_wdata;
+            dcachemux::regfilemux_out: dcachemux_out = regfilemux_out;
+            default: dcachemux_out = mem_wdata;
+      endcase
+      //dcachemux_out = mem_wdata;
 
       // rs1 forwarding mux
       unique case (rs1mux_forwarding_sel)
@@ -658,6 +715,19 @@ always_comb begin : MUXES
             cmpmux::rs2_out: cmpmux_out = rs2mux_out;
             cmpmux::i_imm: cmpmux_out = pipereg_idex_idecode.i_imm;
             //default: `BAD_MUX_SEL;
+      endcase
+
+      // alu result mux output
+      unique case ({idex_opcode, idex_funct3, idex_funct7})
+            {op_reg, mul, 7'b0000001}: aluresmux_out = multiplier_out[31:0];
+            {op_reg, mulh, 7'b0000001}: aluresmux_out = multiplier_out[63:32];
+            {op_reg, mulhsu, 7'b0000001}: aluresmux_out = multiplier_out[63:32];
+            {op_reg, mulhu, 7'b0000001}: aluresmux_out = multiplier_out[63:32];
+            {op_reg, div, 7'b0000001}: aluresmux_out = quotient_out;
+            {op_reg, divu, 7'b0000001}: aluresmux_out = quotient_out;
+            {op_reg, rem, 7'b0000001}: aluresmux_out = remainder_out;
+            {op_reg, remu, 7'b0000001}: aluresmux_out = remainder_out;
+            default: aluresmux_out = alu_module_out;
       endcase
 
 end

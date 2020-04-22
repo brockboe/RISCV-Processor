@@ -1,3 +1,5 @@
+import dcachemux::*;
+
 module mp3_tb;
 `timescale 1ns/10ps
 
@@ -31,6 +33,7 @@ logic [31:0] memwb_pc_wdata;
 logic [31:0] memwb_mem_addr;
 logic [3:0] memwb_mem_wmask, memwb_mem_rmask;
 logic [31:0] memwb_mem_wdata;
+logic [31:0] memwb_mem_rdata;
 logic [31:0] exmem_rs1_rdata, exmem_rs2_rdata, memwb_rs1_rdata, memwb_rs2_rdata;
 logic pause_pipeline;
 assign pause_pipeline = dut.d.pause_pipeline;
@@ -42,11 +45,16 @@ always_ff @(posedge itf.clk) begin
       if (~pause_pipeline) begin
             memwb_pc_wdata <= (dut.d.branch_go)? dut.d.pcmux_out : (dut.d.pipereg_idex_pc_out);
             memwb_rs1_rdata <= exmem_rs1_rdata;
-            memwb_rs2_rdata <= exmem_rs2_rdata;
+            //memwb_rs2_rdata <= exmem_rs2_rdata;
+            unique case(dut.d.dcachemux_forwarding_sel)
+                  dcachemux::rs2_out: memwb_rs2_rdata <= dut.d.pipereg_exmem_rs2_out;
+                  dcachemux::regfilemux_out: memwb_rs2_rdata <= dut.d.dcachemux_out;
+            endcase
             memwb_mem_addr <= dut.dcache_address;
             memwb_mem_rmask <= (dut.d.pipereg_exmem_ctrl_word.dcache_read)? dut.dcache_mbe : '0;
             memwb_mem_wmask <= (dut.d.pipereg_exmem_ctrl_word.dcache_write)? dut.dcache_mbe : '0;
             memwb_mem_wdata <= dut.dcache_wdata;
+            memwb_mem_rdata <= dut.dcache_rdata;
       end
 end
 
@@ -70,7 +78,8 @@ always_comb begin // rvfi signals
       rvfi.mem_addr = memwb_mem_addr;
       rvfi.mem_rmask = memwb_mem_rmask;
       rvfi.mem_wmask = memwb_mem_wmask;
-      rvfi.mem_rdata = dut.d.pipereg_memwb_mdr_out;
+      //rvfi.mem_rdata = dut.d.pipereg_memwb_mdr_out;
+      rvfi.mem_rdata = memwb_mem_rdata;
       rvfi.mem_wdata = memwb_mem_wdata;
 
 //     logic [15:0] errcode;

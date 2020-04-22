@@ -1,4 +1,5 @@
 // shift_sub-subtract divider
+import rv32i_types::*;
 
 module divider_unsigned
 (
@@ -88,6 +89,9 @@ always_comb begin
 
             d: begin
                   done <= 1'b1;
+                  Q <= 32'b0;
+                  R <= 32'b0;
+                  next_counter <= 32'd31;
             end
       endcase
 end
@@ -104,7 +108,7 @@ module divider (
       input logic clk,
       input logic rst,
       // signals are self-explainatory
-      input logic sign,
+      input muldiv_funct3_t sign,
       input logic start,
       input logic [31:0] numerator,
       input logic [31:0] denominator,
@@ -132,18 +136,42 @@ assign neg_q = numerator[31] ^ denominator[31];
 assign neg_r = numerator[31];
 
 always_comb begin
-      if(~sign) begin
-            N = numerator;
-            D = denominator;
-            quotient = Q;
-            remainder = R;
-      end else begin
-            N = numerator[31] ? (~numerator) + 32'd1 : numerator;
-            D = denominator[31] ? (~denominator) + 32'd1 : denominator;
-            quotient = neg_q ? (~Q) + 32'd1 : Q;
-            remainder = neg_r ? (~R) + 32'd1 : R;
-      end
+      unique case (sign)
+            div: begin
+                  N = numerator[31] ? (~numerator) + 32'd1 : numerator;
+                  D = denominator[31] ? (~denominator) + 32'd1 : denominator;
+                  quotient = neg_q ? (~Q) + 32'd1 : Q;
+                  remainder = neg_r ? (~R) + 32'd1 : R;
+            end
 
+            divu: begin
+                  N = numerator;
+                  D = denominator;
+                  quotient = Q;
+                  remainder = R;
+            end
+
+            rem: begin
+                  N = numerator[31] ? (~numerator) + 32'd1 : numerator;
+                  D = denominator[31] ? (~denominator) + 32'd1 : denominator;
+                  quotient = neg_q ? (~Q) + 32'd1 : Q;
+                  remainder = neg_r ? (~R) + 32'd1 : R;
+            end
+
+            remu: begin
+                  N = numerator;
+                  D = denominator;
+                  quotient = Q;
+                  remainder = R;
+            end
+
+            default: begin
+                  N = numerator[31] ? (~numerator) + 32'd1 : numerator;
+                  D = denominator[31] ? (~denominator) + 32'd1 : denominator;
+                  quotient = neg_q ? (~Q) + 32'd1 : Q;
+                  remainder = neg_r ? (~R) + 32'd1 : R;
+            end
+      endcase
 end
 
 endmodule
