@@ -24,7 +24,7 @@ logic [31:0] counter;
 always_ff @ (posedge clk) begin
 
       if(rst) counter <= 32'd0;
-      else if(start & (counter > 32'd4)) counter <= 32'd0;
+      else if(start & (counter > 32'd3)) counter <= 32'd0;
       else if(start) counter <= counter + 32'd1;
       else counter <= 32'd0;
 
@@ -64,7 +64,7 @@ always_ff @ (posedge clk) begin
       rl2[14] <= rl1[14];
 
       product <= (rl2[0] << 0) + (rl2[1] << 4) + (rl2[2] << 8) + (rl2[3] << 12) + (rl2[4] << 16) + (rl2[5] << 20) + (rl2[6] << 24) + (rl2[7] << 28) + (rl2[8] << 32) + (rl2[9] << 36) + (rl2[10] << 40) + (rl2[11] << 44) + (rl2[12] << 48) + (rl2[13] << 52) + (rl2[14] << 56);
-      done <= (counter == 32'd4);
+      done <= (counter == 32'd3);
 end
 endmodule
 

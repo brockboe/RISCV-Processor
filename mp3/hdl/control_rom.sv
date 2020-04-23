@@ -166,18 +166,23 @@ always_comb begin
             idex_ctrl_word.aluop = alu_ops'(funct3);
             idex_ctrl_word.cmpop = branch_funct3_t'(funct3);
 
-            case(alu_ops'(funct3))
-                slt: begin
-                    idex_ctrl_word.cmpop = blt;
-                    idex_ctrl_word.regfilemux_sel = regfilemux::br_en;
-                end
-                sltu: begin
-                    idex_ctrl_word.cmpop = bltu;
-                    idex_ctrl_word.regfilemux_sel = regfilemux::br_en;
-                end
-                sr: idex_ctrl_word.aluop = (funct7 == 7'b0100000) ? alu_sra : alu_srl;
-                default: idex_ctrl_word.aluop = alu_ops'(funct3);
-            endcase
+            if(funct7 == 7'b01) begin
+                  idex_ctrl_word.cmpop = blt;
+                  idex_ctrl_word.regfilemux_sel = regfilemux::alu_out;
+            end else begin
+                  case(alu_ops'(funct3))
+                      slt: begin
+                          idex_ctrl_word.cmpop = blt;
+                          idex_ctrl_word.regfilemux_sel = regfilemux::br_en;
+                      end
+                      sltu: begin
+                          idex_ctrl_word.cmpop = bltu;
+                          idex_ctrl_word.regfilemux_sel = regfilemux::br_en;
+                      end
+                      sr: idex_ctrl_word.aluop = (funct7 == 7'b0100000) ? alu_sra : alu_srl;
+                      default: idex_ctrl_word.aluop = alu_ops'(funct3);
+                  endcase
+            end
         end
         // op_csr   :
         default   : ;

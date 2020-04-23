@@ -87,6 +87,7 @@ logic [31:0] mem_wdata;       //parsed memory output, for non-word-aligned write
 logic [3:0] mem_mbe;           //parsed memory byte enable, for non-word aligned writes
 logic mem_forward_pause_pipeline;   // pause pipeline if we have to fowarward data from the mem stage
 logic [31:0] mem_rdata_temp;   // temporary storage of mem_rdata, see mem stage below
+logic skip_pcload_jal;        // don't update the pc when a jump instruction is propagating
 
 logic icache_resp_2, dcache_resp_2;     // 1 if cache has responded to the current inst, 0 if not.
 forwarding_itf::instruction_input fitf;
@@ -421,7 +422,7 @@ pc_register #(.width(32))
 pc (
       .clk(clk),
       .rst(rst),
-      .load(~pause_pipeline),                  //don't always load the pc
+      .load(~pause_pipeline),          //don't always load the pc
       .in(pcmux_out),
       .out(pc_module_out)
 );
