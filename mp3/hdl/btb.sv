@@ -18,7 +18,6 @@ module btb #(
 );
 logic [width-1:idx_width] w_tag, r_tag;
 logic [idx_width-1:0] w_idx, r_idx;
-rv32i_word target_out;
 logic [tag_width-1:0] tag_out;
 logic valid_out;
 

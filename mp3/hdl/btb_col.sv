@@ -1,7 +1,7 @@
 module btb_col #(
     parameter width = 32,
     parameter idx_width = 6,
-    parameter n_sets = 2 ** idx_width
+    parameter n_entry = 2 ** idx_width
 )
 (
     input clk,
@@ -10,9 +10,9 @@ module btb_col #(
     input [idx_width-1:0] r_idx,
     input [idx_width-1:0] w_idx,
     input [width-1:0] in,
-    output [width-1:0] out,
+    output [width-1:0] out
 );
-logic [width-1:0] data [n_sets-1:0] = '{default:'0};
+logic [width-1:0] data [n_entry-1:0] = '{default:'0};
 
 assign out = (read)?(load && r_idx == w_idx)?in:data[r_idx]:{width{1'bx}};
 

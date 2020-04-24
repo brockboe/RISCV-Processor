@@ -1,17 +1,17 @@
 
 module bht #(
     parameter width = 10,
-    parameter n_sets = 2 ** width,
+    parameter n_sets = 2 ** width
 )
 (
-    input clk,
-    input read,
-    input load,
-    input [width-1:0] r_idx,
-    input [width-1:0] w_idx,
-    input taken,
-    input correct, //whether or not taken input var was correct
-    output prediction
+    input logic clk,
+    input logic read,
+    input logic load,
+    input logic [width-1:0] r_idx,
+    input logic [width-1:0] w_idx,
+    input logic taken,
+    input logic correct, //whether or not taken input var was correct
+    output logic prediction
 );
 // 2-bit saturating counters
 logic [1:0] data [n_sets-1:0] = '{default: 2'b10};

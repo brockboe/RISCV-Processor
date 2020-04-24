@@ -36,6 +36,8 @@ logic [31:0] memwb_mem_wdata;
 logic [31:0] memwb_mem_rdata;
 logic [31:0] exmem_rs1_rdata, exmem_rs2_rdata, memwb_rs1_rdata, memwb_rs2_rdata;
 logic pause_pipeline;
+int correct = 0;
+
 assign pause_pipeline = dut.d.pause_pipeline;
 always_ff @(posedge itf.clk) begin
       if (~pause_pipeline) begin
@@ -43,7 +45,7 @@ always_ff @(posedge itf.clk) begin
             exmem_rs2_rdata <= dut.d.rs2mux_out;
       end
       if (~pause_pipeline) begin
-            memwb_pc_wdata <= (dut.d.branch_go)? dut.d.pcmux_out : (dut.d.pipereg_idex_pc_out);
+            memwb_pc_wdata <= (dut.d.branch_go)? dut.d.pc_in : (dut.d.pipereg_idex_pc_out);
             memwb_rs1_rdata <= exmem_rs1_rdata;
             //memwb_rs2_rdata <= exmem_rs2_rdata;
             unique case(dut.d.dcachemux_forwarding_sel)
@@ -111,6 +113,19 @@ assign itf.data_rdata = dut.dcache_rdata;
 assign itf.registers = dut.d.regfile.data;
 
 initial begin
+      $monitor(
+            "time: %0t; ", $time,
+            "dut.d.flush: %d; ", dut.d.flush, 
+            "dut.d.correct: %d; ", dut.d.correct,
+            "dut.d.branch_go: %d; ", dut.d.branch_go,
+            "dut.d.pipereg_idex_taken: %d; ", dut.d.pipereg_idex_taken,
+            "dut.d.pc_in: %d;", dut.d.pc_in,
+            "\n",
+            "dut.d.pc_module_out: %d; ", dut.d.pc_module_out,
+            "dut.d.pipereg_ifid_pc_out: %d; ", dut.d.pipereg_ifid_pc_out,
+            "dut.d.pipereg_idex_pc_out: %d; ", dut.d.pipereg_idex_pc_out,
+            "dut.d.pipereg_exmem_pc_out: %d; ", dut.d.pipereg_exmem_pc_out
+      );
       itf.rst = 1'b1;
       repeat (5) @(posedge itf.clk);
       itf.rst = 1'b0;
