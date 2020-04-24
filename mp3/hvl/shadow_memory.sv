@@ -3,10 +3,20 @@
 
 module shadow_memory(tb_itf.sm sm_itf);
 
-logic [255:0] _mem [logic [31:5]];
+logic [255:0] _mem  [logic [31:5]];
+logic [255:0] _imem [logic [31:5]];
 
 function void _new(string filepath);
     $readmemh(filepath, _mem);
+    $readmemh(filepath, _imem);
+endfunction
+
+function automatic logic [31:0] read_inst(logic [31:0] addr);
+    logic [255:0] line;
+    logic [31:0] rv;
+    line = _imem[addr[31:5]];
+    rv = line[8*{addr[4:2], 2'b00} +: 32];
+    return rv;
 endfunction
 
 function automatic logic [31:0] read(logic [31:0] addr);
@@ -40,7 +50,7 @@ initial begin
         begin : instruction
             forever begin
                 @(sm_itf.smcb iff (sm_itf.smcb.read_a && sm_itf.smcb.resp_a))
-                rdata_inst = read(sm_itf.smcb.address_a);
+                rdata_inst = read_inst(sm_itf.smcb.address_a);
                 if (rdata_inst != sm_itf.smcb.rdata_a) begin
                     $display("%0t: ShadowMemory Error: Mismatch rdata:", $time,
                         " Expected %8h, Detected %8h", rdata_inst,
