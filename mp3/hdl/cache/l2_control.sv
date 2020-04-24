@@ -56,6 +56,10 @@ enum int unsigned {
 
 logic [2:0] prev_lru;
 
+// performance counters
+int hit_count, hit_count_next;
+int miss_count, miss_count_next;
+
 always_ff @(posedge clk)
 begin
     /* Assignment of next state on clock edge */
@@ -65,17 +69,30 @@ begin
     if (load_lru) prev_lru <= lru;
 end
 
+// performance counters update
+always_ff @(posedge clk)
+begin
+    hit_count <= rst ? 0 : hit_count_next;
+	 miss_count <= rst ? 0 : miss_count_next;
+end
+
 always_comb begin // next state logic
+    hit_count_next = hit_count;
+	 miss_count_next = miss_count;
     case(state)
         idle: begin
             if (mem_read & mem_write) begin
                 next_state = idle; // no flush support
             end
             else if (mem_read | mem_write) begin
-                if ((valid & cmp) == '0) begin // read miss
+                if ((valid & cmp) == '0) begin // cache miss
                     if(dirty[lru] & valid[lru]) next_state = write_back;
                     else next_state = read_mem;
-                end else next_state = idle;
+						  miss_count_next = miss_count + 1;
+                end else begin // cache hit
+					     next_state = idle;
+						  hit_count_next = hit_count + 1;
+				    end
             end
             else next_state = idle;
         end

@@ -128,7 +128,7 @@ logic [31:0] l2_pmem_address;
 logic l2_pmem_read, l2_pmem_write, l2_pmem_resp;
 
 // L2 cache (cp3)
-l2_cache #(.s_index(5)) l2(    
+l2_cache #(.s_index(4)) l2(    
     .clk(clk), .rst(rst),
     // L1 - L2
     .l2_read(l2_read2), 

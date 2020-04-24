@@ -83,5 +83,17 @@ assign pc_val = itf.inst_addr;
 
 /***************************** End Instantiation *****************************/
 
+/************************** Performance Counters *****************************/
+logic end_detect;
+assign end_detect = (dut.d.pipereg_exmem_pc_out == dut.d.pcmux_out) & (~dut.d.pause_pipeline);
+
+int l2_cache_hit, l2_cache_miss;
+assign l2_cache_hit = dut.cache.l2.control.hit_count;
+assign l2_cache_miss = dut.cache.l2.control.miss_count;
+
+always_ff @(posedge itf.clk) begin
+    if (end_detect) $display ("L2 cache hit: %d, miss: %d", l2_cache_hit, l2_cache_miss);
+end
+
 
 endmodule
