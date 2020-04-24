@@ -105,6 +105,14 @@ logic run_divider;
 
 logic [31:0] aluresmux_out;
 
+//Branch predictor Signals
+rv32i_word target, pc_in, bpmux_out;
+logic btb_hit;
+logic prediction, correct;
+logic pipereg_idex_taken, pipereg_ifid_taken;
+
+
+
 // memory forwarding / hazard detection solution.
 //
 // comparisons are performed between ifid / idex
@@ -236,6 +244,15 @@ pipe_ifid_pc (
       .in(pc_module_out),
       .out(pipereg_ifid_pc_out)
 );
+//taken 
+register #(.width(1))
+pipereg_ifid_taken (
+      .clk(clk),
+      .rst(pipe_rst_ifid),
+      .load(pipe_load_ifid),
+      .in(local_prediction),
+      .out(pipereg_ifid_taken)
+);
 
 
 // ID / EX Registers
@@ -285,6 +302,15 @@ pipe_idex_rs2_out (
       .load(pipe_load_idex),
       .in(regfile_rs2_out),
       .out(pipereg_idex_rs2_out)
+);
+//taken 
+register #(.width(1))
+pipereg_idex_taken (
+      .clk(clk),
+      .rst(pipe_rst_idex),
+      .load(pipe_load_idex),
+      .in(pipereg_ifid_taken),
+      .out(pipereg_idex_taken)
 );
 
 
@@ -423,11 +449,11 @@ pc (
       .clk(clk),
       .rst(rst),
       .load(~pause_pipeline),          //don't always load the pc
-      .in(pcmux_out),
+      .in(pc_in),                      //modified with branch prediction
       .out(pc_module_out)
 );
 
-// DE - decode
+// ID - decode
 regfile regfile(
       .clk(clk),
       .rst(rst),
@@ -443,6 +469,30 @@ regfile regfile(
 assign opcode = rv32i_opcode'(pipereg_ifid_idecode.opcode);
 assign funct3 = pipereg_ifid_idecode.funct3;
 assign funct7 = pipereg_ifid_idecode.funct7;
+
+btb btb(
+    .clk(clk),
+    .r_pc(pipereg_ifid_pc_out),
+    .w_pc(pipereg_idex_pc_out),
+    .load(branch_go & ~pause_pipeline),
+    .read(~pause_pipeline),
+    .target_in(alu_module_out),
+    .target_out(target),
+    .btb_hit(btb_hit)
+);
+
+assign correct = (pipereg_idex_taken == br_en_out && pipereg_idex_idecode.opcode == op_br)
+bht local_bht(
+    .clk(clk),
+    .read(~pause_pipeline),
+    .load(~pause_pipeline),
+    .r_idx(pipereg_ifid_pc_out[9:0]),
+    .w_idx(pipereg_idex_pc_out[9:0]),
+    .taken(pipereg_idex_taken),
+    .correct(correct),
+    .prediction(local_prediction)
+);
+assign prediction = btb_hit && local_prediction;
 
 // EX - execute
 alu alu (
@@ -642,13 +692,29 @@ always_comb begin : MUXES
       regfilemux_out = 32'bx;
       cmpmux_out = 32'bx;
       dcachemux_out = 32'bx;
+      bpmux_out = 32'bx;
+
+      //Branch predictor
+      unique case ({~correct, pipereg_idex_taken})
+            2'b00: bpmux_out = pc_module_out + 32'd4; //not taken correct
+            2'b01: bpmux_out = pc_module_out + 32'd4; //taken correct
+            2'b10: bpmux_out = pipe_exmem_alu_out; //not taken incorrect
+            2'b11: bpmux_out = pipereg_idex_pc_out + 32'd4; //taken incorrect
+      endcase
 
       // input into the pc module, dependent
       // on the branch_go signal
       unique case (branch_go)
-            1'b0: pcmux_out = pc_module_out + 32'd4;
+            1'b0: pcmux_out = bpmux_out;
             1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
-            default: pcmux_out = pc_module_out + 32'd4;
+            default: pcmux_out = bpmux_out;
+      endcase
+
+      //Branch predictor
+      unique case (prediction)
+            1'b0: pc_in = pcmux_out;
+            1'b1: pc_in = target;
+            default: pc_in = pcmux_out;
       endcase
 
       // regfile mux
