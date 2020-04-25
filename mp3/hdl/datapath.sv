@@ -460,7 +460,7 @@ cmp_module cmp (
 );
 
 multiplier multiplier (
-      .clk(clk),
+      .clk(clk), .rst(rst),
       .a(rs1mux_out),
       .b(rs2mux_out),
       .start(run_multiplier),

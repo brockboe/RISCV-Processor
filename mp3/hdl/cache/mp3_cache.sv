@@ -168,6 +168,14 @@ ewb buffer (
     .resp_i(l2_pmem_resp)
 );
 
+// Direct Connection:
+//assign l2_pmem_read = ewb_read_i;
+//assign l2_pmem_write = ewb_write_i;
+//assign l2_pmem_wdata = ewb_wdata_i;
+//assign l2_pmem_address = ewb_addr_i;
+//assign ewb_rdata_o = l2_pmem_rdata;
+//assign ewb_resp_o = l2_pmem_resp;
+
 cacheline_adaptor adapter(
     .clk(clk),
     .reset_n(~rst),

@@ -131,5 +131,12 @@ mp3 dut(
 
 /***************************** End Instantiation *****************************/
 
+/**************************** Performance Counters ***************************/
+int ewb_count;
+int l2_hit, l2_miss;
+
+assign ewb_count = dut.cache.buffer.eviction_write_counter;
+assign l2_hit = dut.cache.l2.control.hit_count;
+assign l2_miss = dut.cache.l2.control.miss_count;
 
 endmodule

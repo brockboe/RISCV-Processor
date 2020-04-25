@@ -22,10 +22,17 @@ logic [31:0] addr;
 logic valid, match;
 logic [2:0] counter;
 
+int eviction_write_counter;
+
 assign match = (addr_i == addr) && valid;
 
 always_ff @(posedge clk) begin
     state <= rst ? idle : next_state;
+end
+
+always_ff @(posedge clk) begin
+    if (rst) eviction_write_counter <= 0;
+	 else if (state == idle && write_i) eviction_write_counter <= eviction_write_counter + 1;
 end
 
 always_ff @(posedge clk) begin
