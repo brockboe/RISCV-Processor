@@ -779,6 +779,7 @@ LoopRowsA:
     addi x1, x1, 4
     addi x2, x2, -1
     ble x0, x2, LoopRowsA
+
     slli x4,x4,2
 
     lw  x2, ONEFOURTHREE
@@ -811,6 +812,7 @@ LoopRowsD:
 
     and x3, x3,x7
     not x7,x7
+
 
 
     HALT:
@@ -1656,5 +1658,3 @@ OFC:    .word           0x00000000
 OFD:    .word           0x00000000
 OFE:    .word           0x00000000
 OFF:    .word           0x00000000
-
-
