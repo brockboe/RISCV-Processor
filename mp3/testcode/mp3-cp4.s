@@ -1,4 +1,4 @@
-.align 4
+.align 5
 .section .text
 .globl _start
 
@@ -816,7 +816,7 @@ LoopRowsD:
     HALT:
     beq x0, x0, HALT
 
-
+.align 5
 .section .rodata
 
 XX1:             .word    0x00000000
