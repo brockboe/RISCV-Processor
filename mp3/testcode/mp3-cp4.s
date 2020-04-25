@@ -1,4 +1,4 @@
-.align 4
+.align 5
 .section .text
 .globl _start
 
@@ -779,6 +779,7 @@ LoopRowsA:
     addi x1, x1, 4
     addi x2, x2, -1
     ble x0, x2, LoopRowsA
+
     slli x4,x4,2
 
     lw  x2, ONEFOURTHREE
@@ -813,10 +814,11 @@ LoopRowsD:
     not x7,x7
 
 
+
     HALT:
     beq x0, x0, HALT
 
-
+.align 5
 .section .rodata
 
 XX1:             .word    0x00000000
@@ -1656,5 +1658,3 @@ OFC:    .word           0x00000000
 OFD:    .word           0x00000000
 OFE:    .word           0x00000000
 OFF:    .word           0x00000000
-
-
