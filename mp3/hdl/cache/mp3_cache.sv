@@ -38,7 +38,7 @@ logic d_a_read, d_a_write;
 logic d_a_resp;
 
 
-cache icache(
+cache #(.s_index(3)) icache(
     .clk(clk), .rst(rst),
     // to cpu
     .mem_read(icache_read), .mem_write(1'b0),
@@ -56,7 +56,7 @@ cache icache(
     .pmem_resp(i_a_resp)
 );
 
-cache dcache(
+cache #(.s_index(3)) dcache(
     .clk(clk), .rst(rst),
     // to cpu
     .mem_read(dcache_read), .mem_write(dcache_write),
@@ -127,8 +127,13 @@ logic [255:0] l2_pmem_rdata, l2_pmem_wdata;
 logic [31:0] l2_pmem_address;
 logic l2_pmem_read, l2_pmem_write, l2_pmem_resp;
 
+// EWB logic
+logic [255:0] ewb_rdata_o, ewb_wdata_i;
+logic [31:0] ewb_addr_i;
+logic ewb_read_i, ewb_write_i, ewb_resp_o;
+
 // L2 cache (cp3)
-l2_cache #(.s_index(5)) l2(    
+l2_cache #(.s_index(4)) l2(    
     .clk(clk), .rst(rst),
     // L1 - L2
     .l2_read(l2_read2), 
@@ -138,12 +143,29 @@ l2_cache #(.s_index(5)) l2(
     .l2_rdata(l2_rdata),
     .l2_resp(l2_resp),
 
+    // L2 - EWB
+    .pmem_rdata(ewb_rdata_o),
+    .pmem_wdata(ewb_wdata_i),
+    .pmem_address(ewb_addr_i),
+    .pmem_read(ewb_read_i), .pmem_write(ewb_write_i),
+    .pmem_resp(ewb_resp_o)
+);
+
+ewb buffer (
+    .clk(clk), .rst(rst),
+    // L2 - EWB
+    .read_i(ewb_read_i), .write_i(ewb_write_i),
+    .wdata_i(ewb_wdata_i), 
+    .addr_i(ewb_addr_i),
+    .rdata_o(ewb_rdata_o),
+    .resp_o(ewb_resp_o),
+
     // L2 - pmem
-    .pmem_rdata(l2_pmem_rdata),
-    .pmem_wdata(l2_pmem_wdata),
-    .pmem_address(l2_pmem_address),
-    .pmem_read(l2_pmem_read), .pmem_write(l2_pmem_write),
-    .pmem_resp(l2_pmem_resp)
+    .rdata_i(l2_pmem_rdata),
+    .wdata_o(l2_pmem_wdata),
+    .addr_o(l2_pmem_address),
+    .read_o(l2_pmem_read), .write_o(l2_pmem_write),
+    .resp_i(l2_pmem_resp)
 );
 
 cacheline_adaptor adapter(
