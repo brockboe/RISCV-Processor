@@ -131,7 +131,7 @@ divider_unsigned d
       .done(done)
 );
 
-logic net_q;
+logic neg_q, neg_r;
 assign neg_q = numerator[31] ^ denominator[31];
 assign neg_r = numerator[31];
 

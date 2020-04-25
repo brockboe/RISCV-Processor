@@ -3,14 +3,15 @@ module l2_control (
     input logic rst,
 
     // datapath
-    input logic [1:0] cmp, dirty, valid,
-    input logic lru,
-    output logic sel, data_in_sel,
-    output logic [1:0] write_en,
+    input logic [7:0] cmp, dirty, valid,
+    input logic [2:0] lru,
+    output logic [2:0] sel, 
+    output logic data_in_sel,
+    output logic [7:0] write_en,
     output logic load_lru, load_dirty, load_valid,
-    output logic [1:0] load_tag,
-    output logic lru_in,
-    output logic [1:0] dirty_in, valid_in,
+    output logic [7:0] load_tag,
+    output logic [2:0] mru,
+    output logic [7:0] dirty_in, valid_in,
 
     // cpu & bus_adapter
     input logic mem_read, mem_write,
@@ -22,6 +23,29 @@ module l2_control (
     output logic cacheline_read
 );
 
+// helper functions
+// encoder
+function logic [2:0] enc (logic [7:0] data);
+    logic [2:0] out;
+    case(data)
+        8'h01: out = 3'b000;
+        8'h02: out = 3'b001;
+        8'h04: out = 3'b010;
+        8'h08: out = 3'b011;
+        8'h10: out = 3'b100;
+        8'h20: out = 3'b101;
+        8'h40: out = 3'b110;
+        8'h80: out = 3'b111;
+        default: out = 3'bxxx;
+    endcase
+    return out;
+endfunction
+
+// decoder
+function logic [7:0] dec (logic [2:0] data);
+    return (8'h01 << data);
+endfunction
+
 enum int unsigned {
     /* List of states */
     idle, read_check, write_check,
@@ -30,7 +54,7 @@ enum int unsigned {
     wait0, wait1, wait2
 } state, next_state;
 
-logic prev_lru;
+logic [2:0] prev_lru;
 
 always_ff @(posedge clk)
 begin
@@ -48,7 +72,7 @@ always_comb begin // next state logic
                 next_state = idle; // no flush support
             end
             else if (mem_read | mem_write) begin
-                if ((valid & cmp) == 2'b00) begin // read miss
+                if ((valid & cmp) == '0) begin // read miss
                     if(dirty[lru] & valid[lru]) next_state = write_back;
                     else next_state = read_mem;
                 end else next_state = idle;
@@ -78,15 +102,15 @@ end
 
 always_comb begin // state actions
     // set defaults
-    sel = cmp[1] & valid[1]; // encoder
+    sel = enc(cmp & valid); // encoder
     data_in_sel = 1'b0;
-    write_en = 2'b00;
-    load_tag = 2'b00;
+    write_en = '0;
+    load_tag = '0;
     load_lru = 1'b0;
     load_dirty = 1'b0;
     load_valid = 1'b0;
     resp = 1'b0;
-    lru_in = lru;
+    mru = enc(cmp & valid);
     valid_in = valid;
     dirty_in = dirty;
 	cacheline_read = 1'b0;
@@ -97,12 +121,11 @@ always_comb begin // state actions
         if (mem_read & mem_write) begin
             // do nothing
         end else if (mem_read) begin
-            if ((cmp & valid) != 2'b00) begin // read hit
+            if ((cmp & valid) != '0) begin // read hit
             resp = 1'b1;
-            lru_in = cmp[0] & valid[0];
             load_lru = 1'b1;
             end else if (!(dirty[lru] & valid[lru])) begin // read miss (no write_back)
-                lru_in = ~lru;
+                mru = lru;
                 load_lru = 1'b1;
                 // new data is clean and valid
                 dirty_in[lru] = 1'b0;
@@ -114,16 +137,15 @@ always_comb begin // state actions
                 load_tag[lru] = 1'b1;
             end
         end else if (mem_write) begin
-            if ((cmp & valid) != 2'b00) begin // write hit
+            if ((cmp & valid) != '0) begin // write hit
                 resp = 1'b1;
-                lru_in = cmp[0] & valid[0];
                 load_lru = 1'b1;
                 write_en = cmp & valid;
-                dirty_in[(cmp[1] & valid[1])] = 1'b1;
+                dirty_in[enc(cmp & valid)] = 1'b1;
                 load_dirty = 1'b1;
                 
             end else if (!(dirty[lru] & valid[lru])) begin // write miss (no write_back)
-                lru_in = ~lru;
+                mru = lru;
                 load_lru = 1'b1;
                 // new data is dirty and valid
                 dirty_in[lru] = 1'b1;
@@ -143,7 +165,7 @@ always_comb begin // state actions
     end
 
     meta_update: begin
-        lru_in = ~lru;
+        mru = lru;
         load_lru = 1'b1;
         // new data is valid
         dirty_in[lru] = mem_write;

@@ -17,14 +17,15 @@ module l2_cache #(parameter s_index = 3) (
 
 
 // datapath <==> control
-logic [1:0] cmp, dirty, valid;
-logic lru;
-logic sel, data_in_sel, index_sel;
-logic [1:0] write_en;
+logic [7:0] cmp, dirty, valid;
+logic [2:0] lru;
+logic [2:0] sel;
+logic data_in_sel;
+logic [7:0] write_en;
 logic load_lru, load_dirty, load_valid;
-logic [1:0] load_tag;
-logic lru_in;
-logic [1:0] dirty_in, valid_in;
+logic [7:0] load_tag;
+logic [2:0] mru;
+logic [7:0] dirty_in, valid_in;
 
 // control <==> bus adapter
 logic [255:0] data_out;
@@ -44,7 +45,7 @@ l2_control control
     .write_en,
     .load_lru, .load_dirty, .load_valid,
     .load_tag,
-    .lru_in,
+    .mru,
     .dirty_in, .valid_in,
 
     // cpu & bus_adapter
@@ -68,7 +69,7 @@ l2_datapath #(.s_index(s_index)) datapath
     .load_dirty,
     .load_valid,
     .load_tag,
-    .lru_in,
+    .mru,
     .dirty_in,
     .valid_in,
     .addr(l2_address),
