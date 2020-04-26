@@ -507,14 +507,14 @@ btb btb(
     .clk(clk),
     .r_pc(pc_module_out), //changed from pipereg_ifid_pc_out to pc_module_out so we get pc from IF
     .w_pc(pipereg_idex_pc_out),
-    .load(branch_go & ~pause_pipeline),
+    .load(pipereg_idex_idecode.opcode == op_br && ~pause_pipeline),
     .read(~pause_pipeline),
     .target_in(alu_module_out),
     .target_out(target),
     .btb_hit(btb_hit)
 );
 
-assign correct = (pipereg_idex_taken == br_en_out && pipereg_idex_idecode.opcode == op_br && ~pipereg_idex_flush);
+assign correct = (pipereg_idex_taken == (br_en_out && pipereg_idex_idecode.opcode == op_br && ~pipereg_idex_flush));
 bht local_bht(
     .clk(clk),
     .read(~pause_pipeline),
@@ -525,7 +525,7 @@ bht local_bht(
     .correct(correct),
     .prediction(taken)
 );
-assign prediction = btb_hit && taken;
+assign prediction = btb_hit && taken && ~(br_en_out && pipereg_idex_idecode.opcode == op_br && ~pipereg_idex_flush);
 
 // EX - execute
 alu alu (
@@ -731,9 +731,8 @@ always_comb begin : MUXES
       unique case ({~correct && ~pipereg_idex_flush, pipereg_idex_taken})
             2'b00: bpmux_out = pc_module_out + 32'd4; //not taken correct
             2'b01: bpmux_out = pc_module_out + 32'd4; //taken correct
-            2'b10: bpmux_out = alu_module_out; //not taken incorrect
+            2'b10: bpmux_out = alu_module_out + 32'd4; //not taken incorrect
             2'b11: bpmux_out = pipereg_idex_pc_out + 32'd4; //taken incorrect
-            default: bpmux_out = pc_module_out + 32'd4;
       endcase
 
       // input into the pc module, dependent

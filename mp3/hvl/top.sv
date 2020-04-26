@@ -115,16 +115,24 @@ assign itf.registers = dut.d.regfile.data;
 initial begin
       $monitor(
             "time: %0t; ", $time,
+            "dut.d.pc_module_out: %x; ", dut.d.pc_module_out,
+            "rvfi.order: %d; ", rvfi.order,
             "dut.d.flush: %d; ", dut.d.flush, 
             "dut.d.correct: %d; ", dut.d.correct,
-            "dut.d.branch_go: %d; ", dut.d.branch_go,
+            "dut.d.pipereg_idex_flush: %d; ", dut.d.pipereg_idex_flush,
             "dut.d.pipereg_idex_taken: %d; ", dut.d.pipereg_idex_taken,
-            "dut.d.pc_in: %d;", dut.d.pc_in,
-            "\n",
-            "dut.d.pc_module_out: %d; ", dut.d.pc_module_out,
-            "dut.d.pipereg_ifid_pc_out: %d; ", dut.d.pipereg_ifid_pc_out,
-            "dut.d.pipereg_idex_pc_out: %d; ", dut.d.pipereg_idex_pc_out,
-            "dut.d.pipereg_exmem_pc_out: %d; ", dut.d.pipereg_exmem_pc_out
+            "dut.d.branch_go: %d; ",dut.d.branch_go,
+            // "dut.d.branch_go: %d; ", dut.d.branch_go,
+            // "dut.d.pipereg_idex_taken: %d; ", dut.d.pipereg_idex_taken,
+            // "dut.d.pc_in: %d;", dut.d.pc_in,
+            // "dut.d.pcmux_out: %d;", dut.d.pcmux_out,
+            // "dut.d.bpmux_out: %d;", dut.d.bpmux_out,
+            // "\n",
+            // "dut.d.pc_module_out: %d; ", dut.d.pc_module_out,
+            // "dut.d.pipereg_ifid_pc_out: %d; ", dut.d.pipereg_ifid_pc_out,
+            // "dut.d.pipereg_idex_pc_out: %d; ", dut.d.pipereg_idex_pc_out,
+            // "dut.d.pipereg_exmem_pc_out: %d; ", dut.d.pipereg_exmem_pc_out,
+            // "dut.d.pipereg_memwb_pc_out: %d; ", dut.d.pipereg_memwb_pc_out
       );
       itf.rst = 1'b1;
       repeat (5) @(posedge itf.clk);

@@ -9,7 +9,7 @@
 # 
 # vlog -sv -work work  {./hdl/rv32i_mux_types.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:41 on Apr 24,2020
+# Start time: 09:53:56 on Apr 26,2020
 # vlog -sv -work work ./hdl/rv32i_mux_types.sv 
 # -- Compiling package pcmux
 # -- Compiling package marmux
@@ -22,11 +22,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:35:41 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:56 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/rv32i_types.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:41 on Apr 24,2020
+# Start time: 09:53:56 on Apr 26,2020
 # vlog -sv -work work ./hdl/rv32i_types.sv 
 # -- Compiling package rv32i_types
 # -- Importing package pcmux
@@ -37,11 +37,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:35:42 on Apr 24,2020, Elapsed time: 0:00:01
+# End time: 09:53:56 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:42 on Apr 24,2020
+# Start time: 09:53:56 on Apr 26,2020
 # vlog -sv -work work ./hdl/alu.sv 
 # -- Compiling package alu_sv_unit
 # -- Importing package rv32i_types
@@ -54,21 +54,21 @@
 # 
 # Top level modules:
 # 	alu
-# End time: 16:35:42 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:56 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/bht.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:42 on Apr 24,2020
+# Start time: 09:53:56 on Apr 26,2020
 # vlog -sv -work work ./hdl/bht.sv 
 # -- Compiling module bht
 # 
 # Top level modules:
 # 	bht
-# End time: 16:35:42 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:56 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/btb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:42 on Apr 24,2020
+# Start time: 09:53:56 on Apr 26,2020
 # vlog -sv -work work ./hdl/btb.sv 
 # -- Compiling package btb_sv_unit
 # -- Importing package rv32i_types
@@ -81,21 +81,21 @@
 # 
 # Top level modules:
 # 	btb
-# End time: 16:35:42 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/btb_col.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:42 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/btb_col.sv 
 # -- Compiling module btb_col
 # 
 # Top level modules:
 # 	btb_col
-# End time: 16:35:42 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/control_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:42 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/control_itf.sv 
 # -- Compiling package control_itf_sv_unit
 # -- Importing package rv32i_types
@@ -108,11 +108,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:35:42 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/forwarding/forwarding_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:42 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/forwarding/forwarding_itf.sv 
 # -- Compiling package forwarding_itf_sv_unit
 # -- Importing package rv32i_types
@@ -128,11 +128,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:35:42 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cmp_module.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:42 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/cmp_module.sv 
 # -- Compiling package cmp_module_sv_unit
 # -- Importing package rv32i_types
@@ -149,11 +149,11 @@
 # 
 # Top level modules:
 # 	cmp_module
-# End time: 16:35:43 on Apr 24,2020, Elapsed time: 0:00:01
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/control_rom.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:43 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/control_rom.sv 
 # -- Compiling package control_rom_sv_unit
 # -- Importing package rv32i_types
@@ -170,11 +170,11 @@
 # 
 # Top level modules:
 # 	control_rom
-# End time: 16:35:43 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:43 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/datapath.sv 
 # -- Compiling package datapath_sv_unit
 # -- Importing package rv32i_types
@@ -192,11 +192,11 @@
 # 
 # Top level modules:
 # 	datapath
-# End time: 16:35:43 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/execute_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:43 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/execute_controller.sv 
 # -- Compiling package execute_controller_sv_unit
 # -- Importing package control_itf
@@ -210,11 +210,11 @@
 # 
 # Top level modules:
 # 	execute_controller
-# End time: 16:35:43 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/ir.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:43 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/ir.sv 
 # -- Compiling package ir_sv_unit
 # -- Importing package rv32i_types
@@ -227,11 +227,11 @@
 # 
 # Top level modules:
 # 	ir
-# End time: 16:35:43 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/mp3.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:43 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/mp3.sv 
 # -- Compiling package mp3_sv_unit
 # -- Importing package rv32i_types
@@ -248,31 +248,31 @@
 # 
 # Top level modules:
 # 	mp3
-# End time: 16:35:43 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/pc_reg.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:43 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/pc_reg.sv 
 # -- Compiling module pc_register
 # 
 # Top level modules:
 # 	pc_register
-# End time: 16:35:43 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:43 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:01
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:44 on Apr 24,2020
+# Start time: 09:53:57 on Apr 26,2020
 # vlog -sv -work work ./hdl/register.sv 
 # -- Compiling package register_sv_unit
 # -- Importing package control_itf
@@ -288,11 +288,11 @@
 # Top level modules:
 # 	register
 # 	ctrl_word_register
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:57 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/array.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:44 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/array.sv 
 # -- Compiling module array
 # -- Compiling module array2
@@ -300,130 +300,130 @@
 # Top level modules:
 # 	array
 # 	array2
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/bus_adapter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:44 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/bus_adapter.sv 
 # -- Compiling module bus_adapter
 # 
 # Top level modules:
 # 	bus_adapter
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_arbiter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:44 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/cache_arbiter.sv 
 # -- Compiling module cache_arbiter
 # 
 # Top level modules:
 # 	cache_arbiter
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:44 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/cache_control.sv 
 # -- Compiling module cache_control
 # 
 # Top level modules:
 # 	cache_control
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:44 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/cache_datapath.sv 
 # -- Compiling module cache_datapath
 # 
 # Top level modules:
 # 	cache_datapath
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:44 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/cache.sv 
 # -- Compiling module cache
 # 
 # Top level modules:
 # 	cache
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cacheline_adaptor.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:44 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/cacheline_adaptor.sv 
 # -- Compiling module cacheline_adaptor
 # 
 # Top level modules:
 # 	cacheline_adaptor
-# End time: 16:35:44 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/data_array.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:45 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/data_array.sv 
 # -- Compiling module data_array
 # 
 # Top level modules:
 # 	data_array
-# End time: 16:35:45 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:45 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/l2_cache.sv 
 # -- Compiling module l2_cache
 # 
 # Top level modules:
 # 	l2_cache
-# End time: 16:35:45 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:45 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/l2_control.sv 
 # -- Compiling module l2_control
 # 
 # Top level modules:
 # 	l2_control
-# End time: 16:35:45 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:45 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/l2_datapath.sv 
 # -- Compiling module l2_datapath
 # 
 # Top level modules:
 # 	l2_datapath
-# End time: 16:35:45 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/mp3_cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:45 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/cache/mp3_cache.sv 
 # -- Compiling module mp3_cache
 # 
 # Top level modules:
 # 	mp3_cache
-# End time: 16:35:45 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/forwarding/forwarding.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:45 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/forwarding/forwarding.sv 
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:35:46 on Apr 24,2020, Elapsed time: 0:00:01
+# End time: 09:53:58 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/divider.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:46 on Apr 24,2020
+# Start time: 09:53:58 on Apr 26,2020
 # vlog -sv -work work ./hdl/muldiv/divider.sv 
 # -- Compiling package divider_sv_unit
 # -- Importing package rv32i_types
@@ -437,20 +437,20 @@
 # 
 # Top level modules:
 # 	divider
-# End time: 16:35:46 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/mult_precomputed.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:46 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hdl/muldiv/mult_precomputed.sv 
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:35:46 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/multiplier.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:46 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hdl/muldiv/multiplier.sv 
 # -- Compiling package multiplier_sv_unit
 # -- Importing package rv32i_types
@@ -464,7 +464,7 @@
 # 
 # Top level modules:
 # 	multiplier
-# End time: 16:35:46 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
@@ -472,17 +472,17 @@
 # 
 # vlog -sv -work work  {./hvl/magic_dual_port.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:46 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hvl/magic_dual_port.sv 
 # -- Compiling module magic_memory_dp
 # 
 # Top level modules:
 # 	magic_memory_dp
-# End time: 16:35:46 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/param_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:46 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hvl/param_memory.sv 
 # -- Compiling module ParamMemory
 # ** Warning: ./hvl/param_memory.sv(25): (vlog-2244) Variable 'iteration' is implicitly static. You must either explicitly declare it as static or automatic
@@ -490,21 +490,21 @@
 # 
 # Top level modules:
 # 	ParamMemory
-# End time: 16:35:46 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vlog -sv -work work  {./hvl/shadow_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:46 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hvl/shadow_memory.sv 
 # -- Compiling module shadow_memory
 # 
 # Top level modules:
 # 	shadow_memory
-# End time: 16:35:46 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/rvfimon.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:46 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hvl/rvfimon.v 
 # -- Compiling module riscv_formal_monitor_rv32imc
 # -- Compiling module riscv_formal_monitor_rv32imc_rob
@@ -582,41 +582,41 @@
 # 
 # Top level modules:
 # 	riscv_formal_monitor_rv32imc
-# End time: 16:35:47 on Apr 24,2020, Elapsed time: 0:00:01
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/source_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:47 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hvl/source_tb.sv 
 # -- Compiling module source_tb
 # 
 # Top level modules:
 # 	source_tb
-# End time: 16:35:47 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/rvfi_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:47 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hvl/rvfi_itf.sv 
 # -- Compiling interface rvfi_itf
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:35:47 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/tb_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:47 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hvl/tb_itf.sv 
 # -- Compiling interface tb_itf
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:35:47 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:53:59 on Apr 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/top.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:35:47 on Apr 24,2020
+# Start time: 09:53:59 on Apr 26,2020
 # vlog -sv -work work ./hvl/top.sv 
 # -- Compiling package top_sv_unit
 # -- Importing package dcachemux
@@ -624,12 +624,12 @@
 # 
 # Top level modules:
 # 	mp3_tb
-# End time: 16:35:47 on Apr 24,2020, Elapsed time: 0:00:00
+# End time: 09:54:00 on Apr 26,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixv_ver -L stratixv_hssi_ver -L stratixv_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  mp3_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixv_ver -L stratixv_hssi_ver -L stratixv_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" mp3_tb 
-# Start time: 16:35:47 on Apr 24,2020
+# Start time: 09:54:00 on Apr 26,2020
 # Loading sv_std.std
 # Loading work.dcachemux
 # Loading work.top_sv_unit
@@ -779,31 +779,22 @@
 # 
 # run -all 
 # Compilation Successful
-# time: 0; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 0; dut.d.pc_in:          0;
-# dut.d.pc_module_out:          x; dut.d.pipereg_ifid_pc_out:          0; dut.d.pipereg_idex_pc_out:          0; dut.d.pipereg_exmem_pc_out:          0; 
+# ** Warning: (vsim-8315) ./hdl/datapath.sv(731): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /mp3_tb/dut/d
+# time: 0; dut.d.pc_module_out: xxxxxxxx; rvfi.order:                    0; dut.d.flush: 1; dut.d.correct: 1; dut.d.pipereg_idex_flush: 0; dut.d.pipereg_idex_taken: 0; dut.d.branch_go: 0;  
 # Reset Memory
-# time: 5000; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 0; dut.d.pc_in:          0;
-# dut.d.pc_module_out:         96; dut.d.pipereg_ifid_pc_out:          0; dut.d.pipereg_idex_pc_out:          0; dut.d.pipereg_exmem_pc_out:          0; 
-# time: 675000; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 0; dut.d.pc_in:          4;
-# dut.d.pc_module_out:          0; dut.d.pipereg_ifid_pc_out:         96; dut.d.pipereg_idex_pc_out:          0; dut.d.pipereg_exmem_pc_out:          0; 
-# ** Warning: (vsim-3829) ./hvl/param_memory.sv(95): Non-existent associative array entry. Returning default value.
-# ** Warning: (vsim-3829) ./hvl/param_memory.sv(95): Non-existent associative array entry. Returning default value.
-# ** Warning: (vsim-3829) ./hvl/param_memory.sv(95): Non-existent associative array entry. Returning default value.
-# ** Warning: (vsim-3829) ./hvl/param_memory.sv(95): Non-existent associative array entry. Returning default value.
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1055000; dut.d.flush: 0; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 0; dut.d.pc_in:          8;
-# dut.d.pc_module_out:          4; dut.d.pipereg_ifid_pc_out:          0; dut.d.pipereg_idex_pc_out:         96; dut.d.pipereg_exmem_pc_out:          0; 
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1065000; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 1; dut.d.pc_in:          4;
-# dut.d.pc_module_out:          8; dut.d.pipereg_ifid_pc_out:          4; dut.d.pipereg_idex_pc_out:          0; dut.d.pipereg_exmem_pc_out:         96; 
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1075000; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 1; dut.d.pc_in:          8;
-# dut.d.pc_module_out:          4; dut.d.pipereg_ifid_pc_out:          8; dut.d.pipereg_idex_pc_out:          4; dut.d.pipereg_exmem_pc_out:          0; 
-# -------- RVFI Monitor error 106 in channel 0: mp3_tb.tb.genblk3.monitor.ch0_handle_error at time 1085000 --------
+# time: 5000; dut.d.pc_module_out: 00000060; rvfi.order:                    0; dut.d.flush: 1; dut.d.correct: 1; dut.d.pipereg_idex_flush: 0; dut.d.pipereg_idex_taken: 0; dut.d.branch_go: 0;  
+# time: 675000; dut.d.pc_module_out: 00000064; rvfi.order:                    0; dut.d.flush: 0; dut.d.correct: 1; dut.d.pipereg_idex_flush: 1; dut.d.pipereg_idex_taken: 0; dut.d.branch_go: 0;  
+# time: 685000; dut.d.pc_module_out: 00000068; rvfi.order:                    0; dut.d.flush: 1; dut.d.correct: 0; dut.d.pipereg_idex_flush: 0; dut.d.pipereg_idex_taken: 1; dut.d.branch_go: 0;  
+# time: 695000; dut.d.pc_module_out: 00000064; rvfi.order:                    0; dut.d.flush: 1; dut.d.correct: 0; dut.d.pipereg_idex_flush: 1; dut.d.pipereg_idex_taken: 1; dut.d.branch_go: 0;  
+# time: 1325000; dut.d.pc_module_out: 00000068; rvfi.order:                    0; dut.d.flush: 0; dut.d.correct: 0; dut.d.pipereg_idex_flush: 1; dut.d.pipereg_idex_taken: 1; dut.d.branch_go: 0;  
+# time: 1335000; dut.d.pc_module_out: 0000006c; rvfi.order:                    1; dut.d.flush: 1; dut.d.correct: 0; dut.d.pipereg_idex_flush: 0; dut.d.pipereg_idex_taken: 1; dut.d.branch_go: 0;  
+# time: 1345000; dut.d.pc_module_out: 00000068; rvfi.order:                    2; dut.d.flush: 1; dut.d.correct: 1; dut.d.pipereg_idex_flush: 1; dut.d.pipereg_idex_taken: 0; dut.d.branch_go: 0;  
+# -------- RVFI Monitor error 106 in channel 0: mp3_tb.tb.genblk3.monitor.ch0_handle_error at time 1355000 --------
 # Error message: mismatch in pc_wdata
 # rvfi_valid = 1
-# rvfi_order = 0000000000000000
-# rvfi_insn = 00000417
+# rvfi_order = 0000000000000002
+# rvfi_insn = 20002203
 # rvfi_trap = 0
 # rvfi_halt = 0
 # rvfi_intr = 0
@@ -811,46 +802,98 @@
 # rvfi_rs2_addr = 00
 # rvfi_rs1_rdata = 00000000
 # rvfi_rs2_rdata = 00000000
-# rvfi_rd_addr = 08
-# rvfi_rd_wdata = 00000060
-# rvfi_pc_rdata = 00000060
-# rvfi_pc_wdata = 00000000
-# rvfi_mem_addr = 00000060
-# rvfi_mem_rmask = 0
+# rvfi_rd_addr = 04
+# rvfi_rd_wdata = 00000001
+# rvfi_pc_rdata = 00000068
+# rvfi_pc_wdata = 00000064
+# rvfi_mem_addr = 00000200
+# rvfi_mem_rmask = f
 # rvfi_mem_wmask = 0
-# rvfi_mem_rdata = xxxxxxxx
+# rvfi_mem_rdata = 00000001
 # rvfi_mem_wdata = 00000000
 # spec_valid = 1
 # spec_trap = 0
 # spec_rs1_addr = 00
 # spec_rs2_addr = 00
-# spec_rd_addr = 08
-# spec_rd_wdata = 00000060
-# spec_pc_wdata = 00000064
+# spec_rd_addr = 04
+# spec_rd_wdata = 00000001
+# spec_pc_wdata = 0000006c
+# spec_mem_addr = 00000200
+# spec_mem_rmask = f
+# spec_mem_wmask = 0
+# spec_mem_wdata = 00000000
+# time: 1355000; dut.d.pc_module_out: 0000006c; rvfi.order:                    3; dut.d.flush: 0; dut.d.correct: 1; dut.d.pipereg_idex_flush: 1; dut.d.pipereg_idex_taken: 0; dut.d.branch_go: 0;  
+# time: 1365000; dut.d.pc_module_out: 00000070; rvfi.order:                    4; dut.d.flush: 1; dut.d.correct: 0; dut.d.pipereg_idex_flush: 0; dut.d.pipereg_idex_taken: 1; dut.d.branch_go: 0;  
+# time: 1375000; dut.d.pc_module_out: 0000006c; rvfi.order:                    5; dut.d.flush: 1; dut.d.correct: 1; dut.d.pipereg_idex_flush: 1; dut.d.pipereg_idex_taken: 0; dut.d.branch_go: 0;  
+# -------- RVFI Monitor error 106 in channel 0: mp3_tb.tb.genblk3.monitor.ch0_handle_error at time 1385000 --------
+# Error message: mismatch in pc_wdata
+# rvfi_valid = 1
+# rvfi_order = 0000000000000005
+# rvfi_insn = 00000013
+# rvfi_trap = 0
+# rvfi_halt = 0
+# rvfi_intr = 0
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 0000006c
+# rvfi_pc_wdata = 00000068
+# rvfi_mem_addr = 00000000
+# rvfi_mem_rmask = 0
+# rvfi_mem_wmask = 0
+# rvfi_mem_rdata = 00000001
+# rvfi_mem_wdata = 00000000
+# spec_valid = 1
+# spec_trap = 0
+# spec_rs1_addr = 00
+# spec_rs2_addr = 00
+# spec_rd_addr = 00
+# spec_rd_wdata = 00000000
+# spec_pc_wdata = 00000070
 # spec_mem_addr = 00000000
 # spec_mem_rmask = 0
 # spec_mem_wmask = 0
 # spec_mem_wdata = 00000000
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1085000; dut.d.flush: 0; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 1; dut.d.pc_in:         12;
-# dut.d.pc_module_out:          8; dut.d.pipereg_ifid_pc_out:          4; dut.d.pipereg_idex_pc_out:          8; dut.d.pipereg_exmem_pc_out:          4; 
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1095000; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 1; dut.d.pc_in:          8;
-# dut.d.pc_module_out:         12; dut.d.pipereg_ifid_pc_out:          8; dut.d.pipereg_idex_pc_out:          4; dut.d.pipereg_exmem_pc_out:          8; 
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1105000; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 0; dut.d.pc_in:         12;
-# dut.d.pc_module_out:          8; dut.d.pipereg_ifid_pc_out:         12; dut.d.pipereg_idex_pc_out:          8; dut.d.pipereg_exmem_pc_out:          4; 
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1115000; dut.d.flush: 0; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 0; dut.d.pc_in:         16;
-# dut.d.pc_module_out:         12; dut.d.pipereg_ifid_pc_out:          8; dut.d.pipereg_idex_pc_out:         12; dut.d.pipereg_exmem_pc_out:          8; 
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1125000; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 1; dut.d.pc_in:         12;
-# dut.d.pc_module_out:         16; dut.d.pipereg_ifid_pc_out:         12; dut.d.pipereg_idex_pc_out:          8; dut.d.pipereg_exmem_pc_out:         12; 
-# ** Warning: (vsim-3829) ./hvl/shadow_memory.sv(17): Non-existent associative array entry. Returning default value.
-# time: 1135000; dut.d.flush: 1; dut.d.correct: 0; dut.d.branch_go: 0; dut.d.pipereg_idex_taken: 1; dut.d.pc_in:         16;
-# dut.d.pc_module_out:         12; dut.d.pipereg_ifid_pc_out:         16; dut.d.pipereg_idex_pc_out:         12; dut.d.pipereg_exmem_pc_out:          8; 
+# time: 1385000; dut.d.pc_module_out: 00000070; rvfi.order:                    6; dut.d.flush: 0; dut.d.correct: 1; dut.d.pipereg_idex_flush: 1; dut.d.pipereg_idex_taken: 0; dut.d.branch_go: 0;  
+# time: 1395000; dut.d.pc_module_out: 00000074; rvfi.order:                    7; dut.d.flush: 1; dut.d.correct: 0; dut.d.pipereg_idex_flush: 0; dut.d.pipereg_idex_taken: 1; dut.d.branch_go: 0;  
+# time: 1405000; dut.d.pc_module_out: 00000070; rvfi.order:                    8; dut.d.flush: 1; dut.d.correct: 1; dut.d.pipereg_idex_flush: 1; dut.d.pipereg_idex_taken: 0; dut.d.branch_go: 0;  
+# -------- RVFI Monitor error 106 in channel 0: mp3_tb.tb.genblk3.monitor.ch0_handle_error at time 1415000 --------
+# Error message: mismatch in pc_wdata
+# rvfi_valid = 1
+# rvfi_order = 0000000000000008
+# rvfi_insn = 00000013
+# rvfi_trap = 0
+# rvfi_halt = 0
+# rvfi_intr = 0
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 00000070
+# rvfi_pc_wdata = 0000006c
+# rvfi_mem_addr = 00000000
+# rvfi_mem_rmask = 0
+# rvfi_mem_wmask = 0
+# rvfi_mem_rdata = 00000001
+# rvfi_mem_wdata = 00000000
+# spec_valid = 1
+# spec_trap = 0
+# spec_rs1_addr = 00
+# spec_rs2_addr = 00
+# spec_rd_addr = 00
+# spec_rd_wdata = 00000000
+# spec_pc_wdata = 00000074
+# spec_mem_addr = 00000000
+# spec_mem_rmask = 0
+# spec_mem_wmask = 0
+# spec_mem_wdata = 00000000
 # TOP: Errcode: 0
 # ** Note: $finish    : ./hvl/source_tb.sv(44)
-#    Time: 1145 ns  Iteration: 1  Instance: /mp3_tb/tb
-# End time: 16:35:48 on Apr 24,2020, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 20
+#    Time: 1415 ns  Iteration: 1  Instance: /mp3_tb/tb
+# End time: 09:54:00 on Apr 26,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 8
