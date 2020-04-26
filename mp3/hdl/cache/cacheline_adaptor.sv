@@ -20,57 +20,71 @@ module cacheline_adaptor
     input resp_i
 );
 
-logic [3:0] state, next;
-logic [255:0] read_buffer;
+enum int {idle, cycle0, cycle1, cycle2, cycle3, finish} state, next;
+
+logic [255:0] read_buffer, write_buffer, write_buffer_next;
+logic [31:0] addr_buffer, addr_next;
+
+assign address_o = addr_buffer;
 
 always_comb begin
-    if (read_i == 1'b1 && write_i == 1'b1) begin
-        read_o = 1'b1;
-        write_o = 1'b0;
-    end else begin
-        read_o = read_i;
-        write_o = write_i;
-    end
-
-    address_o = address_i;
-
     // default behavior
+	 read_o = 1'b0;
+	 write_o = 1'b0;
     read_buffer = line_o;
-    next = 4'h0;
+	 write_buffer_next = write_buffer;
+    next = idle;
     resp_o = 1'b0;
 	 burst_o = {64{1'b0}};
+	 addr_next = addr_buffer;
 
     case(state)
-        4'h0: begin
+	     idle: begin
+		      if (read_i || write_i) begin
+				    next = cycle0;
+					 addr_next = address_i;
+					 write_buffer_next = line_i;
+				end
+		  end
+		  
+        cycle0: begin
+            read_o = read_i;
+				write_o = write_i;
             if (resp_i) begin
-                next = 4'h1;
+                next = cycle1;
                 read_buffer[63:0] = burst_i;
-                burst_o = line_i[63:0];
+                burst_o = write_buffer[63:0];
             end else begin
-                next = 4'h0;
+                next = cycle0;
             end
         end
 
-        4'h1: begin
-            next = 4'h2;
+        cycle1: begin
+            next = cycle2;
+				read_o = read_i;
+				write_o = write_i;
             read_buffer[127:64] = burst_i;
-            burst_o = line_i[127:64];
+            burst_o = write_buffer[127:64];
         end
 
-        4'h2: begin
-            next = 4'h3;
+        cycle2: begin
+            next = cycle3;
+				read_o = read_i;
+				write_o = write_i;
             read_buffer[191:128] = burst_i;
-            burst_o = line_i[191:128];
+            burst_o = write_buffer[191:128];
         end
 
-        4'h3: begin
-            next = 4'h4;
+        cycle3: begin
+            next = finish;
+				read_o = read_i;
+				write_o = write_i;
             read_buffer[255:192] = burst_i;
-            burst_o = line_i[255:192];
+            burst_o = write_buffer[255:192];
         end
 
-        4'h4: begin
-            next = 4'h0;
+        finish: begin
+            next = idle;
             resp_o = 1'b1;
 				read_o = 1'b0;
 				write_o = 1'b0;
@@ -81,8 +95,10 @@ always_comb begin
 end
 
 always_ff @(posedge clk) begin
-    state <= reset_n? next : 4'h0;
+    state <= reset_n? next : idle;
     line_o <= read_buffer;
+	 addr_buffer <= addr_next;
+	 write_buffer <= write_buffer_next;
 end
 
 endmodule : cacheline_adaptor
