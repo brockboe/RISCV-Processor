@@ -57,6 +57,7 @@ task automatic memread(input logic [ADDRLEN-1:0] addr);
     _pageno = addr / PAGE_SIZE;
     delay = _pageno == pageno ? DELAY_PAGE_HIT : DELAY_MEM;
     pageno = _pageno;
+    $display("memread(_addr=%x)", _addr);
     fork : f
         begin : error_check
             // This process simply runs some assertions at each 

@@ -80,7 +80,6 @@ logic br_en_out;                           //TODO: When working with the cmp mod
 logic [31:0] pipereg_exmem_br_en_out;      // that the output is one bit, and must be extended
 logic [31:0] pipereg_memwb_br_en;          // to 32 bits.
 logic [31:0] cmpmux_out;
-logic branch_go;                    // specifies whether we need to branch
 logic pause_pipeline;               // logic specifying if we need to halt the pipeline
 logic [31:0] mem_rdata;       //parsed memory input, for non-word-aligned stores
 logic [31:0] mem_wdata;       //parsed memory output, for non-word-aligned writes
@@ -111,6 +110,12 @@ logic prediction;
 logic taken, pipereg_idex_taken, pipereg_ifid_taken;
 logic correct, pipereg_exmem_correct;
 logic flush, pipereg_idex_flush, pipereg_exmem_flush;
+logic not_correct,is_taken, is_jal, is_jalr;
+assign not_correct = ~correct && pipereg_idex_idecode.opcode == op_br;
+assign is_taken = pipereg_idex_taken;
+assign is_jal = pipereg_idex_idecode.opcode == op_jal;
+assign is_jalr = pipereg_idex_idecode.opcode == op_jalr;
+assign is_br = pipereg_idex_idecode.opcode == op_br;
 
 
 
@@ -168,11 +173,6 @@ always_comb begin
       fitf.exmem_inst_decode = pipereg_exmem_idecode;
       fitf.memwb_inst_decode = pipereg_memwb_idecode;
 
-      // calculate whether or not we need to branch
-      branch_go = (pipereg_exmem_br_en_out[0] &
-                  (pipereg_exmem_idecode.opcode == op_br)) |
-                  (pipereg_exmem_idecode.opcode == op_jal) |
-                  (pipereg_exmem_idecode.opcode == op_jalr);
 
       // calcualte if we need to pause (if we're waiting on data from memory)
       if (icache_read & (~icache_resp)) pause_pipeline = 1'b1; // waiting on icache
@@ -225,7 +225,7 @@ endfunction
 //********************************** Pipeline Registers
 
 // IF / ID Registers
-assign pipe_rst_ifid = rst | (branch_go & (~pause_pipeline));
+assign pipe_rst_ifid = rst;
 assign pipe_load_ifid = ~pause_pipeline;
 // holds instruction data for current instruction
 register #(.width(192))
@@ -257,8 +257,8 @@ pipe_ifid_taken (
 
 
 // ID / EX Registers
-assign pipe_rst_idex = rst | (branch_go & (~pause_pipeline));
-assign pipe_load_idex = ~pause_pipeline;
+assign pipe_rst_idex = rst;
+assign pipe_load_idex = ~pause_pipeline && (pipereg_ifid_idecode.opcode == op_br);
 // holds the decoded instruction
 register #(.width(192))
 pipe_idex_idecode (
@@ -330,8 +330,8 @@ pipe_idex_flush (
 
 
 // EX/MEM Registers
-assign pipe_rst_exmem = rst | (branch_go & (~pause_pipeline));
-assign pipe_load_exmem = ~pause_pipeline;
+assign pipe_rst_exmem = rst;
+assign pipe_load_exmem = ~pause_pipeline && (pipereg_ifid_idecode.opcode == op_br);
 //rs2 out
 register #(.width(32))
 pipe_exmem_rs2_out (
@@ -507,14 +507,14 @@ btb btb(
     .clk(clk),
     .r_pc(pc_module_out), //changed from pipereg_ifid_pc_out to pc_module_out so we get pc from IF
     .w_pc(pipereg_idex_pc_out),
-    .load(pipereg_idex_idecode.opcode == op_br && ~pause_pipeline),
+    .load(is_br && ~pause_pipeline),
     .read(~pause_pipeline),
     .target_in(alu_module_out),
     .target_out(target),
     .btb_hit(btb_hit)
 );
 
-assign correct = (pipereg_idex_taken == (br_en_out && pipereg_idex_idecode.opcode == op_br && ~pipereg_idex_flush));
+assign correct = (pipereg_idex_taken == br_en_out && is_br && ~pipereg_idex_flush);
 bht local_bht(
     .clk(clk),
     .read(~pause_pipeline),
@@ -717,6 +717,7 @@ assign idex_funct3 = muldiv_funct3_t ' (pipereg_idex_idecode.funct3);
 assign idex_opcode = pipereg_idex_idecode.opcode;
 assign idex_funct7 = pipereg_idex_idecode.funct7;
 
+
 always_comb begin : MUXES
       // Set defaults
       pcmux_out = 32'bx;
@@ -728,18 +729,21 @@ always_comb begin : MUXES
       bpmux_out = 32'bx;
 
       //Branch predictor
-      unique case ({~correct && ~pipereg_idex_flush, pipereg_idex_taken})
+      
+      unique case ({not_correct, is_taken})
             2'b00: bpmux_out = pc_module_out + 32'd4; //not taken correct
             2'b01: bpmux_out = pc_module_out + 32'd4; //taken correct
-            2'b10: bpmux_out = alu_module_out + 32'd4; //not taken incorrect
+            2'b10: bpmux_out = alu_module_out; //not taken incorrect
             2'b11: bpmux_out = pipereg_idex_pc_out + 32'd4; //taken incorrect
+            default: bpmux_out = pc_module_out + 32'd4;
       endcase
 
-      // input into the pc module, dependent
-      // on the branch_go signal
-      unique case (branch_go)
-            1'b0: pcmux_out = bpmux_out;
-            1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
+      //Modified with branch prediction
+      unique case ({is_jalr, is_jal})
+            2'b00: pcmux_out = bpmux_out;
+            2'b01: pcmux_out = pipe_exmem_alu_out;
+            2'b10: pcmux_out = {pipe_exmem_alu_out[31:2], 2'b0};
+            2'b11: pcmux_out = bpmux_out; //Shouldnt be here
             default: pcmux_out = bpmux_out;
       endcase
 

@@ -14,7 +14,7 @@ module bht #(
     output logic prediction
 );
 // 2-bit saturating counters
-logic [1:0] data [n_sets-1:0] = '{default: 2'b10};
+logic [1:0] data [n_sets-1:0] = '{default: 2'b00};
 logic [1:0] _data;
 
 always_comb begin
