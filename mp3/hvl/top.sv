@@ -1,4 +1,5 @@
 import dcachemux::*;
+import rv32i_types::*;
 
 module mp3_tb;
 `timescale 1ns/10ps
@@ -45,7 +46,7 @@ always_ff @(posedge itf.clk) begin
             exmem_rs2_rdata <= dut.d.rs2mux_out;
       end
       if (~pause_pipeline) begin
-            memwb_pc_wdata <= dut.d.pipereg_exmem_pc_out;//(dut.d.branch_go)? dut.d.pc_in : (dut.d.pipereg_idex_pc_out);
+            memwb_pc_wdata <= dut.d.pipereg_idex_pc_out;//(dut.d.branch_go)? dut.d.pc_in : (dut.d.pipereg_idex_pc_out);
             memwb_rs1_rdata <= exmem_rs1_rdata;
             //memwb_rs2_rdata <= exmem_rs2_rdata;
             unique case(dut.d.dcachemux_forwarding_sel)
@@ -62,9 +63,9 @@ end
 
 always_comb begin // rvfi signals
 //     logic halt;
-      //if (dut.d.pipereg_memwb_idecode.opcode) begin
+      if (dut.d.pipereg_memwb_idecode.opcode) begin
             rvfi.commit = (~pause_pipeline);
-      //end else rvfi.commit = 1'b0;
+      end else rvfi.commit = 1'b0;
 //     logic [63:0] order;
       rvfi.inst = {dut.d.pipereg_memwb_idecode.u_imm[31:12], dut.d.pipereg_memwb_idecode.rd, dut.d.pipereg_memwb_idecode.opcode};
       rvfi.trap = 1'b0;
@@ -75,8 +76,8 @@ always_comb begin // rvfi signals
       rvfi.load_regfile = dut.d.pipereg_memwb_ctrl_word.load_regfile;
       rvfi.rd_addr = dut.d.pipereg_memwb_idecode.rd;
       rvfi.rd_wdata = dut.d.regfile.in;
-      rvfi.pc_rdata = dut.d.pc_module_out;
-      rvfi.pc_wdata = dut.d.pc_in;
+      rvfi.pc_rdata = dut.d.pipereg_memwb_pc_out;
+      rvfi.pc_wdata = dut.d.pipereg_exmem_pc_out;
       rvfi.mem_addr = memwb_mem_addr;
       rvfi.mem_rmask = memwb_mem_rmask;
       rvfi.mem_wmask = memwb_mem_wmask;
@@ -113,56 +114,58 @@ assign itf.data_rdata = dut.dcache_rdata;
 assign itf.registers = dut.d.regfile.data;
 
 initial begin
-      // $monitor(
-      //       "time: %0t; ", $time,
-      //       "opcode: %d; ",dut.d.pipereg_memwb_idecode.opcode,
-      //       "rvfi.commit: %d; ", rvfi.commit,
-      //       "ifid_is_br: %d; ", dut.d.pipereg_ifid_idecode.opcode==7'b1100011,
-      //       "dut.d.flush: %d; ", dut.d.flush,
-      //       "dut.d.btb_hit: %d; ", dut.d.btb_hit,
-      //       "dut.d.pause_pipeline: %d; ", dut.d.pause_pipeline,
-      //       "dut.d.taken: %d; ", dut.d.taken,
-      //       "dut.d.prediction: %d; ", dut.d.prediction,
-      //       // "\n",
-      //       // "dut.d.br_en_out: %d; ", dut.d.br_en_out,
-      //       // "dut.d.pipereg_idex_idecode.opcode: %d; ", dut.d.pipereg_idex_idecode.opcode,
-      //       "\n",
-      //       "dut.d.not_correct: %d; ",dut.d.not_correct,
-      //       "dut.d.is_taken: %d; ", dut.d.is_taken,
-      //       "is_jalr: %d; ", dut.d.is_jalr,
-      //       "is_jal: %d; ", dut.d.is_jal,
-      //       "\n",
-      //       "dut.d.bpmux_out: %x; ", dut.d.bpmux_out,
-      //       "dut.d.pcmux_out: %x; ", dut.d.pcmux_out,
-      //       "dut.d.pc_in: %x; ", dut.d.pc_in,
-      //       "dut.d.pc_module_out: %x; ", dut.d.pc_module_out,
-      //       "\n",
-      //       "dut.d.alu_module_out: %x; ", dut.d.alu_module_out,
-      //       "dut.d.pipe_exmem_alu_out: %x; ", dut.d.pipe_exmem_alu_out,
-      //       "\n",
-      //       "rvfi.pc_rdata: %x; ", rvfi.pc_rdata,
-      //       "rvfi.pc_wdata: %x; ", rvfi.pc_wdata,
+      $monitor(
+            "time: %0t; ", $time,
+            "is_jal: %d; ", dut.d.is_jal,
+            "is_jalr: %d; ", dut.d.is_jalr,
+            // "dut.d.rs1mux_out: %x; ", dut.d.rs1mux_out,
+            // "dut.d.rs2mux_out: %x; ", dut.d.rs2mux_out,
+            // "opcode: %d; ",dut.d.pipereg_memwb_idecode.opcode,
+            // "rvfi.commit: %d; ", rvfi.commit,
+            // "ifid_is_br: %d; ", dut.d.pipereg_ifid_idecode.opcode==7'b1100011,
+            // "dut.d.pipereg_memwb_mdr_out: %x; ", dut.d.pipereg_memwb_mdr_out,
+            // "dut.d.flush: %d; ", dut.d.flush,
+            // "dut.d.btb_hit: %d; ", dut.d.btb_hit,
+            // "dut.d.pause_pipeline: %d; ", dut.d.pause_pipeline,
+            // "dut.d.taken: %d; ", dut.d.taken,
+            // "dut.d.prediction: %d; ", dut.d.prediction,
+            // "dut.d.pipe_exmem_alu_out: %x; ", dut.d.pipe_exmem_alu_out,
+            // "dut.d.pipe_memwb_alu_out: %x; ", dut.d.pipe_memwb_alu_out,
+            // // "\n",
+            // // "dut.d.br_en_out: %d; ", dut.d.br_en_out,
+            // // "dut.d.pipereg_idex_idecode.opcode: %d; ", dut.d.pipereg_idex_idecode.opcode,
+            // "\n",
+            // "dut.d.not_correct: %d; ",dut.d.not_correct,
+            // "dut.d.is_taken: %d; ", dut.d.is_taken,
+            // "\n",
+            // "dut.d.bpmux_out: %x; ", dut.d.bpmux_out,
+            // "dut.d.pcmux_out: %x; ", dut.d.pcmux_out,
+            "dut.d.pc_in: %x; ", dut.d.pc_in,
+            "dut.d.pc_module_out: %x; ", dut.d.pc_module_out,
+            // "\n",
+            // "dut.d.alu_module_out: %x; ", dut.d.alu_module_out,
+            // "dut.d.pipe_exmem_alu_out: %x; ", dut.d.pipe_exmem_alu_out,
+            // "\n",
+            // "rvfi.pc_rdata: %x; ", rvfi.pc_rdata,
+            // "rvfi.pc_wdata: %x; ", rvfi.pc_wdata,
 
             
-      //       // "dut.d.pipereg_idex_pc_out: %x; ", dut.d.pipereg_idex_pc_out,
-      //       // "rvfi.order: %d; ", rvfi.order,
-      //       // "dut.d.flush: %d; ", dut.d.flush, 
-      //       // "dut.d.correct: %d; ", dut.d.correct,
-      //       // "dut.d.pipereg_idex_flush: %d; ", dut.d.pipereg_idex_flush,
-      //       // "dut.d.pipereg_idex_taken: %d; ", dut.d.pipereg_idex_taken,
-      //       // "dut.d.branch_go: %d; ",dut.d.branch_go,
-      //       // "dut.d.branch_go: %d; ", dut.d.branch_go,
-      //       // "dut.d.pipereg_idex_taken: %d; ", dut.d.pipereg_idex_taken,
-      //       // "dut.d.pc_in: %d;", dut.d.pc_in,
-      //       // "dut.d.pcmux_out: %d;", dut.d.pcmux_out,
-      //       // "dut.d.bpmux_out: %d;", dut.d.bpmux_out,
-      //       "\n",
-      //       "dut.d.pipereg_ifid_pc_out: %x; ", dut.d.pipereg_ifid_pc_out,
-      //       "dut.d.pipereg_idex_pc_out: %x; ", dut.d.pipereg_idex_pc_out,
-      //       "dut.d.pipereg_exmem_pc_out: %x; ", dut.d.pipereg_exmem_pc_out,
-      //       "dut.d.pipereg_memwb_pc_out: %x; ", dut.d.pipereg_memwb_pc_out,
-      //       "\n",
-      // );
+            // "dut.d.pipereg_idex_pc_out: %x; ", dut.d.pipereg_idex_pc_out,
+            // "rvfi.order: %d; ", rvfi.order,
+            // "dut.d.flush: %d; ", dut.d.flush, 
+            // "dut.d.correct: %d; ", dut.d.correct,
+            // "dut.d.pipereg_idex_flush: %d; ", dut.d.pipereg_idex_flush,
+            // "dut.d.pipereg_idex_taken: %d; ", dut.d.pipereg_idex_taken,
+            // "dut.d.pc_in: %d;", dut.d.pc_in,
+            // "dut.d.pcmux_out: %d;", dut.d.pcmux_out,
+            // "dut.d.bpmux_out: %d;", dut.d.bpmux_out,
+            "\n",
+            "dut.d.pipereg_ifid_pc_out: %x; ", dut.d.pipereg_ifid_pc_out,
+            "dut.d.pipereg_idex_pc_out: %x; ", dut.d.pipereg_idex_pc_out,
+            "dut.d.pipereg_exmem_pc_out: %x; ", dut.d.pipereg_exmem_pc_out,
+            "dut.d.pipereg_memwb_pc_out: %x; ", dut.d.pipereg_memwb_pc_out,
+            "\n",
+      );
       itf.rst = 1'b1;
       repeat (5) @(posedge itf.clk);
       itf.rst = 1'b0;

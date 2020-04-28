@@ -226,7 +226,7 @@ endfunction
 
 // IF / ID Registers
 assign pipe_rst_ifid = rst;
-assign pipe_load_ifid = ~pause_pipeline;
+assign pipe_load_ifid = ~pause_pipeline && ~(pipereg_idex_idecode.opcode == op_jalr)&& ~(pipereg_exmem_idecode.opcode == op_jalr);
 // holds instruction data for current instruction
 register #(.width(192))
 pipe_ifid_idecode (
@@ -258,7 +258,7 @@ pipe_ifid_taken (
 
 // ID / EX Registers
 assign pipe_rst_idex = rst;
-assign pipe_load_idex = ~pause_pipeline && (pipereg_ifid_idecode.opcode == op_br);
+assign pipe_load_idex = ~pause_pipeline && ~(pipereg_idex_idecode.opcode == op_jalr) && ~(pipereg_exmem_idecode.opcode == op_jalr);
 // holds the decoded instruction
 register #(.width(192))
 pipe_idex_idecode (
@@ -331,7 +331,7 @@ pipe_idex_flush (
 
 // EX/MEM Registers
 assign pipe_rst_exmem = rst;
-assign pipe_load_exmem = ~pause_pipeline && (pipereg_ifid_idecode.opcode == op_br);
+assign pipe_load_exmem = ~pause_pipeline && ~(pipereg_idex_idecode.opcode == op_jalr) && ~(pipereg_exmem_idecode.opcode == op_jalr);
 //rs2 out
 register #(.width(32))
 pipe_exmem_rs2_out (
@@ -409,7 +409,7 @@ pipe_exmem_flush (
 
 
 // MEM / WB Registers
-assign pipe_load_memwb = ~pause_pipeline;
+assign pipe_load_memwb = ~pause_pipeline && ~(pipereg_idex_idecode.opcode == op_jalr) && ~(pipereg_exmem_idecode.opcode == op_jalr);
 // alu output
 register #(.width(32))
 pipe_memwb_alu (
@@ -741,8 +741,8 @@ always_comb begin : MUXES
       //Modified with branch prediction
       unique case ({is_jalr, is_jal})
             2'b00: pcmux_out = bpmux_out;
-            2'b01: pcmux_out = pipe_exmem_alu_out;
-            2'b10: pcmux_out = {pipe_exmem_alu_out[31:2], 2'b0};
+            2'b01: pcmux_out = alu_module_out;
+            2'b10: pcmux_out = {alu_module_out[31:2], 2'b0};
             2'b11: pcmux_out = bpmux_out; //Shouldnt be here
             default: pcmux_out = bpmux_out;
       endcase

@@ -9,7 +9,7 @@
 # 
 # vlog -sv -work work  {./hdl/rv32i_mux_types.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:28 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/rv32i_mux_types.sv 
 # -- Compiling package pcmux
 # -- Compiling package marmux
@@ -22,11 +22,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:28:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/rv32i_types.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:28 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/rv32i_types.sv 
 # -- Compiling package rv32i_types
 # -- Importing package pcmux
@@ -37,11 +37,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:28:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:28 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/alu.sv 
 # -- Compiling package alu_sv_unit
 # -- Importing package rv32i_types
@@ -54,21 +54,21 @@
 # 
 # Top level modules:
 # 	alu
-# End time: 02:28:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/bht.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:28 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/bht.sv 
 # -- Compiling module bht
 # 
 # Top level modules:
 # 	bht
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/btb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/btb.sv 
 # -- Compiling package btb_sv_unit
 # -- Importing package rv32i_types
@@ -81,21 +81,21 @@
 # 
 # Top level modules:
 # 	btb
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/btb_col.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/btb_col.sv 
 # -- Compiling module btb_col
 # 
 # Top level modules:
 # 	btb_col
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/control_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/control_itf.sv 
 # -- Compiling package control_itf_sv_unit
 # -- Importing package rv32i_types
@@ -108,11 +108,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/forwarding/forwarding_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/forwarding/forwarding_itf.sv 
 # -- Compiling package forwarding_itf_sv_unit
 # -- Importing package rv32i_types
@@ -128,11 +128,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cmp_module.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:28 on Apr 27,2020
 # vlog -sv -work work ./hdl/cmp_module.sv 
 # -- Compiling package cmp_module_sv_unit
 # -- Importing package rv32i_types
@@ -149,11 +149,11 @@
 # 
 # Top level modules:
 # 	cmp_module
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:29 on Apr 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/control_rom.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:29 on Apr 27,2020
 # vlog -sv -work work ./hdl/control_rom.sv 
 # -- Compiling package control_rom_sv_unit
 # -- Importing package rv32i_types
@@ -170,11 +170,197 @@
 # 
 # Top level modules:
 # 	control_rom
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:29 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:29 on Apr 27,2020
+# vlog -sv -work work ./hdl/datapath.sv 
+# ** Error: (vlog-13069) ./hdl/datapath.sv(261): near "&&": syntax error, unexpected &&.
+# End time: 16:21:29 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /software/quartus-std-18.1/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./run.do line 18
+# /software/quartus-std-18.1/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -sv -work work  {./hdl/datapath.sv}"
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work  {./hdl/rv32i_mux_types.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:39 on Apr 27,2020
+# vlog -sv -work work ./hdl/rv32i_mux_types.sv 
+# -- Compiling package pcmux
+# -- Compiling package marmux
+# -- Compiling package cmpmux
+# -- Compiling package alumux
+# -- Compiling package rs1mux
+# -- Compiling package rs2mux
+# -- Compiling package regfilemux
+# -- Compiling package dcachemux
+# 
+# Top level modules:
+# 	--none--
+# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/rv32i_types.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:39 on Apr 27,2020
+# vlog -sv -work work ./hdl/rv32i_types.sv 
+# -- Compiling package rv32i_types
+# -- Importing package pcmux
+# -- Importing package marmux
+# -- Importing package cmpmux
+# -- Importing package alumux
+# -- Importing package regfilemux
+# 
+# Top level modules:
+# 	--none--
+# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/alu.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:39 on Apr 27,2020
+# vlog -sv -work work ./hdl/alu.sv 
+# -- Compiling package alu_sv_unit
+# -- Importing package rv32i_types
+# -- Importing package pcmux
+# -- Importing package marmux
+# -- Importing package cmpmux
+# -- Importing package alumux
+# -- Importing package regfilemux
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/bht.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:39 on Apr 27,2020
+# vlog -sv -work work ./hdl/bht.sv 
+# -- Compiling module bht
+# 
+# Top level modules:
+# 	bht
+# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/btb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:39 on Apr 27,2020
+# vlog -sv -work work ./hdl/btb.sv 
+# -- Compiling package btb_sv_unit
+# -- Importing package rv32i_types
+# -- Importing package pcmux
+# -- Importing package marmux
+# -- Importing package cmpmux
+# -- Importing package alumux
+# -- Importing package regfilemux
+# -- Compiling module btb
+# 
+# Top level modules:
+# 	btb
+# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/btb_col.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:39 on Apr 27,2020
+# vlog -sv -work work ./hdl/btb_col.sv 
+# -- Compiling module btb_col
+# 
+# Top level modules:
+# 	btb_col
+# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/control_itf.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:39 on Apr 27,2020
+# vlog -sv -work work ./hdl/control_itf.sv 
+# -- Compiling package control_itf_sv_unit
+# -- Importing package rv32i_types
+# -- Importing package pcmux
+# -- Importing package marmux
+# -- Importing package cmpmux
+# -- Importing package alumux
+# -- Importing package regfilemux
+# -- Compiling package control_itf
+# 
+# Top level modules:
+# 	--none--
+# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/forwarding/forwarding_itf.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:39 on Apr 27,2020
+# vlog -sv -work work ./hdl/forwarding/forwarding_itf.sv 
+# -- Compiling package forwarding_itf_sv_unit
+# -- Importing package rv32i_types
+# -- Importing package pcmux
+# -- Importing package marmux
+# -- Importing package cmpmux
+# -- Importing package alumux
+# -- Importing package regfilemux
+# -- Importing package control_itf
+# -- Importing package rs1mux
+# -- Importing package rs2mux
+# -- Compiling package forwarding_itf
+# 
+# Top level modules:
+# 	--none--
+# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/cmp_module.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:40 on Apr 27,2020
+# vlog -sv -work work ./hdl/cmp_module.sv 
+# -- Compiling package cmp_module_sv_unit
+# -- Importing package rv32i_types
+# -- Importing package pcmux
+# -- Importing package marmux
+# -- Importing package cmpmux
+# -- Importing package alumux
+# -- Importing package regfilemux
+# -- Importing package control_itf
+# -- Importing package rs1mux
+# -- Importing package rs2mux
+# -- Importing package dcachemux
+# -- Compiling module cmp_module
+# 
+# Top level modules:
+# 	cmp_module
+# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/control_rom.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:40 on Apr 27,2020
+# vlog -sv -work work ./hdl/control_rom.sv 
+# -- Compiling package control_rom_sv_unit
+# -- Importing package rv32i_types
+# -- Importing package pcmux
+# -- Importing package marmux
+# -- Importing package cmpmux
+# -- Importing package alumux
+# -- Importing package regfilemux
+# -- Importing package rs1mux
+# -- Importing package rs2mux
+# -- Importing package dcachemux
+# -- Importing package control_itf
+# -- Compiling module control_rom
+# 
+# Top level modules:
+# 	control_rom
+# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work  {./hdl/datapath.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:40 on Apr 27,2020
 # vlog -sv -work work ./hdl/datapath.sv 
 # -- Compiling package datapath_sv_unit
 # -- Importing package rv32i_types
@@ -192,11 +378,11 @@
 # 
 # Top level modules:
 # 	datapath
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/execute_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:40 on Apr 27,2020
 # vlog -sv -work work ./hdl/execute_controller.sv 
 # -- Compiling package execute_controller_sv_unit
 # -- Importing package control_itf
@@ -210,11 +396,11 @@
 # 
 # Top level modules:
 # 	execute_controller
-# End time: 02:28:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/ir.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:29 on Apr 27,2020
+# Start time: 16:21:40 on Apr 27,2020
 # vlog -sv -work work ./hdl/ir.sv 
 # -- Compiling package ir_sv_unit
 # -- Importing package rv32i_types
@@ -227,11 +413,11 @@
 # 
 # Top level modules:
 # 	ir
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/mp3.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:40 on Apr 27,2020
 # vlog -sv -work work ./hdl/mp3.sv 
 # -- Compiling package mp3_sv_unit
 # -- Importing package rv32i_types
@@ -248,31 +434,31 @@
 # 
 # Top level modules:
 # 	mp3
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/pc_reg.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:40 on Apr 27,2020
 # vlog -sv -work work ./hdl/pc_reg.sv 
 # -- Compiling module pc_register
 # 
 # Top level modules:
 # 	pc_register
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:41 on Apr 27,2020
 # vlog -sv -work work ./hdl/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:41 on Apr 27,2020
 # vlog -sv -work work ./hdl/register.sv 
 # -- Compiling package register_sv_unit
 # -- Importing package control_itf
@@ -288,11 +474,11 @@
 # Top level modules:
 # 	register
 # 	ctrl_word_register
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/array.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:41 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/array.sv 
 # -- Compiling module array
 # -- Compiling module array2
@@ -300,130 +486,130 @@
 # Top level modules:
 # 	array
 # 	array2
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/bus_adapter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:41 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/bus_adapter.sv 
 # -- Compiling module bus_adapter
 # 
 # Top level modules:
 # 	bus_adapter
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_arbiter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:41 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/cache_arbiter.sv 
 # -- Compiling module cache_arbiter
 # 
 # Top level modules:
 # 	cache_arbiter
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:41 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/cache_control.sv 
 # -- Compiling module cache_control
 # 
 # Top level modules:
 # 	cache_control
-# End time: 02:28:30 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:30 on Apr 27,2020
+# Start time: 16:21:41 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/cache_datapath.sv 
 # -- Compiling module cache_datapath
 # 
 # Top level modules:
 # 	cache_datapath
-# End time: 02:28:31 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:31 on Apr 27,2020
+# Start time: 16:21:41 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/cache.sv 
 # -- Compiling module cache
 # 
 # Top level modules:
 # 	cache
-# End time: 02:28:31 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cacheline_adaptor.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:31 on Apr 27,2020
+# Start time: 16:21:42 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/cacheline_adaptor.sv 
 # -- Compiling module cacheline_adaptor
 # 
 # Top level modules:
 # 	cacheline_adaptor
-# End time: 02:28:31 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/data_array.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:31 on Apr 27,2020
+# Start time: 16:21:42 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/data_array.sv 
 # -- Compiling module data_array
 # 
 # Top level modules:
 # 	data_array
-# End time: 02:28:31 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:31 on Apr 27,2020
+# Start time: 16:21:42 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/l2_cache.sv 
 # -- Compiling module l2_cache
 # 
 # Top level modules:
 # 	l2_cache
-# End time: 02:28:31 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:31 on Apr 27,2020
+# Start time: 16:21:42 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/l2_control.sv 
 # -- Compiling module l2_control
 # 
 # Top level modules:
 # 	l2_control
-# End time: 02:28:31 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:31 on Apr 27,2020
+# Start time: 16:21:42 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/l2_datapath.sv 
 # -- Compiling module l2_datapath
 # 
 # Top level modules:
 # 	l2_datapath
-# End time: 02:28:31 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/mp3_cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:31 on Apr 27,2020
+# Start time: 16:21:42 on Apr 27,2020
 # vlog -sv -work work ./hdl/cache/mp3_cache.sv 
 # -- Compiling module mp3_cache
 # 
 # Top level modules:
 # 	mp3_cache
-# End time: 02:28:31 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/forwarding/forwarding.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:31 on Apr 27,2020
+# Start time: 16:21:42 on Apr 27,2020
 # vlog -sv -work work ./hdl/forwarding/forwarding.sv 
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:28:32 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/divider.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:32 on Apr 27,2020
+# Start time: 16:21:42 on Apr 27,2020
 # vlog -sv -work work ./hdl/muldiv/divider.sv 
 # -- Compiling package divider_sv_unit
 # -- Importing package rv32i_types
@@ -437,20 +623,20 @@
 # 
 # Top level modules:
 # 	divider
-# End time: 02:28:32 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/mult_precomputed.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:32 on Apr 27,2020
+# Start time: 16:21:43 on Apr 27,2020
 # vlog -sv -work work ./hdl/muldiv/mult_precomputed.sv 
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:28:32 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/multiplier.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:32 on Apr 27,2020
+# Start time: 16:21:43 on Apr 27,2020
 # vlog -sv -work work ./hdl/muldiv/multiplier.sv 
 # -- Compiling package multiplier_sv_unit
 # -- Importing package rv32i_types
@@ -464,7 +650,7 @@
 # 
 # Top level modules:
 # 	multiplier
-# End time: 02:28:32 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
@@ -472,17 +658,17 @@
 # 
 # vlog -sv -work work  {./hvl/magic_dual_port.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:32 on Apr 27,2020
+# Start time: 16:21:43 on Apr 27,2020
 # vlog -sv -work work ./hvl/magic_dual_port.sv 
 # -- Compiling module magic_memory_dp
 # 
 # Top level modules:
 # 	magic_memory_dp
-# End time: 02:28:32 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/param_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:32 on Apr 27,2020
+# Start time: 16:21:43 on Apr 27,2020
 # vlog -sv -work work ./hvl/param_memory.sv 
 # -- Compiling module ParamMemory
 # ** Warning: ./hvl/param_memory.sv(25): (vlog-2244) Variable 'iteration' is implicitly static. You must either explicitly declare it as static or automatic
@@ -490,21 +676,21 @@
 # 
 # Top level modules:
 # 	ParamMemory
-# End time: 02:28:32 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vlog -sv -work work  {./hvl/shadow_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:32 on Apr 27,2020
+# Start time: 16:21:43 on Apr 27,2020
 # vlog -sv -work work ./hvl/shadow_memory.sv 
 # -- Compiling module shadow_memory
 # 
 # Top level modules:
 # 	shadow_memory
-# End time: 02:28:32 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/rvfimon.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:32 on Apr 27,2020
+# Start time: 16:21:43 on Apr 27,2020
 # vlog -sv -work work ./hvl/rvfimon.v 
 # -- Compiling module riscv_formal_monitor_rv32imc
 # -- Compiling module riscv_formal_monitor_rv32imc_rob
@@ -582,55 +768,67 @@
 # 
 # Top level modules:
 # 	riscv_formal_monitor_rv32imc
-# End time: 02:28:33 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/source_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:33 on Apr 27,2020
+# Start time: 16:21:44 on Apr 27,2020
 # vlog -sv -work work ./hvl/source_tb.sv 
 # -- Compiling module source_tb
 # 
 # Top level modules:
 # 	source_tb
-# End time: 02:28:33 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/rvfi_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:33 on Apr 27,2020
+# Start time: 16:21:44 on Apr 27,2020
 # vlog -sv -work work ./hvl/rvfi_itf.sv 
 # -- Compiling interface rvfi_itf
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:28:33 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/tb_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:33 on Apr 27,2020
+# Start time: 16:21:44 on Apr 27,2020
 # vlog -sv -work work ./hvl/tb_itf.sv 
 # -- Compiling interface tb_itf
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:28:33 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/top.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 02:28:33 on Apr 27,2020
+# Start time: 16:21:44 on Apr 27,2020
 # vlog -sv -work work ./hvl/top.sv 
 # -- Compiling package top_sv_unit
 # -- Importing package dcachemux
+# -- Importing package rv32i_types
+# -- Importing package pcmux
+# -- Importing package marmux
+# -- Importing package cmpmux
+# -- Importing package alumux
+# -- Importing package regfilemux
 # -- Compiling module mp3_tb
 # 
 # Top level modules:
 # 	mp3_tb
-# End time: 02:28:33 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixv_ver -L stratixv_hssi_ver -L stratixv_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  mp3_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixv_ver -L stratixv_hssi_ver -L stratixv_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" mp3_tb 
-# Start time: 02:28:33 on Apr 27,2020
+# Start time: 16:21:44 on Apr 27,2020
 # Loading sv_std.std
+# Loading work.regfilemux
+# Loading work.alumux
+# Loading work.cmpmux
+# Loading work.marmux
+# Loading work.pcmux
+# Loading work.rv32i_types
 # Loading work.dcachemux
 # Loading work.top_sv_unit
 # Loading work.mp3_tb
@@ -639,12 +837,6 @@
 # Loading work.source_tb
 # Loading work.rs2mux
 # Loading work.rs1mux
-# Loading work.regfilemux
-# Loading work.alumux
-# Loading work.cmpmux
-# Loading work.marmux
-# Loading work.pcmux
-# Loading work.rv32i_types
 # Loading work.control_itf
 # Loading work.mp3_sv_unit
 # Loading work.mp3
@@ -764,26 +956,541 @@
 # ** Warning: (vsim-3017) ./hdl/datapath.sv(545): [TFMPC] - Too few port connections. Expected 8, found 7.
 #    Time: 0 ps  Iteration: 0  Instance: /mp3_tb/dut/d/multiplier File: ./hdl/muldiv/multiplier.sv
 # ** Warning: (vsim-3722) ./hdl/datapath.sv(545): [TFMPC] - Missing connection for port 'rst'.
-# ** Warning: (vsim-3838) ./hvl/top.sv(108): Variable '/mp3_tb/itf/data_rdata' written by continuous and procedural assignments. 
+# ** Warning: (vsim-3838) ./hvl/top.sv(109): Variable '/mp3_tb/itf/data_rdata' written by continuous and procedural assignments. 
 # One of the assignments is implicit. See ./hvl/tb_itf.sv(70).
 #    Time: 0 ps  Iteration: 0  Instance: /mp3_tb File: ./hvl/top.sv
-# ** Warning: (vsim-3838) ./hvl/top.sv(107): Variable '/mp3_tb/itf/data_resp' written by continuous and procedural assignments. 
+# ** Warning: (vsim-3838) ./hvl/top.sv(108): Variable '/mp3_tb/itf/data_resp' written by continuous and procedural assignments. 
 # One of the assignments is implicit. See ./hvl/tb_itf.sv(70).
 #    Time: 0 ps  Iteration: 0  Instance: /mp3_tb File: ./hvl/top.sv
-# ** Warning: (vsim-3838) ./hvl/top.sv(99): Variable '/mp3_tb/itf/inst_rdata' written by continuous and procedural assignments. 
+# ** Warning: (vsim-3838) ./hvl/top.sv(100): Variable '/mp3_tb/itf/inst_rdata' written by continuous and procedural assignments. 
 # One of the assignments is implicit. See ./hvl/tb_itf.sv(70).
 #    Time: 0 ps  Iteration: 0  Instance: /mp3_tb File: ./hvl/top.sv
-# ** Warning: (vsim-3838) ./hvl/top.sv(98): Variable '/mp3_tb/itf/inst_resp' written by continuous and procedural assignments. 
+# ** Warning: (vsim-3838) ./hvl/top.sv(99): Variable '/mp3_tb/itf/inst_resp' written by continuous and procedural assignments. 
 # One of the assignments is implicit. See ./hvl/tb_itf.sv(70).
 #    Time: 0 ps  Iteration: 0  Instance: /mp3_tb File: ./hvl/top.sv
 # 
 # run -all 
 # Compilation Successful
+# time: 0; is_jal: 0; is_jalr: 0; dut.d.pc_in: xxxxxxxx; dut.d.pc_module_out: xxxxxxxx; 
+# dut.d.pipereg_ifid_pc_out: 00000000; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+#  
 # Reset Memory
+# time: 5000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000064; dut.d.pc_module_out: 00000060; 
+# dut.d.pipereg_ifid_pc_out: 00000000; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+#  
 # memread(_addr=00000060)
+# time: 675000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000068; dut.d.pc_module_out: 00000064; 
+# dut.d.pipereg_ifid_pc_out: 00000060; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+#  
+# time: 685000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000006c; dut.d.pc_module_out: 00000068; 
+# dut.d.pipereg_ifid_pc_out: 00000064; dut.d.pipereg_idex_pc_out: 00000060; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+#  
+# time: 695000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000070; dut.d.pc_module_out: 0000006c; 
+# dut.d.pipereg_ifid_pc_out: 00000068; dut.d.pipereg_idex_pc_out: 00000064; dut.d.pipereg_exmem_pc_out: 00000060; dut.d.pipereg_memwb_pc_out: 00000000; 
+#  
+# time: 705000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000074; dut.d.pc_module_out: 00000070; 
+# dut.d.pipereg_ifid_pc_out: 0000006c; dut.d.pipereg_idex_pc_out: 00000068; dut.d.pipereg_exmem_pc_out: 00000064; dut.d.pipereg_memwb_pc_out: 00000060; 
+#  
+# time: 715000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000078; dut.d.pc_module_out: 00000074; 
+# dut.d.pipereg_ifid_pc_out: 00000070; dut.d.pipereg_idex_pc_out: 0000006c; dut.d.pipereg_exmem_pc_out: 00000068; dut.d.pipereg_memwb_pc_out: 00000064; 
+#  
+# time: 725000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000007c; dut.d.pc_module_out: 00000078; 
+# dut.d.pipereg_ifid_pc_out: 00000074; dut.d.pipereg_idex_pc_out: 00000070; dut.d.pipereg_exmem_pc_out: 0000006c; dut.d.pipereg_memwb_pc_out: 00000068; 
+#  
+# time: 735000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000080; dut.d.pc_module_out: 0000007c; 
+# dut.d.pipereg_ifid_pc_out: 00000078; dut.d.pipereg_idex_pc_out: 00000074; dut.d.pipereg_exmem_pc_out: 00000070; dut.d.pipereg_memwb_pc_out: 0000006c; 
+#  
+# time: 745000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000084; dut.d.pc_module_out: 00000080; 
+# dut.d.pipereg_ifid_pc_out: 0000007c; dut.d.pipereg_idex_pc_out: 00000078; dut.d.pipereg_exmem_pc_out: 00000074; dut.d.pipereg_memwb_pc_out: 00000070; 
+#  
 # memread(_addr=00000080)
+# time: 1125000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000088; dut.d.pc_module_out: 00000084; 
+# dut.d.pipereg_ifid_pc_out: 00000080; dut.d.pipereg_idex_pc_out: 0000007c; dut.d.pipereg_exmem_pc_out: 00000078; dut.d.pipereg_memwb_pc_out: 00000074; 
+#  
+# time: 1135000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000008c; dut.d.pc_module_out: 00000088; 
+# dut.d.pipereg_ifid_pc_out: 00000084; dut.d.pipereg_idex_pc_out: 00000080; dut.d.pipereg_exmem_pc_out: 0000007c; dut.d.pipereg_memwb_pc_out: 00000078; 
+#  
+# time: 1145000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000090; dut.d.pc_module_out: 0000008c; 
+# dut.d.pipereg_ifid_pc_out: 00000088; dut.d.pipereg_idex_pc_out: 00000084; dut.d.pipereg_exmem_pc_out: 00000080; dut.d.pipereg_memwb_pc_out: 0000007c; 
+#  
+# time: 1155000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000094; dut.d.pc_module_out: 00000090; 
+# dut.d.pipereg_ifid_pc_out: 0000008c; dut.d.pipereg_idex_pc_out: 00000088; dut.d.pipereg_exmem_pc_out: 00000084; dut.d.pipereg_memwb_pc_out: 00000080; 
+#  
+# time: 1165000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000098; dut.d.pc_module_out: 00000094; 
+# dut.d.pipereg_ifid_pc_out: 00000090; dut.d.pipereg_idex_pc_out: 0000008c; dut.d.pipereg_exmem_pc_out: 00000088; dut.d.pipereg_memwb_pc_out: 00000084; 
+#  
+# time: 1175000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000009c; dut.d.pc_module_out: 00000098; 
+# dut.d.pipereg_ifid_pc_out: 00000094; dut.d.pipereg_idex_pc_out: 00000090; dut.d.pipereg_exmem_pc_out: 0000008c; dut.d.pipereg_memwb_pc_out: 00000088; 
+#  
+# time: 1185000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000a0; dut.d.pc_module_out: 0000009c; 
+# dut.d.pipereg_ifid_pc_out: 00000098; dut.d.pipereg_idex_pc_out: 00000094; dut.d.pipereg_exmem_pc_out: 00000090; dut.d.pipereg_memwb_pc_out: 0000008c; 
+#  
+# time: 1195000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000a4; dut.d.pc_module_out: 000000a0; 
+# dut.d.pipereg_ifid_pc_out: 0000009c; dut.d.pipereg_idex_pc_out: 00000098; dut.d.pipereg_exmem_pc_out: 00000094; dut.d.pipereg_memwb_pc_out: 00000090; 
+#  
 # memread(_addr=000000a0)
-# ** Note: $finish    : ./hvl/source_tb.sv(33)
-#    Time: 1545 ns  Iteration: 1  Instance: /mp3_tb/tb
-# End time: 02:28:34 on Apr 27,2020, Elapsed time: 0:00:01
+# time: 1575000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000a8; dut.d.pc_module_out: 000000a4; 
+# dut.d.pipereg_ifid_pc_out: 000000a0; dut.d.pipereg_idex_pc_out: 0000009c; dut.d.pipereg_exmem_pc_out: 00000098; dut.d.pipereg_memwb_pc_out: 00000094; 
+#  
+# time: 1585000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000ac; dut.d.pc_module_out: 000000a8; 
+# dut.d.pipereg_ifid_pc_out: 000000a4; dut.d.pipereg_idex_pc_out: 000000a0; dut.d.pipereg_exmem_pc_out: 0000009c; dut.d.pipereg_memwb_pc_out: 00000098; 
+#  
+# memread(_addr=000005a0)
+# time: 2215000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000b0; dut.d.pc_module_out: 000000ac; 
+# dut.d.pipereg_ifid_pc_out: 000000a8; dut.d.pipereg_idex_pc_out: 000000a4; dut.d.pipereg_exmem_pc_out: 000000a0; dut.d.pipereg_memwb_pc_out: 0000009c; 
+#  
+# time: 2225000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000b4; dut.d.pc_module_out: 000000b0; 
+# dut.d.pipereg_ifid_pc_out: 000000ac; dut.d.pipereg_idex_pc_out: 000000a8; dut.d.pipereg_exmem_pc_out: 000000a4; dut.d.pipereg_memwb_pc_out: 000000a0; 
+#  
+# time: 2235000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000b8; dut.d.pc_module_out: 000000b4; 
+# dut.d.pipereg_ifid_pc_out: 000000b0; dut.d.pipereg_idex_pc_out: 000000ac; dut.d.pipereg_exmem_pc_out: 000000a8; dut.d.pipereg_memwb_pc_out: 000000a4; 
+#  
+# time: 2245000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000bc; dut.d.pc_module_out: 000000b8; 
+# dut.d.pipereg_ifid_pc_out: 000000b4; dut.d.pipereg_idex_pc_out: 000000b0; dut.d.pipereg_exmem_pc_out: 000000ac; dut.d.pipereg_memwb_pc_out: 000000a8; 
+#  
+# time: 2255000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000c0; dut.d.pc_module_out: 000000bc; 
+# dut.d.pipereg_ifid_pc_out: 000000b8; dut.d.pipereg_idex_pc_out: 000000b4; dut.d.pipereg_exmem_pc_out: 000000b0; dut.d.pipereg_memwb_pc_out: 000000ac; 
+#  
+# time: 2265000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000c4; dut.d.pc_module_out: 000000c0; 
+# dut.d.pipereg_ifid_pc_out: 000000bc; dut.d.pipereg_idex_pc_out: 000000b8; dut.d.pipereg_exmem_pc_out: 000000b4; dut.d.pipereg_memwb_pc_out: 000000b0; 
+#  
+# memread(_addr=000000c0)
+# time: 2895000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000c8; dut.d.pc_module_out: 000000c4; 
+# dut.d.pipereg_ifid_pc_out: 000000c0; dut.d.pipereg_idex_pc_out: 000000bc; dut.d.pipereg_exmem_pc_out: 000000b8; dut.d.pipereg_memwb_pc_out: 000000b4; 
+#  
+# time: 2905000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000cc; dut.d.pc_module_out: 000000c8; 
+# dut.d.pipereg_ifid_pc_out: 000000c4; dut.d.pipereg_idex_pc_out: 000000c0; dut.d.pipereg_exmem_pc_out: 000000bc; dut.d.pipereg_memwb_pc_out: 000000b8; 
+#  
+# time: 2915000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000d0; dut.d.pc_module_out: 000000cc; 
+# dut.d.pipereg_ifid_pc_out: 000000c8; dut.d.pipereg_idex_pc_out: 000000c4; dut.d.pipereg_exmem_pc_out: 000000c0; dut.d.pipereg_memwb_pc_out: 000000bc; 
+#  
+# time: 2925000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000d4; dut.d.pc_module_out: 000000d0; 
+# dut.d.pipereg_ifid_pc_out: 000000cc; dut.d.pipereg_idex_pc_out: 000000c8; dut.d.pipereg_exmem_pc_out: 000000c4; dut.d.pipereg_memwb_pc_out: 000000c0; 
+#  
+# time: 2935000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000d8; dut.d.pc_module_out: 000000d4; 
+# dut.d.pipereg_ifid_pc_out: 000000d0; dut.d.pipereg_idex_pc_out: 000000cc; dut.d.pipereg_exmem_pc_out: 000000c8; dut.d.pipereg_memwb_pc_out: 000000c4; 
+#  
+# memread(_addr=00000580)
+# time: 3565000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000dc; dut.d.pc_module_out: 000000d8; 
+# dut.d.pipereg_ifid_pc_out: 000000d4; dut.d.pipereg_idex_pc_out: 000000d0; dut.d.pipereg_exmem_pc_out: 000000cc; dut.d.pipereg_memwb_pc_out: 000000c8; 
+#  
+# time: 3575000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000e0; dut.d.pc_module_out: 000000dc; 
+# dut.d.pipereg_ifid_pc_out: 000000d8; dut.d.pipereg_idex_pc_out: 000000d4; dut.d.pipereg_exmem_pc_out: 000000d0; dut.d.pipereg_memwb_pc_out: 000000cc; 
+#  
+# time: 3585000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000e4; dut.d.pc_module_out: 000000e0; 
+# dut.d.pipereg_ifid_pc_out: 000000dc; dut.d.pipereg_idex_pc_out: 000000d8; dut.d.pipereg_exmem_pc_out: 000000d4; dut.d.pipereg_memwb_pc_out: 000000d0; 
+#  
+# memread(_addr=000000e0)
+# time: 4215000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000e8; dut.d.pc_module_out: 000000e4; 
+# dut.d.pipereg_ifid_pc_out: 000000e0; dut.d.pipereg_idex_pc_out: 000000dc; dut.d.pipereg_exmem_pc_out: 000000d8; dut.d.pipereg_memwb_pc_out: 000000d4; 
+#  
+# time: 4225000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000ec; dut.d.pc_module_out: 000000e8; 
+# dut.d.pipereg_ifid_pc_out: 000000e4; dut.d.pipereg_idex_pc_out: 000000e0; dut.d.pipereg_exmem_pc_out: 000000dc; dut.d.pipereg_memwb_pc_out: 000000d8; 
+#  
+# time: 4235000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000f0; dut.d.pc_module_out: 000000ec; 
+# dut.d.pipereg_ifid_pc_out: 000000e8; dut.d.pipereg_idex_pc_out: 000000e4; dut.d.pipereg_exmem_pc_out: 000000e0; dut.d.pipereg_memwb_pc_out: 000000dc; 
+#  
+# time: 4245000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000f4; dut.d.pc_module_out: 000000f0; 
+# dut.d.pipereg_ifid_pc_out: 000000ec; dut.d.pipereg_idex_pc_out: 000000e8; dut.d.pipereg_exmem_pc_out: 000000e4; dut.d.pipereg_memwb_pc_out: 000000e0; 
+#  
+# time: 4255000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000f8; dut.d.pc_module_out: 000000f4; 
+# dut.d.pipereg_ifid_pc_out: 000000f0; dut.d.pipereg_idex_pc_out: 000000ec; dut.d.pipereg_exmem_pc_out: 000000e8; dut.d.pipereg_memwb_pc_out: 000000e4; 
+#  
+# time: 4265000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000fc; dut.d.pc_module_out: 000000f8; 
+# dut.d.pipereg_ifid_pc_out: 000000f4; dut.d.pipereg_idex_pc_out: 000000f0; dut.d.pipereg_exmem_pc_out: 000000ec; dut.d.pipereg_memwb_pc_out: 000000e8; 
+#  
+# time: 4275000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000100; dut.d.pc_module_out: 000000fc; 
+# dut.d.pipereg_ifid_pc_out: 000000f8; dut.d.pipereg_idex_pc_out: 000000f4; dut.d.pipereg_exmem_pc_out: 000000f0; dut.d.pipereg_memwb_pc_out: 000000ec; 
+#  
+# time: 4285000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000104; dut.d.pc_module_out: 00000100; 
+# dut.d.pipereg_ifid_pc_out: 000000fc; dut.d.pipereg_idex_pc_out: 000000f8; dut.d.pipereg_exmem_pc_out: 000000f4; dut.d.pipereg_memwb_pc_out: 000000f0; 
+#  
+# memread(_addr=00000100)
+# time: 4665000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000108; dut.d.pc_module_out: 00000104; 
+# dut.d.pipereg_ifid_pc_out: 00000100; dut.d.pipereg_idex_pc_out: 000000fc; dut.d.pipereg_exmem_pc_out: 000000f8; dut.d.pipereg_memwb_pc_out: 000000f4; 
+#  
+# time: 4675000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000010c; dut.d.pc_module_out: 00000108; 
+# dut.d.pipereg_ifid_pc_out: 00000104; dut.d.pipereg_idex_pc_out: 00000100; dut.d.pipereg_exmem_pc_out: 000000fc; dut.d.pipereg_memwb_pc_out: 000000f8; 
+#  
+# time: 4685000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000110; dut.d.pc_module_out: 0000010c; 
+# dut.d.pipereg_ifid_pc_out: 00000108; dut.d.pipereg_idex_pc_out: 00000104; dut.d.pipereg_exmem_pc_out: 00000100; dut.d.pipereg_memwb_pc_out: 000000fc; 
+#  
+# time: 4695000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000114; dut.d.pc_module_out: 00000110; 
+# dut.d.pipereg_ifid_pc_out: 0000010c; dut.d.pipereg_idex_pc_out: 00000108; dut.d.pipereg_exmem_pc_out: 00000104; dut.d.pipereg_memwb_pc_out: 00000100; 
+#  
+# time: 4705000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000118; dut.d.pc_module_out: 00000114; 
+# dut.d.pipereg_ifid_pc_out: 00000110; dut.d.pipereg_idex_pc_out: 0000010c; dut.d.pipereg_exmem_pc_out: 00000108; dut.d.pipereg_memwb_pc_out: 00000104; 
+#  
+# time: 4715000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000011c; dut.d.pc_module_out: 00000118; 
+# dut.d.pipereg_ifid_pc_out: 00000114; dut.d.pipereg_idex_pc_out: 00000110; dut.d.pipereg_exmem_pc_out: 0000010c; dut.d.pipereg_memwb_pc_out: 00000108; 
+#  
+# time: 4725000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000120; dut.d.pc_module_out: 0000011c; 
+# dut.d.pipereg_ifid_pc_out: 00000118; dut.d.pipereg_idex_pc_out: 00000114; dut.d.pipereg_exmem_pc_out: 00000110; dut.d.pipereg_memwb_pc_out: 0000010c; 
+#  
+# time: 4735000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000124; dut.d.pc_module_out: 00000120; 
+# dut.d.pipereg_ifid_pc_out: 0000011c; dut.d.pipereg_idex_pc_out: 00000118; dut.d.pipereg_exmem_pc_out: 00000114; dut.d.pipereg_memwb_pc_out: 00000110; 
+#  
+# memread(_addr=00000120)
+# time: 5115000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000128; dut.d.pc_module_out: 00000124; 
+# dut.d.pipereg_ifid_pc_out: 00000120; dut.d.pipereg_idex_pc_out: 0000011c; dut.d.pipereg_exmem_pc_out: 00000118; dut.d.pipereg_memwb_pc_out: 00000114; 
+#  
+# time: 5125000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000012c; dut.d.pc_module_out: 00000128; 
+# dut.d.pipereg_ifid_pc_out: 00000124; dut.d.pipereg_idex_pc_out: 00000120; dut.d.pipereg_exmem_pc_out: 0000011c; dut.d.pipereg_memwb_pc_out: 00000118; 
+#  
+# time: 5135000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000130; dut.d.pc_module_out: 0000012c; 
+# dut.d.pipereg_ifid_pc_out: 00000128; dut.d.pipereg_idex_pc_out: 00000124; dut.d.pipereg_exmem_pc_out: 00000120; dut.d.pipereg_memwb_pc_out: 0000011c; 
+#  
+# time: 5145000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000134; dut.d.pc_module_out: 00000130; 
+# dut.d.pipereg_ifid_pc_out: 0000012c; dut.d.pipereg_idex_pc_out: 00000128; dut.d.pipereg_exmem_pc_out: 00000124; dut.d.pipereg_memwb_pc_out: 00000120; 
+#  
+# time: 5155000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000138; dut.d.pc_module_out: 00000134; 
+# dut.d.pipereg_ifid_pc_out: 00000130; dut.d.pipereg_idex_pc_out: 0000012c; dut.d.pipereg_exmem_pc_out: 00000128; dut.d.pipereg_memwb_pc_out: 00000124; 
+#  
+# time: 5165000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000013c; dut.d.pc_module_out: 00000138; 
+# dut.d.pipereg_ifid_pc_out: 00000134; dut.d.pipereg_idex_pc_out: 00000130; dut.d.pipereg_exmem_pc_out: 0000012c; dut.d.pipereg_memwb_pc_out: 00000128; 
+#  
+# time: 5175000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000140; dut.d.pc_module_out: 0000013c; 
+# dut.d.pipereg_ifid_pc_out: 00000138; dut.d.pipereg_idex_pc_out: 00000134; dut.d.pipereg_exmem_pc_out: 00000130; dut.d.pipereg_memwb_pc_out: 0000012c; 
+#  
+# time: 5185000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000144; dut.d.pc_module_out: 00000140; 
+# dut.d.pipereg_ifid_pc_out: 0000013c; dut.d.pipereg_idex_pc_out: 00000138; dut.d.pipereg_exmem_pc_out: 00000134; dut.d.pipereg_memwb_pc_out: 00000130; 
+#  
+# memread(_addr=00000140)
+# time: 5565000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000148; dut.d.pc_module_out: 00000144; 
+# dut.d.pipereg_ifid_pc_out: 00000140; dut.d.pipereg_idex_pc_out: 0000013c; dut.d.pipereg_exmem_pc_out: 00000138; dut.d.pipereg_memwb_pc_out: 00000134; 
+#  
+# time: 5575000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000014c; dut.d.pc_module_out: 00000148; 
+# dut.d.pipereg_ifid_pc_out: 00000144; dut.d.pipereg_idex_pc_out: 00000140; dut.d.pipereg_exmem_pc_out: 0000013c; dut.d.pipereg_memwb_pc_out: 00000138; 
+#  
+# time: 5585000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000150; dut.d.pc_module_out: 0000014c; 
+# dut.d.pipereg_ifid_pc_out: 00000148; dut.d.pipereg_idex_pc_out: 00000144; dut.d.pipereg_exmem_pc_out: 00000140; dut.d.pipereg_memwb_pc_out: 0000013c; 
+#  
+# time: 5595000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000154; dut.d.pc_module_out: 00000150; 
+# dut.d.pipereg_ifid_pc_out: 0000014c; dut.d.pipereg_idex_pc_out: 00000148; dut.d.pipereg_exmem_pc_out: 00000144; dut.d.pipereg_memwb_pc_out: 00000140; 
+#  
+# time: 5605000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000158; dut.d.pc_module_out: 00000154; 
+# dut.d.pipereg_ifid_pc_out: 00000150; dut.d.pipereg_idex_pc_out: 0000014c; dut.d.pipereg_exmem_pc_out: 00000148; dut.d.pipereg_memwb_pc_out: 00000144; 
+#  
+# time: 5615000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000015c; dut.d.pc_module_out: 00000158; 
+# dut.d.pipereg_ifid_pc_out: 00000154; dut.d.pipereg_idex_pc_out: 00000150; dut.d.pipereg_exmem_pc_out: 0000014c; dut.d.pipereg_memwb_pc_out: 00000148; 
+#  
+# time: 5625000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000160; dut.d.pc_module_out: 0000015c; 
+# dut.d.pipereg_ifid_pc_out: 00000158; dut.d.pipereg_idex_pc_out: 00000154; dut.d.pipereg_exmem_pc_out: 00000150; dut.d.pipereg_memwb_pc_out: 0000014c; 
+#  
+# time: 5635000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000164; dut.d.pc_module_out: 00000160; 
+# dut.d.pipereg_ifid_pc_out: 0000015c; dut.d.pipereg_idex_pc_out: 00000158; dut.d.pipereg_exmem_pc_out: 00000154; dut.d.pipereg_memwb_pc_out: 00000150; 
+#  
+# memread(_addr=00000160)
+# time: 6015000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000168; dut.d.pc_module_out: 00000164; 
+# dut.d.pipereg_ifid_pc_out: 00000160; dut.d.pipereg_idex_pc_out: 0000015c; dut.d.pipereg_exmem_pc_out: 00000158; dut.d.pipereg_memwb_pc_out: 00000154; 
+#  
+# time: 6025000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000016c; dut.d.pc_module_out: 00000168; 
+# dut.d.pipereg_ifid_pc_out: 00000164; dut.d.pipereg_idex_pc_out: 00000160; dut.d.pipereg_exmem_pc_out: 0000015c; dut.d.pipereg_memwb_pc_out: 00000158; 
+#  
+# time: 6035000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000170; dut.d.pc_module_out: 0000016c; 
+# dut.d.pipereg_ifid_pc_out: 00000168; dut.d.pipereg_idex_pc_out: 00000164; dut.d.pipereg_exmem_pc_out: 00000160; dut.d.pipereg_memwb_pc_out: 0000015c; 
+#  
+# time: 6045000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000174; dut.d.pc_module_out: 00000170; 
+# dut.d.pipereg_ifid_pc_out: 0000016c; dut.d.pipereg_idex_pc_out: 00000168; dut.d.pipereg_exmem_pc_out: 00000164; dut.d.pipereg_memwb_pc_out: 00000160; 
+#  
+# time: 6055000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000178; dut.d.pc_module_out: 00000174; 
+# dut.d.pipereg_ifid_pc_out: 00000170; dut.d.pipereg_idex_pc_out: 0000016c; dut.d.pipereg_exmem_pc_out: 00000168; dut.d.pipereg_memwb_pc_out: 00000164; 
+#  
+# memread(_addr=000005c0)
+# time: 6685000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000017c; dut.d.pc_module_out: 00000178; 
+# dut.d.pipereg_ifid_pc_out: 00000174; dut.d.pipereg_idex_pc_out: 00000170; dut.d.pipereg_exmem_pc_out: 0000016c; dut.d.pipereg_memwb_pc_out: 00000168; 
+#  
+# time: 6695000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000180; dut.d.pc_module_out: 0000017c; 
+# dut.d.pipereg_ifid_pc_out: 00000178; dut.d.pipereg_idex_pc_out: 00000174; dut.d.pipereg_exmem_pc_out: 00000170; dut.d.pipereg_memwb_pc_out: 0000016c; 
+#  
+# time: 6705000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000184; dut.d.pc_module_out: 00000180; 
+# dut.d.pipereg_ifid_pc_out: 0000017c; dut.d.pipereg_idex_pc_out: 00000178; dut.d.pipereg_exmem_pc_out: 00000174; dut.d.pipereg_memwb_pc_out: 00000170; 
+#  
+# memread(_addr=00000180)
+# time: 7335000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000188; dut.d.pc_module_out: 00000184; 
+# dut.d.pipereg_ifid_pc_out: 00000180; dut.d.pipereg_idex_pc_out: 0000017c; dut.d.pipereg_exmem_pc_out: 00000178; dut.d.pipereg_memwb_pc_out: 00000174; 
+#  
+# time: 7345000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000018c; dut.d.pc_module_out: 00000188; 
+# dut.d.pipereg_ifid_pc_out: 00000184; dut.d.pipereg_idex_pc_out: 00000180; dut.d.pipereg_exmem_pc_out: 0000017c; dut.d.pipereg_memwb_pc_out: 00000178; 
+#  
+# time: 7355000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000190; dut.d.pc_module_out: 0000018c; 
+# dut.d.pipereg_ifid_pc_out: 00000188; dut.d.pipereg_idex_pc_out: 00000184; dut.d.pipereg_exmem_pc_out: 00000180; dut.d.pipereg_memwb_pc_out: 0000017c; 
+#  
+# time: 7365000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000194; dut.d.pc_module_out: 00000190; 
+# dut.d.pipereg_ifid_pc_out: 0000018c; dut.d.pipereg_idex_pc_out: 00000188; dut.d.pipereg_exmem_pc_out: 00000184; dut.d.pipereg_memwb_pc_out: 00000180; 
+#  
+# time: 7375000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000198; dut.d.pc_module_out: 00000194; 
+# dut.d.pipereg_ifid_pc_out: 00000190; dut.d.pipereg_idex_pc_out: 0000018c; dut.d.pipereg_exmem_pc_out: 00000188; dut.d.pipereg_memwb_pc_out: 00000184; 
+#  
+# time: 7385000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000019c; dut.d.pc_module_out: 00000198; 
+# dut.d.pipereg_ifid_pc_out: 00000194; dut.d.pipereg_idex_pc_out: 00000190; dut.d.pipereg_exmem_pc_out: 0000018c; dut.d.pipereg_memwb_pc_out: 00000188; 
+#  
+# time: 7395000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001a0; dut.d.pc_module_out: 0000019c; 
+# dut.d.pipereg_ifid_pc_out: 00000198; dut.d.pipereg_idex_pc_out: 00000194; dut.d.pipereg_exmem_pc_out: 00000190; dut.d.pipereg_memwb_pc_out: 0000018c; 
+#  
+# time: 7405000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001a4; dut.d.pc_module_out: 000001a0; 
+# dut.d.pipereg_ifid_pc_out: 0000019c; dut.d.pipereg_idex_pc_out: 00000198; dut.d.pipereg_exmem_pc_out: 00000194; dut.d.pipereg_memwb_pc_out: 00000190; 
+#  
+# memread(_addr=000001a0)
+# time: 7785000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001a8; dut.d.pc_module_out: 000001a4; 
+# dut.d.pipereg_ifid_pc_out: 000001a0; dut.d.pipereg_idex_pc_out: 0000019c; dut.d.pipereg_exmem_pc_out: 00000198; dut.d.pipereg_memwb_pc_out: 00000194; 
+#  
+# time: 7795000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001ac; dut.d.pc_module_out: 000001a8; 
+# dut.d.pipereg_ifid_pc_out: 000001a4; dut.d.pipereg_idex_pc_out: 000001a0; dut.d.pipereg_exmem_pc_out: 0000019c; dut.d.pipereg_memwb_pc_out: 00000198; 
+#  
+# time: 7805000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001b0; dut.d.pc_module_out: 000001ac; 
+# dut.d.pipereg_ifid_pc_out: 000001a8; dut.d.pipereg_idex_pc_out: 000001a4; dut.d.pipereg_exmem_pc_out: 000001a0; dut.d.pipereg_memwb_pc_out: 0000019c; 
+#  
+# time: 7815000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001b4; dut.d.pc_module_out: 000001b0; 
+# dut.d.pipereg_ifid_pc_out: 000001ac; dut.d.pipereg_idex_pc_out: 000001a8; dut.d.pipereg_exmem_pc_out: 000001a4; dut.d.pipereg_memwb_pc_out: 000001a0; 
+#  
+# time: 7825000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001b8; dut.d.pc_module_out: 000001b4; 
+# dut.d.pipereg_ifid_pc_out: 000001b0; dut.d.pipereg_idex_pc_out: 000001ac; dut.d.pipereg_exmem_pc_out: 000001a8; dut.d.pipereg_memwb_pc_out: 000001a4; 
+#  
+# time: 7835000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001bc; dut.d.pc_module_out: 000001b8; 
+# dut.d.pipereg_ifid_pc_out: 000001b4; dut.d.pipereg_idex_pc_out: 000001b0; dut.d.pipereg_exmem_pc_out: 000001ac; dut.d.pipereg_memwb_pc_out: 000001a8; 
+#  
+# time: 7845000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001c0; dut.d.pc_module_out: 000001bc; 
+# dut.d.pipereg_ifid_pc_out: 000001b8; dut.d.pipereg_idex_pc_out: 000001b4; dut.d.pipereg_exmem_pc_out: 000001b0; dut.d.pipereg_memwb_pc_out: 000001ac; 
+#  
+# time: 7855000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001c4; dut.d.pc_module_out: 000001c0; 
+# dut.d.pipereg_ifid_pc_out: 000001bc; dut.d.pipereg_idex_pc_out: 000001b8; dut.d.pipereg_exmem_pc_out: 000001b4; dut.d.pipereg_memwb_pc_out: 000001b0; 
+#  
+# memread(_addr=000001c0)
+# time: 8235000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001c8; dut.d.pc_module_out: 000001c4; 
+# dut.d.pipereg_ifid_pc_out: 000001c0; dut.d.pipereg_idex_pc_out: 000001bc; dut.d.pipereg_exmem_pc_out: 000001b8; dut.d.pipereg_memwb_pc_out: 000001b4; 
+#  
+# time: 8245000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001cc; dut.d.pc_module_out: 000001c8; 
+# dut.d.pipereg_ifid_pc_out: 000001c4; dut.d.pipereg_idex_pc_out: 000001c0; dut.d.pipereg_exmem_pc_out: 000001bc; dut.d.pipereg_memwb_pc_out: 000001b8; 
+#  
+# time: 8255000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001d0; dut.d.pc_module_out: 000001cc; 
+# dut.d.pipereg_ifid_pc_out: 000001c8; dut.d.pipereg_idex_pc_out: 000001c4; dut.d.pipereg_exmem_pc_out: 000001c0; dut.d.pipereg_memwb_pc_out: 000001bc; 
+#  
+# time: 8265000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001d4; dut.d.pc_module_out: 000001d0; 
+# dut.d.pipereg_ifid_pc_out: 000001cc; dut.d.pipereg_idex_pc_out: 000001c8; dut.d.pipereg_exmem_pc_out: 000001c4; dut.d.pipereg_memwb_pc_out: 000001c0; 
+#  
+# time: 8275000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001d8; dut.d.pc_module_out: 000001d4; 
+# dut.d.pipereg_ifid_pc_out: 000001d0; dut.d.pipereg_idex_pc_out: 000001cc; dut.d.pipereg_exmem_pc_out: 000001c8; dut.d.pipereg_memwb_pc_out: 000001c4; 
+#  
+# time: 8285000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001dc; dut.d.pc_module_out: 000001d8; 
+# dut.d.pipereg_ifid_pc_out: 000001d4; dut.d.pipereg_idex_pc_out: 000001d0; dut.d.pipereg_exmem_pc_out: 000001cc; dut.d.pipereg_memwb_pc_out: 000001c8; 
+#  
+# time: 8295000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001e0; dut.d.pc_module_out: 000001dc; 
+# dut.d.pipereg_ifid_pc_out: 000001d8; dut.d.pipereg_idex_pc_out: 000001d4; dut.d.pipereg_exmem_pc_out: 000001d0; dut.d.pipereg_memwb_pc_out: 000001cc; 
+#  
+# time: 8305000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001e4; dut.d.pc_module_out: 000001e0; 
+# dut.d.pipereg_ifid_pc_out: 000001dc; dut.d.pipereg_idex_pc_out: 000001d8; dut.d.pipereg_exmem_pc_out: 000001d4; dut.d.pipereg_memwb_pc_out: 000001d0; 
+#  
+# memread(_addr=000001e0)
+# time: 8685000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001e8; dut.d.pc_module_out: 000001e4; 
+# dut.d.pipereg_ifid_pc_out: 000001e0; dut.d.pipereg_idex_pc_out: 000001dc; dut.d.pipereg_exmem_pc_out: 000001d8; dut.d.pipereg_memwb_pc_out: 000001d4; 
+#  
+# time: 8695000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001ec; dut.d.pc_module_out: 000001e8; 
+# dut.d.pipereg_ifid_pc_out: 000001e4; dut.d.pipereg_idex_pc_out: 000001e0; dut.d.pipereg_exmem_pc_out: 000001dc; dut.d.pipereg_memwb_pc_out: 000001d8; 
+#  
+# time: 8705000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001f0; dut.d.pc_module_out: 000001ec; 
+# dut.d.pipereg_ifid_pc_out: 000001e8; dut.d.pipereg_idex_pc_out: 000001e4; dut.d.pipereg_exmem_pc_out: 000001e0; dut.d.pipereg_memwb_pc_out: 000001dc; 
+#  
+# time: 8715000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001f4; dut.d.pc_module_out: 000001f0; 
+# dut.d.pipereg_ifid_pc_out: 000001ec; dut.d.pipereg_idex_pc_out: 000001e8; dut.d.pipereg_exmem_pc_out: 000001e4; dut.d.pipereg_memwb_pc_out: 000001e0; 
+#  
+# time: 8725000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001f8; dut.d.pc_module_out: 000001f4; 
+# dut.d.pipereg_ifid_pc_out: 000001f0; dut.d.pipereg_idex_pc_out: 000001ec; dut.d.pipereg_exmem_pc_out: 000001e8; dut.d.pipereg_memwb_pc_out: 000001e4; 
+#  
+# time: 8735000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001fc; dut.d.pc_module_out: 000001f8; 
+# dut.d.pipereg_ifid_pc_out: 000001f4; dut.d.pipereg_idex_pc_out: 000001f0; dut.d.pipereg_exmem_pc_out: 000001ec; dut.d.pipereg_memwb_pc_out: 000001e8; 
+#  
+# time: 8745000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000200; dut.d.pc_module_out: 000001fc; 
+# dut.d.pipereg_ifid_pc_out: 000001f8; dut.d.pipereg_idex_pc_out: 000001f4; dut.d.pipereg_exmem_pc_out: 000001f0; dut.d.pipereg_memwb_pc_out: 000001ec; 
+#  
+# memread(_addr=00000560)
+# time: 9375000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000204; dut.d.pc_module_out: 00000200; 
+# dut.d.pipereg_ifid_pc_out: 000001fc; dut.d.pipereg_idex_pc_out: 000001f8; dut.d.pipereg_exmem_pc_out: 000001f4; dut.d.pipereg_memwb_pc_out: 000001f0; 
+#  
+# memread(_addr=00000200)
+# time: 10005000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000208; dut.d.pc_module_out: 00000204; 
+# dut.d.pipereg_ifid_pc_out: 00000200; dut.d.pipereg_idex_pc_out: 000001fc; dut.d.pipereg_exmem_pc_out: 000001f8; dut.d.pipereg_memwb_pc_out: 000001f4; 
+#  
+# time: 10015000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000020c; dut.d.pc_module_out: 00000208; 
+# dut.d.pipereg_ifid_pc_out: 00000204; dut.d.pipereg_idex_pc_out: 00000200; dut.d.pipereg_exmem_pc_out: 000001fc; dut.d.pipereg_memwb_pc_out: 000001f8; 
+#  
+# time: 10025000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000210; dut.d.pc_module_out: 0000020c; 
+# dut.d.pipereg_ifid_pc_out: 00000208; dut.d.pipereg_idex_pc_out: 00000204; dut.d.pipereg_exmem_pc_out: 00000200; dut.d.pipereg_memwb_pc_out: 000001fc; 
+#  
+# time: 10035000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000214; dut.d.pc_module_out: 00000210; 
+# dut.d.pipereg_ifid_pc_out: 0000020c; dut.d.pipereg_idex_pc_out: 00000208; dut.d.pipereg_exmem_pc_out: 00000204; dut.d.pipereg_memwb_pc_out: 00000200; 
+#  
+# time: 10045000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000218; dut.d.pc_module_out: 00000214; 
+# dut.d.pipereg_ifid_pc_out: 00000210; dut.d.pipereg_idex_pc_out: 0000020c; dut.d.pipereg_exmem_pc_out: 00000208; dut.d.pipereg_memwb_pc_out: 00000204; 
+#  
+# time: 10055000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000021c; dut.d.pc_module_out: 00000218; 
+# dut.d.pipereg_ifid_pc_out: 00000214; dut.d.pipereg_idex_pc_out: 00000210; dut.d.pipereg_exmem_pc_out: 0000020c; dut.d.pipereg_memwb_pc_out: 00000208; 
+#  
+# time: 10065000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000220; dut.d.pc_module_out: 0000021c; 
+# dut.d.pipereg_ifid_pc_out: 00000218; dut.d.pipereg_idex_pc_out: 00000214; dut.d.pipereg_exmem_pc_out: 00000210; dut.d.pipereg_memwb_pc_out: 0000020c; 
+#  
+# time: 10075000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000224; dut.d.pc_module_out: 00000220; 
+# dut.d.pipereg_ifid_pc_out: 0000021c; dut.d.pipereg_idex_pc_out: 00000218; dut.d.pipereg_exmem_pc_out: 00000214; dut.d.pipereg_memwb_pc_out: 00000210; 
+#  
+# memread(_addr=00000220)
+# time: 10455000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000228; dut.d.pc_module_out: 00000224; 
+# dut.d.pipereg_ifid_pc_out: 00000220; dut.d.pipereg_idex_pc_out: 0000021c; dut.d.pipereg_exmem_pc_out: 00000218; dut.d.pipereg_memwb_pc_out: 00000214; 
+#  
+# time: 10465000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000022c; dut.d.pc_module_out: 00000228; 
+# dut.d.pipereg_ifid_pc_out: 00000224; dut.d.pipereg_idex_pc_out: 00000220; dut.d.pipereg_exmem_pc_out: 0000021c; dut.d.pipereg_memwb_pc_out: 00000218; 
+#  
+# time: 10475000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000230; dut.d.pc_module_out: 0000022c; 
+# dut.d.pipereg_ifid_pc_out: 00000228; dut.d.pipereg_idex_pc_out: 00000224; dut.d.pipereg_exmem_pc_out: 00000220; dut.d.pipereg_memwb_pc_out: 0000021c; 
+#  
+# time: 10485000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000234; dut.d.pc_module_out: 00000230; 
+# dut.d.pipereg_ifid_pc_out: 0000022c; dut.d.pipereg_idex_pc_out: 00000228; dut.d.pipereg_exmem_pc_out: 00000224; dut.d.pipereg_memwb_pc_out: 00000220; 
+#  
+# time: 10495000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000238; dut.d.pc_module_out: 00000234; 
+# dut.d.pipereg_ifid_pc_out: 00000230; dut.d.pipereg_idex_pc_out: 0000022c; dut.d.pipereg_exmem_pc_out: 00000228; dut.d.pipereg_memwb_pc_out: 00000224; 
+#  
+# time: 10505000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000023c; dut.d.pc_module_out: 00000238; 
+# dut.d.pipereg_ifid_pc_out: 00000234; dut.d.pipereg_idex_pc_out: 00000230; dut.d.pipereg_exmem_pc_out: 0000022c; dut.d.pipereg_memwb_pc_out: 00000228; 
+#  
+# time: 10515000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000240; dut.d.pc_module_out: 0000023c; 
+# dut.d.pipereg_ifid_pc_out: 00000238; dut.d.pipereg_idex_pc_out: 00000234; dut.d.pipereg_exmem_pc_out: 00000230; dut.d.pipereg_memwb_pc_out: 0000022c; 
+#  
+# time: 10525000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000244; dut.d.pc_module_out: 00000240; 
+# dut.d.pipereg_ifid_pc_out: 0000023c; dut.d.pipereg_idex_pc_out: 00000238; dut.d.pipereg_exmem_pc_out: 00000234; dut.d.pipereg_memwb_pc_out: 00000230; 
+#  
+# memread(_addr=00000240)
+# time: 10905000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000248; dut.d.pc_module_out: 00000244; 
+# dut.d.pipereg_ifid_pc_out: 00000240; dut.d.pipereg_idex_pc_out: 0000023c; dut.d.pipereg_exmem_pc_out: 00000238; dut.d.pipereg_memwb_pc_out: 00000234; 
+#  
+# time: 10915000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000024c; dut.d.pc_module_out: 00000248; 
+# dut.d.pipereg_ifid_pc_out: 00000244; dut.d.pipereg_idex_pc_out: 00000240; dut.d.pipereg_exmem_pc_out: 0000023c; dut.d.pipereg_memwb_pc_out: 00000238; 
+#  
+# time: 10925000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000250; dut.d.pc_module_out: 0000024c; 
+# dut.d.pipereg_ifid_pc_out: 00000248; dut.d.pipereg_idex_pc_out: 00000244; dut.d.pipereg_exmem_pc_out: 00000240; dut.d.pipereg_memwb_pc_out: 0000023c; 
+#  
+# time: 10935000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000254; dut.d.pc_module_out: 00000250; 
+# dut.d.pipereg_ifid_pc_out: 0000024c; dut.d.pipereg_idex_pc_out: 00000248; dut.d.pipereg_exmem_pc_out: 00000244; dut.d.pipereg_memwb_pc_out: 00000240; 
+#  
+# time: 10945000; is_jal: 0; is_jalr: 1; dut.d.pc_in: 00000270; dut.d.pc_module_out: 00000254; 
+# dut.d.pipereg_ifid_pc_out: 00000250; dut.d.pipereg_idex_pc_out: 0000024c; dut.d.pipereg_exmem_pc_out: 00000248; dut.d.pipereg_memwb_pc_out: 00000244; 
+#  
+# time: 10955000; is_jal: 0; is_jalr: 1; dut.d.pc_in: 00000270; dut.d.pc_module_out: 00000270; 
+# dut.d.pipereg_ifid_pc_out: 00000250; dut.d.pipereg_idex_pc_out: 0000024c; dut.d.pipereg_exmem_pc_out: 00000248; dut.d.pipereg_memwb_pc_out: 00000244; 
+#  
+# memread(_addr=00000260)
+# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11355000 --------
+# Error message: mismatch with shadow pc
+# rvfi_valid = 1
+# rvfi_order = 000000000000007a
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 00000244
+# rvfi_pc_wdata = 00000248
+# rvfi_intr = 0
+# rvfi_trap = 0
+# shadow_pc_valid = 1
+# shadow_pc_rdata = 00000248
+# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11365000 --------
+# Error message: mismatch with shadow pc
+# rvfi_valid = 1
+# rvfi_order = 000000000000007b
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 00000244
+# rvfi_pc_wdata = 00000248
+# rvfi_intr = 0
+# rvfi_trap = 0
+# shadow_pc_valid = 1
+# shadow_pc_rdata = 00000248
+# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11375000 --------
+# Error message: mismatch with shadow pc
+# rvfi_valid = 1
+# rvfi_order = 000000000000007c
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 00000244
+# rvfi_pc_wdata = 00000248
+# rvfi_intr = 0
+# rvfi_trap = 0
+# shadow_pc_valid = 1
+# shadow_pc_rdata = 00000248
+# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11385000 --------
+# Error message: mismatch with shadow pc
+# rvfi_valid = 1
+# rvfi_order = 000000000000007d
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 00000244
+# rvfi_pc_wdata = 00000248
+# rvfi_intr = 0
+# rvfi_trap = 0
+# shadow_pc_valid = 1
+# shadow_pc_rdata = 00000248
+# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11395000 --------
+# Error message: mismatch with shadow pc
+# rvfi_valid = 1
+# rvfi_order = 000000000000007e
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 00000244
+# rvfi_pc_wdata = 00000248
+# rvfi_intr = 0
+# rvfi_trap = 0
+# shadow_pc_valid = 1
+# shadow_pc_rdata = 00000248
+# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11405000 --------
+# Error message: mismatch with shadow pc
+# rvfi_valid = 1
+# rvfi_order = 000000000000007f
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 00000244
+# rvfi_pc_wdata = 00000248
+# rvfi_intr = 0
+# rvfi_trap = 0
+# shadow_pc_valid = 1
+# shadow_pc_rdata = 00000248
+# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11415000 --------
+# Error message: mismatch with shadow pc
+# rvfi_valid = 1
+# rvfi_order = 0000000000000080
+# rvfi_rs1_addr = 00
+# rvfi_rs2_addr = 00
+# rvfi_rs1_rdata = 00000000
+# rvfi_rs2_rdata = 00000000
+# rvfi_rd_addr = 00
+# rvfi_rd_wdata = 00000000
+# rvfi_pc_rdata = 00000244
+# rvfi_pc_wdata = 00000248
+# rvfi_intr = 0
+# rvfi_trap = 0
+# shadow_pc_valid = 1
+# shadow_pc_rdata = 00000248
+# TOP: Errcode: 130
+# ** Note: $finish    : ./hvl/source_tb.sv(44)
+#    Time: 11415 ns  Iteration: 1  Instance: /mp3_tb/tb
+# End time: 16:21:45 on Apr 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 7
