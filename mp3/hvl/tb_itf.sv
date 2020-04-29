@@ -1,12 +1,18 @@
 `ifndef TB_ITF_SV
 `define TB_ITF_SV
-`timescale 1ns/10ps
+
+`define FREQUENCY_MHZ 100.0
+`define FREQUENCY (`FREQUENCY_MHZ * 1000000)
+`define PERIOD_NS (1000000000/`FREQUENCY)
+`define PERIOD_CLK (`PERIOD_NS / 2)
+
+`timescale 1ns/1ps
 
 interface tb_itf();
 
     /* Generate Clock */
     bit clk, rst;
-    always #5 clk = clk === 1'b0;
+    always #(`PERIOD_CLK) clk = clk === 1'b0;
 
     /* Needed to validate correctness */
     logic [31:0] registers[32];
