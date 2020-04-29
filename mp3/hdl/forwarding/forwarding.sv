@@ -33,8 +33,8 @@ function rs1mux::rs1mux_sel_t rs1_forward (forwarding_itf::instruction_input itf
       op_exmem = itf.exmem_inst_decode.opcode;
       op_memwb = itf.memwb_inst_decode.opcode;
 
-      slti = (op_exmem == rv32i_types::op_imm) & (itf.exmem_inst_decode.funct3 == rv32i_types::slt) & (itf.exmem_inst_decode.funct7 == 7'b0);
-      sltui = (op_exmem == rv32i_types::op_imm) & (itf.exmem_inst_decode.funct3 == rv32i_types::sltu) & (itf.exmem_inst_decode.funct7 == 7'b0);
+      slti = (op_exmem == rv32i_types::op_imm) & (itf.exmem_inst_decode.funct3 == rv32i_types::slt);
+      sltui = (op_exmem == rv32i_types::op_imm) & (itf.exmem_inst_decode.funct3 == rv32i_types::sltu);
       slt = (op_exmem == rv32i_types::op_reg) & (itf.exmem_inst_decode.funct3 == rv32i_types::slt) & (itf.exmem_inst_decode.funct7 == 7'b0);
       sltu = (op_exmem == rv32i_types::op_reg) & (itf.exmem_inst_decode.funct3 == rv32i_types::sltu) & (itf.exmem_inst_decode.funct7 == 7'b0);
 
@@ -100,8 +100,8 @@ function rs2mux::rs2mux_sel_t rs2_forward (forwarding_itf::instruction_input itf
       op_exmem = itf.exmem_inst_decode.opcode;
       op_memwb = itf.memwb_inst_decode.opcode;
 
-      slti = (op_exmem == rv32i_types::op_imm) & (itf.exmem_inst_decode.funct3 == rv32i_types::slt) & (itf.exmem_inst_decode.funct7 == 7'b0);
-      sltui = (op_exmem == rv32i_types::op_imm) & (itf.exmem_inst_decode.funct3 == rv32i_types::sltu) & (itf.exmem_inst_decode.funct7 == 7'b0);
+      slti = (op_exmem == rv32i_types::op_imm) & (itf.exmem_inst_decode.funct3 == rv32i_types::slt);
+      sltui = (op_exmem == rv32i_types::op_imm) & (itf.exmem_inst_decode.funct3 == rv32i_types::sltu);
       slt = (op_exmem == rv32i_types::op_reg) & (itf.exmem_inst_decode.funct3 == rv32i_types::slt) & (itf.exmem_inst_decode.funct7 == 7'b0);
       sltu = (op_exmem == rv32i_types::op_reg) & (itf.exmem_inst_decode.funct3 == rv32i_types::sltu) & (itf.exmem_inst_decode.funct7 == 7'b0);
 
