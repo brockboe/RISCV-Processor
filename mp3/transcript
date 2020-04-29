@@ -9,7 +9,7 @@
 # 
 # vlog -sv -work work  {./hdl/rv32i_mux_types.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:06 on Apr 28,2020
 # vlog -sv -work work ./hdl/rv32i_mux_types.sv 
 # -- Compiling package pcmux
 # -- Compiling package marmux
@@ -22,11 +22,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:06 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/rv32i_types.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:06 on Apr 28,2020
 # vlog -sv -work work ./hdl/rv32i_types.sv 
 # -- Compiling package rv32i_types
 # -- Importing package pcmux
@@ -37,11 +37,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:06 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:06 on Apr 28,2020
 # vlog -sv -work work ./hdl/alu.sv 
 # -- Compiling package alu_sv_unit
 # -- Importing package rv32i_types
@@ -54,21 +54,21 @@
 # 
 # Top level modules:
 # 	alu
-# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:07 on Apr 28,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/bht.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:07 on Apr 28,2020
 # vlog -sv -work work ./hdl/bht.sv 
 # -- Compiling module bht
 # 
 # Top level modules:
 # 	bht
-# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:07 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/btb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:07 on Apr 28,2020
 # vlog -sv -work work ./hdl/btb.sv 
 # -- Compiling package btb_sv_unit
 # -- Importing package rv32i_types
@@ -81,21 +81,21 @@
 # 
 # Top level modules:
 # 	btb
-# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:07 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/btb_col.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:07 on Apr 28,2020
 # vlog -sv -work work ./hdl/btb_col.sv 
 # -- Compiling module btb_col
 # 
 # Top level modules:
 # 	btb_col
-# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:07 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/control_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:07 on Apr 28,2020
 # vlog -sv -work work ./hdl/control_itf.sv 
 # -- Compiling package control_itf_sv_unit
 # -- Importing package rv32i_types
@@ -108,11 +108,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:07 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/forwarding/forwarding_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:07 on Apr 28,2020
 # vlog -sv -work work ./hdl/forwarding/forwarding_itf.sv 
 # -- Compiling package forwarding_itf_sv_unit
 # -- Importing package rv32i_types
@@ -128,11 +128,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:21:28 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:07 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cmp_module.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:28 on Apr 27,2020
+# Start time: 19:00:07 on Apr 28,2020
 # vlog -sv -work work ./hdl/cmp_module.sv 
 # -- Compiling package cmp_module_sv_unit
 # -- Importing package rv32i_types
@@ -149,11 +149,11 @@
 # 
 # Top level modules:
 # 	cmp_module
-# End time: 16:21:29 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 19:00:07 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/control_rom.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:29 on Apr 27,2020
+# Start time: 19:00:07 on Apr 28,2020
 # vlog -sv -work work ./hdl/control_rom.sv 
 # -- Compiling package control_rom_sv_unit
 # -- Importing package rv32i_types
@@ -170,197 +170,11 @@
 # 
 # Top level modules:
 # 	control_rom
-# End time: 16:21:29 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:08 on Apr 28,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:29 on Apr 27,2020
-# vlog -sv -work work ./hdl/datapath.sv 
-# ** Error: (vlog-13069) ./hdl/datapath.sv(261): near "&&": syntax error, unexpected &&.
-# End time: 16:21:29 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /software/quartus-std-18.1/modelsim_ase/linuxaloem/vlog failed.
-# Error in macro ./run.do line 18
-# /software/quartus-std-18.1/modelsim_ase/linuxaloem/vlog failed.
-#     while executing
-# "vlog -sv -work work  {./hdl/datapath.sv}"
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work  {./hdl/rv32i_mux_types.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:39 on Apr 27,2020
-# vlog -sv -work work ./hdl/rv32i_mux_types.sv 
-# -- Compiling package pcmux
-# -- Compiling package marmux
-# -- Compiling package cmpmux
-# -- Compiling package alumux
-# -- Compiling package rs1mux
-# -- Compiling package rs2mux
-# -- Compiling package regfilemux
-# -- Compiling package dcachemux
-# 
-# Top level modules:
-# 	--none--
-# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/rv32i_types.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:39 on Apr 27,2020
-# vlog -sv -work work ./hdl/rv32i_types.sv 
-# -- Compiling package rv32i_types
-# -- Importing package pcmux
-# -- Importing package marmux
-# -- Importing package cmpmux
-# -- Importing package alumux
-# -- Importing package regfilemux
-# 
-# Top level modules:
-# 	--none--
-# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/alu.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:39 on Apr 27,2020
-# vlog -sv -work work ./hdl/alu.sv 
-# -- Compiling package alu_sv_unit
-# -- Importing package rv32i_types
-# -- Importing package pcmux
-# -- Importing package marmux
-# -- Importing package cmpmux
-# -- Importing package alumux
-# -- Importing package regfilemux
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/bht.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:39 on Apr 27,2020
-# vlog -sv -work work ./hdl/bht.sv 
-# -- Compiling module bht
-# 
-# Top level modules:
-# 	bht
-# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/btb.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:39 on Apr 27,2020
-# vlog -sv -work work ./hdl/btb.sv 
-# -- Compiling package btb_sv_unit
-# -- Importing package rv32i_types
-# -- Importing package pcmux
-# -- Importing package marmux
-# -- Importing package cmpmux
-# -- Importing package alumux
-# -- Importing package regfilemux
-# -- Compiling module btb
-# 
-# Top level modules:
-# 	btb
-# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/btb_col.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:39 on Apr 27,2020
-# vlog -sv -work work ./hdl/btb_col.sv 
-# -- Compiling module btb_col
-# 
-# Top level modules:
-# 	btb_col
-# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/control_itf.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:39 on Apr 27,2020
-# vlog -sv -work work ./hdl/control_itf.sv 
-# -- Compiling package control_itf_sv_unit
-# -- Importing package rv32i_types
-# -- Importing package pcmux
-# -- Importing package marmux
-# -- Importing package cmpmux
-# -- Importing package alumux
-# -- Importing package regfilemux
-# -- Compiling package control_itf
-# 
-# Top level modules:
-# 	--none--
-# End time: 16:21:39 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/forwarding/forwarding_itf.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:39 on Apr 27,2020
-# vlog -sv -work work ./hdl/forwarding/forwarding_itf.sv 
-# -- Compiling package forwarding_itf_sv_unit
-# -- Importing package rv32i_types
-# -- Importing package pcmux
-# -- Importing package marmux
-# -- Importing package cmpmux
-# -- Importing package alumux
-# -- Importing package regfilemux
-# -- Importing package control_itf
-# -- Importing package rs1mux
-# -- Importing package rs2mux
-# -- Compiling package forwarding_itf
-# 
-# Top level modules:
-# 	--none--
-# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/cmp_module.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:40 on Apr 27,2020
-# vlog -sv -work work ./hdl/cmp_module.sv 
-# -- Compiling package cmp_module_sv_unit
-# -- Importing package rv32i_types
-# -- Importing package pcmux
-# -- Importing package marmux
-# -- Importing package cmpmux
-# -- Importing package alumux
-# -- Importing package regfilemux
-# -- Importing package control_itf
-# -- Importing package rs1mux
-# -- Importing package rs2mux
-# -- Importing package dcachemux
-# -- Compiling module cmp_module
-# 
-# Top level modules:
-# 	cmp_module
-# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/control_rom.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:40 on Apr 27,2020
-# vlog -sv -work work ./hdl/control_rom.sv 
-# -- Compiling package control_rom_sv_unit
-# -- Importing package rv32i_types
-# -- Importing package pcmux
-# -- Importing package marmux
-# -- Importing package cmpmux
-# -- Importing package alumux
-# -- Importing package regfilemux
-# -- Importing package rs1mux
-# -- Importing package rs2mux
-# -- Importing package dcachemux
-# -- Importing package control_itf
-# -- Compiling module control_rom
-# 
-# Top level modules:
-# 	control_rom
-# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work  {./hdl/datapath.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:40 on Apr 27,2020
+# Start time: 19:00:08 on Apr 28,2020
 # vlog -sv -work work ./hdl/datapath.sv 
 # -- Compiling package datapath_sv_unit
 # -- Importing package rv32i_types
@@ -378,11 +192,11 @@
 # 
 # Top level modules:
 # 	datapath
-# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:08 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/execute_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:40 on Apr 27,2020
+# Start time: 19:00:08 on Apr 28,2020
 # vlog -sv -work work ./hdl/execute_controller.sv 
 # -- Compiling package execute_controller_sv_unit
 # -- Importing package control_itf
@@ -396,11 +210,11 @@
 # 
 # Top level modules:
 # 	execute_controller
-# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:08 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/ir.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:40 on Apr 27,2020
+# Start time: 19:00:08 on Apr 28,2020
 # vlog -sv -work work ./hdl/ir.sv 
 # -- Compiling package ir_sv_unit
 # -- Importing package rv32i_types
@@ -413,11 +227,11 @@
 # 
 # Top level modules:
 # 	ir
-# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:08 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/mp3.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:40 on Apr 27,2020
+# Start time: 19:00:08 on Apr 28,2020
 # vlog -sv -work work ./hdl/mp3.sv 
 # -- Compiling package mp3_sv_unit
 # -- Importing package rv32i_types
@@ -434,31 +248,31 @@
 # 
 # Top level modules:
 # 	mp3
-# End time: 16:21:40 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:08 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/pc_reg.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:40 on Apr 27,2020
+# Start time: 19:00:08 on Apr 28,2020
 # vlog -sv -work work ./hdl/pc_reg.sv 
 # -- Compiling module pc_register
 # 
 # Top level modules:
 # 	pc_register
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 19:00:09 on Apr 28,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:41 on Apr 27,2020
+# Start time: 19:00:09 on Apr 28,2020
 # vlog -sv -work work ./hdl/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:09 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:41 on Apr 27,2020
+# Start time: 19:00:09 on Apr 28,2020
 # vlog -sv -work work ./hdl/register.sv 
 # -- Compiling package register_sv_unit
 # -- Importing package control_itf
@@ -474,11 +288,11 @@
 # Top level modules:
 # 	register
 # 	ctrl_word_register
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:09 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/array.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:41 on Apr 27,2020
+# Start time: 19:00:09 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/array.sv 
 # -- Compiling module array
 # -- Compiling module array2
@@ -486,130 +300,130 @@
 # Top level modules:
 # 	array
 # 	array2
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:09 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/bus_adapter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:41 on Apr 27,2020
+# Start time: 19:00:09 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/bus_adapter.sv 
 # -- Compiling module bus_adapter
 # 
 # Top level modules:
 # 	bus_adapter
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:09 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_arbiter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:41 on Apr 27,2020
+# Start time: 19:00:09 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/cache_arbiter.sv 
 # -- Compiling module cache_arbiter
 # 
 # Top level modules:
 # 	cache_arbiter
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:09 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:41 on Apr 27,2020
+# Start time: 19:00:09 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/cache_control.sv 
 # -- Compiling module cache_control
 # 
 # Top level modules:
 # 	cache_control
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:09 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache_datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:41 on Apr 27,2020
+# Start time: 19:00:09 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/cache_datapath.sv 
 # -- Compiling module cache_datapath
 # 
 # Top level modules:
 # 	cache_datapath
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:10 on Apr 28,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:41 on Apr 27,2020
+# Start time: 19:00:10 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/cache.sv 
 # -- Compiling module cache
 # 
 # Top level modules:
 # 	cache
-# End time: 16:21:41 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:10 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/cacheline_adaptor.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:42 on Apr 27,2020
+# Start time: 19:00:10 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/cacheline_adaptor.sv 
 # -- Compiling module cacheline_adaptor
 # 
 # Top level modules:
 # 	cacheline_adaptor
-# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:10 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/data_array.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:42 on Apr 27,2020
+# Start time: 19:00:10 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/data_array.sv 
 # -- Compiling module data_array
 # 
 # Top level modules:
 # 	data_array
-# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:10 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:42 on Apr 27,2020
+# Start time: 19:00:10 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/l2_cache.sv 
 # -- Compiling module l2_cache
 # 
 # Top level modules:
 # 	l2_cache
-# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:10 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:42 on Apr 27,2020
+# Start time: 19:00:10 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/l2_control.sv 
 # -- Compiling module l2_control
 # 
 # Top level modules:
 # 	l2_control
-# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:10 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/l2_datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:42 on Apr 27,2020
+# Start time: 19:00:10 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/l2_datapath.sv 
 # -- Compiling module l2_datapath
 # 
 # Top level modules:
 # 	l2_datapath
-# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:11 on Apr 28,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/cache/mp3_cache.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:42 on Apr 27,2020
+# Start time: 19:00:11 on Apr 28,2020
 # vlog -sv -work work ./hdl/cache/mp3_cache.sv 
 # -- Compiling module mp3_cache
 # 
 # Top level modules:
 # 	mp3_cache
-# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:11 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/forwarding/forwarding.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:42 on Apr 27,2020
+# Start time: 19:00:11 on Apr 28,2020
 # vlog -sv -work work ./hdl/forwarding/forwarding.sv 
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:21:42 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:11 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/divider.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:42 on Apr 27,2020
+# Start time: 19:00:11 on Apr 28,2020
 # vlog -sv -work work ./hdl/muldiv/divider.sv 
 # -- Compiling package divider_sv_unit
 # -- Importing package rv32i_types
@@ -623,20 +437,20 @@
 # 
 # Top level modules:
 # 	divider
-# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 19:00:11 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/mult_precomputed.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:43 on Apr 27,2020
+# Start time: 19:00:11 on Apr 28,2020
 # vlog -sv -work work ./hdl/muldiv/mult_precomputed.sv 
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:11 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hdl/muldiv/multiplier.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:43 on Apr 27,2020
+# Start time: 19:00:11 on Apr 28,2020
 # vlog -sv -work work ./hdl/muldiv/multiplier.sv 
 # -- Compiling package multiplier_sv_unit
 # -- Importing package rv32i_types
@@ -650,7 +464,7 @@
 # 
 # Top level modules:
 # 	multiplier
-# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:11 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
@@ -658,17 +472,17 @@
 # 
 # vlog -sv -work work  {./hvl/magic_dual_port.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:43 on Apr 27,2020
+# Start time: 19:00:11 on Apr 28,2020
 # vlog -sv -work work ./hvl/magic_dual_port.sv 
 # -- Compiling module magic_memory_dp
 # 
 # Top level modules:
 # 	magic_memory_dp
-# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:12 on Apr 28,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/param_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:43 on Apr 27,2020
+# Start time: 19:00:12 on Apr 28,2020
 # vlog -sv -work work ./hvl/param_memory.sv 
 # -- Compiling module ParamMemory
 # ** Warning: ./hvl/param_memory.sv(25): (vlog-2244) Variable 'iteration' is implicitly static. You must either explicitly declare it as static or automatic
@@ -676,21 +490,21 @@
 # 
 # Top level modules:
 # 	ParamMemory
-# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:12 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vlog -sv -work work  {./hvl/shadow_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:43 on Apr 27,2020
+# Start time: 19:00:12 on Apr 28,2020
 # vlog -sv -work work ./hvl/shadow_memory.sv 
 # -- Compiling module shadow_memory
 # 
 # Top level modules:
 # 	shadow_memory
-# End time: 16:21:43 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:12 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/rvfimon.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:43 on Apr 27,2020
+# Start time: 19:00:12 on Apr 28,2020
 # vlog -sv -work work ./hvl/rvfimon.v 
 # -- Compiling module riscv_formal_monitor_rv32imc
 # -- Compiling module riscv_formal_monitor_rv32imc_rob
@@ -768,41 +582,41 @@
 # 
 # Top level modules:
 # 	riscv_formal_monitor_rv32imc
-# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:01
+# End time: 19:00:13 on Apr 28,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/source_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:44 on Apr 27,2020
+# Start time: 19:00:13 on Apr 28,2020
 # vlog -sv -work work ./hvl/source_tb.sv 
 # -- Compiling module source_tb
 # 
 # Top level modules:
 # 	source_tb
-# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:13 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/rvfi_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:44 on Apr 27,2020
+# Start time: 19:00:13 on Apr 28,2020
 # vlog -sv -work work ./hvl/rvfi_itf.sv 
 # -- Compiling interface rvfi_itf
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:13 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/tb_itf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:44 on Apr 27,2020
+# Start time: 19:00:13 on Apr 28,2020
 # vlog -sv -work work ./hvl/tb_itf.sv 
 # -- Compiling interface tb_itf
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:13 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work  {./hvl/top.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:21:44 on Apr 27,2020
+# Start time: 19:00:13 on Apr 28,2020
 # vlog -sv -work work ./hvl/top.sv 
 # -- Compiling package top_sv_unit
 # -- Importing package dcachemux
@@ -816,12 +630,12 @@
 # 
 # Top level modules:
 # 	mp3_tb
-# End time: 16:21:44 on Apr 27,2020, Elapsed time: 0:00:00
+# End time: 19:00:13 on Apr 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixv_ver -L stratixv_hssi_ver -L stratixv_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  mp3_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixv_ver -L stratixv_hssi_ver -L stratixv_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" mp3_tb 
-# Start time: 16:21:44 on Apr 27,2020
+# Start time: 19:00:13 on Apr 28,2020
 # Loading sv_std.std
 # Loading work.regfilemux
 # Loading work.alumux
@@ -971,526 +785,1586 @@
 # 
 # run -all 
 # Compilation Successful
-# time: 0; is_jal: 0; is_jalr: 0; dut.d.pc_in: xxxxxxxx; dut.d.pc_module_out: xxxxxxxx; 
+# time: 0; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: xxxxxxxx; dut.d.pc_module_out: xxxxxxxx; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: xxxxxxxx;dut.d.bpmux_out: xxxxxxxx;
 # dut.d.pipereg_ifid_pc_out: 00000000; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+# rvfi.pc_rdata: 00000000; rvfi.pc_wdata: xxxxxxxx; 
 #  
 # Reset Memory
-# time: 5000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000064; dut.d.pc_module_out: 00000060; 
+# time: 5000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000064; dut.d.pc_module_out: 00000060; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000064;dut.d.bpmux_out: 00000064;
 # dut.d.pipereg_ifid_pc_out: 00000000; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+# rvfi.pc_rdata: 00000000; rvfi.pc_wdata: 00000000; 
 #  
 # memread(_addr=00000060)
-# time: 675000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000068; dut.d.pc_module_out: 00000064; 
+# time: 665000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000064; dut.d.pc_module_out: 00000060; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000064;dut.d.bpmux_out: 00000064;
+# dut.d.pipereg_ifid_pc_out: 00000000; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+# rvfi.pc_rdata: 00000000; rvfi.pc_wdata: 00000000; 
+#  
+# time: 675000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000068; dut.d.pc_module_out: 00000064; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000068;dut.d.bpmux_out: 00000068;
 # dut.d.pipereg_ifid_pc_out: 00000060; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+# rvfi.pc_rdata: 00000000; rvfi.pc_wdata: 00000000; 
 #  
-# time: 685000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000006c; dut.d.pc_module_out: 00000068; 
+# time: 685000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000006c; dut.d.pc_module_out: 00000068; 
+# dut.d.alu_module_out: 00000060; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000006c;dut.d.bpmux_out: 0000006c;
 # dut.d.pipereg_ifid_pc_out: 00000064; dut.d.pipereg_idex_pc_out: 00000060; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+# rvfi.pc_rdata: 00000000; rvfi.pc_wdata: 00000000; 
 #  
-# time: 695000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000070; dut.d.pc_module_out: 0000006c; 
+# time: 695000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000070; dut.d.pc_module_out: 0000006c; 
+# dut.d.alu_module_out: 00000570; dut.d.pipe_exmem_alu_out: 00000060; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000070;dut.d.bpmux_out: 00000070;
 # dut.d.pipereg_ifid_pc_out: 00000068; dut.d.pipereg_idex_pc_out: 00000064; dut.d.pipereg_exmem_pc_out: 00000060; dut.d.pipereg_memwb_pc_out: 00000000; 
+# rvfi.pc_rdata: 00000000; rvfi.pc_wdata: 00000060; 
 #  
-# time: 705000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000074; dut.d.pc_module_out: 00000070; 
+# time: 705000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000074; dut.d.pc_module_out: 00000070; 
+# dut.d.alu_module_out: 0000000c; dut.d.pipe_exmem_alu_out: 00000570; dut.d.pipe_memwb_alu_out: 00000060; dut.d.pcmux_out: 00000074;dut.d.bpmux_out: 00000074;
 # dut.d.pipereg_ifid_pc_out: 0000006c; dut.d.pipereg_idex_pc_out: 00000068; dut.d.pipereg_exmem_pc_out: 00000064; dut.d.pipereg_memwb_pc_out: 00000060; 
+# rvfi.pc_rdata: 00000060; rvfi.pc_wdata: 00000064; 
 #  
-# time: 715000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000078; dut.d.pc_module_out: 00000074; 
+# time: 715000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000078; dut.d.pc_module_out: 00000074; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 0000000c; dut.d.pipe_memwb_alu_out: 00000570; dut.d.pcmux_out: 00000078;dut.d.bpmux_out: 00000078;
 # dut.d.pipereg_ifid_pc_out: 00000070; dut.d.pipereg_idex_pc_out: 0000006c; dut.d.pipereg_exmem_pc_out: 00000068; dut.d.pipereg_memwb_pc_out: 00000064; 
+# rvfi.pc_rdata: 00000064; rvfi.pc_wdata: 00000068; 
 #  
-# time: 725000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000007c; dut.d.pc_module_out: 00000078; 
+# time: 725000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000007c; dut.d.pc_module_out: 00000078; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 0000000c; dut.d.pcmux_out: 0000007c;dut.d.bpmux_out: 0000007c;
 # dut.d.pipereg_ifid_pc_out: 00000074; dut.d.pipereg_idex_pc_out: 00000070; dut.d.pipereg_exmem_pc_out: 0000006c; dut.d.pipereg_memwb_pc_out: 00000068; 
+# rvfi.pc_rdata: 00000068; rvfi.pc_wdata: 0000006c; 
 #  
-# time: 735000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000080; dut.d.pc_module_out: 0000007c; 
+# time: 735000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000080; dut.d.pc_module_out: 0000007c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000080;dut.d.bpmux_out: 00000080;
 # dut.d.pipereg_ifid_pc_out: 00000078; dut.d.pipereg_idex_pc_out: 00000074; dut.d.pipereg_exmem_pc_out: 00000070; dut.d.pipereg_memwb_pc_out: 0000006c; 
+# rvfi.pc_rdata: 0000006c; rvfi.pc_wdata: 00000070; 
 #  
-# time: 745000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000084; dut.d.pc_module_out: 00000080; 
+# time: 745000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000084; dut.d.pc_module_out: 00000080; 
+# dut.d.alu_module_out: 00000007; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000084;dut.d.bpmux_out: 00000084;
 # dut.d.pipereg_ifid_pc_out: 0000007c; dut.d.pipereg_idex_pc_out: 00000078; dut.d.pipereg_exmem_pc_out: 00000074; dut.d.pipereg_memwb_pc_out: 00000070; 
+# rvfi.pc_rdata: 00000070; rvfi.pc_wdata: 00000074; 
 #  
 # memread(_addr=00000080)
-# time: 1125000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000088; dut.d.pc_module_out: 00000084; 
+# time: 1115000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000084; dut.d.pc_module_out: 00000080; 
+# dut.d.alu_module_out: 00000007; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000084;dut.d.bpmux_out: 00000084;
+# dut.d.pipereg_ifid_pc_out: 0000007c; dut.d.pipereg_idex_pc_out: 00000078; dut.d.pipereg_exmem_pc_out: 00000074; dut.d.pipereg_memwb_pc_out: 00000070; 
+# rvfi.pc_rdata: 00000070; rvfi.pc_wdata: 00000074; 
+#  
+# time: 1125000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000088; dut.d.pc_module_out: 00000084; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000007; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000088;dut.d.bpmux_out: 00000088;
 # dut.d.pipereg_ifid_pc_out: 00000080; dut.d.pipereg_idex_pc_out: 0000007c; dut.d.pipereg_exmem_pc_out: 00000078; dut.d.pipereg_memwb_pc_out: 00000074; 
+# rvfi.pc_rdata: 00000074; rvfi.pc_wdata: 00000078; 
 #  
-# time: 1135000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000008c; dut.d.pc_module_out: 00000088; 
+# time: 1135000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000008c; dut.d.pc_module_out: 00000088; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000007; dut.d.pcmux_out: 0000008c;dut.d.bpmux_out: 0000008c;
 # dut.d.pipereg_ifid_pc_out: 00000084; dut.d.pipereg_idex_pc_out: 00000080; dut.d.pipereg_exmem_pc_out: 0000007c; dut.d.pipereg_memwb_pc_out: 00000078; 
+# rvfi.pc_rdata: 00000078; rvfi.pc_wdata: 0000007c; 
 #  
-# time: 1145000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000090; dut.d.pc_module_out: 0000008c; 
+# time: 1145000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000090; dut.d.pc_module_out: 0000008c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000090;dut.d.bpmux_out: 00000090;
 # dut.d.pipereg_ifid_pc_out: 00000088; dut.d.pipereg_idex_pc_out: 00000084; dut.d.pipereg_exmem_pc_out: 00000080; dut.d.pipereg_memwb_pc_out: 0000007c; 
+# rvfi.pc_rdata: 0000007c; rvfi.pc_wdata: 00000080; 
 #  
-# time: 1155000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000094; dut.d.pc_module_out: 00000090; 
+# time: 1155000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000094; dut.d.pc_module_out: 00000090; 
+# dut.d.alu_module_out: 00000007; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000094;dut.d.bpmux_out: 00000094;
 # dut.d.pipereg_ifid_pc_out: 0000008c; dut.d.pipereg_idex_pc_out: 00000088; dut.d.pipereg_exmem_pc_out: 00000084; dut.d.pipereg_memwb_pc_out: 00000080; 
+# rvfi.pc_rdata: 00000080; rvfi.pc_wdata: 00000084; 
 #  
-# time: 1165000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000098; dut.d.pc_module_out: 00000094; 
+# time: 1165000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000098; dut.d.pc_module_out: 00000094; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000007; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000098;dut.d.bpmux_out: 00000098;
 # dut.d.pipereg_ifid_pc_out: 00000090; dut.d.pipereg_idex_pc_out: 0000008c; dut.d.pipereg_exmem_pc_out: 00000088; dut.d.pipereg_memwb_pc_out: 00000084; 
+# rvfi.pc_rdata: 00000084; rvfi.pc_wdata: 00000088; 
 #  
-# time: 1175000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000009c; dut.d.pc_module_out: 00000098; 
+# time: 1175000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000009c; dut.d.pc_module_out: 00000098; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000007; dut.d.pcmux_out: 0000009c;dut.d.bpmux_out: 0000009c;
 # dut.d.pipereg_ifid_pc_out: 00000094; dut.d.pipereg_idex_pc_out: 00000090; dut.d.pipereg_exmem_pc_out: 0000008c; dut.d.pipereg_memwb_pc_out: 00000088; 
+# rvfi.pc_rdata: 00000088; rvfi.pc_wdata: 0000008c; 
 #  
-# time: 1185000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000a0; dut.d.pc_module_out: 0000009c; 
+# time: 1185000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000a0; dut.d.pc_module_out: 0000009c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000a0;dut.d.bpmux_out: 000000a0;
 # dut.d.pipereg_ifid_pc_out: 00000098; dut.d.pipereg_idex_pc_out: 00000094; dut.d.pipereg_exmem_pc_out: 00000090; dut.d.pipereg_memwb_pc_out: 0000008c; 
+# rvfi.pc_rdata: 0000008c; rvfi.pc_wdata: 00000090; 
 #  
-# time: 1195000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000a4; dut.d.pc_module_out: 000000a0; 
+# time: 1195000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000a4; dut.d.pc_module_out: 000000a0; 
+# dut.d.alu_module_out: 00000098; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000a4;dut.d.bpmux_out: 000000a4;
 # dut.d.pipereg_ifid_pc_out: 0000009c; dut.d.pipereg_idex_pc_out: 00000098; dut.d.pipereg_exmem_pc_out: 00000094; dut.d.pipereg_memwb_pc_out: 00000090; 
+# rvfi.pc_rdata: 00000090; rvfi.pc_wdata: 00000094; 
 #  
 # memread(_addr=000000a0)
-# time: 1575000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000a8; dut.d.pc_module_out: 000000a4; 
-# dut.d.pipereg_ifid_pc_out: 000000a0; dut.d.pipereg_idex_pc_out: 0000009c; dut.d.pipereg_exmem_pc_out: 00000098; dut.d.pipereg_memwb_pc_out: 00000094; 
+# time: 1565000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000a4; dut.d.pc_module_out: 000000a0; 
+# dut.d.alu_module_out: 00000098; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000a4;dut.d.bpmux_out: 000000a4;
+# dut.d.pipereg_ifid_pc_out: 0000009c; dut.d.pipereg_idex_pc_out: 00000098; dut.d.pipereg_exmem_pc_out: 00000094; dut.d.pipereg_memwb_pc_out: 00000090; 
+# rvfi.pc_rdata: 00000090; rvfi.pc_wdata: 00000094; 
 #  
-# time: 1585000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000ac; dut.d.pc_module_out: 000000a8; 
+# time: 1575000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000a8; dut.d.pc_module_out: 000000a4; 
+# dut.d.alu_module_out: 000005b0; dut.d.pipe_exmem_alu_out: 00000098; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000a8;dut.d.bpmux_out: 000000a8;
+# dut.d.pipereg_ifid_pc_out: 000000a0; dut.d.pipereg_idex_pc_out: 0000009c; dut.d.pipereg_exmem_pc_out: 00000098; dut.d.pipereg_memwb_pc_out: 00000094; 
+# rvfi.pc_rdata: 00000094; rvfi.pc_wdata: 00000098; 
+#  
+# time: 1585000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000ac; dut.d.pc_module_out: 000000a8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005b0; dut.d.pipe_memwb_alu_out: 00000098; dut.d.pcmux_out: 000000ac;dut.d.bpmux_out: 000000ac;
 # dut.d.pipereg_ifid_pc_out: 000000a4; dut.d.pipereg_idex_pc_out: 000000a0; dut.d.pipereg_exmem_pc_out: 0000009c; dut.d.pipereg_memwb_pc_out: 00000098; 
+# rvfi.pc_rdata: 00000098; rvfi.pc_wdata: 0000009c; 
 #  
 # memread(_addr=000005a0)
-# time: 2215000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000b0; dut.d.pc_module_out: 000000ac; 
+# time: 2205000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000ac; dut.d.pc_module_out: 000000a8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005b0; dut.d.pipe_memwb_alu_out: 00000098; dut.d.pcmux_out: 000000ac;dut.d.bpmux_out: 000000ac;
+# dut.d.pipereg_ifid_pc_out: 000000a4; dut.d.pipereg_idex_pc_out: 000000a0; dut.d.pipereg_exmem_pc_out: 0000009c; dut.d.pipereg_memwb_pc_out: 00000098; 
+# rvfi.pc_rdata: 00000098; rvfi.pc_wdata: 0000009c; 
+#  
+# time: 2215000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000b0; dut.d.pc_module_out: 000000ac; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005b0; dut.d.pcmux_out: 000000b0;dut.d.bpmux_out: 000000b0;
 # dut.d.pipereg_ifid_pc_out: 000000a8; dut.d.pipereg_idex_pc_out: 000000a4; dut.d.pipereg_exmem_pc_out: 000000a0; dut.d.pipereg_memwb_pc_out: 0000009c; 
+# rvfi.pc_rdata: 0000009c; rvfi.pc_wdata: 000000a0; 
 #  
-# time: 2225000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000b4; dut.d.pc_module_out: 000000b0; 
+# time: 2225000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000b4; dut.d.pc_module_out: 000000b0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000b4;dut.d.bpmux_out: 000000b4;
 # dut.d.pipereg_ifid_pc_out: 000000ac; dut.d.pipereg_idex_pc_out: 000000a8; dut.d.pipereg_exmem_pc_out: 000000a4; dut.d.pipereg_memwb_pc_out: 000000a0; 
+# rvfi.pc_rdata: 000000a0; rvfi.pc_wdata: 000000a4; 
 #  
-# time: 2235000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000b8; dut.d.pc_module_out: 000000b4; 
+# time: 2235000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000b8; dut.d.pc_module_out: 000000b4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000b8;dut.d.bpmux_out: 000000b8;
 # dut.d.pipereg_ifid_pc_out: 000000b0; dut.d.pipereg_idex_pc_out: 000000ac; dut.d.pipereg_exmem_pc_out: 000000a8; dut.d.pipereg_memwb_pc_out: 000000a4; 
+# rvfi.pc_rdata: 000000a4; rvfi.pc_wdata: 000000a8; 
 #  
-# time: 2245000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000bc; dut.d.pc_module_out: 000000b8; 
+# time: 2245000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000bc; dut.d.pc_module_out: 000000b8; 
+# dut.d.alu_module_out: 000000b0; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000bc;dut.d.bpmux_out: 000000bc;
 # dut.d.pipereg_ifid_pc_out: 000000b4; dut.d.pipereg_idex_pc_out: 000000b0; dut.d.pipereg_exmem_pc_out: 000000ac; dut.d.pipereg_memwb_pc_out: 000000a8; 
+# rvfi.pc_rdata: 000000a8; rvfi.pc_wdata: 000000ac; 
 #  
-# time: 2255000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000c0; dut.d.pc_module_out: 000000bc; 
+# time: 2255000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000c0; dut.d.pc_module_out: 000000bc; 
+# dut.d.alu_module_out: 000005b4; dut.d.pipe_exmem_alu_out: 000000b0; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000c0;dut.d.bpmux_out: 000000c0;
 # dut.d.pipereg_ifid_pc_out: 000000b8; dut.d.pipereg_idex_pc_out: 000000b4; dut.d.pipereg_exmem_pc_out: 000000b0; dut.d.pipereg_memwb_pc_out: 000000ac; 
+# rvfi.pc_rdata: 000000ac; rvfi.pc_wdata: 000000b0; 
 #  
-# time: 2265000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000c4; dut.d.pc_module_out: 000000c0; 
+# time: 2265000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000c4; dut.d.pc_module_out: 000000c0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005b4; dut.d.pipe_memwb_alu_out: 000000b0; dut.d.pcmux_out: 000000c4;dut.d.bpmux_out: 000000c4;
 # dut.d.pipereg_ifid_pc_out: 000000bc; dut.d.pipereg_idex_pc_out: 000000b8; dut.d.pipereg_exmem_pc_out: 000000b4; dut.d.pipereg_memwb_pc_out: 000000b0; 
+# rvfi.pc_rdata: 000000b0; rvfi.pc_wdata: 000000b4; 
 #  
 # memread(_addr=000000c0)
-# time: 2895000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000c8; dut.d.pc_module_out: 000000c4; 
+# time: 2885000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000c4; dut.d.pc_module_out: 000000c0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005b4; dut.d.pipe_memwb_alu_out: 000000b0; dut.d.pcmux_out: 000000c4;dut.d.bpmux_out: 000000c4;
+# dut.d.pipereg_ifid_pc_out: 000000bc; dut.d.pipereg_idex_pc_out: 000000b8; dut.d.pipereg_exmem_pc_out: 000000b4; dut.d.pipereg_memwb_pc_out: 000000b0; 
+# rvfi.pc_rdata: 000000b0; rvfi.pc_wdata: 000000b4; 
+#  
+# time: 2895000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000c8; dut.d.pc_module_out: 000000c4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005b4; dut.d.pcmux_out: 000000c8;dut.d.bpmux_out: 000000c8;
 # dut.d.pipereg_ifid_pc_out: 000000c0; dut.d.pipereg_idex_pc_out: 000000bc; dut.d.pipereg_exmem_pc_out: 000000b8; dut.d.pipereg_memwb_pc_out: 000000b4; 
+# rvfi.pc_rdata: 000000b4; rvfi.pc_wdata: 000000b8; 
 #  
-# time: 2905000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000cc; dut.d.pc_module_out: 000000c8; 
+# time: 2905000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000cc; dut.d.pc_module_out: 000000c8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000cc;dut.d.bpmux_out: 000000cc;
 # dut.d.pipereg_ifid_pc_out: 000000c4; dut.d.pipereg_idex_pc_out: 000000c0; dut.d.pipereg_exmem_pc_out: 000000bc; dut.d.pipereg_memwb_pc_out: 000000b8; 
+# rvfi.pc_rdata: 000000b8; rvfi.pc_wdata: 000000bc; 
 #  
-# time: 2915000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000d0; dut.d.pc_module_out: 000000cc; 
+# time: 2915000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000d0; dut.d.pc_module_out: 000000cc; 
+# dut.d.alu_module_out: 000000c4; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000d0;dut.d.bpmux_out: 000000d0;
 # dut.d.pipereg_ifid_pc_out: 000000c8; dut.d.pipereg_idex_pc_out: 000000c4; dut.d.pipereg_exmem_pc_out: 000000c0; dut.d.pipereg_memwb_pc_out: 000000bc; 
+# rvfi.pc_rdata: 000000bc; rvfi.pc_wdata: 000000c0; 
 #  
-# time: 2925000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000d4; dut.d.pc_module_out: 000000d0; 
+# time: 2925000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000d4; dut.d.pc_module_out: 000000d0; 
+# dut.d.alu_module_out: 00000580; dut.d.pipe_exmem_alu_out: 000000c4; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000d4;dut.d.bpmux_out: 000000d4;
 # dut.d.pipereg_ifid_pc_out: 000000cc; dut.d.pipereg_idex_pc_out: 000000c8; dut.d.pipereg_exmem_pc_out: 000000c4; dut.d.pipereg_memwb_pc_out: 000000c0; 
+# rvfi.pc_rdata: 000000c0; rvfi.pc_wdata: 000000c4; 
 #  
-# time: 2935000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000d8; dut.d.pc_module_out: 000000d4; 
+# time: 2935000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000d8; dut.d.pc_module_out: 000000d4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000580; dut.d.pipe_memwb_alu_out: 000000c4; dut.d.pcmux_out: 000000d8;dut.d.bpmux_out: 000000d8;
 # dut.d.pipereg_ifid_pc_out: 000000d0; dut.d.pipereg_idex_pc_out: 000000cc; dut.d.pipereg_exmem_pc_out: 000000c8; dut.d.pipereg_memwb_pc_out: 000000c4; 
+# rvfi.pc_rdata: 000000c4; rvfi.pc_wdata: 000000c8; 
 #  
 # memread(_addr=00000580)
-# time: 3565000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000dc; dut.d.pc_module_out: 000000d8; 
+# time: 3555000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000d8; dut.d.pc_module_out: 000000d4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000580; dut.d.pipe_memwb_alu_out: 000000c4; dut.d.pcmux_out: 000000d8;dut.d.bpmux_out: 000000d8;
+# dut.d.pipereg_ifid_pc_out: 000000d0; dut.d.pipereg_idex_pc_out: 000000cc; dut.d.pipereg_exmem_pc_out: 000000c8; dut.d.pipereg_memwb_pc_out: 000000c4; 
+# rvfi.pc_rdata: 000000c4; rvfi.pc_wdata: 000000c8; 
+#  
+# time: 3565000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000dc; dut.d.pc_module_out: 000000d8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000580; dut.d.pcmux_out: 000000dc;dut.d.bpmux_out: 000000dc;
 # dut.d.pipereg_ifid_pc_out: 000000d4; dut.d.pipereg_idex_pc_out: 000000d0; dut.d.pipereg_exmem_pc_out: 000000cc; dut.d.pipereg_memwb_pc_out: 000000c8; 
+# rvfi.pc_rdata: 000000c8; rvfi.pc_wdata: 000000cc; 
 #  
-# time: 3575000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000e0; dut.d.pc_module_out: 000000dc; 
+# time: 3575000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000e0; dut.d.pc_module_out: 000000dc; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000e0;dut.d.bpmux_out: 000000e0;
 # dut.d.pipereg_ifid_pc_out: 000000d8; dut.d.pipereg_idex_pc_out: 000000d4; dut.d.pipereg_exmem_pc_out: 000000d0; dut.d.pipereg_memwb_pc_out: 000000cc; 
+# rvfi.pc_rdata: 000000cc; rvfi.pc_wdata: 000000d0; 
 #  
-# time: 3585000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000e4; dut.d.pc_module_out: 000000e0; 
+# time: 3585000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000e4; dut.d.pc_module_out: 000000e0; 
+# dut.d.alu_module_out: 000000d8; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000e4;dut.d.bpmux_out: 000000e4;
 # dut.d.pipereg_ifid_pc_out: 000000dc; dut.d.pipereg_idex_pc_out: 000000d8; dut.d.pipereg_exmem_pc_out: 000000d4; dut.d.pipereg_memwb_pc_out: 000000d0; 
+# rvfi.pc_rdata: 000000d0; rvfi.pc_wdata: 000000d4; 
 #  
 # memread(_addr=000000e0)
-# time: 4215000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000e8; dut.d.pc_module_out: 000000e4; 
+# time: 4205000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000e4; dut.d.pc_module_out: 000000e0; 
+# dut.d.alu_module_out: 000000d8; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000e4;dut.d.bpmux_out: 000000e4;
+# dut.d.pipereg_ifid_pc_out: 000000dc; dut.d.pipereg_idex_pc_out: 000000d8; dut.d.pipereg_exmem_pc_out: 000000d4; dut.d.pipereg_memwb_pc_out: 000000d0; 
+# rvfi.pc_rdata: 000000d0; rvfi.pc_wdata: 000000d4; 
+#  
+# time: 4215000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000e8; dut.d.pc_module_out: 000000e4; 
+# dut.d.alu_module_out: 00000584; dut.d.pipe_exmem_alu_out: 000000d8; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000e8;dut.d.bpmux_out: 000000e8;
 # dut.d.pipereg_ifid_pc_out: 000000e0; dut.d.pipereg_idex_pc_out: 000000dc; dut.d.pipereg_exmem_pc_out: 000000d8; dut.d.pipereg_memwb_pc_out: 000000d4; 
+# rvfi.pc_rdata: 000000d4; rvfi.pc_wdata: 000000d8; 
 #  
-# time: 4225000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000ec; dut.d.pc_module_out: 000000e8; 
+# time: 4225000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000ec; dut.d.pc_module_out: 000000e8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000584; dut.d.pipe_memwb_alu_out: 000000d8; dut.d.pcmux_out: 000000ec;dut.d.bpmux_out: 000000ec;
 # dut.d.pipereg_ifid_pc_out: 000000e4; dut.d.pipereg_idex_pc_out: 000000e0; dut.d.pipereg_exmem_pc_out: 000000dc; dut.d.pipereg_memwb_pc_out: 000000d8; 
+# rvfi.pc_rdata: 000000d8; rvfi.pc_wdata: 000000dc; 
 #  
-# time: 4235000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000f0; dut.d.pc_module_out: 000000ec; 
+# time: 4235000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000f0; dut.d.pc_module_out: 000000ec; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000584; dut.d.pcmux_out: 000000f0;dut.d.bpmux_out: 000000f0;
 # dut.d.pipereg_ifid_pc_out: 000000e8; dut.d.pipereg_idex_pc_out: 000000e4; dut.d.pipereg_exmem_pc_out: 000000e0; dut.d.pipereg_memwb_pc_out: 000000dc; 
+# rvfi.pc_rdata: 000000dc; rvfi.pc_wdata: 000000e0; 
 #  
-# time: 4245000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000f4; dut.d.pc_module_out: 000000f0; 
+# time: 4245000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000f4; dut.d.pc_module_out: 000000f0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000f4;dut.d.bpmux_out: 000000f4;
 # dut.d.pipereg_ifid_pc_out: 000000ec; dut.d.pipereg_idex_pc_out: 000000e8; dut.d.pipereg_exmem_pc_out: 000000e4; dut.d.pipereg_memwb_pc_out: 000000e0; 
+# rvfi.pc_rdata: 000000e0; rvfi.pc_wdata: 000000e4; 
 #  
-# time: 4255000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000f8; dut.d.pc_module_out: 000000f4; 
+# time: 4255000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000f8; dut.d.pc_module_out: 000000f4; 
+# dut.d.alu_module_out: 000000ec; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000f8;dut.d.bpmux_out: 000000f8;
 # dut.d.pipereg_ifid_pc_out: 000000f0; dut.d.pipereg_idex_pc_out: 000000ec; dut.d.pipereg_exmem_pc_out: 000000e8; dut.d.pipereg_memwb_pc_out: 000000e4; 
+# rvfi.pc_rdata: 000000e4; rvfi.pc_wdata: 000000e8; 
 #  
-# time: 4265000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000000fc; dut.d.pc_module_out: 000000f8; 
+# time: 4265000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000000fc; dut.d.pc_module_out: 000000f8; 
+# dut.d.alu_module_out: 00000588; dut.d.pipe_exmem_alu_out: 000000ec; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000000fc;dut.d.bpmux_out: 000000fc;
 # dut.d.pipereg_ifid_pc_out: 000000f4; dut.d.pipereg_idex_pc_out: 000000f0; dut.d.pipereg_exmem_pc_out: 000000ec; dut.d.pipereg_memwb_pc_out: 000000e8; 
+# rvfi.pc_rdata: 000000e8; rvfi.pc_wdata: 000000ec; 
 #  
-# time: 4275000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000100; dut.d.pc_module_out: 000000fc; 
+# time: 4275000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000100; dut.d.pc_module_out: 000000fc; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000588; dut.d.pipe_memwb_alu_out: 000000ec; dut.d.pcmux_out: 00000100;dut.d.bpmux_out: 00000100;
 # dut.d.pipereg_ifid_pc_out: 000000f8; dut.d.pipereg_idex_pc_out: 000000f4; dut.d.pipereg_exmem_pc_out: 000000f0; dut.d.pipereg_memwb_pc_out: 000000ec; 
+# rvfi.pc_rdata: 000000ec; rvfi.pc_wdata: 000000f0; 
 #  
-# time: 4285000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000104; dut.d.pc_module_out: 00000100; 
+# time: 4285000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000104; dut.d.pc_module_out: 00000100; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000588; dut.d.pcmux_out: 00000104;dut.d.bpmux_out: 00000104;
 # dut.d.pipereg_ifid_pc_out: 000000fc; dut.d.pipereg_idex_pc_out: 000000f8; dut.d.pipereg_exmem_pc_out: 000000f4; dut.d.pipereg_memwb_pc_out: 000000f0; 
+# rvfi.pc_rdata: 000000f0; rvfi.pc_wdata: 000000f4; 
 #  
 # memread(_addr=00000100)
-# time: 4665000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000108; dut.d.pc_module_out: 00000104; 
+# time: 4655000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000104; dut.d.pc_module_out: 00000100; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000588; dut.d.pcmux_out: 00000104;dut.d.bpmux_out: 00000104;
+# dut.d.pipereg_ifid_pc_out: 000000fc; dut.d.pipereg_idex_pc_out: 000000f8; dut.d.pipereg_exmem_pc_out: 000000f4; dut.d.pipereg_memwb_pc_out: 000000f0; 
+# rvfi.pc_rdata: 000000f0; rvfi.pc_wdata: 000000f4; 
+#  
+# time: 4665000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000108; dut.d.pc_module_out: 00000104; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000108;dut.d.bpmux_out: 00000108;
 # dut.d.pipereg_ifid_pc_out: 00000100; dut.d.pipereg_idex_pc_out: 000000fc; dut.d.pipereg_exmem_pc_out: 000000f8; dut.d.pipereg_memwb_pc_out: 000000f4; 
+# rvfi.pc_rdata: 000000f4; rvfi.pc_wdata: 000000f8; 
 #  
-# time: 4675000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000010c; dut.d.pc_module_out: 00000108; 
+# time: 4675000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000010c; dut.d.pc_module_out: 00000108; 
+# dut.d.alu_module_out: 00000100; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000010c;dut.d.bpmux_out: 0000010c;
 # dut.d.pipereg_ifid_pc_out: 00000104; dut.d.pipereg_idex_pc_out: 00000100; dut.d.pipereg_exmem_pc_out: 000000fc; dut.d.pipereg_memwb_pc_out: 000000f8; 
+# rvfi.pc_rdata: 000000f8; rvfi.pc_wdata: 000000fc; 
 #  
-# time: 4685000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000110; dut.d.pc_module_out: 0000010c; 
+# time: 4685000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000110; dut.d.pc_module_out: 0000010c; 
+# dut.d.alu_module_out: 0000058c; dut.d.pipe_exmem_alu_out: 00000100; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000110;dut.d.bpmux_out: 00000110;
 # dut.d.pipereg_ifid_pc_out: 00000108; dut.d.pipereg_idex_pc_out: 00000104; dut.d.pipereg_exmem_pc_out: 00000100; dut.d.pipereg_memwb_pc_out: 000000fc; 
+# rvfi.pc_rdata: 000000fc; rvfi.pc_wdata: 00000100; 
 #  
-# time: 4695000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000114; dut.d.pc_module_out: 00000110; 
+# time: 4695000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000114; dut.d.pc_module_out: 00000110; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 0000058c; dut.d.pipe_memwb_alu_out: 00000100; dut.d.pcmux_out: 00000114;dut.d.bpmux_out: 00000114;
 # dut.d.pipereg_ifid_pc_out: 0000010c; dut.d.pipereg_idex_pc_out: 00000108; dut.d.pipereg_exmem_pc_out: 00000104; dut.d.pipereg_memwb_pc_out: 00000100; 
+# rvfi.pc_rdata: 00000100; rvfi.pc_wdata: 00000104; 
 #  
-# time: 4705000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000118; dut.d.pc_module_out: 00000114; 
+# time: 4705000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000118; dut.d.pc_module_out: 00000114; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 0000058c; dut.d.pcmux_out: 00000118;dut.d.bpmux_out: 00000118;
 # dut.d.pipereg_ifid_pc_out: 00000110; dut.d.pipereg_idex_pc_out: 0000010c; dut.d.pipereg_exmem_pc_out: 00000108; dut.d.pipereg_memwb_pc_out: 00000104; 
+# rvfi.pc_rdata: 00000104; rvfi.pc_wdata: 00000108; 
 #  
-# time: 4715000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000011c; dut.d.pc_module_out: 00000118; 
+# time: 4715000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000011c; dut.d.pc_module_out: 00000118; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000011c;dut.d.bpmux_out: 0000011c;
 # dut.d.pipereg_ifid_pc_out: 00000114; dut.d.pipereg_idex_pc_out: 00000110; dut.d.pipereg_exmem_pc_out: 0000010c; dut.d.pipereg_memwb_pc_out: 00000108; 
+# rvfi.pc_rdata: 00000108; rvfi.pc_wdata: 0000010c; 
 #  
-# time: 4725000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000120; dut.d.pc_module_out: 0000011c; 
+# time: 4725000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000120; dut.d.pc_module_out: 0000011c; 
+# dut.d.alu_module_out: deebfd9a; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000120;dut.d.bpmux_out: 00000120;
 # dut.d.pipereg_ifid_pc_out: 00000118; dut.d.pipereg_idex_pc_out: 00000114; dut.d.pipereg_exmem_pc_out: 00000110; dut.d.pipereg_memwb_pc_out: 0000010c; 
+# rvfi.pc_rdata: 0000010c; rvfi.pc_wdata: 00000110; 
 #  
-# time: 4735000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000124; dut.d.pc_module_out: 00000120; 
+# time: 4735000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000124; dut.d.pc_module_out: 00000120; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: deebfd9a; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000124;dut.d.bpmux_out: 00000124;
 # dut.d.pipereg_ifid_pc_out: 0000011c; dut.d.pipereg_idex_pc_out: 00000118; dut.d.pipereg_exmem_pc_out: 00000114; dut.d.pipereg_memwb_pc_out: 00000110; 
+# rvfi.pc_rdata: 00000110; rvfi.pc_wdata: 00000114; 
 #  
 # memread(_addr=00000120)
-# time: 5115000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000128; dut.d.pc_module_out: 00000124; 
+# time: 5105000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000124; dut.d.pc_module_out: 00000120; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: deebfd9a; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000124;dut.d.bpmux_out: 00000124;
+# dut.d.pipereg_ifid_pc_out: 0000011c; dut.d.pipereg_idex_pc_out: 00000118; dut.d.pipereg_exmem_pc_out: 00000114; dut.d.pipereg_memwb_pc_out: 00000110; 
+# rvfi.pc_rdata: 00000110; rvfi.pc_wdata: 00000114; 
+#  
+# time: 5115000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000128; dut.d.pc_module_out: 00000124; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: deebfd9a; dut.d.pcmux_out: 00000128;dut.d.bpmux_out: 00000128;
 # dut.d.pipereg_ifid_pc_out: 00000120; dut.d.pipereg_idex_pc_out: 0000011c; dut.d.pipereg_exmem_pc_out: 00000118; dut.d.pipereg_memwb_pc_out: 00000114; 
+# rvfi.pc_rdata: 00000114; rvfi.pc_wdata: 00000118; 
 #  
-# time: 5125000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000012c; dut.d.pc_module_out: 00000128; 
+# time: 5125000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000012c; dut.d.pc_module_out: 00000128; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000012c;dut.d.bpmux_out: 0000012c;
 # dut.d.pipereg_ifid_pc_out: 00000124; dut.d.pipereg_idex_pc_out: 00000120; dut.d.pipereg_exmem_pc_out: 0000011c; dut.d.pipereg_memwb_pc_out: 00000118; 
+# rvfi.pc_rdata: 00000118; rvfi.pc_wdata: 0000011c; 
 #  
-# time: 5135000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000130; dut.d.pc_module_out: 0000012c; 
+# time: 5135000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000130; dut.d.pc_module_out: 0000012c; 
+# dut.d.alu_module_out: bdd7fb34; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000130;dut.d.bpmux_out: 00000130;
 # dut.d.pipereg_ifid_pc_out: 00000128; dut.d.pipereg_idex_pc_out: 00000124; dut.d.pipereg_exmem_pc_out: 00000120; dut.d.pipereg_memwb_pc_out: 0000011c; 
+# rvfi.pc_rdata: 0000011c; rvfi.pc_wdata: 00000120; 
 #  
-# time: 5145000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000134; dut.d.pc_module_out: 00000130; 
+# time: 5145000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000134; dut.d.pc_module_out: 00000130; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: bdd7fb34; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000134;dut.d.bpmux_out: 00000134;
 # dut.d.pipereg_ifid_pc_out: 0000012c; dut.d.pipereg_idex_pc_out: 00000128; dut.d.pipereg_exmem_pc_out: 00000124; dut.d.pipereg_memwb_pc_out: 00000120; 
+# rvfi.pc_rdata: 00000120; rvfi.pc_wdata: 00000124; 
 #  
-# time: 5155000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000138; dut.d.pc_module_out: 00000134; 
+# time: 5155000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000138; dut.d.pc_module_out: 00000134; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: bdd7fb34; dut.d.pcmux_out: 00000138;dut.d.bpmux_out: 00000138;
 # dut.d.pipereg_ifid_pc_out: 00000130; dut.d.pipereg_idex_pc_out: 0000012c; dut.d.pipereg_exmem_pc_out: 00000128; dut.d.pipereg_memwb_pc_out: 00000124; 
+# rvfi.pc_rdata: 00000124; rvfi.pc_wdata: 00000128; 
 #  
-# time: 5165000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000013c; dut.d.pc_module_out: 00000138; 
+# time: 5165000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000013c; dut.d.pc_module_out: 00000138; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000013c;dut.d.bpmux_out: 0000013c;
 # dut.d.pipereg_ifid_pc_out: 00000134; dut.d.pipereg_idex_pc_out: 00000130; dut.d.pipereg_exmem_pc_out: 0000012c; dut.d.pipereg_memwb_pc_out: 00000128; 
+# rvfi.pc_rdata: 00000128; rvfi.pc_wdata: 0000012c; 
 #  
-# time: 5175000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000140; dut.d.pc_module_out: 0000013c; 
+# time: 5175000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000140; dut.d.pc_module_out: 0000013c; 
+# dut.d.alu_module_out: 00000134; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000140;dut.d.bpmux_out: 00000140;
 # dut.d.pipereg_ifid_pc_out: 00000138; dut.d.pipereg_idex_pc_out: 00000134; dut.d.pipereg_exmem_pc_out: 00000130; dut.d.pipereg_memwb_pc_out: 0000012c; 
+# rvfi.pc_rdata: 0000012c; rvfi.pc_wdata: 00000130; 
 #  
-# time: 5185000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000144; dut.d.pc_module_out: 00000140; 
+# time: 5185000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000144; dut.d.pc_module_out: 00000140; 
+# dut.d.alu_module_out: 000005b8; dut.d.pipe_exmem_alu_out: 00000134; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000144;dut.d.bpmux_out: 00000144;
 # dut.d.pipereg_ifid_pc_out: 0000013c; dut.d.pipereg_idex_pc_out: 00000138; dut.d.pipereg_exmem_pc_out: 00000134; dut.d.pipereg_memwb_pc_out: 00000130; 
+# rvfi.pc_rdata: 00000130; rvfi.pc_wdata: 00000134; 
 #  
 # memread(_addr=00000140)
-# time: 5565000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000148; dut.d.pc_module_out: 00000144; 
+# time: 5555000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000144; dut.d.pc_module_out: 00000140; 
+# dut.d.alu_module_out: 000005b8; dut.d.pipe_exmem_alu_out: 00000134; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000144;dut.d.bpmux_out: 00000144;
+# dut.d.pipereg_ifid_pc_out: 0000013c; dut.d.pipereg_idex_pc_out: 00000138; dut.d.pipereg_exmem_pc_out: 00000134; dut.d.pipereg_memwb_pc_out: 00000130; 
+# rvfi.pc_rdata: 00000130; rvfi.pc_wdata: 00000134; 
+#  
+# time: 5565000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000148; dut.d.pc_module_out: 00000144; 
+# dut.d.alu_module_out: 9005d224; dut.d.pipe_exmem_alu_out: 000005b8; dut.d.pipe_memwb_alu_out: 00000134; dut.d.pcmux_out: 00000148;dut.d.bpmux_out: 00000148;
 # dut.d.pipereg_ifid_pc_out: 00000140; dut.d.pipereg_idex_pc_out: 0000013c; dut.d.pipereg_exmem_pc_out: 00000138; dut.d.pipereg_memwb_pc_out: 00000134; 
+# rvfi.pc_rdata: 00000134; rvfi.pc_wdata: 00000138; 
 #  
-# time: 5575000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000014c; dut.d.pc_module_out: 00000148; 
+# time: 5575000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000014c; dut.d.pc_module_out: 00000148; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 9005d224; dut.d.pipe_memwb_alu_out: 000005b8; dut.d.pcmux_out: 0000014c;dut.d.bpmux_out: 0000014c;
 # dut.d.pipereg_ifid_pc_out: 00000144; dut.d.pipereg_idex_pc_out: 00000140; dut.d.pipereg_exmem_pc_out: 0000013c; dut.d.pipereg_memwb_pc_out: 00000138; 
+# rvfi.pc_rdata: 00000138; rvfi.pc_wdata: 0000013c; 
 #  
-# time: 5585000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000150; dut.d.pc_module_out: 0000014c; 
+# time: 5585000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000150; dut.d.pc_module_out: 0000014c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 9005d224; dut.d.pcmux_out: 00000150;dut.d.bpmux_out: 00000150;
 # dut.d.pipereg_ifid_pc_out: 00000148; dut.d.pipereg_idex_pc_out: 00000144; dut.d.pipereg_exmem_pc_out: 00000140; dut.d.pipereg_memwb_pc_out: 0000013c; 
+# rvfi.pc_rdata: 0000013c; rvfi.pc_wdata: 00000140; 
 #  
-# time: 5595000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000154; dut.d.pc_module_out: 00000150; 
+# time: 5595000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000154; dut.d.pc_module_out: 00000150; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000154;dut.d.bpmux_out: 00000154;
 # dut.d.pipereg_ifid_pc_out: 0000014c; dut.d.pipereg_idex_pc_out: 00000148; dut.d.pipereg_exmem_pc_out: 00000144; dut.d.pipereg_memwb_pc_out: 00000140; 
+# rvfi.pc_rdata: 00000140; rvfi.pc_wdata: 00000144; 
 #  
-# time: 5605000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000158; dut.d.pc_module_out: 00000154; 
+# time: 5605000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000158; dut.d.pc_module_out: 00000154; 
+# dut.d.alu_module_out: 0000014c; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000158;dut.d.bpmux_out: 00000158;
 # dut.d.pipereg_ifid_pc_out: 00000150; dut.d.pipereg_idex_pc_out: 0000014c; dut.d.pipereg_exmem_pc_out: 00000148; dut.d.pipereg_memwb_pc_out: 00000144; 
+# rvfi.pc_rdata: 00000144; rvfi.pc_wdata: 00000148; 
 #  
-# time: 5615000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000015c; dut.d.pc_module_out: 00000158; 
+# time: 5615000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000015c; dut.d.pc_module_out: 00000158; 
+# dut.d.alu_module_out: 000005b4; dut.d.pipe_exmem_alu_out: 0000014c; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000015c;dut.d.bpmux_out: 0000015c;
 # dut.d.pipereg_ifid_pc_out: 00000154; dut.d.pipereg_idex_pc_out: 00000150; dut.d.pipereg_exmem_pc_out: 0000014c; dut.d.pipereg_memwb_pc_out: 00000148; 
+# rvfi.pc_rdata: 00000148; rvfi.pc_wdata: 0000014c; 
 #  
-# time: 5625000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000160; dut.d.pc_module_out: 0000015c; 
+# time: 5625000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000160; dut.d.pc_module_out: 0000015c; 
+# dut.d.alu_module_out: 2dd22dd2; dut.d.pipe_exmem_alu_out: 000005b4; dut.d.pipe_memwb_alu_out: 0000014c; dut.d.pcmux_out: 00000160;dut.d.bpmux_out: 00000160;
 # dut.d.pipereg_ifid_pc_out: 00000158; dut.d.pipereg_idex_pc_out: 00000154; dut.d.pipereg_exmem_pc_out: 00000150; dut.d.pipereg_memwb_pc_out: 0000014c; 
+# rvfi.pc_rdata: 0000014c; rvfi.pc_wdata: 00000150; 
 #  
-# time: 5635000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000164; dut.d.pc_module_out: 00000160; 
+# time: 5635000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000164; dut.d.pc_module_out: 00000160; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 2dd22dd2; dut.d.pipe_memwb_alu_out: 000005b4; dut.d.pcmux_out: 00000164;dut.d.bpmux_out: 00000164;
 # dut.d.pipereg_ifid_pc_out: 0000015c; dut.d.pipereg_idex_pc_out: 00000158; dut.d.pipereg_exmem_pc_out: 00000154; dut.d.pipereg_memwb_pc_out: 00000150; 
+# rvfi.pc_rdata: 00000150; rvfi.pc_wdata: 00000154; 
 #  
 # memread(_addr=00000160)
-# time: 6015000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000168; dut.d.pc_module_out: 00000164; 
+# time: 6005000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000164; dut.d.pc_module_out: 00000160; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 2dd22dd2; dut.d.pipe_memwb_alu_out: 000005b4; dut.d.pcmux_out: 00000164;dut.d.bpmux_out: 00000164;
+# dut.d.pipereg_ifid_pc_out: 0000015c; dut.d.pipereg_idex_pc_out: 00000158; dut.d.pipereg_exmem_pc_out: 00000154; dut.d.pipereg_memwb_pc_out: 00000150; 
+# rvfi.pc_rdata: 00000150; rvfi.pc_wdata: 00000154; 
+#  
+# time: 6015000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000168; dut.d.pc_module_out: 00000164; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 2dd22dd2; dut.d.pcmux_out: 00000168;dut.d.bpmux_out: 00000168;
 # dut.d.pipereg_ifid_pc_out: 00000160; dut.d.pipereg_idex_pc_out: 0000015c; dut.d.pipereg_exmem_pc_out: 00000158; dut.d.pipereg_memwb_pc_out: 00000154; 
+# rvfi.pc_rdata: 00000154; rvfi.pc_wdata: 00000158; 
 #  
-# time: 6025000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000016c; dut.d.pc_module_out: 00000168; 
+# time: 6025000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000016c; dut.d.pc_module_out: 00000168; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000016c;dut.d.bpmux_out: 0000016c;
 # dut.d.pipereg_ifid_pc_out: 00000164; dut.d.pipereg_idex_pc_out: 00000160; dut.d.pipereg_exmem_pc_out: 0000015c; dut.d.pipereg_memwb_pc_out: 00000158; 
+# rvfi.pc_rdata: 00000158; rvfi.pc_wdata: 0000015c; 
 #  
-# time: 6035000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000170; dut.d.pc_module_out: 0000016c; 
+# time: 6035000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000170; dut.d.pc_module_out: 0000016c; 
+# dut.d.alu_module_out: 00000164; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000170;dut.d.bpmux_out: 00000170;
 # dut.d.pipereg_ifid_pc_out: 00000168; dut.d.pipereg_idex_pc_out: 00000164; dut.d.pipereg_exmem_pc_out: 00000160; dut.d.pipereg_memwb_pc_out: 0000015c; 
+# rvfi.pc_rdata: 0000015c; rvfi.pc_wdata: 00000160; 
 #  
-# time: 6045000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000174; dut.d.pc_module_out: 00000170; 
+# time: 6045000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000174; dut.d.pc_module_out: 00000170; 
+# dut.d.alu_module_out: 000005c0; dut.d.pipe_exmem_alu_out: 00000164; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000174;dut.d.bpmux_out: 00000174;
 # dut.d.pipereg_ifid_pc_out: 0000016c; dut.d.pipereg_idex_pc_out: 00000168; dut.d.pipereg_exmem_pc_out: 00000164; dut.d.pipereg_memwb_pc_out: 00000160; 
+# rvfi.pc_rdata: 00000160; rvfi.pc_wdata: 00000164; 
 #  
-# time: 6055000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000178; dut.d.pc_module_out: 00000174; 
+# time: 6055000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000178; dut.d.pc_module_out: 00000174; 
+# dut.d.alu_module_out: 0000016c; dut.d.pipe_exmem_alu_out: 000005c0; dut.d.pipe_memwb_alu_out: 00000164; dut.d.pcmux_out: 00000178;dut.d.bpmux_out: 00000178;
 # dut.d.pipereg_ifid_pc_out: 00000170; dut.d.pipereg_idex_pc_out: 0000016c; dut.d.pipereg_exmem_pc_out: 00000168; dut.d.pipereg_memwb_pc_out: 00000164; 
+# rvfi.pc_rdata: 00000164; rvfi.pc_wdata: 00000168; 
 #  
 # memread(_addr=000005c0)
-# time: 6685000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000017c; dut.d.pc_module_out: 00000178; 
+# time: 6675000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000178; dut.d.pc_module_out: 00000174; 
+# dut.d.alu_module_out: 0000016c; dut.d.pipe_exmem_alu_out: 000005c0; dut.d.pipe_memwb_alu_out: 00000164; dut.d.pcmux_out: 00000178;dut.d.bpmux_out: 00000178;
+# dut.d.pipereg_ifid_pc_out: 00000170; dut.d.pipereg_idex_pc_out: 0000016c; dut.d.pipereg_exmem_pc_out: 00000168; dut.d.pipereg_memwb_pc_out: 00000164; 
+# rvfi.pc_rdata: 00000164; rvfi.pc_wdata: 00000168; 
+#  
+# time: 6685000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000017c; dut.d.pc_module_out: 00000178; 
+# dut.d.alu_module_out: 00000590; dut.d.pipe_exmem_alu_out: 0000016c; dut.d.pipe_memwb_alu_out: 000005c0; dut.d.pcmux_out: 0000017c;dut.d.bpmux_out: 0000017c;
 # dut.d.pipereg_ifid_pc_out: 00000174; dut.d.pipereg_idex_pc_out: 00000170; dut.d.pipereg_exmem_pc_out: 0000016c; dut.d.pipereg_memwb_pc_out: 00000168; 
+# rvfi.pc_rdata: 00000168; rvfi.pc_wdata: 0000016c; 
 #  
-# time: 6695000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000180; dut.d.pc_module_out: 0000017c; 
+# time: 6695000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000180; dut.d.pc_module_out: 0000017c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000590; dut.d.pipe_memwb_alu_out: 0000016c; dut.d.pcmux_out: 00000180;dut.d.bpmux_out: 00000180;
 # dut.d.pipereg_ifid_pc_out: 00000178; dut.d.pipereg_idex_pc_out: 00000174; dut.d.pipereg_exmem_pc_out: 00000170; dut.d.pipereg_memwb_pc_out: 0000016c; 
+# rvfi.pc_rdata: 0000016c; rvfi.pc_wdata: 00000170; 
 #  
-# time: 6705000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000184; dut.d.pc_module_out: 00000180; 
+# time: 6705000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000184; dut.d.pc_module_out: 00000180; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000590; dut.d.pcmux_out: 00000184;dut.d.bpmux_out: 00000184;
 # dut.d.pipereg_ifid_pc_out: 0000017c; dut.d.pipereg_idex_pc_out: 00000178; dut.d.pipereg_exmem_pc_out: 00000174; dut.d.pipereg_memwb_pc_out: 00000170; 
+# rvfi.pc_rdata: 00000170; rvfi.pc_wdata: 00000174; 
 #  
 # memread(_addr=00000180)
-# time: 7335000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000188; dut.d.pc_module_out: 00000184; 
+# time: 7325000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000184; dut.d.pc_module_out: 00000180; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000590; dut.d.pcmux_out: 00000184;dut.d.bpmux_out: 00000184;
+# dut.d.pipereg_ifid_pc_out: 0000017c; dut.d.pipereg_idex_pc_out: 00000178; dut.d.pipereg_exmem_pc_out: 00000174; dut.d.pipereg_memwb_pc_out: 00000170; 
+# rvfi.pc_rdata: 00000170; rvfi.pc_wdata: 00000174; 
+#  
+# time: 7335000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000188; dut.d.pc_module_out: 00000184; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000188;dut.d.bpmux_out: 00000188;
 # dut.d.pipereg_ifid_pc_out: 00000180; dut.d.pipereg_idex_pc_out: 0000017c; dut.d.pipereg_exmem_pc_out: 00000178; dut.d.pipereg_memwb_pc_out: 00000174; 
+# rvfi.pc_rdata: 00000174; rvfi.pc_wdata: 00000178; 
 #  
-# time: 7345000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000018c; dut.d.pc_module_out: 00000188; 
+# time: 7345000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000018c; dut.d.pc_module_out: 00000188; 
+# dut.d.alu_module_out: 00000180; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000018c;dut.d.bpmux_out: 0000018c;
 # dut.d.pipereg_ifid_pc_out: 00000184; dut.d.pipereg_idex_pc_out: 00000180; dut.d.pipereg_exmem_pc_out: 0000017c; dut.d.pipereg_memwb_pc_out: 00000178; 
+# rvfi.pc_rdata: 00000178; rvfi.pc_wdata: 0000017c; 
 #  
-# time: 7355000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000190; dut.d.pc_module_out: 0000018c; 
+# time: 7355000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000190; dut.d.pc_module_out: 0000018c; 
+# dut.d.alu_module_out: 00000590; dut.d.pipe_exmem_alu_out: 00000180; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000190;dut.d.bpmux_out: 00000190;
 # dut.d.pipereg_ifid_pc_out: 00000188; dut.d.pipereg_idex_pc_out: 00000184; dut.d.pipereg_exmem_pc_out: 00000180; dut.d.pipereg_memwb_pc_out: 0000017c; 
+# rvfi.pc_rdata: 0000017c; rvfi.pc_wdata: 00000180; 
 #  
-# time: 7365000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000194; dut.d.pc_module_out: 00000190; 
+# time: 7365000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000194; dut.d.pc_module_out: 00000190; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000590; dut.d.pipe_memwb_alu_out: 00000180; dut.d.pcmux_out: 00000194;dut.d.bpmux_out: 00000194;
 # dut.d.pipereg_ifid_pc_out: 0000018c; dut.d.pipereg_idex_pc_out: 00000188; dut.d.pipereg_exmem_pc_out: 00000184; dut.d.pipereg_memwb_pc_out: 00000180; 
+# rvfi.pc_rdata: 00000180; rvfi.pc_wdata: 00000184; 
 #  
-# time: 7375000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000198; dut.d.pc_module_out: 00000194; 
+# time: 7375000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000198; dut.d.pc_module_out: 00000194; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000590; dut.d.pcmux_out: 00000198;dut.d.bpmux_out: 00000198;
 # dut.d.pipereg_ifid_pc_out: 00000190; dut.d.pipereg_idex_pc_out: 0000018c; dut.d.pipereg_exmem_pc_out: 00000188; dut.d.pipereg_memwb_pc_out: 00000184; 
+# rvfi.pc_rdata: 00000184; rvfi.pc_wdata: 00000188; 
 #  
-# time: 7385000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000019c; dut.d.pc_module_out: 00000198; 
+# time: 7385000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000019c; dut.d.pc_module_out: 00000198; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000019c;dut.d.bpmux_out: 0000019c;
 # dut.d.pipereg_ifid_pc_out: 00000194; dut.d.pipereg_idex_pc_out: 00000190; dut.d.pipereg_exmem_pc_out: 0000018c; dut.d.pipereg_memwb_pc_out: 00000188; 
+# rvfi.pc_rdata: 00000188; rvfi.pc_wdata: 0000018c; 
 #  
-# time: 7395000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001a0; dut.d.pc_module_out: 0000019c; 
+# time: 7395000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001a0; dut.d.pc_module_out: 0000019c; 
+# dut.d.alu_module_out: edf0ed00; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001a0;dut.d.bpmux_out: 000001a0;
 # dut.d.pipereg_ifid_pc_out: 00000198; dut.d.pipereg_idex_pc_out: 00000194; dut.d.pipereg_exmem_pc_out: 00000190; dut.d.pipereg_memwb_pc_out: 0000018c; 
+# rvfi.pc_rdata: 0000018c; rvfi.pc_wdata: 00000190; 
 #  
-# time: 7405000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001a4; dut.d.pc_module_out: 000001a0; 
+# time: 7405000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001a4; dut.d.pc_module_out: 000001a0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: edf0ed00; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001a4;dut.d.bpmux_out: 000001a4;
 # dut.d.pipereg_ifid_pc_out: 0000019c; dut.d.pipereg_idex_pc_out: 00000198; dut.d.pipereg_exmem_pc_out: 00000194; dut.d.pipereg_memwb_pc_out: 00000190; 
+# rvfi.pc_rdata: 00000190; rvfi.pc_wdata: 00000194; 
 #  
 # memread(_addr=000001a0)
-# time: 7785000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001a8; dut.d.pc_module_out: 000001a4; 
+# time: 7775000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001a4; dut.d.pc_module_out: 000001a0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: edf0ed00; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001a4;dut.d.bpmux_out: 000001a4;
+# dut.d.pipereg_ifid_pc_out: 0000019c; dut.d.pipereg_idex_pc_out: 00000198; dut.d.pipereg_exmem_pc_out: 00000194; dut.d.pipereg_memwb_pc_out: 00000190; 
+# rvfi.pc_rdata: 00000190; rvfi.pc_wdata: 00000194; 
+#  
+# time: 7785000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001a8; dut.d.pc_module_out: 000001a4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: edf0ed00; dut.d.pcmux_out: 000001a8;dut.d.bpmux_out: 000001a8;
 # dut.d.pipereg_ifid_pc_out: 000001a0; dut.d.pipereg_idex_pc_out: 0000019c; dut.d.pipereg_exmem_pc_out: 00000198; dut.d.pipereg_memwb_pc_out: 00000194; 
+# rvfi.pc_rdata: 00000194; rvfi.pc_wdata: 00000198; 
 #  
-# time: 7795000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001ac; dut.d.pc_module_out: 000001a8; 
+# time: 7795000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001ac; dut.d.pc_module_out: 000001a8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001ac;dut.d.bpmux_out: 000001ac;
 # dut.d.pipereg_ifid_pc_out: 000001a4; dut.d.pipereg_idex_pc_out: 000001a0; dut.d.pipereg_exmem_pc_out: 0000019c; dut.d.pipereg_memwb_pc_out: 00000198; 
+# rvfi.pc_rdata: 00000198; rvfi.pc_wdata: 0000019c; 
 #  
-# time: 7805000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001b0; dut.d.pc_module_out: 000001ac; 
+# time: 7805000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001b0; dut.d.pc_module_out: 000001ac; 
+# dut.d.alu_module_out: 1e1dbe1d; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001b0;dut.d.bpmux_out: 000001b0;
 # dut.d.pipereg_ifid_pc_out: 000001a8; dut.d.pipereg_idex_pc_out: 000001a4; dut.d.pipereg_exmem_pc_out: 000001a0; dut.d.pipereg_memwb_pc_out: 0000019c; 
+# rvfi.pc_rdata: 0000019c; rvfi.pc_wdata: 000001a0; 
 #  
-# time: 7815000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001b4; dut.d.pc_module_out: 000001b0; 
+# time: 7815000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001b4; dut.d.pc_module_out: 000001b0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 1e1dbe1d; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001b4;dut.d.bpmux_out: 000001b4;
 # dut.d.pipereg_ifid_pc_out: 000001ac; dut.d.pipereg_idex_pc_out: 000001a8; dut.d.pipereg_exmem_pc_out: 000001a4; dut.d.pipereg_memwb_pc_out: 000001a0; 
+# rvfi.pc_rdata: 000001a0; rvfi.pc_wdata: 000001a4; 
 #  
-# time: 7825000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001b8; dut.d.pc_module_out: 000001b4; 
+# time: 7825000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001b8; dut.d.pc_module_out: 000001b4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 1e1dbe1d; dut.d.pcmux_out: 000001b8;dut.d.bpmux_out: 000001b8;
 # dut.d.pipereg_ifid_pc_out: 000001b0; dut.d.pipereg_idex_pc_out: 000001ac; dut.d.pipereg_exmem_pc_out: 000001a8; dut.d.pipereg_memwb_pc_out: 000001a4; 
+# rvfi.pc_rdata: 000001a4; rvfi.pc_wdata: 000001a8; 
 #  
-# time: 7835000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001bc; dut.d.pc_module_out: 000001b8; 
+# time: 7835000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001bc; dut.d.pc_module_out: 000001b8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001bc;dut.d.bpmux_out: 000001bc;
 # dut.d.pipereg_ifid_pc_out: 000001b4; dut.d.pipereg_idex_pc_out: 000001b0; dut.d.pipereg_exmem_pc_out: 000001ac; dut.d.pipereg_memwb_pc_out: 000001a8; 
+# rvfi.pc_rdata: 000001a8; rvfi.pc_wdata: 000001ac; 
 #  
-# time: 7845000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001c0; dut.d.pc_module_out: 000001bc; 
+# time: 7845000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001c0; dut.d.pc_module_out: 000001bc; 
+# dut.d.alu_module_out: ffb7c3b4; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001c0;dut.d.bpmux_out: 000001c0;
 # dut.d.pipereg_ifid_pc_out: 000001b8; dut.d.pipereg_idex_pc_out: 000001b4; dut.d.pipereg_exmem_pc_out: 000001b0; dut.d.pipereg_memwb_pc_out: 000001ac; 
+# rvfi.pc_rdata: 000001ac; rvfi.pc_wdata: 000001b0; 
 #  
-# time: 7855000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001c4; dut.d.pc_module_out: 000001c0; 
+# time: 7855000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001c4; dut.d.pc_module_out: 000001c0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: ffb7c3b4; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001c4;dut.d.bpmux_out: 000001c4;
 # dut.d.pipereg_ifid_pc_out: 000001bc; dut.d.pipereg_idex_pc_out: 000001b8; dut.d.pipereg_exmem_pc_out: 000001b4; dut.d.pipereg_memwb_pc_out: 000001b0; 
+# rvfi.pc_rdata: 000001b0; rvfi.pc_wdata: 000001b4; 
 #  
 # memread(_addr=000001c0)
-# time: 8235000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001c8; dut.d.pc_module_out: 000001c4; 
+# time: 8225000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001c4; dut.d.pc_module_out: 000001c0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: ffb7c3b4; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001c4;dut.d.bpmux_out: 000001c4;
+# dut.d.pipereg_ifid_pc_out: 000001bc; dut.d.pipereg_idex_pc_out: 000001b8; dut.d.pipereg_exmem_pc_out: 000001b4; dut.d.pipereg_memwb_pc_out: 000001b0; 
+# rvfi.pc_rdata: 000001b0; rvfi.pc_wdata: 000001b4; 
+#  
+# time: 8235000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001c8; dut.d.pc_module_out: 000001c4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: ffb7c3b4; dut.d.pcmux_out: 000001c8;dut.d.bpmux_out: 000001c8;
 # dut.d.pipereg_ifid_pc_out: 000001c0; dut.d.pipereg_idex_pc_out: 000001bc; dut.d.pipereg_exmem_pc_out: 000001b8; dut.d.pipereg_memwb_pc_out: 000001b4; 
+# rvfi.pc_rdata: 000001b4; rvfi.pc_wdata: 000001b8; 
 #  
-# time: 8245000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001cc; dut.d.pc_module_out: 000001c8; 
+# time: 8245000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001cc; dut.d.pc_module_out: 000001c8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001cc;dut.d.bpmux_out: 000001cc;
 # dut.d.pipereg_ifid_pc_out: 000001c4; dut.d.pipereg_idex_pc_out: 000001c0; dut.d.pipereg_exmem_pc_out: 000001bc; dut.d.pipereg_memwb_pc_out: 000001b8; 
+# rvfi.pc_rdata: 000001b8; rvfi.pc_wdata: 000001bc; 
 #  
-# time: 8255000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001d0; dut.d.pc_module_out: 000001cc; 
+# time: 8255000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001d0; dut.d.pc_module_out: 000001cc; 
+# dut.d.alu_module_out: 000001c4; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001d0;dut.d.bpmux_out: 000001d0;
 # dut.d.pipereg_ifid_pc_out: 000001c8; dut.d.pipereg_idex_pc_out: 000001c4; dut.d.pipereg_exmem_pc_out: 000001c0; dut.d.pipereg_memwb_pc_out: 000001bc; 
+# rvfi.pc_rdata: 000001bc; rvfi.pc_wdata: 000001c0; 
 #  
-# time: 8265000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001d4; dut.d.pc_module_out: 000001d0; 
+# time: 8265000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001d4; dut.d.pc_module_out: 000001d0; 
+# dut.d.alu_module_out: 000005bc; dut.d.pipe_exmem_alu_out: 000001c4; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001d4;dut.d.bpmux_out: 000001d4;
 # dut.d.pipereg_ifid_pc_out: 000001cc; dut.d.pipereg_idex_pc_out: 000001c8; dut.d.pipereg_exmem_pc_out: 000001c4; dut.d.pipereg_memwb_pc_out: 000001c0; 
+# rvfi.pc_rdata: 000001c0; rvfi.pc_wdata: 000001c4; 
 #  
-# time: 8275000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001d8; dut.d.pc_module_out: 000001d4; 
+# time: 8275000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001d8; dut.d.pc_module_out: 000001d4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005bc; dut.d.pipe_memwb_alu_out: 000001c4; dut.d.pcmux_out: 000001d8;dut.d.bpmux_out: 000001d8;
 # dut.d.pipereg_ifid_pc_out: 000001d0; dut.d.pipereg_idex_pc_out: 000001cc; dut.d.pipereg_exmem_pc_out: 000001c8; dut.d.pipereg_memwb_pc_out: 000001c4; 
+# rvfi.pc_rdata: 000001c4; rvfi.pc_wdata: 000001c8; 
 #  
-# time: 8285000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001dc; dut.d.pc_module_out: 000001d8; 
+# time: 8285000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001dc; dut.d.pc_module_out: 000001d8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005bc; dut.d.pcmux_out: 000001dc;dut.d.bpmux_out: 000001dc;
 # dut.d.pipereg_ifid_pc_out: 000001d4; dut.d.pipereg_idex_pc_out: 000001d0; dut.d.pipereg_exmem_pc_out: 000001cc; dut.d.pipereg_memwb_pc_out: 000001c8; 
+# rvfi.pc_rdata: 000001c8; rvfi.pc_wdata: 000001cc; 
 #  
-# time: 8295000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001e0; dut.d.pc_module_out: 000001dc; 
+# time: 8295000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001e0; dut.d.pc_module_out: 000001dc; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001e0;dut.d.bpmux_out: 000001e0;
 # dut.d.pipereg_ifid_pc_out: 000001d8; dut.d.pipereg_idex_pc_out: 000001d4; dut.d.pipereg_exmem_pc_out: 000001d0; dut.d.pipereg_memwb_pc_out: 000001cc; 
+# rvfi.pc_rdata: 000001cc; rvfi.pc_wdata: 000001d0; 
 #  
-# time: 8305000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001e4; dut.d.pc_module_out: 000001e0; 
+# time: 8305000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001e4; dut.d.pc_module_out: 000001e0; 
+# dut.d.alu_module_out: 000001d8; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001e4;dut.d.bpmux_out: 000001e4;
 # dut.d.pipereg_ifid_pc_out: 000001dc; dut.d.pipereg_idex_pc_out: 000001d8; dut.d.pipereg_exmem_pc_out: 000001d4; dut.d.pipereg_memwb_pc_out: 000001d0; 
+# rvfi.pc_rdata: 000001d0; rvfi.pc_wdata: 000001d4; 
 #  
 # memread(_addr=000001e0)
-# time: 8685000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001e8; dut.d.pc_module_out: 000001e4; 
+# time: 8675000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001e4; dut.d.pc_module_out: 000001e0; 
+# dut.d.alu_module_out: 000001d8; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001e4;dut.d.bpmux_out: 000001e4;
+# dut.d.pipereg_ifid_pc_out: 000001dc; dut.d.pipereg_idex_pc_out: 000001d8; dut.d.pipereg_exmem_pc_out: 000001d4; dut.d.pipereg_memwb_pc_out: 000001d0; 
+# rvfi.pc_rdata: 000001d0; rvfi.pc_wdata: 000001d4; 
+#  
+# time: 8685000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001e8; dut.d.pc_module_out: 000001e4; 
+# dut.d.alu_module_out: 000005bc; dut.d.pipe_exmem_alu_out: 000001d8; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001e8;dut.d.bpmux_out: 000001e8;
 # dut.d.pipereg_ifid_pc_out: 000001e0; dut.d.pipereg_idex_pc_out: 000001dc; dut.d.pipereg_exmem_pc_out: 000001d8; dut.d.pipereg_memwb_pc_out: 000001d4; 
+# rvfi.pc_rdata: 000001d4; rvfi.pc_wdata: 000001d8; 
 #  
-# time: 8695000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001ec; dut.d.pc_module_out: 000001e8; 
+# time: 8695000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001ec; dut.d.pc_module_out: 000001e8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005bc; dut.d.pipe_memwb_alu_out: 000001d8; dut.d.pcmux_out: 000001ec;dut.d.bpmux_out: 000001ec;
 # dut.d.pipereg_ifid_pc_out: 000001e4; dut.d.pipereg_idex_pc_out: 000001e0; dut.d.pipereg_exmem_pc_out: 000001dc; dut.d.pipereg_memwb_pc_out: 000001d8; 
+# rvfi.pc_rdata: 000001d8; rvfi.pc_wdata: 000001dc; 
 #  
-# time: 8705000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001f0; dut.d.pc_module_out: 000001ec; 
+# time: 8705000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001f0; dut.d.pc_module_out: 000001ec; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005bc; dut.d.pcmux_out: 000001f0;dut.d.bpmux_out: 000001f0;
 # dut.d.pipereg_ifid_pc_out: 000001e8; dut.d.pipereg_idex_pc_out: 000001e4; dut.d.pipereg_exmem_pc_out: 000001e0; dut.d.pipereg_memwb_pc_out: 000001dc; 
+# rvfi.pc_rdata: 000001dc; rvfi.pc_wdata: 000001e0; 
 #  
-# time: 8715000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001f4; dut.d.pc_module_out: 000001f0; 
+# time: 8715000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001f4; dut.d.pc_module_out: 000001f0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001f4;dut.d.bpmux_out: 000001f4;
 # dut.d.pipereg_ifid_pc_out: 000001ec; dut.d.pipereg_idex_pc_out: 000001e8; dut.d.pipereg_exmem_pc_out: 000001e4; dut.d.pipereg_memwb_pc_out: 000001e0; 
+# rvfi.pc_rdata: 000001e0; rvfi.pc_wdata: 000001e4; 
 #  
-# time: 8725000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001f8; dut.d.pc_module_out: 000001f4; 
+# time: 8725000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001f8; dut.d.pc_module_out: 000001f4; 
+# dut.d.alu_module_out: 000001ec; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001f8;dut.d.bpmux_out: 000001f8;
 # dut.d.pipereg_ifid_pc_out: 000001f0; dut.d.pipereg_idex_pc_out: 000001ec; dut.d.pipereg_exmem_pc_out: 000001e8; dut.d.pipereg_memwb_pc_out: 000001e4; 
+# rvfi.pc_rdata: 000001e4; rvfi.pc_wdata: 000001e8; 
 #  
-# time: 8735000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 000001fc; dut.d.pc_module_out: 000001f8; 
+# time: 8735000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000001fc; dut.d.pc_module_out: 000001f8; 
+# dut.d.alu_module_out: 00000570; dut.d.pipe_exmem_alu_out: 000001ec; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000001fc;dut.d.bpmux_out: 000001fc;
 # dut.d.pipereg_ifid_pc_out: 000001f4; dut.d.pipereg_idex_pc_out: 000001f0; dut.d.pipereg_exmem_pc_out: 000001ec; dut.d.pipereg_memwb_pc_out: 000001e8; 
+# rvfi.pc_rdata: 000001e8; rvfi.pc_wdata: 000001ec; 
 #  
-# time: 8745000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000200; dut.d.pc_module_out: 000001fc; 
+# time: 8745000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000200; dut.d.pc_module_out: 000001fc; 
+# dut.d.alu_module_out: 000001f4; dut.d.pipe_exmem_alu_out: 00000570; dut.d.pipe_memwb_alu_out: 000001ec; dut.d.pcmux_out: 00000200;dut.d.bpmux_out: 00000200;
 # dut.d.pipereg_ifid_pc_out: 000001f8; dut.d.pipereg_idex_pc_out: 000001f4; dut.d.pipereg_exmem_pc_out: 000001f0; dut.d.pipereg_memwb_pc_out: 000001ec; 
+# rvfi.pc_rdata: 000001ec; rvfi.pc_wdata: 000001f0; 
 #  
 # memread(_addr=00000560)
-# time: 9375000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000204; dut.d.pc_module_out: 00000200; 
+# time: 9365000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000200; dut.d.pc_module_out: 000001fc; 
+# dut.d.alu_module_out: 000001f4; dut.d.pipe_exmem_alu_out: 00000570; dut.d.pipe_memwb_alu_out: 000001ec; dut.d.pcmux_out: 00000200;dut.d.bpmux_out: 00000200;
+# dut.d.pipereg_ifid_pc_out: 000001f8; dut.d.pipereg_idex_pc_out: 000001f4; dut.d.pipereg_exmem_pc_out: 000001f0; dut.d.pipereg_memwb_pc_out: 000001ec; 
+# rvfi.pc_rdata: 000001ec; rvfi.pc_wdata: 000001f0; 
+#  
+# time: 9375000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000204; dut.d.pc_module_out: 00000200; 
+# dut.d.alu_module_out: 00000570; dut.d.pipe_exmem_alu_out: 000001f4; dut.d.pipe_memwb_alu_out: 00000570; dut.d.pcmux_out: 00000204;dut.d.bpmux_out: 00000204;
 # dut.d.pipereg_ifid_pc_out: 000001fc; dut.d.pipereg_idex_pc_out: 000001f8; dut.d.pipereg_exmem_pc_out: 000001f4; dut.d.pipereg_memwb_pc_out: 000001f0; 
+# rvfi.pc_rdata: 000001f0; rvfi.pc_wdata: 000001f4; 
 #  
 # memread(_addr=00000200)
-# time: 10005000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000208; dut.d.pc_module_out: 00000204; 
+# time: 9995000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000204; dut.d.pc_module_out: 00000200; 
+# dut.d.alu_module_out: 00000570; dut.d.pipe_exmem_alu_out: 000001f4; dut.d.pipe_memwb_alu_out: 00000570; dut.d.pcmux_out: 00000204;dut.d.bpmux_out: 00000204;
+# dut.d.pipereg_ifid_pc_out: 000001fc; dut.d.pipereg_idex_pc_out: 000001f8; dut.d.pipereg_exmem_pc_out: 000001f4; dut.d.pipereg_memwb_pc_out: 000001f0; 
+# rvfi.pc_rdata: 000001f0; rvfi.pc_wdata: 000001f4; 
+#  
+# time: 10005000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000208; dut.d.pc_module_out: 00000204; 
+# dut.d.alu_module_out: 000001fc; dut.d.pipe_exmem_alu_out: 00000570; dut.d.pipe_memwb_alu_out: 000001f4; dut.d.pcmux_out: 00000208;dut.d.bpmux_out: 00000208;
 # dut.d.pipereg_ifid_pc_out: 00000200; dut.d.pipereg_idex_pc_out: 000001fc; dut.d.pipereg_exmem_pc_out: 000001f8; dut.d.pipereg_memwb_pc_out: 000001f4; 
+# rvfi.pc_rdata: 000001f4; rvfi.pc_wdata: 000001f8; 
 #  
-# time: 10015000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000020c; dut.d.pc_module_out: 00000208; 
+# time: 10015000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000020c; dut.d.pc_module_out: 00000208; 
+# dut.d.alu_module_out: 00000588; dut.d.pipe_exmem_alu_out: 000001fc; dut.d.pipe_memwb_alu_out: 00000570; dut.d.pcmux_out: 0000020c;dut.d.bpmux_out: 0000020c;
 # dut.d.pipereg_ifid_pc_out: 00000204; dut.d.pipereg_idex_pc_out: 00000200; dut.d.pipereg_exmem_pc_out: 000001fc; dut.d.pipereg_memwb_pc_out: 000001f8; 
+# rvfi.pc_rdata: 000001f8; rvfi.pc_wdata: 000001fc; 
 #  
-# time: 10025000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000210; dut.d.pc_module_out: 0000020c; 
+# time: 10025000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000210; dut.d.pc_module_out: 0000020c; 
+# dut.d.alu_module_out: 00000204; dut.d.pipe_exmem_alu_out: 00000588; dut.d.pipe_memwb_alu_out: 000001fc; dut.d.pcmux_out: 00000210;dut.d.bpmux_out: 00000210;
 # dut.d.pipereg_ifid_pc_out: 00000208; dut.d.pipereg_idex_pc_out: 00000204; dut.d.pipereg_exmem_pc_out: 00000200; dut.d.pipereg_memwb_pc_out: 000001fc; 
+# rvfi.pc_rdata: 000001fc; rvfi.pc_wdata: 00000200; 
 #  
-# time: 10035000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000214; dut.d.pc_module_out: 00000210; 
+# time: 10035000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000214; dut.d.pc_module_out: 00000210; 
+# dut.d.alu_module_out: 0000058c; dut.d.pipe_exmem_alu_out: 00000204; dut.d.pipe_memwb_alu_out: 00000588; dut.d.pcmux_out: 00000214;dut.d.bpmux_out: 00000214;
 # dut.d.pipereg_ifid_pc_out: 0000020c; dut.d.pipereg_idex_pc_out: 00000208; dut.d.pipereg_exmem_pc_out: 00000204; dut.d.pipereg_memwb_pc_out: 00000200; 
+# rvfi.pc_rdata: 00000200; rvfi.pc_wdata: 00000204; 
 #  
-# time: 10045000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000218; dut.d.pc_module_out: 00000214; 
+# time: 10045000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000218; dut.d.pc_module_out: 00000214; 
+# dut.d.alu_module_out: 0000020c; dut.d.pipe_exmem_alu_out: 0000058c; dut.d.pipe_memwb_alu_out: 00000204; dut.d.pcmux_out: 00000218;dut.d.bpmux_out: 00000218;
 # dut.d.pipereg_ifid_pc_out: 00000210; dut.d.pipereg_idex_pc_out: 0000020c; dut.d.pipereg_exmem_pc_out: 00000208; dut.d.pipereg_memwb_pc_out: 00000204; 
+# rvfi.pc_rdata: 00000204; rvfi.pc_wdata: 00000208; 
 #  
-# time: 10055000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000021c; dut.d.pc_module_out: 00000218; 
+# time: 10055000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000021c; dut.d.pc_module_out: 00000218; 
+# dut.d.alu_module_out: 00000590; dut.d.pipe_exmem_alu_out: 0000020c; dut.d.pipe_memwb_alu_out: 0000058c; dut.d.pcmux_out: 0000021c;dut.d.bpmux_out: 0000021c;
 # dut.d.pipereg_ifid_pc_out: 00000214; dut.d.pipereg_idex_pc_out: 00000210; dut.d.pipereg_exmem_pc_out: 0000020c; dut.d.pipereg_memwb_pc_out: 00000208; 
+# rvfi.pc_rdata: 00000208; rvfi.pc_wdata: 0000020c; 
 #  
-# time: 10065000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000220; dut.d.pc_module_out: 0000021c; 
+# time: 10065000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000220; dut.d.pc_module_out: 0000021c; 
+# dut.d.alu_module_out: 00000214; dut.d.pipe_exmem_alu_out: 00000590; dut.d.pipe_memwb_alu_out: 0000020c; dut.d.pcmux_out: 00000220;dut.d.bpmux_out: 00000220;
 # dut.d.pipereg_ifid_pc_out: 00000218; dut.d.pipereg_idex_pc_out: 00000214; dut.d.pipereg_exmem_pc_out: 00000210; dut.d.pipereg_memwb_pc_out: 0000020c; 
+# rvfi.pc_rdata: 0000020c; rvfi.pc_wdata: 00000210; 
 #  
-# time: 10075000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000224; dut.d.pc_module_out: 00000220; 
+# time: 10075000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000224; dut.d.pc_module_out: 00000220; 
+# dut.d.alu_module_out: 00000580; dut.d.pipe_exmem_alu_out: 00000214; dut.d.pipe_memwb_alu_out: 00000590; dut.d.pcmux_out: 00000224;dut.d.bpmux_out: 00000224;
 # dut.d.pipereg_ifid_pc_out: 0000021c; dut.d.pipereg_idex_pc_out: 00000218; dut.d.pipereg_exmem_pc_out: 00000214; dut.d.pipereg_memwb_pc_out: 00000210; 
+# rvfi.pc_rdata: 00000210; rvfi.pc_wdata: 00000214; 
 #  
 # memread(_addr=00000220)
-# time: 10455000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000228; dut.d.pc_module_out: 00000224; 
+# time: 10445000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000224; dut.d.pc_module_out: 00000220; 
+# dut.d.alu_module_out: 00000580; dut.d.pipe_exmem_alu_out: 00000214; dut.d.pipe_memwb_alu_out: 00000590; dut.d.pcmux_out: 00000224;dut.d.bpmux_out: 00000224;
+# dut.d.pipereg_ifid_pc_out: 0000021c; dut.d.pipereg_idex_pc_out: 00000218; dut.d.pipereg_exmem_pc_out: 00000214; dut.d.pipereg_memwb_pc_out: 00000210; 
+# rvfi.pc_rdata: 00000210; rvfi.pc_wdata: 00000214; 
+#  
+# time: 10455000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000228; dut.d.pc_module_out: 00000224; 
+# dut.d.alu_module_out: 0000021c; dut.d.pipe_exmem_alu_out: 00000580; dut.d.pipe_memwb_alu_out: 00000214; dut.d.pcmux_out: 00000228;dut.d.bpmux_out: 00000228;
 # dut.d.pipereg_ifid_pc_out: 00000220; dut.d.pipereg_idex_pc_out: 0000021c; dut.d.pipereg_exmem_pc_out: 00000218; dut.d.pipereg_memwb_pc_out: 00000214; 
+# rvfi.pc_rdata: 00000214; rvfi.pc_wdata: 00000218; 
 #  
-# time: 10465000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000022c; dut.d.pc_module_out: 00000228; 
+# time: 10465000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000022c; dut.d.pc_module_out: 00000228; 
+# dut.d.alu_module_out: 00000584; dut.d.pipe_exmem_alu_out: 0000021c; dut.d.pipe_memwb_alu_out: 00000580; dut.d.pcmux_out: 0000022c;dut.d.bpmux_out: 0000022c;
 # dut.d.pipereg_ifid_pc_out: 00000224; dut.d.pipereg_idex_pc_out: 00000220; dut.d.pipereg_exmem_pc_out: 0000021c; dut.d.pipereg_memwb_pc_out: 00000218; 
+# rvfi.pc_rdata: 00000218; rvfi.pc_wdata: 0000021c; 
 #  
-# time: 10475000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000230; dut.d.pc_module_out: 0000022c; 
+# time: 10475000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000230; dut.d.pc_module_out: 0000022c; 
+# dut.d.alu_module_out: 00000224; dut.d.pipe_exmem_alu_out: 00000584; dut.d.pipe_memwb_alu_out: 0000021c; dut.d.pcmux_out: 00000230;dut.d.bpmux_out: 00000230;
 # dut.d.pipereg_ifid_pc_out: 00000228; dut.d.pipereg_idex_pc_out: 00000224; dut.d.pipereg_exmem_pc_out: 00000220; dut.d.pipereg_memwb_pc_out: 0000021c; 
+# rvfi.pc_rdata: 0000021c; rvfi.pc_wdata: 00000220; 
 #  
-# time: 10485000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000234; dut.d.pc_module_out: 00000230; 
+# time: 10485000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000234; dut.d.pc_module_out: 00000230; 
+# dut.d.alu_module_out: 00000594; dut.d.pipe_exmem_alu_out: 00000224; dut.d.pipe_memwb_alu_out: 00000584; dut.d.pcmux_out: 00000234;dut.d.bpmux_out: 00000234;
 # dut.d.pipereg_ifid_pc_out: 0000022c; dut.d.pipereg_idex_pc_out: 00000228; dut.d.pipereg_exmem_pc_out: 00000224; dut.d.pipereg_memwb_pc_out: 00000220; 
+# rvfi.pc_rdata: 00000220; rvfi.pc_wdata: 00000224; 
 #  
-# time: 10495000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000238; dut.d.pc_module_out: 00000234; 
+# time: 10495000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000238; dut.d.pc_module_out: 00000234; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000594; dut.d.pipe_memwb_alu_out: 00000224; dut.d.pcmux_out: 00000238;dut.d.bpmux_out: 00000238;
 # dut.d.pipereg_ifid_pc_out: 00000230; dut.d.pipereg_idex_pc_out: 0000022c; dut.d.pipereg_exmem_pc_out: 00000228; dut.d.pipereg_memwb_pc_out: 00000224; 
+# rvfi.pc_rdata: 00000224; rvfi.pc_wdata: 00000228; 
 #  
-# time: 10505000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000023c; dut.d.pc_module_out: 00000238; 
+# time: 10505000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000023c; dut.d.pc_module_out: 00000238; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000594; dut.d.pcmux_out: 0000023c;dut.d.bpmux_out: 0000023c;
 # dut.d.pipereg_ifid_pc_out: 00000234; dut.d.pipereg_idex_pc_out: 00000230; dut.d.pipereg_exmem_pc_out: 0000022c; dut.d.pipereg_memwb_pc_out: 00000228; 
+# rvfi.pc_rdata: 00000228; rvfi.pc_wdata: 0000022c; 
 #  
-# time: 10515000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000240; dut.d.pc_module_out: 0000023c; 
+# time: 10515000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000240; dut.d.pc_module_out: 0000023c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000240;dut.d.bpmux_out: 00000240;
 # dut.d.pipereg_ifid_pc_out: 00000238; dut.d.pipereg_idex_pc_out: 00000234; dut.d.pipereg_exmem_pc_out: 00000230; dut.d.pipereg_memwb_pc_out: 0000022c; 
+# rvfi.pc_rdata: 0000022c; rvfi.pc_wdata: 00000230; 
 #  
-# time: 10525000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000244; dut.d.pc_module_out: 00000240; 
+# time: 10525000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000244; dut.d.pc_module_out: 00000240; 
+# dut.d.alu_module_out: 00000238; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000244;dut.d.bpmux_out: 00000244;
 # dut.d.pipereg_ifid_pc_out: 0000023c; dut.d.pipereg_idex_pc_out: 00000238; dut.d.pipereg_exmem_pc_out: 00000234; dut.d.pipereg_memwb_pc_out: 00000230; 
+# rvfi.pc_rdata: 00000230; rvfi.pc_wdata: 00000234; 
 #  
 # memread(_addr=00000240)
-# time: 10905000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000248; dut.d.pc_module_out: 00000244; 
+# time: 10895000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000244; dut.d.pc_module_out: 00000240; 
+# dut.d.alu_module_out: 00000238; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000244;dut.d.bpmux_out: 00000244;
+# dut.d.pipereg_ifid_pc_out: 0000023c; dut.d.pipereg_idex_pc_out: 00000238; dut.d.pipereg_exmem_pc_out: 00000234; dut.d.pipereg_memwb_pc_out: 00000230; 
+# rvfi.pc_rdata: 00000230; rvfi.pc_wdata: 00000234; 
+#  
+# time: 10905000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000248; dut.d.pc_module_out: 00000244; 
+# dut.d.alu_module_out: 00000270; dut.d.pipe_exmem_alu_out: 00000238; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000248;dut.d.bpmux_out: 00000248;
 # dut.d.pipereg_ifid_pc_out: 00000240; dut.d.pipereg_idex_pc_out: 0000023c; dut.d.pipereg_exmem_pc_out: 00000238; dut.d.pipereg_memwb_pc_out: 00000234; 
+# rvfi.pc_rdata: 00000234; rvfi.pc_wdata: 00000238; 
 #  
-# time: 10915000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 0000024c; dut.d.pc_module_out: 00000248; 
+# time: 10915000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000024c; dut.d.pc_module_out: 00000248; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000270; dut.d.pipe_memwb_alu_out: 00000238; dut.d.pcmux_out: 0000024c;dut.d.bpmux_out: 0000024c;
 # dut.d.pipereg_ifid_pc_out: 00000244; dut.d.pipereg_idex_pc_out: 00000240; dut.d.pipereg_exmem_pc_out: 0000023c; dut.d.pipereg_memwb_pc_out: 00000238; 
+# rvfi.pc_rdata: 00000238; rvfi.pc_wdata: 0000023c; 
 #  
-# time: 10925000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000250; dut.d.pc_module_out: 0000024c; 
+# time: 10925000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000250; dut.d.pc_module_out: 0000024c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000270; dut.d.pcmux_out: 00000250;dut.d.bpmux_out: 00000250;
 # dut.d.pipereg_ifid_pc_out: 00000248; dut.d.pipereg_idex_pc_out: 00000244; dut.d.pipereg_exmem_pc_out: 00000240; dut.d.pipereg_memwb_pc_out: 0000023c; 
+# rvfi.pc_rdata: 0000023c; rvfi.pc_wdata: 00000240; 
 #  
-# time: 10935000; is_jal: 0; is_jalr: 0; dut.d.pc_in: 00000254; dut.d.pc_module_out: 00000250; 
+# time: 10935000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000254; dut.d.pc_module_out: 00000250; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000254;dut.d.bpmux_out: 00000254;
 # dut.d.pipereg_ifid_pc_out: 0000024c; dut.d.pipereg_idex_pc_out: 00000248; dut.d.pipereg_exmem_pc_out: 00000244; dut.d.pipereg_memwb_pc_out: 00000240; 
+# rvfi.pc_rdata: 00000240; rvfi.pc_wdata: 00000244; 
 #  
-# time: 10945000; is_jal: 0; is_jalr: 1; dut.d.pc_in: 00000270; dut.d.pc_module_out: 00000254; 
+# time: 10945000; is_jal: 0; is_jalr: 1; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000270; dut.d.pc_module_out: 00000254; 
+# dut.d.alu_module_out: 00000270; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000270;dut.d.bpmux_out: 00000258;
 # dut.d.pipereg_ifid_pc_out: 00000250; dut.d.pipereg_idex_pc_out: 0000024c; dut.d.pipereg_exmem_pc_out: 00000248; dut.d.pipereg_memwb_pc_out: 00000244; 
+# rvfi.pc_rdata: 00000244; rvfi.pc_wdata: 00000248; 
 #  
-# time: 10955000; is_jal: 0; is_jalr: 1; dut.d.pc_in: 00000270; dut.d.pc_module_out: 00000270; 
-# dut.d.pipereg_ifid_pc_out: 00000250; dut.d.pipereg_idex_pc_out: 0000024c; dut.d.pipereg_exmem_pc_out: 00000248; dut.d.pipereg_memwb_pc_out: 00000244; 
+# time: 10955000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000274; dut.d.pc_module_out: 00000270; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000270; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000274;dut.d.bpmux_out: 00000274;
+# dut.d.pipereg_ifid_pc_out: 00000250; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 0000024c; dut.d.pipereg_memwb_pc_out: 00000248; 
+# rvfi.pc_rdata: 00000248; rvfi.pc_wdata: 0000024c; 
 #  
 # memread(_addr=00000260)
-# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11355000 --------
-# Error message: mismatch with shadow pc
+# time: 11325000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000274; dut.d.pc_module_out: 00000270; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000270; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000274;dut.d.bpmux_out: 00000274;
+# dut.d.pipereg_ifid_pc_out: 00000250; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 0000024c; dut.d.pipereg_memwb_pc_out: 00000248; 
+# rvfi.pc_rdata: 00000248; rvfi.pc_wdata: 0000024c; 
+#  
+# time: 11335000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000278; dut.d.pc_module_out: 00000274; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000270; dut.d.pcmux_out: 00000278;dut.d.bpmux_out: 00000278;
+# dut.d.pipereg_ifid_pc_out: 00000270; dut.d.pipereg_idex_pc_out: 00000000; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 0000024c; 
+# rvfi.pc_rdata: 0000024c; rvfi.pc_wdata: 00000270; 
+#  
+# time: 11345000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000027c; dut.d.pc_module_out: 00000278; 
+# dut.d.alu_module_out: 00000270; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000027c;dut.d.bpmux_out: 0000027c;
+# dut.d.pipereg_ifid_pc_out: 00000274; dut.d.pipereg_idex_pc_out: 00000270; dut.d.pipereg_exmem_pc_out: 00000000; dut.d.pipereg_memwb_pc_out: 00000000; 
+# rvfi.pc_rdata: 00000000; rvfi.pc_wdata: 00000000; 
+#  
+# time: 11355000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000280; dut.d.pc_module_out: 0000027c; 
+# dut.d.alu_module_out: 0000059c; dut.d.pipe_exmem_alu_out: 00000270; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000280;dut.d.bpmux_out: 00000280;
+# dut.d.pipereg_ifid_pc_out: 00000278; dut.d.pipereg_idex_pc_out: 00000274; dut.d.pipereg_exmem_pc_out: 00000270; dut.d.pipereg_memwb_pc_out: 00000000; 
+# rvfi.pc_rdata: 00000000; rvfi.pc_wdata: 00000270; 
+#  
+# time: 11365000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000284; dut.d.pc_module_out: 00000280; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 0000059c; dut.d.pipe_memwb_alu_out: 00000270; dut.d.pcmux_out: 00000284;dut.d.bpmux_out: 00000284;
+# dut.d.pipereg_ifid_pc_out: 0000027c; dut.d.pipereg_idex_pc_out: 00000278; dut.d.pipereg_exmem_pc_out: 00000274; dut.d.pipereg_memwb_pc_out: 00000270; 
+# rvfi.pc_rdata: 00000270; rvfi.pc_wdata: 00000274; 
+#  
+# memread(_addr=00000280)
+# time: 11735000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000284; dut.d.pc_module_out: 00000280; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 0000059c; dut.d.pipe_memwb_alu_out: 00000270; dut.d.pcmux_out: 00000284;dut.d.bpmux_out: 00000284;
+# dut.d.pipereg_ifid_pc_out: 0000027c; dut.d.pipereg_idex_pc_out: 00000278; dut.d.pipereg_exmem_pc_out: 00000274; dut.d.pipereg_memwb_pc_out: 00000270; 
+# rvfi.pc_rdata: 00000270; rvfi.pc_wdata: 00000274; 
+#  
+# time: 11745000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000288; dut.d.pc_module_out: 00000284; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 0000059c; dut.d.pcmux_out: 00000288;dut.d.bpmux_out: 00000288;
+# dut.d.pipereg_ifid_pc_out: 00000280; dut.d.pipereg_idex_pc_out: 0000027c; dut.d.pipereg_exmem_pc_out: 00000278; dut.d.pipereg_memwb_pc_out: 00000274; 
+# rvfi.pc_rdata: 00000274; rvfi.pc_wdata: 00000278; 
+#  
+# time: 11755000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000028c; dut.d.pc_module_out: 00000288; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000028c;dut.d.bpmux_out: 0000028c;
+# dut.d.pipereg_ifid_pc_out: 00000284; dut.d.pipereg_idex_pc_out: 00000280; dut.d.pipereg_exmem_pc_out: 0000027c; dut.d.pipereg_memwb_pc_out: 00000278; 
+# rvfi.pc_rdata: 00000278; rvfi.pc_wdata: 0000027c; 
+#  
+# time: 11765000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000290; dut.d.pc_module_out: 0000028c; 
+# dut.d.alu_module_out: 00000284; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000290;dut.d.bpmux_out: 00000290;
+# dut.d.pipereg_ifid_pc_out: 00000288; dut.d.pipereg_idex_pc_out: 00000284; dut.d.pipereg_exmem_pc_out: 00000280; dut.d.pipereg_memwb_pc_out: 0000027c; 
+# rvfi.pc_rdata: 0000027c; rvfi.pc_wdata: 00000280; 
+#  
+# time: 11775000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000294; dut.d.pc_module_out: 00000290; 
+# dut.d.alu_module_out: 00000580; dut.d.pipe_exmem_alu_out: 00000284; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000294;dut.d.bpmux_out: 00000294;
+# dut.d.pipereg_ifid_pc_out: 0000028c; dut.d.pipereg_idex_pc_out: 00000288; dut.d.pipereg_exmem_pc_out: 00000284; dut.d.pipereg_memwb_pc_out: 00000280; 
+# rvfi.pc_rdata: 00000280; rvfi.pc_wdata: 00000284; 
+#  
+# time: 11785000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000298; dut.d.pc_module_out: 00000294; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000580; dut.d.pipe_memwb_alu_out: 00000284; dut.d.pcmux_out: 00000298;dut.d.bpmux_out: 00000298;
+# dut.d.pipereg_ifid_pc_out: 00000290; dut.d.pipereg_idex_pc_out: 0000028c; dut.d.pipereg_exmem_pc_out: 00000288; dut.d.pipereg_memwb_pc_out: 00000284; 
+# rvfi.pc_rdata: 00000284; rvfi.pc_wdata: 00000288; 
+#  
+# time: 11795000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000029c; dut.d.pc_module_out: 00000298; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000580; dut.d.pcmux_out: 0000029c;dut.d.bpmux_out: 0000029c;
+# dut.d.pipereg_ifid_pc_out: 00000294; dut.d.pipereg_idex_pc_out: 00000290; dut.d.pipereg_exmem_pc_out: 0000028c; dut.d.pipereg_memwb_pc_out: 00000288; 
+# rvfi.pc_rdata: 00000288; rvfi.pc_wdata: 0000028c; 
+#  
+# time: 11805000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002a0; dut.d.pc_module_out: 0000029c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002a0;dut.d.bpmux_out: 000002a0;
+# dut.d.pipereg_ifid_pc_out: 00000298; dut.d.pipereg_idex_pc_out: 00000294; dut.d.pipereg_exmem_pc_out: 00000290; dut.d.pipereg_memwb_pc_out: 0000028c; 
+# rvfi.pc_rdata: 0000028c; rvfi.pc_wdata: 00000290; 
+#  
+# time: 11815000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002a4; dut.d.pc_module_out: 000002a0; 
+# dut.d.alu_module_out: 00000298; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002a4;dut.d.bpmux_out: 000002a4;
+# dut.d.pipereg_ifid_pc_out: 0000029c; dut.d.pipereg_idex_pc_out: 00000298; dut.d.pipereg_exmem_pc_out: 00000294; dut.d.pipereg_memwb_pc_out: 00000290; 
+# rvfi.pc_rdata: 00000290; rvfi.pc_wdata: 00000294; 
+#  
+# memread(_addr=000002a0)
+# time: 12185000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002a4; dut.d.pc_module_out: 000002a0; 
+# dut.d.alu_module_out: 00000298; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002a4;dut.d.bpmux_out: 000002a4;
+# dut.d.pipereg_ifid_pc_out: 0000029c; dut.d.pipereg_idex_pc_out: 00000298; dut.d.pipereg_exmem_pc_out: 00000294; dut.d.pipereg_memwb_pc_out: 00000290; 
+# rvfi.pc_rdata: 00000290; rvfi.pc_wdata: 00000294; 
+#  
+# time: 12195000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002a8; dut.d.pc_module_out: 000002a4; 
+# dut.d.alu_module_out: 000005d0; dut.d.pipe_exmem_alu_out: 00000298; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002a8;dut.d.bpmux_out: 000002a8;
+# dut.d.pipereg_ifid_pc_out: 000002a0; dut.d.pipereg_idex_pc_out: 0000029c; dut.d.pipereg_exmem_pc_out: 00000298; dut.d.pipereg_memwb_pc_out: 00000294; 
+# rvfi.pc_rdata: 00000294; rvfi.pc_wdata: 00000298; 
+#  
+# time: 12205000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002ac; dut.d.pc_module_out: 000002a8; 
+# dut.d.alu_module_out: 000002a0; dut.d.pipe_exmem_alu_out: 000005d0; dut.d.pipe_memwb_alu_out: 00000298; dut.d.pcmux_out: 000002ac;dut.d.bpmux_out: 000002ac;
+# dut.d.pipereg_ifid_pc_out: 000002a4; dut.d.pipereg_idex_pc_out: 000002a0; dut.d.pipereg_exmem_pc_out: 0000029c; dut.d.pipereg_memwb_pc_out: 00000298; 
+# rvfi.pc_rdata: 00000298; rvfi.pc_wdata: 0000029c; 
+#  
+# time: 12215000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002b0; dut.d.pc_module_out: 000002ac; 
+# dut.d.alu_module_out: 00000590; dut.d.pipe_exmem_alu_out: 000002a0; dut.d.pipe_memwb_alu_out: 000005d0; dut.d.pcmux_out: 000002b0;dut.d.bpmux_out: 000002b0;
+# dut.d.pipereg_ifid_pc_out: 000002a8; dut.d.pipereg_idex_pc_out: 000002a4; dut.d.pipereg_exmem_pc_out: 000002a0; dut.d.pipereg_memwb_pc_out: 0000029c; 
+# rvfi.pc_rdata: 0000029c; rvfi.pc_wdata: 000002a0; 
+#  
+# time: 12225000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002b4; dut.d.pc_module_out: 000002b0; 
+# dut.d.alu_module_out: 000002a8; dut.d.pipe_exmem_alu_out: 00000590; dut.d.pipe_memwb_alu_out: 000002a0; dut.d.pcmux_out: 000002b4;dut.d.bpmux_out: 000002b4;
+# dut.d.pipereg_ifid_pc_out: 000002ac; dut.d.pipereg_idex_pc_out: 000002a8; dut.d.pipereg_exmem_pc_out: 000002a4; dut.d.pipereg_memwb_pc_out: 000002a0; 
+# rvfi.pc_rdata: 000002a0; rvfi.pc_wdata: 000002a4; 
+#  
+# time: 12235000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002b8; dut.d.pc_module_out: 000002b4; 
+# dut.d.alu_module_out: 00000584; dut.d.pipe_exmem_alu_out: 000002a8; dut.d.pipe_memwb_alu_out: 00000590; dut.d.pcmux_out: 000002b8;dut.d.bpmux_out: 000002b8;
+# dut.d.pipereg_ifid_pc_out: 000002b0; dut.d.pipereg_idex_pc_out: 000002ac; dut.d.pipereg_exmem_pc_out: 000002a8; dut.d.pipereg_memwb_pc_out: 000002a4; 
+# rvfi.pc_rdata: 000002a4; rvfi.pc_wdata: 000002a8; 
+#  
+# time: 12245000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002bc; dut.d.pc_module_out: 000002b8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000584; dut.d.pipe_memwb_alu_out: 000002a8; dut.d.pcmux_out: 000002bc;dut.d.bpmux_out: 000002bc;
+# dut.d.pipereg_ifid_pc_out: 000002b4; dut.d.pipereg_idex_pc_out: 000002b0; dut.d.pipereg_exmem_pc_out: 000002ac; dut.d.pipereg_memwb_pc_out: 000002a8; 
+# rvfi.pc_rdata: 000002a8; rvfi.pc_wdata: 000002ac; 
+#  
+# time: 12255000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002c0; dut.d.pc_module_out: 000002bc; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000584; dut.d.pcmux_out: 000002c0;dut.d.bpmux_out: 000002c0;
+# dut.d.pipereg_ifid_pc_out: 000002b8; dut.d.pipereg_idex_pc_out: 000002b4; dut.d.pipereg_exmem_pc_out: 000002b0; dut.d.pipereg_memwb_pc_out: 000002ac; 
+# rvfi.pc_rdata: 000002ac; rvfi.pc_wdata: 000002b0; 
+#  
+# time: 12265000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002c4; dut.d.pc_module_out: 000002c0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002c4;dut.d.bpmux_out: 000002c4;
+# dut.d.pipereg_ifid_pc_out: 000002bc; dut.d.pipereg_idex_pc_out: 000002b8; dut.d.pipereg_exmem_pc_out: 000002b4; dut.d.pipereg_memwb_pc_out: 000002b0; 
+# rvfi.pc_rdata: 000002b0; rvfi.pc_wdata: 000002b4; 
+#  
+# memread(_addr=000002c0)
+# time: 12635000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002c4; dut.d.pc_module_out: 000002c0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002c4;dut.d.bpmux_out: 000002c4;
+# dut.d.pipereg_ifid_pc_out: 000002bc; dut.d.pipereg_idex_pc_out: 000002b8; dut.d.pipereg_exmem_pc_out: 000002b4; dut.d.pipereg_memwb_pc_out: 000002b0; 
+# rvfi.pc_rdata: 000002b0; rvfi.pc_wdata: 000002b4; 
+#  
+# time: 12645000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002c8; dut.d.pc_module_out: 000002c4; 
+# dut.d.alu_module_out: 000002bc; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002c8;dut.d.bpmux_out: 000002c8;
+# dut.d.pipereg_ifid_pc_out: 000002c0; dut.d.pipereg_idex_pc_out: 000002bc; dut.d.pipereg_exmem_pc_out: 000002b8; dut.d.pipereg_memwb_pc_out: 000002b4; 
+# rvfi.pc_rdata: 000002b4; rvfi.pc_wdata: 000002b8; 
+#  
+# time: 12655000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002cc; dut.d.pc_module_out: 000002c8; 
+# dut.d.alu_module_out: 000005d4; dut.d.pipe_exmem_alu_out: 000002bc; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002cc;dut.d.bpmux_out: 000002cc;
+# dut.d.pipereg_ifid_pc_out: 000002c4; dut.d.pipereg_idex_pc_out: 000002c0; dut.d.pipereg_exmem_pc_out: 000002bc; dut.d.pipereg_memwb_pc_out: 000002b8; 
+# rvfi.pc_rdata: 000002b8; rvfi.pc_wdata: 000002bc; 
+#  
+# time: 12665000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002d0; dut.d.pc_module_out: 000002cc; 
+# dut.d.alu_module_out: 000002c4; dut.d.pipe_exmem_alu_out: 000005d4; dut.d.pipe_memwb_alu_out: 000002bc; dut.d.pcmux_out: 000002d0;dut.d.bpmux_out: 000002d0;
+# dut.d.pipereg_ifid_pc_out: 000002c8; dut.d.pipereg_idex_pc_out: 000002c4; dut.d.pipereg_exmem_pc_out: 000002c0; dut.d.pipereg_memwb_pc_out: 000002bc; 
+# rvfi.pc_rdata: 000002bc; rvfi.pc_wdata: 000002c0; 
+#  
+# time: 12675000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002d4; dut.d.pc_module_out: 000002d0; 
+# dut.d.alu_module_out: 000005d8; dut.d.pipe_exmem_alu_out: 000002c4; dut.d.pipe_memwb_alu_out: 000005d4; dut.d.pcmux_out: 000002d4;dut.d.bpmux_out: 000002d4;
+# dut.d.pipereg_ifid_pc_out: 000002cc; dut.d.pipereg_idex_pc_out: 000002c8; dut.d.pipereg_exmem_pc_out: 000002c4; dut.d.pipereg_memwb_pc_out: 000002c0; 
+# rvfi.pc_rdata: 000002c0; rvfi.pc_wdata: 000002c4; 
+#  
+# time: 12685000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002d8; dut.d.pc_module_out: 000002d4; 
+# dut.d.alu_module_out: 000002cc; dut.d.pipe_exmem_alu_out: 000005d8; dut.d.pipe_memwb_alu_out: 000002c4; dut.d.pcmux_out: 000002d8;dut.d.bpmux_out: 000002d8;
+# dut.d.pipereg_ifid_pc_out: 000002d0; dut.d.pipereg_idex_pc_out: 000002cc; dut.d.pipereg_exmem_pc_out: 000002c8; dut.d.pipereg_memwb_pc_out: 000002c4; 
+# rvfi.pc_rdata: 000002c4; rvfi.pc_wdata: 000002c8; 
+#  
+# time: 12695000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002dc; dut.d.pc_module_out: 000002d8; 
+# dut.d.alu_module_out: 000005a4; dut.d.pipe_exmem_alu_out: 000002cc; dut.d.pipe_memwb_alu_out: 000005d8; dut.d.pcmux_out: 000002dc;dut.d.bpmux_out: 000002dc;
+# dut.d.pipereg_ifid_pc_out: 000002d4; dut.d.pipereg_idex_pc_out: 000002d0; dut.d.pipereg_exmem_pc_out: 000002cc; dut.d.pipereg_memwb_pc_out: 000002c8; 
+# rvfi.pc_rdata: 000002c8; rvfi.pc_wdata: 000002cc; 
+#  
+# time: 12705000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002e0; dut.d.pc_module_out: 000002dc; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005a4; dut.d.pipe_memwb_alu_out: 000002cc; dut.d.pcmux_out: 000002e0;dut.d.bpmux_out: 000002e0;
+# dut.d.pipereg_ifid_pc_out: 000002d8; dut.d.pipereg_idex_pc_out: 000002d4; dut.d.pipereg_exmem_pc_out: 000002d0; dut.d.pipereg_memwb_pc_out: 000002cc; 
+# rvfi.pc_rdata: 000002cc; rvfi.pc_wdata: 000002d0; 
+#  
+# time: 12715000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002e4; dut.d.pc_module_out: 000002e0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005a4; dut.d.pcmux_out: 000002e4;dut.d.bpmux_out: 000002e4;
+# dut.d.pipereg_ifid_pc_out: 000002dc; dut.d.pipereg_idex_pc_out: 000002d8; dut.d.pipereg_exmem_pc_out: 000002d4; dut.d.pipereg_memwb_pc_out: 000002d0; 
+# rvfi.pc_rdata: 000002d0; rvfi.pc_wdata: 000002d4; 
+#  
+# memread(_addr=000002e0)
+# time: 13085000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002e4; dut.d.pc_module_out: 000002e0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005a4; dut.d.pcmux_out: 000002e4;dut.d.bpmux_out: 000002e4;
+# dut.d.pipereg_ifid_pc_out: 000002dc; dut.d.pipereg_idex_pc_out: 000002d8; dut.d.pipereg_exmem_pc_out: 000002d4; dut.d.pipereg_memwb_pc_out: 000002d0; 
+# rvfi.pc_rdata: 000002d0; rvfi.pc_wdata: 000002d4; 
+#  
+# time: 13095000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002e8; dut.d.pc_module_out: 000002e4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002e8;dut.d.bpmux_out: 000002e8;
+# dut.d.pipereg_ifid_pc_out: 000002e0; dut.d.pipereg_idex_pc_out: 000002dc; dut.d.pipereg_exmem_pc_out: 000002d8; dut.d.pipereg_memwb_pc_out: 000002d4; 
+# rvfi.pc_rdata: 000002d4; rvfi.pc_wdata: 000002d8; 
+#  
+# time: 13105000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002ec; dut.d.pc_module_out: 000002e8; 
+# dut.d.alu_module_out: 000002e0; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002ec;dut.d.bpmux_out: 000002ec;
+# dut.d.pipereg_ifid_pc_out: 000002e4; dut.d.pipereg_idex_pc_out: 000002e0; dut.d.pipereg_exmem_pc_out: 000002dc; dut.d.pipereg_memwb_pc_out: 000002d8; 
+# rvfi.pc_rdata: 000002d8; rvfi.pc_wdata: 000002dc; 
+#  
+# time: 13115000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002f0; dut.d.pc_module_out: 000002ec; 
+# dut.d.alu_module_out: 000005dc; dut.d.pipe_exmem_alu_out: 000002e0; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002f0;dut.d.bpmux_out: 000002f0;
+# dut.d.pipereg_ifid_pc_out: 000002e8; dut.d.pipereg_idex_pc_out: 000002e4; dut.d.pipereg_exmem_pc_out: 000002e0; dut.d.pipereg_memwb_pc_out: 000002dc; 
+# rvfi.pc_rdata: 000002dc; rvfi.pc_wdata: 000002e0; 
+#  
+# time: 13125000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002f4; dut.d.pc_module_out: 000002f0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005dc; dut.d.pipe_memwb_alu_out: 000002e0; dut.d.pcmux_out: 000002f4;dut.d.bpmux_out: 000002f4;
+# dut.d.pipereg_ifid_pc_out: 000002ec; dut.d.pipereg_idex_pc_out: 000002e8; dut.d.pipereg_exmem_pc_out: 000002e4; dut.d.pipereg_memwb_pc_out: 000002e0; 
+# rvfi.pc_rdata: 000002e0; rvfi.pc_wdata: 000002e4; 
+#  
+# time: 13135000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002f8; dut.d.pc_module_out: 000002f4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005dc; dut.d.pcmux_out: 000002f8;dut.d.bpmux_out: 000002f8;
+# dut.d.pipereg_ifid_pc_out: 000002f0; dut.d.pipereg_idex_pc_out: 000002ec; dut.d.pipereg_exmem_pc_out: 000002e8; dut.d.pipereg_memwb_pc_out: 000002e4; 
+# rvfi.pc_rdata: 000002e4; rvfi.pc_wdata: 000002e8; 
+#  
+# time: 13145000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000002fc; dut.d.pc_module_out: 000002f8; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000002fc;dut.d.bpmux_out: 000002fc;
+# dut.d.pipereg_ifid_pc_out: 000002f4; dut.d.pipereg_idex_pc_out: 000002f0; dut.d.pipereg_exmem_pc_out: 000002ec; dut.d.pipereg_memwb_pc_out: 000002e8; 
+# rvfi.pc_rdata: 000002e8; rvfi.pc_wdata: 000002ec; 
+#  
+# time: 13155000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000300; dut.d.pc_module_out: 000002fc; 
+# dut.d.alu_module_out: 000002f4; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000300;dut.d.bpmux_out: 00000300;
+# dut.d.pipereg_ifid_pc_out: 000002f8; dut.d.pipereg_idex_pc_out: 000002f4; dut.d.pipereg_exmem_pc_out: 000002f0; dut.d.pipereg_memwb_pc_out: 000002ec; 
+# rvfi.pc_rdata: 000002ec; rvfi.pc_wdata: 000002f0; 
+#  
+# time: 13165000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000304; dut.d.pc_module_out: 00000300; 
+# dut.d.alu_module_out: 000005d0; dut.d.pipe_exmem_alu_out: 000002f4; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000304;dut.d.bpmux_out: 00000304;
+# dut.d.pipereg_ifid_pc_out: 000002fc; dut.d.pipereg_idex_pc_out: 000002f8; dut.d.pipereg_exmem_pc_out: 000002f4; dut.d.pipereg_memwb_pc_out: 000002f0; 
+# rvfi.pc_rdata: 000002f0; rvfi.pc_wdata: 000002f4; 
+#  
+# memread(_addr=00000300)
+# time: 13535000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000304; dut.d.pc_module_out: 00000300; 
+# dut.d.alu_module_out: 000005d0; dut.d.pipe_exmem_alu_out: 000002f4; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000304;dut.d.bpmux_out: 00000304;
+# dut.d.pipereg_ifid_pc_out: 000002fc; dut.d.pipereg_idex_pc_out: 000002f8; dut.d.pipereg_exmem_pc_out: 000002f4; dut.d.pipereg_memwb_pc_out: 000002f0; 
+# rvfi.pc_rdata: 000002f0; rvfi.pc_wdata: 000002f4; 
+#  
+# time: 13545000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000308; dut.d.pc_module_out: 00000304; 
+# dut.d.alu_module_out: 000002fc; dut.d.pipe_exmem_alu_out: 000005d0; dut.d.pipe_memwb_alu_out: 000002f4; dut.d.pcmux_out: 00000308;dut.d.bpmux_out: 00000308;
+# dut.d.pipereg_ifid_pc_out: 00000300; dut.d.pipereg_idex_pc_out: 000002fc; dut.d.pipereg_exmem_pc_out: 000002f8; dut.d.pipereg_memwb_pc_out: 000002f4; 
+# rvfi.pc_rdata: 000002f4; rvfi.pc_wdata: 000002f8; 
+#  
+# time: 13555000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000030c; dut.d.pc_module_out: 00000308; 
+# dut.d.alu_module_out: 000005d4; dut.d.pipe_exmem_alu_out: 000002fc; dut.d.pipe_memwb_alu_out: 000005d0; dut.d.pcmux_out: 0000030c;dut.d.bpmux_out: 0000030c;
+# dut.d.pipereg_ifid_pc_out: 00000304; dut.d.pipereg_idex_pc_out: 00000300; dut.d.pipereg_exmem_pc_out: 000002fc; dut.d.pipereg_memwb_pc_out: 000002f8; 
+# rvfi.pc_rdata: 000002f8; rvfi.pc_wdata: 000002fc; 
+#  
+# time: 13565000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000310; dut.d.pc_module_out: 0000030c; 
+# dut.d.alu_module_out: 00000304; dut.d.pipe_exmem_alu_out: 000005d4; dut.d.pipe_memwb_alu_out: 000002fc; dut.d.pcmux_out: 00000310;dut.d.bpmux_out: 00000310;
+# dut.d.pipereg_ifid_pc_out: 00000308; dut.d.pipereg_idex_pc_out: 00000304; dut.d.pipereg_exmem_pc_out: 00000300; dut.d.pipereg_memwb_pc_out: 000002fc; 
+# rvfi.pc_rdata: 000002fc; rvfi.pc_wdata: 00000300; 
+#  
+# time: 13575000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000314; dut.d.pc_module_out: 00000310; 
+# dut.d.alu_module_out: 000005d8; dut.d.pipe_exmem_alu_out: 00000304; dut.d.pipe_memwb_alu_out: 000005d4; dut.d.pcmux_out: 00000314;dut.d.bpmux_out: 00000314;
+# dut.d.pipereg_ifid_pc_out: 0000030c; dut.d.pipereg_idex_pc_out: 00000308; dut.d.pipereg_exmem_pc_out: 00000304; dut.d.pipereg_memwb_pc_out: 00000300; 
+# rvfi.pc_rdata: 00000300; rvfi.pc_wdata: 00000304; 
+#  
+# time: 13585000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000318; dut.d.pc_module_out: 00000314; 
+# dut.d.alu_module_out: 0000030c; dut.d.pipe_exmem_alu_out: 000005d8; dut.d.pipe_memwb_alu_out: 00000304; dut.d.pcmux_out: 00000318;dut.d.bpmux_out: 00000318;
+# dut.d.pipereg_ifid_pc_out: 00000310; dut.d.pipereg_idex_pc_out: 0000030c; dut.d.pipereg_exmem_pc_out: 00000308; dut.d.pipereg_memwb_pc_out: 00000304; 
+# rvfi.pc_rdata: 00000304; rvfi.pc_wdata: 00000308; 
+#  
+# time: 13595000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000031c; dut.d.pc_module_out: 00000318; 
+# dut.d.alu_module_out: 000005dc; dut.d.pipe_exmem_alu_out: 0000030c; dut.d.pipe_memwb_alu_out: 000005d8; dut.d.pcmux_out: 0000031c;dut.d.bpmux_out: 0000031c;
+# dut.d.pipereg_ifid_pc_out: 00000314; dut.d.pipereg_idex_pc_out: 00000310; dut.d.pipereg_exmem_pc_out: 0000030c; dut.d.pipereg_memwb_pc_out: 00000308; 
+# rvfi.pc_rdata: 00000308; rvfi.pc_wdata: 0000030c; 
+#  
+# time: 13605000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000320; dut.d.pc_module_out: 0000031c; 
+# dut.d.alu_module_out: 00000314; dut.d.pipe_exmem_alu_out: 000005dc; dut.d.pipe_memwb_alu_out: 0000030c; dut.d.pcmux_out: 00000320;dut.d.bpmux_out: 00000320;
+# dut.d.pipereg_ifid_pc_out: 00000318; dut.d.pipereg_idex_pc_out: 00000314; dut.d.pipereg_exmem_pc_out: 00000310; dut.d.pipereg_memwb_pc_out: 0000030c; 
+# rvfi.pc_rdata: 0000030c; rvfi.pc_wdata: 00000310; 
+#  
+# time: 13615000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000324; dut.d.pc_module_out: 00000320; 
+# dut.d.alu_module_out: 000005dc; dut.d.pipe_exmem_alu_out: 00000314; dut.d.pipe_memwb_alu_out: 000005dc; dut.d.pcmux_out: 00000324;dut.d.bpmux_out: 00000324;
+# dut.d.pipereg_ifid_pc_out: 0000031c; dut.d.pipereg_idex_pc_out: 00000318; dut.d.pipereg_exmem_pc_out: 00000314; dut.d.pipereg_memwb_pc_out: 00000310; 
+# rvfi.pc_rdata: 00000310; rvfi.pc_wdata: 00000314; 
+#  
+# memread(_addr=00000320)
+# time: 13985000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000324; dut.d.pc_module_out: 00000320; 
+# dut.d.alu_module_out: 000005dc; dut.d.pipe_exmem_alu_out: 00000314; dut.d.pipe_memwb_alu_out: 000005dc; dut.d.pcmux_out: 00000324;dut.d.bpmux_out: 00000324;
+# dut.d.pipereg_ifid_pc_out: 0000031c; dut.d.pipereg_idex_pc_out: 00000318; dut.d.pipereg_exmem_pc_out: 00000314; dut.d.pipereg_memwb_pc_out: 00000310; 
+# rvfi.pc_rdata: 00000310; rvfi.pc_wdata: 00000314; 
+#  
+# time: 13995000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000328; dut.d.pc_module_out: 00000324; 
+# dut.d.alu_module_out: 0000031c; dut.d.pipe_exmem_alu_out: 000005dc; dut.d.pipe_memwb_alu_out: 00000314; dut.d.pcmux_out: 00000328;dut.d.bpmux_out: 00000328;
+# dut.d.pipereg_ifid_pc_out: 00000320; dut.d.pipereg_idex_pc_out: 0000031c; dut.d.pipereg_exmem_pc_out: 00000318; dut.d.pipereg_memwb_pc_out: 00000314; 
+# rvfi.pc_rdata: 00000314; rvfi.pc_wdata: 00000318; 
+#  
+# time: 14005000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000032c; dut.d.pc_module_out: 00000328; 
+# dut.d.alu_module_out: 000005dc; dut.d.pipe_exmem_alu_out: 0000031c; dut.d.pipe_memwb_alu_out: 000005dc; dut.d.pcmux_out: 0000032c;dut.d.bpmux_out: 0000032c;
+# dut.d.pipereg_ifid_pc_out: 00000324; dut.d.pipereg_idex_pc_out: 00000320; dut.d.pipereg_exmem_pc_out: 0000031c; dut.d.pipereg_memwb_pc_out: 00000318; 
+# rvfi.pc_rdata: 00000318; rvfi.pc_wdata: 0000031c; 
+#  
+# time: 14015000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000330; dut.d.pc_module_out: 0000032c; 
+# dut.d.alu_module_out: 00000324; dut.d.pipe_exmem_alu_out: 000005dc; dut.d.pipe_memwb_alu_out: 0000031c; dut.d.pcmux_out: 00000330;dut.d.bpmux_out: 00000330;
+# dut.d.pipereg_ifid_pc_out: 00000328; dut.d.pipereg_idex_pc_out: 00000324; dut.d.pipereg_exmem_pc_out: 00000320; dut.d.pipereg_memwb_pc_out: 0000031c; 
+# rvfi.pc_rdata: 0000031c; rvfi.pc_wdata: 00000320; 
+#  
+# time: 14025000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000334; dut.d.pc_module_out: 00000330; 
+# dut.d.alu_module_out: 000005dc; dut.d.pipe_exmem_alu_out: 00000324; dut.d.pipe_memwb_alu_out: 000005dc; dut.d.pcmux_out: 00000334;dut.d.bpmux_out: 00000334;
+# dut.d.pipereg_ifid_pc_out: 0000032c; dut.d.pipereg_idex_pc_out: 00000328; dut.d.pipereg_exmem_pc_out: 00000324; dut.d.pipereg_memwb_pc_out: 00000320; 
+# rvfi.pc_rdata: 00000320; rvfi.pc_wdata: 00000324; 
+#  
+# time: 14035000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000338; dut.d.pc_module_out: 00000334; 
+# dut.d.alu_module_out: 0000032c; dut.d.pipe_exmem_alu_out: 000005dc; dut.d.pipe_memwb_alu_out: 00000324; dut.d.pcmux_out: 00000338;dut.d.bpmux_out: 00000338;
+# dut.d.pipereg_ifid_pc_out: 00000330; dut.d.pipereg_idex_pc_out: 0000032c; dut.d.pipereg_exmem_pc_out: 00000328; dut.d.pipereg_memwb_pc_out: 00000324; 
+# rvfi.pc_rdata: 00000324; rvfi.pc_wdata: 00000328; 
+#  
+# time: 14045000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000033c; dut.d.pc_module_out: 00000338; 
+# dut.d.alu_module_out: 000005dc; dut.d.pipe_exmem_alu_out: 0000032c; dut.d.pipe_memwb_alu_out: 000005dc; dut.d.pcmux_out: 0000033c;dut.d.bpmux_out: 0000033c;
+# dut.d.pipereg_ifid_pc_out: 00000334; dut.d.pipereg_idex_pc_out: 00000330; dut.d.pipereg_exmem_pc_out: 0000032c; dut.d.pipereg_memwb_pc_out: 00000328; 
+# rvfi.pc_rdata: 00000328; rvfi.pc_wdata: 0000032c; 
+#  
+# time: 14055000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000340; dut.d.pc_module_out: 0000033c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 000005dc; dut.d.pipe_memwb_alu_out: 0000032c; dut.d.pcmux_out: 00000340;dut.d.bpmux_out: 00000340;
+# dut.d.pipereg_ifid_pc_out: 00000338; dut.d.pipereg_idex_pc_out: 00000334; dut.d.pipereg_exmem_pc_out: 00000330; dut.d.pipereg_memwb_pc_out: 0000032c; 
+# rvfi.pc_rdata: 0000032c; rvfi.pc_wdata: 00000330; 
+#  
+# time: 14065000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000344; dut.d.pc_module_out: 00000340; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005dc; dut.d.pcmux_out: 00000344;dut.d.bpmux_out: 00000344;
+# dut.d.pipereg_ifid_pc_out: 0000033c; dut.d.pipereg_idex_pc_out: 00000338; dut.d.pipereg_exmem_pc_out: 00000334; dut.d.pipereg_memwb_pc_out: 00000330; 
+# rvfi.pc_rdata: 00000330; rvfi.pc_wdata: 00000334; 
+#  
+# memread(_addr=00000340)
+# time: 14435000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000344; dut.d.pc_module_out: 00000340; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 000005dc; dut.d.pcmux_out: 00000344;dut.d.bpmux_out: 00000344;
+# dut.d.pipereg_ifid_pc_out: 0000033c; dut.d.pipereg_idex_pc_out: 00000338; dut.d.pipereg_exmem_pc_out: 00000334; dut.d.pipereg_memwb_pc_out: 00000330; 
+# rvfi.pc_rdata: 00000330; rvfi.pc_wdata: 00000334; 
+#  
+# time: 14445000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000348; dut.d.pc_module_out: 00000344; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000348;dut.d.bpmux_out: 00000348;
+# dut.d.pipereg_ifid_pc_out: 00000340; dut.d.pipereg_idex_pc_out: 0000033c; dut.d.pipereg_exmem_pc_out: 00000338; dut.d.pipereg_memwb_pc_out: 00000334; 
+# rvfi.pc_rdata: 00000334; rvfi.pc_wdata: 00000338; 
+#  
+# time: 14455000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000034c; dut.d.pc_module_out: 00000348; 
+# dut.d.alu_module_out: 00007ebc; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000034c;dut.d.bpmux_out: 0000034c;
+# dut.d.pipereg_ifid_pc_out: 00000344; dut.d.pipereg_idex_pc_out: 00000340; dut.d.pipereg_exmem_pc_out: 0000033c; dut.d.pipereg_memwb_pc_out: 00000338; 
+# rvfi.pc_rdata: 00000338; rvfi.pc_wdata: 0000033c; 
+#  
+# time: 14465000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000350; dut.d.pc_module_out: 0000034c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00007ebc; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000350;dut.d.bpmux_out: 00000350;
+# dut.d.pipereg_ifid_pc_out: 00000348; dut.d.pipereg_idex_pc_out: 00000344; dut.d.pipereg_exmem_pc_out: 00000340; dut.d.pipereg_memwb_pc_out: 0000033c; 
+# rvfi.pc_rdata: 0000033c; rvfi.pc_wdata: 00000340; 
+#  
+# time: 14475000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000354; dut.d.pc_module_out: 00000350; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00007ebc; dut.d.pcmux_out: 00000354;dut.d.bpmux_out: 00000354;
+# dut.d.pipereg_ifid_pc_out: 0000034c; dut.d.pipereg_idex_pc_out: 00000348; dut.d.pipereg_exmem_pc_out: 00000344; dut.d.pipereg_memwb_pc_out: 00000340; 
+# rvfi.pc_rdata: 00000340; rvfi.pc_wdata: 00000344; 
+#  
+# time: 14485000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000358; dut.d.pc_module_out: 00000354; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000358;dut.d.bpmux_out: 00000358;
+# dut.d.pipereg_ifid_pc_out: 00000350; dut.d.pipereg_idex_pc_out: 0000034c; dut.d.pipereg_exmem_pc_out: 00000348; dut.d.pipereg_memwb_pc_out: 00000344; 
+# rvfi.pc_rdata: 00000344; rvfi.pc_wdata: 00000348; 
+#  
+# time: 14495000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000035c; dut.d.pc_module_out: 00000358; 
+# dut.d.alu_module_out: cfd9cfd8; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000035c;dut.d.bpmux_out: 0000035c;
+# dut.d.pipereg_ifid_pc_out: 00000354; dut.d.pipereg_idex_pc_out: 00000350; dut.d.pipereg_exmem_pc_out: 0000034c; dut.d.pipereg_memwb_pc_out: 00000348; 
+# rvfi.pc_rdata: 00000348; rvfi.pc_wdata: 0000034c; 
+#  
+# time: 14505000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000360; dut.d.pc_module_out: 0000035c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: cfd9cfd8; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000360;dut.d.bpmux_out: 00000360;
+# dut.d.pipereg_ifid_pc_out: 00000358; dut.d.pipereg_idex_pc_out: 00000354; dut.d.pipereg_exmem_pc_out: 00000350; dut.d.pipereg_memwb_pc_out: 0000034c; 
+# rvfi.pc_rdata: 0000034c; rvfi.pc_wdata: 00000350; 
+#  
+# time: 14515000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000364; dut.d.pc_module_out: 00000360; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: cfd9cfd8; dut.d.pcmux_out: 00000364;dut.d.bpmux_out: 00000364;
+# dut.d.pipereg_ifid_pc_out: 0000035c; dut.d.pipereg_idex_pc_out: 00000358; dut.d.pipereg_exmem_pc_out: 00000354; dut.d.pipereg_memwb_pc_out: 00000350; 
+# rvfi.pc_rdata: 00000350; rvfi.pc_wdata: 00000354; 
+#  
+# memread(_addr=00000360)
+# time: 14885000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000364; dut.d.pc_module_out: 00000360; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: cfd9cfd8; dut.d.pcmux_out: 00000364;dut.d.bpmux_out: 00000364;
+# dut.d.pipereg_ifid_pc_out: 0000035c; dut.d.pipereg_idex_pc_out: 00000358; dut.d.pipereg_exmem_pc_out: 00000354; dut.d.pipereg_memwb_pc_out: 00000350; 
+# rvfi.pc_rdata: 00000350; rvfi.pc_wdata: 00000354; 
+#  
+# time: 14895000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000368; dut.d.pc_module_out: 00000364; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000368;dut.d.bpmux_out: 00000368;
+# dut.d.pipereg_ifid_pc_out: 00000360; dut.d.pipereg_idex_pc_out: 0000035c; dut.d.pipereg_exmem_pc_out: 00000358; dut.d.pipereg_memwb_pc_out: 00000354; 
+# rvfi.pc_rdata: 00000354; rvfi.pc_wdata: 00000358; 
+#  
+# time: 14905000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000036c; dut.d.pc_module_out: 00000368; 
+# dut.d.alu_module_out: cfda4e94; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000036c;dut.d.bpmux_out: 0000036c;
+# dut.d.pipereg_ifid_pc_out: 00000364; dut.d.pipereg_idex_pc_out: 00000360; dut.d.pipereg_exmem_pc_out: 0000035c; dut.d.pipereg_memwb_pc_out: 00000358; 
+# rvfi.pc_rdata: 00000358; rvfi.pc_wdata: 0000035c; 
+#  
+# time: 14915000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000370; dut.d.pc_module_out: 0000036c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: cfda4e94; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000370;dut.d.bpmux_out: 00000370;
+# dut.d.pipereg_ifid_pc_out: 00000368; dut.d.pipereg_idex_pc_out: 00000364; dut.d.pipereg_exmem_pc_out: 00000360; dut.d.pipereg_memwb_pc_out: 0000035c; 
+# rvfi.pc_rdata: 0000035c; rvfi.pc_wdata: 00000360; 
+#  
+# time: 14925000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000374; dut.d.pc_module_out: 00000370; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: cfda4e94; dut.d.pcmux_out: 00000374;dut.d.bpmux_out: 00000374;
+# dut.d.pipereg_ifid_pc_out: 0000036c; dut.d.pipereg_idex_pc_out: 00000368; dut.d.pipereg_exmem_pc_out: 00000364; dut.d.pipereg_memwb_pc_out: 00000360; 
+# rvfi.pc_rdata: 00000360; rvfi.pc_wdata: 00000364; 
+#  
+# time: 14935000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000378; dut.d.pc_module_out: 00000374; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000378;dut.d.bpmux_out: 00000378;
+# dut.d.pipereg_ifid_pc_out: 00000370; dut.d.pipereg_idex_pc_out: 0000036c; dut.d.pipereg_exmem_pc_out: 00000368; dut.d.pipereg_memwb_pc_out: 00000364; 
+# rvfi.pc_rdata: 00000364; rvfi.pc_wdata: 00000368; 
+#  
+# time: 14945000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000037c; dut.d.pc_module_out: 00000378; 
+# dut.d.alu_module_out: 00000571; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000037c;dut.d.bpmux_out: 0000037c;
+# dut.d.pipereg_ifid_pc_out: 00000374; dut.d.pipereg_idex_pc_out: 00000370; dut.d.pipereg_exmem_pc_out: 0000036c; dut.d.pipereg_memwb_pc_out: 00000368; 
+# rvfi.pc_rdata: 00000368; rvfi.pc_wdata: 0000036c; 
+#  
+# time: 14955000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000380; dut.d.pc_module_out: 0000037c; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000571; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000380;dut.d.bpmux_out: 00000380;
+# dut.d.pipereg_ifid_pc_out: 00000378; dut.d.pipereg_idex_pc_out: 00000374; dut.d.pipereg_exmem_pc_out: 00000370; dut.d.pipereg_memwb_pc_out: 0000036c; 
+# rvfi.pc_rdata: 0000036c; rvfi.pc_wdata: 00000370; 
+#  
+# time: 14965000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000384; dut.d.pc_module_out: 00000380; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000571; dut.d.pcmux_out: 00000384;dut.d.bpmux_out: 00000384;
+# dut.d.pipereg_ifid_pc_out: 0000037c; dut.d.pipereg_idex_pc_out: 00000378; dut.d.pipereg_exmem_pc_out: 00000374; dut.d.pipereg_memwb_pc_out: 00000370; 
+# rvfi.pc_rdata: 00000370; rvfi.pc_wdata: 00000374; 
+#  
+# memread(_addr=00000380)
+# time: 15335000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000384; dut.d.pc_module_out: 00000380; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000571; dut.d.pcmux_out: 00000384;dut.d.bpmux_out: 00000384;
+# dut.d.pipereg_ifid_pc_out: 0000037c; dut.d.pipereg_idex_pc_out: 00000378; dut.d.pipereg_exmem_pc_out: 00000374; dut.d.pipereg_memwb_pc_out: 00000370; 
+# rvfi.pc_rdata: 00000370; rvfi.pc_wdata: 00000374; 
+#  
+# time: 15345000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000388; dut.d.pc_module_out: 00000384; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000388;dut.d.bpmux_out: 00000388;
+# dut.d.pipereg_ifid_pc_out: 00000380; dut.d.pipereg_idex_pc_out: 0000037c; dut.d.pipereg_exmem_pc_out: 00000378; dut.d.pipereg_memwb_pc_out: 00000374; 
+# rvfi.pc_rdata: 00000374; rvfi.pc_wdata: 00000378; 
+#  
+# time: 15355000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000038c; dut.d.pc_module_out: 00000388; 
+# dut.d.alu_module_out: 00000380; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 0000038c;dut.d.bpmux_out: 0000038c;
+# dut.d.pipereg_ifid_pc_out: 00000384; dut.d.pipereg_idex_pc_out: 00000380; dut.d.pipereg_exmem_pc_out: 0000037c; dut.d.pipereg_memwb_pc_out: 00000378; 
+# rvfi.pc_rdata: 00000378; rvfi.pc_wdata: 0000037c; 
+#  
+# time: 15365000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000390; dut.d.pc_module_out: 0000038c; 
+# dut.d.alu_module_out: 00000574; dut.d.pipe_exmem_alu_out: 00000380; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 00000390;dut.d.bpmux_out: 00000390;
+# dut.d.pipereg_ifid_pc_out: 00000388; dut.d.pipereg_idex_pc_out: 00000384; dut.d.pipereg_exmem_pc_out: 00000380; dut.d.pipereg_memwb_pc_out: 0000037c; 
+# rvfi.pc_rdata: 0000037c; rvfi.pc_wdata: 00000380; 
+#  
+# time: 15375000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000394; dut.d.pc_module_out: 00000390; 
+# dut.d.alu_module_out: 00000575; dut.d.pipe_exmem_alu_out: 00000574; dut.d.pipe_memwb_alu_out: 00000380; dut.d.pcmux_out: 00000394;dut.d.bpmux_out: 00000394;
+# dut.d.pipereg_ifid_pc_out: 0000038c; dut.d.pipereg_idex_pc_out: 00000388; dut.d.pipereg_exmem_pc_out: 00000384; dut.d.pipereg_memwb_pc_out: 00000380; 
+# rvfi.pc_rdata: 00000380; rvfi.pc_wdata: 00000384; 
+#  
+# time: 15385000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 00000398; dut.d.pc_module_out: 00000394; 
+# dut.d.alu_module_out: 0000038c; dut.d.pipe_exmem_alu_out: 00000575; dut.d.pipe_memwb_alu_out: 00000574; dut.d.pcmux_out: 00000398;dut.d.bpmux_out: 00000398;
+# dut.d.pipereg_ifid_pc_out: 00000390; dut.d.pipereg_idex_pc_out: 0000038c; dut.d.pipereg_exmem_pc_out: 00000388; dut.d.pipereg_memwb_pc_out: 00000384; 
+# rvfi.pc_rdata: 00000384; rvfi.pc_wdata: 00000388; 
+#  
+# time: 15395000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 0000039c; dut.d.pc_module_out: 00000398; 
+# dut.d.alu_module_out: 00000574; dut.d.pipe_exmem_alu_out: 0000038c; dut.d.pipe_memwb_alu_out: 00000575; dut.d.pcmux_out: 0000039c;dut.d.bpmux_out: 0000039c;
+# dut.d.pipereg_ifid_pc_out: 00000394; dut.d.pipereg_idex_pc_out: 00000390; dut.d.pipereg_exmem_pc_out: 0000038c; dut.d.pipereg_memwb_pc_out: 00000388; 
+# rvfi.pc_rdata: 00000388; rvfi.pc_wdata: 0000038c; 
+#  
+# time: 15405000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003a0; dut.d.pc_module_out: 0000039c; 
+# dut.d.alu_module_out: 00000394; dut.d.pipe_exmem_alu_out: 00000574; dut.d.pipe_memwb_alu_out: 0000038c; dut.d.pcmux_out: 000003a0;dut.d.bpmux_out: 000003a0;
+# dut.d.pipereg_ifid_pc_out: 00000398; dut.d.pipereg_idex_pc_out: 00000394; dut.d.pipereg_exmem_pc_out: 00000390; dut.d.pipereg_memwb_pc_out: 0000038c; 
+# rvfi.pc_rdata: 0000038c; rvfi.pc_wdata: 00000390; 
+#  
+# time: 15415000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003a4; dut.d.pc_module_out: 000003a0; 
+# dut.d.alu_module_out: 00000578; dut.d.pipe_exmem_alu_out: 00000394; dut.d.pipe_memwb_alu_out: 00000574; dut.d.pcmux_out: 000003a4;dut.d.bpmux_out: 000003a4;
+# dut.d.pipereg_ifid_pc_out: 0000039c; dut.d.pipereg_idex_pc_out: 00000398; dut.d.pipereg_exmem_pc_out: 00000394; dut.d.pipereg_memwb_pc_out: 00000390; 
+# rvfi.pc_rdata: 00000390; rvfi.pc_wdata: 00000394; 
+#  
+# memread(_addr=000003a0)
+# time: 15785000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003a4; dut.d.pc_module_out: 000003a0; 
+# dut.d.alu_module_out: 00000578; dut.d.pipe_exmem_alu_out: 00000394; dut.d.pipe_memwb_alu_out: 00000574; dut.d.pcmux_out: 000003a4;dut.d.bpmux_out: 000003a4;
+# dut.d.pipereg_ifid_pc_out: 0000039c; dut.d.pipereg_idex_pc_out: 00000398; dut.d.pipereg_exmem_pc_out: 00000394; dut.d.pipereg_memwb_pc_out: 00000390; 
+# rvfi.pc_rdata: 00000390; rvfi.pc_wdata: 00000394; 
+#  
+# time: 15795000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003a8; dut.d.pc_module_out: 000003a4; 
+# dut.d.alu_module_out: 0000039c; dut.d.pipe_exmem_alu_out: 00000578; dut.d.pipe_memwb_alu_out: 00000394; dut.d.pcmux_out: 000003a8;dut.d.bpmux_out: 000003a8;
+# dut.d.pipereg_ifid_pc_out: 000003a0; dut.d.pipereg_idex_pc_out: 0000039c; dut.d.pipereg_exmem_pc_out: 00000398; dut.d.pipereg_memwb_pc_out: 00000394; 
+# rvfi.pc_rdata: 00000394; rvfi.pc_wdata: 00000398; 
+#  
+# time: 15805000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003ac; dut.d.pc_module_out: 000003a8; 
+# dut.d.alu_module_out: 00000578; dut.d.pipe_exmem_alu_out: 0000039c; dut.d.pipe_memwb_alu_out: 00000578; dut.d.pcmux_out: 000003ac;dut.d.bpmux_out: 000003ac;
+# dut.d.pipereg_ifid_pc_out: 000003a4; dut.d.pipereg_idex_pc_out: 000003a0; dut.d.pipereg_exmem_pc_out: 0000039c; dut.d.pipereg_memwb_pc_out: 00000398; 
+# rvfi.pc_rdata: 00000398; rvfi.pc_wdata: 0000039c; 
+#  
+# time: 15815000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003b0; dut.d.pc_module_out: 000003ac; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000578; dut.d.pipe_memwb_alu_out: 0000039c; dut.d.pcmux_out: 000003b0;dut.d.bpmux_out: 000003b0;
+# dut.d.pipereg_ifid_pc_out: 000003a8; dut.d.pipereg_idex_pc_out: 000003a4; dut.d.pipereg_exmem_pc_out: 000003a0; dut.d.pipereg_memwb_pc_out: 0000039c; 
+# rvfi.pc_rdata: 0000039c; rvfi.pc_wdata: 000003a0; 
+#  
+# time: 15825000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003b4; dut.d.pc_module_out: 000003b0; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000578; dut.d.pcmux_out: 000003b4;dut.d.bpmux_out: 000003b4;
+# dut.d.pipereg_ifid_pc_out: 000003ac; dut.d.pipereg_idex_pc_out: 000003a8; dut.d.pipereg_exmem_pc_out: 000003a4; dut.d.pipereg_memwb_pc_out: 000003a0; 
+# rvfi.pc_rdata: 000003a0; rvfi.pc_wdata: 000003a4; 
+#  
+# time: 15835000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003b8; dut.d.pc_module_out: 000003b4; 
+# dut.d.alu_module_out: 00000000; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000003b8;dut.d.bpmux_out: 000003b8;
+# dut.d.pipereg_ifid_pc_out: 000003b0; dut.d.pipereg_idex_pc_out: 000003ac; dut.d.pipereg_exmem_pc_out: 000003a8; dut.d.pipereg_memwb_pc_out: 000003a4; 
+# rvfi.pc_rdata: 000003a4; rvfi.pc_wdata: 000003a8; 
+#  
+# time: 15845000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003bc; dut.d.pc_module_out: 000003b8; 
+# dut.d.alu_module_out: 000003b0; dut.d.pipe_exmem_alu_out: 00000000; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000003bc;dut.d.bpmux_out: 000003bc;
+# dut.d.pipereg_ifid_pc_out: 000003b4; dut.d.pipereg_idex_pc_out: 000003b0; dut.d.pipereg_exmem_pc_out: 000003ac; dut.d.pipereg_memwb_pc_out: 000003a8; 
+# rvfi.pc_rdata: 000003a8; rvfi.pc_wdata: 000003ac; 
+#  
+# time: 15855000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003c0; dut.d.pc_module_out: 000003bc; 
+# dut.d.alu_module_out: 000005c4; dut.d.pipe_exmem_alu_out: 000003b0; dut.d.pipe_memwb_alu_out: 00000000; dut.d.pcmux_out: 000003c0;dut.d.bpmux_out: 000003c0;
+# dut.d.pipereg_ifid_pc_out: 000003b8; dut.d.pipereg_idex_pc_out: 000003b4; dut.d.pipereg_exmem_pc_out: 000003b0; dut.d.pipereg_memwb_pc_out: 000003ac; 
+# rvfi.pc_rdata: 000003ac; rvfi.pc_wdata: 000003b0; 
+#  
+# time: 15865000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003c4; dut.d.pc_module_out: 000003c0; 
+# dut.d.alu_module_out: 000003b8; dut.d.pipe_exmem_alu_out: 000005c4; dut.d.pipe_memwb_alu_out: 000003b0; dut.d.pcmux_out: 000003c4;dut.d.bpmux_out: 000003c4;
+# dut.d.pipereg_ifid_pc_out: 000003bc; dut.d.pipereg_idex_pc_out: 000003b8; dut.d.pipereg_exmem_pc_out: 000003b4; dut.d.pipereg_memwb_pc_out: 000003b0; 
+# rvfi.pc_rdata: 000003b0; rvfi.pc_wdata: 000003b4; 
+#  
+# memread(_addr=000003c0)
+# time: 16235000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003c4; dut.d.pc_module_out: 000003c0; 
+# dut.d.alu_module_out: 000003b8; dut.d.pipe_exmem_alu_out: 000005c4; dut.d.pipe_memwb_alu_out: 000003b0; dut.d.pcmux_out: 000003c4;dut.d.bpmux_out: 000003c4;
+# dut.d.pipereg_ifid_pc_out: 000003bc; dut.d.pipereg_idex_pc_out: 000003b8; dut.d.pipereg_exmem_pc_out: 000003b4; dut.d.pipereg_memwb_pc_out: 000003b0; 
+# rvfi.pc_rdata: 000003b0; rvfi.pc_wdata: 000003b4; 
+#  
+# time: 16245000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003c8; dut.d.pc_module_out: 000003c4; 
+# dut.d.alu_module_out: 000005c4; dut.d.pipe_exmem_alu_out: 000003b8; dut.d.pipe_memwb_alu_out: 000005c4; dut.d.pcmux_out: 000003c8;dut.d.bpmux_out: 000003c8;
+# dut.d.pipereg_ifid_pc_out: 000003c0; dut.d.pipereg_idex_pc_out: 000003bc; dut.d.pipereg_exmem_pc_out: 000003b8; dut.d.pipereg_memwb_pc_out: 000003b4; 
+# rvfi.pc_rdata: 000003b4; rvfi.pc_wdata: 000003b8; 
+#  
+# time: 16255000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003cc; dut.d.pc_module_out: 000003c8; 
+# dut.d.alu_module_out: beaea9be; dut.d.pipe_exmem_alu_out: 000005c4; dut.d.pipe_memwb_alu_out: 000003b8; dut.d.pcmux_out: 000003cc;dut.d.bpmux_out: 000003cc;
+# dut.d.pipereg_ifid_pc_out: 000003c4; dut.d.pipereg_idex_pc_out: 000003c0; dut.d.pipereg_exmem_pc_out: 000003bc; dut.d.pipereg_memwb_pc_out: 000003b8; 
+# rvfi.pc_rdata: 000003b8; rvfi.pc_wdata: 000003bc; 
+#  
+# time: 16265000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003d0; dut.d.pc_module_out: 000003cc; 
+# dut.d.alu_module_out: 000003c4; dut.d.pipe_exmem_alu_out: beaea9be; dut.d.pipe_memwb_alu_out: 000005c4; dut.d.pcmux_out: 000003d0;dut.d.bpmux_out: 000003d0;
+# dut.d.pipereg_ifid_pc_out: 000003c8; dut.d.pipereg_idex_pc_out: 000003c4; dut.d.pipereg_exmem_pc_out: 000003c0; dut.d.pipereg_memwb_pc_out: 000003bc; 
+# rvfi.pc_rdata: 000003bc; rvfi.pc_wdata: 000003c0; 
+#  
+# time: 16275000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003d4; dut.d.pc_module_out: 000003d0; 
+# dut.d.alu_module_out: 00000570; dut.d.pipe_exmem_alu_out: 000003c4; dut.d.pipe_memwb_alu_out: beaea9be; dut.d.pcmux_out: 000003d4;dut.d.bpmux_out: 000003d4;
+# dut.d.pipereg_ifid_pc_out: 000003cc; dut.d.pipereg_idex_pc_out: 000003c8; dut.d.pipereg_exmem_pc_out: 000003c4; dut.d.pipereg_memwb_pc_out: 000003c0; 
+# rvfi.pc_rdata: 000003c0; rvfi.pc_wdata: 000003c4; 
+#  
+# time: 16285000; is_jal: 1; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003d8; dut.d.pc_module_out: 000003d4; 
+# dut.d.alu_module_out: 000005f0; dut.d.pipe_exmem_alu_out: 00000570; dut.d.pipe_memwb_alu_out: 000003c4; dut.d.pcmux_out: 000003d8;dut.d.bpmux_out: 000003d8;
+# dut.d.pipereg_ifid_pc_out: 000003d0; dut.d.pipereg_idex_pc_out: 000003cc; dut.d.pipereg_exmem_pc_out: 000003c8; dut.d.pipereg_memwb_pc_out: 000003c4; 
+# rvfi.pc_rdata: 000003c4; rvfi.pc_wdata: 000003c8; 
+#  
+# time: 16295000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003dc; dut.d.pc_module_out: 000003d8; 
+# dut.d.alu_module_out: 000003d0; dut.d.pipe_exmem_alu_out: 000005f0; dut.d.pipe_memwb_alu_out: 00000570; dut.d.pcmux_out: 000003dc;dut.d.bpmux_out: 000003dc;
+# dut.d.pipereg_ifid_pc_out: 000003d4; dut.d.pipereg_idex_pc_out: 000003d0; dut.d.pipereg_exmem_pc_out: 000003cc; dut.d.pipereg_memwb_pc_out: 000003c8; 
+# rvfi.pc_rdata: 000003c8; rvfi.pc_wdata: 000003cc; 
+#  
+# time: 16305000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: 0; dut.d.pause_pipeline: 0; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003e0; dut.d.pc_module_out: 000003dc; 
+# dut.d.alu_module_out: 000005e8; dut.d.pipe_exmem_alu_out: 000003d0; dut.d.pipe_memwb_alu_out: 000005f0; dut.d.pcmux_out: 000003e0;dut.d.bpmux_out: 000003e0;
+# dut.d.pipereg_ifid_pc_out: 000003d8; dut.d.pipereg_idex_pc_out: 000003d4; dut.d.pipereg_exmem_pc_out: 000003d0; dut.d.pipereg_memwb_pc_out: 000003cc; 
+# rvfi.pc_rdata: 000003cc; rvfi.pc_wdata: 000003d0; 
+#  
+# -------- RVFI Monitor error 106 in channel 0: mp3_tb.tb.genblk3.monitor.ch0_handle_error at time 16315000 --------
+# Error message: mismatch in pc_wdata
 # rvfi_valid = 1
-# rvfi_order = 000000000000007a
+# rvfi_order = 00000000000000d3
+# rvfi_insn = 224003ef
+# rvfi_trap = 0
+# rvfi_halt = 0
+# rvfi_intr = 0
 # rvfi_rs1_addr = 00
-# rvfi_rs2_addr = 00
+# rvfi_rs2_addr = 04
 # rvfi_rs1_rdata = 00000000
 # rvfi_rs2_rdata = 00000000
-# rvfi_rd_addr = 00
-# rvfi_rd_wdata = 00000000
-# rvfi_pc_rdata = 00000244
-# rvfi_pc_wdata = 00000248
-# rvfi_intr = 0
-# rvfi_trap = 0
-# shadow_pc_valid = 1
-# shadow_pc_rdata = 00000248
-# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11365000 --------
-# Error message: mismatch with shadow pc
-# rvfi_valid = 1
-# rvfi_order = 000000000000007b
-# rvfi_rs1_addr = 00
-# rvfi_rs2_addr = 00
-# rvfi_rs1_rdata = 00000000
-# rvfi_rs2_rdata = 00000000
-# rvfi_rd_addr = 00
-# rvfi_rd_wdata = 00000000
-# rvfi_pc_rdata = 00000244
-# rvfi_pc_wdata = 00000248
-# rvfi_intr = 0
-# rvfi_trap = 0
-# shadow_pc_valid = 1
-# shadow_pc_rdata = 00000248
-# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11375000 --------
-# Error message: mismatch with shadow pc
-# rvfi_valid = 1
-# rvfi_order = 000000000000007c
-# rvfi_rs1_addr = 00
-# rvfi_rs2_addr = 00
-# rvfi_rs1_rdata = 00000000
-# rvfi_rs2_rdata = 00000000
-# rvfi_rd_addr = 00
-# rvfi_rd_wdata = 00000000
-# rvfi_pc_rdata = 00000244
-# rvfi_pc_wdata = 00000248
-# rvfi_intr = 0
-# rvfi_trap = 0
-# shadow_pc_valid = 1
-# shadow_pc_rdata = 00000248
-# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11385000 --------
-# Error message: mismatch with shadow pc
-# rvfi_valid = 1
-# rvfi_order = 000000000000007d
-# rvfi_rs1_addr = 00
-# rvfi_rs2_addr = 00
-# rvfi_rs1_rdata = 00000000
-# rvfi_rs2_rdata = 00000000
-# rvfi_rd_addr = 00
-# rvfi_rd_wdata = 00000000
-# rvfi_pc_rdata = 00000244
-# rvfi_pc_wdata = 00000248
-# rvfi_intr = 0
-# rvfi_trap = 0
-# shadow_pc_valid = 1
-# shadow_pc_rdata = 00000248
-# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11395000 --------
-# Error message: mismatch with shadow pc
-# rvfi_valid = 1
-# rvfi_order = 000000000000007e
-# rvfi_rs1_addr = 00
-# rvfi_rs2_addr = 00
-# rvfi_rs1_rdata = 00000000
-# rvfi_rs2_rdata = 00000000
-# rvfi_rd_addr = 00
-# rvfi_rd_wdata = 00000000
-# rvfi_pc_rdata = 00000244
-# rvfi_pc_wdata = 00000248
-# rvfi_intr = 0
-# rvfi_trap = 0
-# shadow_pc_valid = 1
-# shadow_pc_rdata = 00000248
-# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11405000 --------
-# Error message: mismatch with shadow pc
-# rvfi_valid = 1
-# rvfi_order = 000000000000007f
-# rvfi_rs1_addr = 00
-# rvfi_rs2_addr = 00
-# rvfi_rs1_rdata = 00000000
-# rvfi_rs2_rdata = 00000000
-# rvfi_rd_addr = 00
-# rvfi_rd_wdata = 00000000
-# rvfi_pc_rdata = 00000244
-# rvfi_pc_wdata = 00000248
-# rvfi_intr = 0
-# rvfi_trap = 0
-# shadow_pc_valid = 1
-# shadow_pc_rdata = 00000248
-# -------- RVFI Monitor error 130 in reordered channel 0: mp3_tb.tb.genblk3.monitor.ro0_handle_error_p at time 11415000 --------
-# Error message: mismatch with shadow pc
-# rvfi_valid = 1
-# rvfi_order = 0000000000000080
-# rvfi_rs1_addr = 00
-# rvfi_rs2_addr = 00
-# rvfi_rs1_rdata = 00000000
-# rvfi_rs2_rdata = 00000000
-# rvfi_rd_addr = 00
-# rvfi_rd_wdata = 00000000
-# rvfi_pc_rdata = 00000244
-# rvfi_pc_wdata = 00000248
-# rvfi_intr = 0
-# rvfi_trap = 0
-# shadow_pc_valid = 1
-# shadow_pc_rdata = 00000248
-# TOP: Errcode: 130
+# rvfi_rd_addr = 07
+# rvfi_rd_wdata = 000003d0
+# rvfi_pc_rdata = 000003cc
+# rvfi_pc_wdata = 000003d0
+# rvfi_mem_addr = 000005f0
+# rvfi_mem_rmask = 0
+# rvfi_mem_wmask = 0
+# rvfi_mem_rdata = xxxxxxxx
+# rvfi_mem_wdata = 00000000
+# spec_valid = 1
+# spec_trap = 0
+# spec_rs1_addr = 00
+# spec_rs2_addr = 00
+# spec_rd_addr = 07
+# spec_rd_wdata = 000003d0
+# spec_pc_wdata = 000005f0
+# spec_mem_addr = 00000000
+# spec_mem_rmask = 0
+# spec_mem_wmask = 0
+# spec_mem_wdata = 00000000
+# time: 16315000; is_jal: 0; is_jalr: 0; dut.d.btb_hit: x; dut.d.pause_pipeline: 1; dut.d.prediction: 0; 
+# dut.d.not_correct: 0; dut.d.is_taken: 0; dut.d.pc_in: 000003e4; dut.d.pc_module_out: 000003e0; 
+# dut.d.alu_module_out: 000003d8; dut.d.pipe_exmem_alu_out: 000005e8; dut.d.pipe_memwb_alu_out: 000003d0; dut.d.pcmux_out: 000003e4;dut.d.bpmux_out: 000003e4;
+# dut.d.pipereg_ifid_pc_out: 000003dc; dut.d.pipereg_idex_pc_out: 000003d8; dut.d.pipereg_exmem_pc_out: 000003d4; dut.d.pipereg_memwb_pc_out: 000003d0; 
+# rvfi.pc_rdata: 000003d0; rvfi.pc_wdata: 000003d4; 
+#  
+# memread(_addr=000003e0)
+# TOP: Errcode: 0
 # ** Note: $finish    : ./hvl/source_tb.sv(44)
-#    Time: 11415 ns  Iteration: 1  Instance: /mp3_tb/tb
-# End time: 16:21:45 on Apr 27,2020, Elapsed time: 0:00:01
+#    Time: 16375 ns  Iteration: 1  Instance: /mp3_tb/tb
+# End time: 19:00:15 on Apr 28,2020, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 7
