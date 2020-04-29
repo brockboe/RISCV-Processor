@@ -84,11 +84,11 @@ always_comb begin // next state logic
                 if ((valid & cmp) == '0) begin // cache miss
                     if(dirty[lru] & valid[lru]) next_state = write_back;
                     else next_state = read_mem;
-						  miss_count_next = miss_count + 1;
+					miss_count_next = miss_count + 1;
                 end else begin
-					     next_state = idle;
-						  hit_count_next = hit_count + 1;
-				    end
+					next_state = wait0;
+					hit_count_next = hit_count + 1;
+				end
             end
             else next_state = idle;
         end
@@ -106,8 +106,6 @@ always_comb begin // next state logic
         end
 
         read_end, write_end: next_state = wait0;
-        wait0: next_state = wait1;
-        // wait1: next_state = wait2;
 
         default: next_state = idle;
     endcase
