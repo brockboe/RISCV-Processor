@@ -153,14 +153,16 @@ always_comb begin
                     & ((pipereg_idex_idecode.funct3 == div) |
                       (pipereg_idex_idecode.funct3 == divu) |
                       (pipereg_idex_idecode.funct3 == rem) |
-                      (pipereg_idex_idecode.funct3 == remu));
+                      (pipereg_idex_idecode.funct3 == remu))
+                    & (~dcache_resp);
 
       run_multiplier = (pipereg_idex_idecode.opcode == rv32i_types::op_reg)
                        & (pipereg_idex_idecode.funct7 == 7'b0000001)
                        & ((pipereg_idex_idecode.funct3 == mul) |
                           (pipereg_idex_idecode.funct3 == mulh) |
                           (pipereg_idex_idecode.funct3 == mulhsu) |
-                          (pipereg_idex_idecode.funct3 == mulhu));
+                          (pipereg_idex_idecode.funct3 == mulhu))
+                       & (~dcache_resp);
 
       // assign forwarding itf signals
       fitf.idex_inst_decode =  pipereg_idex_idecode;

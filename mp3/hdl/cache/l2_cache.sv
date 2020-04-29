@@ -15,6 +15,17 @@ module l2_cache #(parameter s_index = 3) (
     input logic pmem_resp
 );
 
+// registered inputs:
+logic l2_read_reg, l2_write_reg;
+logic [255:0] l2_wdata_reg; 
+logic [31:0] l2_address_reg;
+
+always_ff @(posedge clk) begin
+    l2_read_reg <= l2_read;
+    l2_write_reg <= l2_write;
+    l2_wdata_reg <= l2_wdata;
+    l2_address_reg <= l2_address;
+end
 
 // datapath <==> control
 logic [7:0] cmp, dirty, valid;
@@ -49,7 +60,7 @@ l2_control control
     .dirty_in, .valid_in,
 
     // cpu & bus_adapter
-    .mem_read(l2_read), .mem_write(l2_write),
+    .mem_read(l2_read_reg), .mem_write(l2_write_reg),
     .resp(l2_resp),
 
     // cacheline adaptor
@@ -61,7 +72,7 @@ l2_control control
 l2_datapath #(.s_index(s_index)) datapath
 (
     .clk(clk), .rst,
-    .read(l2_read),
+    .read(l2_read_reg),
     .write_en,
     .sel,
     .data_in_sel,
@@ -72,14 +83,14 @@ l2_datapath #(.s_index(s_index)) datapath
     .mru,
     .dirty_in,
     .valid_in,
-    .addr(l2_address),
+    .addr(l2_address_reg),
     .addr_out(pmem_address),
     .data_out,
     .cmp,
     .dirty,
     .valid,
     .lru,
-    .mem_wdata256(l2_wdata),
+    .mem_wdata256(l2_wdata_reg),
     .line_in(pmem_rdata)
 );
 

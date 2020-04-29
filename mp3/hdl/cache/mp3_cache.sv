@@ -78,22 +78,6 @@ cache #(.s_index(3)) dcache(
 logic l2_read, l2_write, l2_resp;
 logic [31:0] l2_address;
 logic [255:0] l2_wdata, l2_rdata;
-// latched signals
-logic l2_read2, l2_write2, l2_resp2;
-logic [31:0] l2_address2;
-logic [255:0] l2_wdata2, l2_rdata2;
-
-always_ff @( posedge clk ) begin
-    // arbiter to l2
-    l2_read2 <= l2_read;
-    l2_write2 <= l2_write;
-    l2_address2 <= l2_address;
-    l2_wdata2 <= l2_wdata;
-
-    // l2 to arbiter
-    l2_rdata2 <= l2_rdata;
-    l2_resp2 <= l2_resp;
-end
 
 cache_arbiter arbiter(
     .clk(clk),
@@ -118,8 +102,8 @@ cache_arbiter arbiter(
     .l2_write(l2_write),
     .l2_wdata(l2_wdata), 
     .l2_address(l2_address),
-    .l2_rdata(l2_rdata2),
-    .l2_resp(l2_resp2)
+    .l2_rdata(l2_rdata),
+    .l2_resp(l2_resp)
 );
 
 // signals between l2 cache and adapter
@@ -136,10 +120,10 @@ logic ewb_read_i, ewb_write_i, ewb_resp_o;
 l2_cache #(.s_index(4)) l2(    
     .clk(clk), .rst(rst),
     // L1 - L2
-    .l2_read(l2_read2), 
-    .l2_write(l2_write2),
-    .l2_wdata(l2_wdata2), 
-    .l2_address(l2_address2),
+    .l2_read(l2_read), 
+    .l2_write(l2_write),
+    .l2_wdata(l2_wdata), 
+    .l2_address(l2_address),
     .l2_rdata(l2_rdata),
     .l2_resp(l2_resp),
 

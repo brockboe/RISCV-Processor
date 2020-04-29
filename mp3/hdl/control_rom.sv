@@ -169,8 +169,10 @@ always_comb begin
             if(funct7 == 7'b01) begin
                   idex_ctrl_word.cmpop = blt;
                   idex_ctrl_word.regfilemux_sel = regfilemux::alu_out;
+            end else if ((funct7 == 7'b0100000) & (funct3 == 3'b000)) begin
+                  idex_ctrl_word.aluop = alu_sub;
             end else begin
-                  case(alu_ops'(funct3))
+                  case(arith_funct3_t'(funct3))
                       slt: begin
                           idex_ctrl_word.cmpop = blt;
                           idex_ctrl_word.regfilemux_sel = regfilemux::br_en;
