@@ -21,7 +21,7 @@ module source_tb(
 
 initial begin
     $display("Compilation Successful");
-    tb_itf.path_mb.put("simulation/memory.lst");
+    tb_itf.path_mb.put("memory.lst");
     tb_itf.rst = 1'b1;
     repeat (5) @(posedge tb_itf.clk);
     tb_itf.rst = 1'b0;
