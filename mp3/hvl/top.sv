@@ -36,37 +36,14 @@ logic [31:0] memwb_mem_wdata;
 logic [31:0] memwb_mem_rdata;
 logic [31:0] exmem_rs1_rdata, exmem_rs2_rdata, memwb_rs1_rdata, memwb_rs2_rdata;
 logic pause_pipeline;
-
-// initial $monitor(
-//       "time: %0t; ", $time,
-//       // "btb_hit: %d; ", dut.d.btb_hit,
-//       // "branch_go: %d; ", dut.d.branch_go,
-//       // "\n",
-//       // "alu_module_out: %x; ", dut.d.alu_module_out,
-//       // "target: %x; ", dut.d.target,
-//       // "\n",
-//       // "pcmux_out: %x; ", dut.d.pcmux_out,
-//       // "pc_module_out: %x; ", dut.d.pc_module_out,
-//       // "\n",
-//       // "pipereg_ifid_pc_out: %x; ", dut.d.pipereg_ifid_pc_out,
-//       // "pipereg_idex_pc_out: %x; ", dut.d.pipereg_idex_pc_out,
-//       // "pipereg_exmem_pc_out: %x; ", dut.d.pipereg_exmem_pc_out,
-//       // "pipereg_memwb_pc_out: %x; ", dut.d.pipereg_memwb_pc_out,
-//       // "\n",
-//       "btb_counter: %d; ",dut.d.btb_counter,
-// );
-
-
 assign pause_pipeline = dut.d.pause_pipeline;
-logic delay_br_go;
 always_ff @(posedge itf.clk) begin
       if (~pause_pipeline) begin
             exmem_rs1_rdata <= dut.d.rs1mux_out;
             exmem_rs2_rdata <= dut.d.rs2mux_out;
-            delay_br_go <= dut.d.branch_go;
       end
       if (~pause_pipeline) begin
-            memwb_pc_wdata <= (delay_br_go)? dut.d.pc_module_out : (dut.d.pipereg_idex_pc_out);
+            memwb_pc_wdata <= (dut.d.branch_go)? dut.d.pcmux_out : (dut.d.pipereg_idex_pc_out);
             memwb_rs1_rdata <= exmem_rs1_rdata;
             //memwb_rs2_rdata <= exmem_rs2_rdata;
             unique case(dut.d.dcachemux_forwarding_sel)

@@ -105,14 +105,6 @@ logic run_divider;
 
 logic [31:0] aluresmux_out;
 
-// Branch Prediction Signal
-logic btb_hit;
-logic [31:0] target;
-int btb_counter = 0;
-always_ff @ (posedge clk) begin
-      if(pcmux_out == target) begin btb_counter <= btb_counter + 1;end
-end
-
 // memory forwarding / hazard detection solution.
 //
 // comparisons are performed between ifid / idex
@@ -170,10 +162,10 @@ always_comb begin
       fitf.memwb_inst_decode = pipereg_memwb_idecode;
 
       // calculate whether or not we need to branch
-      branch_go = (br_en_out &
-                  (pipereg_idex_idecode.opcode == op_br)) |
-                  (pipereg_idex_idecode.opcode == op_jal) |
-                  (pipereg_idex_idecode.opcode == op_jalr);
+      branch_go = (pipereg_exmem_br_en_out[0] &
+                  (pipereg_exmem_idecode.opcode == op_br)) |
+                  (pipereg_exmem_idecode.opcode == op_jal) |
+                  (pipereg_exmem_idecode.opcode == op_jalr);
 
       // calcualte if we need to pause (if we're waiting on data from memory)
       if (icache_read & (~icache_resp)) pause_pipeline = 1'b1; // waiting on icache
@@ -299,7 +291,7 @@ pipe_idex_rs2_out (
 
 
 // EX/MEM Registers
-assign pipe_rst_exmem = rst;
+assign pipe_rst_exmem = rst | (branch_go & (~pause_pipeline));
 assign pipe_load_exmem = ~pause_pipeline;
 //rs2 out
 register #(.width(32))
@@ -453,17 +445,6 @@ regfile regfile(
 assign opcode = rv32i_opcode'(pipereg_ifid_idecode.opcode);
 assign funct3 = pipereg_ifid_idecode.funct3;
 assign funct7 = pipereg_ifid_idecode.funct7;
-
-btb btb(
-    .clk(clk),
-    .r_pc(pipereg_idex_pc_out),
-    .w_pc(pipereg_exmem_pc_out),
-    .load(pipereg_exmem_idecode.opcode == op_br && ~pause_pipeline),
-    .read(~pause_pipeline),
-    .target_in(pipe_exmem_alu_out),
-    .target_out(target),
-    .btb_hit(btb_hit)
-);
 
 // EX - execute
 alu alu (
@@ -666,14 +647,9 @@ always_comb begin : MUXES
 
       // input into the pc module, dependent
       // on the branch_go signal
-      // unique case (branch_go)
-      //       1'b0: pcmux_out = pc_module_out + 32'd4;
-      //       1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
-      //       default: pcmux_out = pc_module_out + 32'd4;
-      // endcase
       unique case (branch_go)
-            2'b0: pcmux_out = pc_module_out + 32'd4;
-            2'b1: pcmux_out = (btb_hit && pipereg_idex_idecode == op_br)?target:{alu_module_out[31:2], 2'd0};
+            1'b0: pcmux_out = pc_module_out + 32'd4;
+            1'b1: pcmux_out = {pipe_exmem_alu_out[31:2], 2'd0};
             default: pcmux_out = pc_module_out + 32'd4;
       endcase
 
