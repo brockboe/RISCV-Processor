@@ -29,7 +29,6 @@ end
 
 /**************************** Halting Conditions *****************************/
 int timeout = 100000000;
-
 always @(posedge tb_itf.clk) begin
     if (rvfi.halt)
         $finish;
