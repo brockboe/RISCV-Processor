@@ -134,9 +134,15 @@ mp3 dut(
 /**************************** Performance Counters ***************************/
 int ewb_count;
 int l2_hit, l2_miss;
+int dcache_hit, dcache_miss;
+int icache_hit, icache_miss;
 
 assign ewb_count = dut.cache.buffer.eviction_write_counter;
 assign l2_hit = dut.cache.l2.control.hit_count;
 assign l2_miss = dut.cache.l2.control.miss_count;
+assign dcache_hit = dut.cache.dcache.control.hit_count;
+assign dcache_miss = dut.cache.dcache.control.miss_count;
+assign icache_hit = dut.cache.icache.control.hit_count;
+assign icache_miss = dut.cache.icache.control.miss_count;
 
 endmodule

@@ -30,13 +30,20 @@ enum int unsigned {
     read_end, write_end
 } state, next_state;
 
+int hit_count, hit_count_next, miss_count, miss_count_next;
+
 always_ff @(posedge clk)
 begin: next_state_assignment
     /* Assignment of next state on clock edge */
     state <= rst? idle : next_state;
+
+    hit_count <= rst ? 0 : hit_count_next;
+    miss_count <= rst ? 0 : miss_count_next;
 end
 
 always_comb begin // next state logic
+    hit_count_next = hit_count;
+    miss_count_next = miss_count;
     case(state)
         idle: begin
             if (mem_read & mem_write) begin
@@ -46,7 +53,11 @@ always_comb begin // next state logic
                 if ((valid & cmp) == 2'b00) begin // read miss
                     if(dirty[lru] & valid[lru]) next_state = write_back;
                     else next_state = read_mem;
-                end else next_state = idle;
+                    miss_count_next = miss_count + 1;
+                end else begin
+                    next_state = idle;
+                    hit_count_next = hit_count + 1;
+                end
             end
             else next_state = idle;
         end
