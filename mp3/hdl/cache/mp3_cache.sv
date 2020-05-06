@@ -117,7 +117,7 @@ logic [31:0] ewb_addr_i;
 logic ewb_read_i, ewb_write_i, ewb_resp_o;
 
 // L2 cache (cp3)
-l2_cache #(.s_index(4)) l2(    
+l2_cache #(.s_index(2)) l2(    
     .clk(clk), .rst(rst),
     // L1 - L2
     .l2_read(l2_read), 
