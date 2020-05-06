@@ -35,6 +35,7 @@ always @(posedge tb_itf.clk) begin
         "l2_hit_counter: %d; ",itf.l2_hit_counter,"l2_miss_counter: %d; ",itf.l2_miss_counter,"\n",
         "dcache_hit: %d; ",itf.dcache_hit,"dcache_hit: %d; ",itf.dcache_miss,"\n",
         "icache_hit: %d; ",itf.icache_hit,"icache_hit: %d; ",itf.icache_miss,"\n",
+        "ewb_counter: %d; ", itf.ewb_counter, "\n"
         );
         $finish;
     end
