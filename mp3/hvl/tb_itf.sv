@@ -47,6 +47,9 @@ interface tb_itf();
     logic mem_resp;
     logic [63:0] mem_rdata;
 
+    //br signals
+    int btb_counter, br_counter,l2_hit_counter,l2_miss_counter,ewb_counter,dcache_hit,dcache_miss,icache_hit,icache_miss;
+
     /* Mailbox for memory path */
     mailbox #(string) path_mb;
     initial path_mb = new();

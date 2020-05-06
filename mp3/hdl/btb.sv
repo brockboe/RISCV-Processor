@@ -2,7 +2,7 @@ import rv32i_types::*;
 
 module btb #(
     parameter width = 32,
-    parameter idx_width = 6,
+    parameter idx_width = 10,
     parameter n_sets = 2 ** idx_width,
     parameter tag_width = width - idx_width
 )

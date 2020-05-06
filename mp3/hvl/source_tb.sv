@@ -30,8 +30,14 @@ end
 /**************************** Halting Conditions *****************************/
 int timeout = 100000000;
 always @(posedge tb_itf.clk) begin
-    if (rvfi.halt)
+    if (rvfi.halt) begin
+        $display("btb_counter: %d; ",itf.btb_counter,"br_counter: %d; ",itf.br_counter,"\n",
+        "l2_hit_counter: %d; ",itf.l2_hit_counter,"l2_miss_counter: %d; ",itf.l2_miss_counter,"\n",
+        "dcache_hit: %d; ",itf.dcache_hit,"dcache_hit: %d; ",itf.dcache_miss,"\n",
+        "icache_hit: %d; ",itf.icache_hit,"icache_hit: %d; ",itf.icache_miss,"\n",
+        );
         $finish;
+    end
     if (timeout == 0) begin
         $display("TOP: Timed out");
         $finish;

@@ -1,4 +1,5 @@
 import dcachemux::*;
+import rv32i_types::*;
 
 module mp3_tb;
 `timescale 1ns/10ps
@@ -25,7 +26,6 @@ source_tb tb(
 // This section not required until CP3
 
 assign rvfi.halt = (rvfi.pc_wdata == rvfi.pc_rdata) && rvfi.commit;      // Set high when you detect an infinite loop
-
 initial rvfi.order = 0;
 always @(posedge itf.clk iff rvfi.commit) rvfi.order <= rvfi.order + 1; // Modify for OoO
 
@@ -54,6 +54,7 @@ logic pause_pipeline;
 //       // "pipereg_memwb_pc_out: %x; ", dut.d.pipereg_memwb_pc_out,
 //       // "\n",
 //       "btb_counter: %d; ",dut.d.btb_counter,
+//       // "pipereg_exmem_idecode.opcode == op_br: %d", dut.d.pipereg_exmem_idecode.opcode == op_br,
 // );
 
 
@@ -160,12 +161,15 @@ int l2_hit, l2_miss;
 int dcache_hit, dcache_miss;
 int icache_hit, icache_miss;
 
-assign ewb_count = dut.cache.buffer.eviction_write_counter;
-assign l2_hit = dut.cache.l2.control.hit_count;
-assign l2_miss = dut.cache.l2.control.miss_count;
-assign dcache_hit = dut.cache.dcache.control.hit_count;
-assign dcache_miss = dut.cache.dcache.control.miss_count;
-assign icache_hit = dut.cache.icache.control.hit_count;
-assign icache_miss = dut.cache.icache.control.miss_count;
+assign itf.dcache_hit = dut.cache.dcache.control.hit_count;
+assign itf.dcache_miss = dut.cache.dcache.control.miss_count;
+assign itf.icache_hit = dut.cache.icache.control.hit_count;
+assign itf.icache_miss = dut.cache.icache.control.miss_count;
+
+assign itf.btb_counter = dut.d.btb_counter;
+assign itf.br_counter = dut.d.br_counter;
+assign itf.l2_hit_counter = dut.cache.l2.control.hit_count;
+assign itf.l2_miss_counter = dut.cache.l2.control.miss_count;
+assign itf.ewb_counter = dut.cache.buffer.eviction_write_counter;
 
 endmodule

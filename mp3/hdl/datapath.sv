@@ -109,8 +109,10 @@ logic [31:0] aluresmux_out;
 logic btb_hit;
 logic [31:0] target;
 int btb_counter = 0;
+int br_counter = 0;
 always_ff @ (posedge clk) begin
-      if(pcmux_out == target) begin btb_counter <= btb_counter + 1;end
+      if(pcmux_out == target) btb_counter <= btb_counter + 1;
+      if(pipereg_idex_idecode.opcode == op_br) br_counter <= br_counter + 1;
 end
 
 // memory forwarding / hazard detection solution.
